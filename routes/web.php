@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('admin.index');
+    return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/admin', 'ControllerAdmin@index');
