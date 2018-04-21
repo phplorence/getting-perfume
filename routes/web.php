@@ -11,10 +11,13 @@
 |
 */
 
+Route::get('/', function (){
+    return view('welcome');
+});
+
+
 Auth::routes();
-
-Route::get('/login', 'ControllerAdminLogin@index');
-
-Route::get('/register', 'ControllerAdminRegister@index');
-
-Route::get('/', 'ControllerAdminHome@index');
+Route::get('/public', 'UserPublicController@index');
+Route::get('/admin', 'AdminHomeController@index')->name('admin.dashboard');
+Route::get('/admin', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/admin', 'Auth\AdminLoginController@login')->name('admin.login.submit');
