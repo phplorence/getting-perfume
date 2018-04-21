@@ -20,7 +20,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/perfume';
+    protected $redirectTo = '/';
 
     public function __construct()
     {
