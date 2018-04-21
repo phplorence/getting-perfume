@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Perfume;
 
-class AdminController extends Controller
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class AdminHomeController extends Controller
 {
     public function __construct()
     {
