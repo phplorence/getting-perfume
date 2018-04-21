@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-class UserPublicController extends Controller
+class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:admin');
     }
 
     public function index()
     {
-        return view('welcome');
+        return view('admin.index');
     }
 }
