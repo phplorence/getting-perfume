@@ -19,6 +19,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::prefix('quan-tri')->group(function () {
         Route::get('/dang-nhap', 'Auth\Admin\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
+        Route::get('/dang-xuat', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
         Route::get('/', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
     });
 });

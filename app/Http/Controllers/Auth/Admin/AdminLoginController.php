@@ -39,4 +39,13 @@ class AdminLoginController extends Controller
             return redirect()->back()->withInput($request->only('email', 'remember'));
         }
     }
+
+    /**
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+    public function logout() {
+        // Attempt to log the user in
+        Auth('admin')->logout();
+        return redirect()->intended(route('admin.login'));
+    }
 }
