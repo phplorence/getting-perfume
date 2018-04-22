@@ -39,7 +39,7 @@
     <form action="{{ route('admin.login.submit') }}" method="post">
       {{ csrf_field() }}
       <div class="form-group has-feedback">
-        <input type="email" name="email" class="form-control" placeholder="Vui lòng nhập địa chỉ mail" value="{{ old('email') }}" required autofocus>
+        <input name="email" class="form-control" placeholder="Vui lòng nhập địa chỉ mail" value="{{ old('email') }}">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
         @if ($errors->has('email'))

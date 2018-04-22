@@ -2849,13 +2849,16 @@ table.text-center,table.text-center td,table.text-center th{
     }
 }
 .login-box-body,.register-box-body{
-    background:#eaeaea85;
+    background:#d8e8de47;
     padding:20px;
     border-top:0;
     color:#a9a5a5
 }
 .login-box-body .form-control-feedback,.register-box-body .form-control-feedback{
     color:#3b8cbc
+}
+.help-block{
+    color:red;
 }
 .login-box-msg,.register-box-msg{
     margin:0;

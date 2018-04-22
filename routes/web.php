@@ -21,6 +21,5 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
     });
-
 });
 
