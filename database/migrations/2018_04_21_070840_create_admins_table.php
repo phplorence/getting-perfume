@@ -17,7 +17,7 @@ class CreateAdminsTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('password');
-            $table->integer('user_type');
+            $table->string('user_type');
             $table->string('email')->unique();
             $table->string('first_name');
             $table->string('last_name');
@@ -27,6 +27,7 @@ class CreateAdminsTable extends Migration
             $table->string('postcode');
             $table->boolean('active');
             $table->string('telephone');
+            $table->string('path_image');
             $table->rememberToken();
             $table->timestamps();
         });
