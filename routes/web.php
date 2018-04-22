@@ -16,10 +16,11 @@ Route::group(['middleware' => 'web'], function () {
     Auth::routes();
     Route::get('/', 'HomeController@index')->name('home');
 
-    Auth::routes();
-    Route::prefix('admin')->group(function () {
-        Route::get('/login', 'Auth\Admin\AdminLoginController@showLoginForm')->name('admin.login');
-        Route::post('/login', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
-        Route::get('', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
+    Route::prefix('quan-tri')->group(function () {
+        Route::get('/dang-nhap', 'Auth\Admin\AdminLoginController@showLoginForm')->name('admin.login');
+        Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
+        Route::get('/', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
     });
+
 });
+

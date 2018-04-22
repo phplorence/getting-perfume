@@ -2833,10 +2833,10 @@ table.text-center,table.text-center td,table.text-center th{
     font-weight:300
 }
 .login-logo a,.register-logo a{
-    color:#444
+    color:#4a8cb3
 }
 .login-page,.register-page{
-    background:#d2d6de
+    background:#ffffff
 }
 .login-box,.register-box{
     width:360px;
@@ -2849,13 +2849,13 @@ table.text-center,table.text-center td,table.text-center th{
     }
 }
 .login-box-body,.register-box-body{
-    background:#fff;
+    background:#eaeaea85;
     padding:20px;
     border-top:0;
-    color:#666
+    color:#a9a5a5
 }
 .login-box-body .form-control-feedback,.register-box-body .form-control-feedback{
-    color:#777
+    color:#3b8cbc
 }
 .login-box-msg,.register-box-msg{
     margin:0;
