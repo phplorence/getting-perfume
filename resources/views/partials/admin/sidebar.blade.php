@@ -68,7 +68,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="perfume.html" target="_blank"><i class="fa fa-circle-o"></i> Nước hoa</a></li>
+                    <li><a href="{{ route('admin.perfume') }}"><i class="fa fa-circle-o"></i> Nước hoa</a></li>
                     <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Thời trang</a></li>
                     <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Trị mụn</a></li>
                 </ul>
@@ -118,7 +118,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Thanh toán</a></li>
+                    <li><a href="{{ route('admin.invoice') }}"><i class="fa fa-circle-o"></i> Thanh toán</a></li>
                 </ul>
             </li>
 

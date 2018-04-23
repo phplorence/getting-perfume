@@ -36,6 +36,10 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('user.password.request');;
 
         Route::get('/', 'HomeController@index')->name('home');
+
+
+
+
     });
 
     Route::prefix('quan-tri')->group(function () {
@@ -43,6 +47,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/dang-xuat', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
         Route::get('/', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
+
+        // Content Navigation Bar
+        Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume');
+        Route::get('/them-nuoc-hoa', 'Perfume\AdminPerfumeController@perfumeNew')->name('admin.perfume.add');
+
+        Route::get('/nguoi-dung', 'Perfume\AdminProfileController@index')->name('admin.profile');
+        Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
+
     });
 });
 

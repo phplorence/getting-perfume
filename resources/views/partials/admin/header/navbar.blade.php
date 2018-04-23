@@ -245,7 +245,7 @@
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">Hồ sơ</a>
+                            <a href="{{ route('admin.profile') }}" class="btn btn-default btn-flat">Hồ sơ</a>
                         </div>
                         <div class="pull-right">
                             <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">Đăng xuất</a>

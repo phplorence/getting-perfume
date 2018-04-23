@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{URL::asset('components/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{URL::asset('components/Ionicons/css/ionicons.min.css')}}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{URL::asset('components/select2/dist/css/select2.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{URL::asset('css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -71,34 +73,61 @@
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="{{URL::asset('components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{ URL::asset('components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- Select2 -->
+<script src="{{ URL::asset('components/select2/dist/js/select2.full.min.js') }}"></script>
 <!-- Morris.js charts -->
-<script src="{{URL::asset('components/raphael/raphael.min.js')}}"></script>
-<script src="{{URL::asset('components/morris.js/morris.min.js')}}"></script>
+<script src="{{ URL::asset('components/raphael/raphael.min.js')}}"></script>
+<script src="{{ URL::asset('components/morris.js/morris.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{URL::asset('components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+<script src="{{ URL::asset('components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
 <!-- jvectormap -->
-<script src="{{URL::asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script src="{{URL::asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+<script src="{{ URL::asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+<script src="{{ URL::asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{URL::asset('components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
+<script src="{{ URL::asset('components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
-<script src="{{URL::asset('components/moment/min/moment.min.js')}}"></script>
+<script src="{{ URL::asset('components/moment/min/moment.min.js')}}"></script>
 <script src="{{URL::asset('components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <!-- datepicker -->
-<script src="{{URL::asset('components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ URL::asset('components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="{{URL::asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+<script src="{{ URL::asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 <!-- Slimscroll -->
-<script src="{{URL::asset('components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{ URL::asset('components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
-<script src="{{URL::asset('components/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{ URL::asset('components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{URL::asset('js/adminlte.min.js')}}"></script>
+<script src="{{ URL::asset('js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{URL::asset('js/pages/dashboard.js')}}"></script>
+<script src="{{ URL::asset('js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{URL::asset('js/demo.js')}}"></script>
+<script src="{{ URL::asset('js/demo.js')}}"></script>
+<!-- CK Editor -->
+<script src="{{ URL::asset('components/ckeditor/ckeditor.js') }}"></script>
+<!-- InputMask -->
+<script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.js') }}"></script>
+<script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+<script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+<script>
+    $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('editor1')
+        //bootstrap WYSIHTML5 - text editor
+        $('.textarea').wysihtml5()
+    })
+
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+        //Datemask dd/mm/yyyy
+        $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+        //Money Euro
+        $('[data-mask]').inputmask()
+    })
+
+</script>
 </body>
 </html>
 
