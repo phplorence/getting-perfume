@@ -53,6 +53,9 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/them-nuoc-hoa', 'Perfume\AdminPerfumeController@perfumeNew')->name('admin.perfume.add');
 
         Route::get('/nguoi-dung', 'Perfume\AdminProfileController@index')->name('admin.profile');
+        Route::get('/nguoi-dung/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.dashboard');
+        Route::get('/nguoi-dung/cap-cao/them', 'Perfume\AdminSuperController@superNew')->name('admin.super.add');
+
         Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 
     });

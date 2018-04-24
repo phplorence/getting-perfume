@@ -33,30 +33,52 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"><strong>Thanh Điều Hướng</strong></li>
 
-            <li class="treeview">
+            <li class="treeview menu-open">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Quản trị</span>
+                    <i class="fa fa-user"></i> <span>Quản trị</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Danh sách User</a></li>
-                    <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Phân quyền</a></li>
+                <ul class="treeview-menu" style="display: block;">
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-list"></i> Danh sách
+                            <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ route('admin.super.dashboard') }}"><i class="fa fa-user-secret"></i> Cấp cao</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Người dùng</a></li>
+                            <li class="treeview">
+                                <a href="#"><i class="fa fa-user-plus"></i> Cộng tác
+                                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="#"><i class="fa fa-user-secret"></i> Nước hoa</a></li>
+                                    <li><a href="#"><i class="fa fa-user-secret"></i> Phân phối</a></li>
+                                    <li><a href="#"><i class="fa fa-user-secret"></i> Quảng cáo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-address-book"></i> Phân quyền</a></li>
                 </ul>
             </li>
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Khu vực menu</span>
+                    <i class="fa fa-cog"></i> <span>Khu vực menu</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="perfume.html" target="_blank"><i class="fa fa-circle-o"></i> Nước hoa</a></li>
-                    <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Thời trang</a></li>
-                    <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Trị mụn</a></li>
+                    <li><a href="perfume.html" target="_blank"><i class="fa fa-table"></i> Nước hoa</a></li>
+                    <li><a href="pages/examples/profile.html"><i class="fa fa-table"></i> Thời trang</a></li>
+                    <li><a href="pages/examples/login.html"><i class="fa fa-table"></i> Trị mụn</a></li>
                 </ul>
             </li>
 
@@ -68,39 +90,27 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.perfume') }}"><i class="fa fa-circle-o"></i> Nước hoa</a></li>
-                    <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Thời trang</a></li>
-                    <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Trị mụn</a></li>
+                    <li><a href="{{ route('admin.perfume') }}"><i class="fa fa-table"></i> Nước hoa</a></li>
+                    <li><a href="pages/examples/profile.html"><i class="fa fa-table"></i> Thời trang</a></li>
+                    <li><a href="pages/examples/login.html"><i class="fa fa-table"></i> Trị mụn</a></li>
                 </ul>
             </li>
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Bảng biểu</span>
+                    <i class="fa fa-table"></i> <span>Bảng biểu</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="perfumeadvance.html" target="_blank"><i class="fa fa-circle-o"></i> Nước Hoa</a></li>
+                    <li><a href="perfumeadvance.html" target="_blank"><i class="fa fa-table"></i> Nước Hoa</a></li>
                 </ul>
             </li>
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Quảng cáo</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                </ul>
-            </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-folder"></i> <span>Rao vặt</span>
+                    <i class="fa fa-handshake-o"></i> <span>Quảng cáo</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -112,7 +122,19 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Thanh toán</span>
+                    <i class="fa fa-shopping-bag"></i> <span>Rao vặt</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cart-arrow-down"></i> <span>Thanh toán</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -124,7 +146,7 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Liên hệ</span>
+                    <i class="fa fa-phone"></i> <span>Liên hệ</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
