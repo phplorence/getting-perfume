@@ -35,16 +35,28 @@
           <div class="row">
             <div class="col-md-12">
               <div class="box box-primary">
-                  <form role="form">
+                  <form role="form" action="{{ route('admin.super.form.add') }}" method="post">
+                    {{ csrf_field() }}
+
                     <div class="box-body">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Tên đăng nhập</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input name="username" type="text" class="form-control" placeholder="">
+                        @if ($errors->has('username'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('username') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Mật khẩu</label>
-                        <input type="password" class="form-control" placeholder="">
+                        <input name="password" type="password" class="form-control" placeholder="">
+                        @if ($errors->has('password'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
                       <div class="form-group">
