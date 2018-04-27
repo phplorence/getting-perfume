@@ -41,7 +41,7 @@
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                 </div>
                 <!-- /.btn-group -->
-                <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.form') }}" target="_blank"><i class="fa fa-user-plus"></i></a></button>
+                <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.create') }}" target="_blank"><i class="fa fa-user-plus"></i></a></button>
                 <div class="pull-right">
                   1-50/200
                   <div class="btn-group">

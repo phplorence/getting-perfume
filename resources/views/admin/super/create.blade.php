@@ -9,7 +9,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
-        <li><a href="{{ route('admin.super.dashboard') }}"> Danh sách người dùng cấp cao</a></li>
+        <li><a href="{{ route('admin.super.index') }}"> Danh sách người dùng cấp cao</a></li>
         <li class="active">Thêm mới</li>
       </ol>
     </section>
@@ -34,7 +34,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="box box-primary">
-                  <form role="form" action="{{ route('admin.super.form.add') }}" method="post">
+                  <form role="form" action="{{ route('admin.super.store') }}" method="post">
                     {{ csrf_field() }}
 
                     <div class="box-body">
@@ -90,7 +90,7 @@
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Họ và tên</label>
-                        <input name="fullname" type="text" class="form-control" placeholder="" value="{{ old('fullname') }}"/>
+                        <input name="full_name" type="text" class="form-control" placeholder="" value="{{ old('fullname') }}"/>
                       </div>
 
                       <div class="form-group">
@@ -98,10 +98,10 @@
                           <label for="exampleInputFile">Giới tính</label>
                         </div>
                         <label class="radio-inline">
-                          <input type="radio" name="gender" value="nam">Nam
+                          <input type="radio" name="gender" value="Nam">Nam
                         </label>
                         <label class="radio-inline">
-                          <input type="radio" name="gender" value="nu">Nữ
+                          <input type="radio" name="gender" value="Nữ">Nữ
                         </label>
                         @if ($errors->has('gender'))
                           <span class="help-block">

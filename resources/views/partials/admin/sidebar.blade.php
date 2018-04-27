@@ -48,7 +48,7 @@
                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ route('admin.super.dashboard') }}"><i class="fa fa-user-secret"></i> Cấp cao</a></li>
+                            <li><a href="{{ route('admin.super.index') }}"><i class="fa fa-user-secret"></i> Cấp cao</a></li>
                             <li><a href="#"><i class="fa fa-users"></i> Người dùng</a></li>
                             <li class="treeview">
                                 <a href="#"><i class="fa fa-user-plus"></i> Cộng tác

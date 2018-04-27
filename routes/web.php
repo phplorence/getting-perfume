@@ -53,9 +53,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/them-nuoc-hoa', 'Perfume\AdminPerfumeController@perfumeNew')->name('admin.perfume.add');
 
         Route::get('/tai-khoan', 'Perfume\AdminProfileController@index')->name('admin.profile');
-        Route::get('/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.dashboard');
-        Route::get('/cap-cao/them', 'Perfume\AdminSuperController@show')->name('admin.super.form');
-        Route::post('/cap-cao/them', 'Perfume\AdminSuperController@add')->name('admin.super.form.add');
+
+
+        Route::get('/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.index');
+        Route::get('/cap-cao/them', 'Perfume\AdminSuperController@create')->name('admin.super.create');
+        Route::post('/cap-cao', 'Perfume\AdminSuperController@store')->name('admin.super.store');
+
+        // https://laravel.com/docs/5.0/controllers#implicit-controllers
+
 
         Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 

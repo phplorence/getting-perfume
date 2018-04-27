@@ -66,7 +66,7 @@ class Helper extends Controller
     public function validateRadioGender($request) {
         $this->validate(
             $request,
-            ['gender' => 'required|in:nam,nu'],
+            ['gender' => 'required|in:Nam,Nữ'],
             ['gender.required' => 'Vui lòng chọn giới tính']
         );
     }
