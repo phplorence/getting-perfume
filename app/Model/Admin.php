@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -40,4 +41,12 @@ class Admin extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function insert(Request $request) {
+        $username = $request->username;
+        $password = $request->password;
+        $user_type = $request->user_type;
+        $email = $request->email;
+        $fullname = $request->fullname;
+    }
 }

@@ -22,8 +22,8 @@ class Helper extends Controller
         // This e-mail address is not valid
         $this->validate(
             $request,
-            ['email' => 'email'],
-            ['email.email' => 'Địa chỉ email này không hợp lệ']
+            ['email' => 'regex:/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'],
+            ['email.regex' => 'Địa chỉ email này không hợp lệ']
         );
     }
 
@@ -34,11 +34,24 @@ class Helper extends Controller
             ['password.required' => 'Trường mật khẩu không được bỏ trống']
         );
 
-        // Passwords must be at least 10 characters
         $this->validate(
             $request,
-            ['password' => 'min:6'],
-            ['password.min:6' => 'Mật khẩu phải có ít nhất 6 ký tự']
+            ['password' => 'required|min:6'],
+            ['password.min' => 'Mật khẩu phải có ít nhất 6 ký tự']
+        );
+
+        $this->validate(
+            $request,
+            ['password' => 'regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'],
+            ['password.regex' => 'Mật khẩu không đủ mạnh (chứa ký tự in hoa, chữ số và ký tự đặc biệt)']
+        );
+    }
+
+    public function validateConfirmationPassword($request) {
+        $this->validate(
+            $request,
+            ['password_confirmation' => 'required'],
+            ['password_confirmation.required' => 'Trường xác nhận mật khẩu không được bỏ trống']
         );
     }
 
@@ -47,6 +60,14 @@ class Helper extends Controller
             $request,
             ['username' => 'required'],
             ['username.required' => 'Trường tên đăng nhập không được bỏ trống']
+        );
+    }
+
+    public function validateRadioGender($request) {
+        $this->validate(
+            $request,
+            ['gender' => 'required|in:nam,nu'],
+            ['gender.required' => 'Vui lòng chọn giới tính']
         );
     }
 }

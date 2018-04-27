@@ -5,12 +5,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tạo mới tài khoản quản trị (ADMIN)
+        ADMIN
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
-        <li><a href="post.html" target="blank"> Bài Viết</a></li>
-        <li class="active">Thêm mới người dùng cấp cao</li>
+        <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
+        <li><a href="{{ route('admin.super.dashboard') }}"> Danh sách người dùng cấp cao</a></li>
+        <li class="active">Thêm mới</li>
       </ol>
     </section>
 
@@ -20,8 +20,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Nhập thông tin chi tiết người dùng cấp cao</h3>
-
+          <h3 class="box-title"></h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">
@@ -41,7 +40,7 @@
                     <div class="box-body">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Tên đăng nhập</label>
-                        <input name="username" type="text" class="form-control" placeholder="">
+                        <input name="username" type="text" class="form-control" placeholder="" value="{{ old('username') }}">
                         @if ($errors->has('username'))
                           <span class="help-block">
                             <strong>{{ $errors->first('username') }}</strong>
@@ -51,7 +50,7 @@
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Mật khẩu</label>
-                        <input name="password" type="password" class="form-control" placeholder="">
+                        <input name="password" id="password" type="password" class="form-control" placeholder="">
                         @if ($errors->has('password'))
                           <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -61,26 +60,37 @@
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Xác nhận mật khẩu</label>
-                        <input type="password" class="form-control" placeholder="">
+                        <input name="password_confirmation" id="confirm_password" type="password" class="form-control" placeholder="" onkeyup='confirmPassword();'>
+                        @if ($errors->has('password_confirmation'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                        </span>
+                        @endif
+                        <span class="help-block" id='message'></span>
                       </div>
 
                       <div class="form-group">
-                        <label>Phân loại</label>
-                        <select class="form-control">
-                          <option>Editor</option>
+                        <label>Phân quyền</label>
+                        <select name="permission" class="form-control">
+                          <option>Guest</option>
                           <option>Admin</option>
-                          <option>Author</option>
+                          <option>User</option>
                         </select>
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Địa chỉ email</label>
-                        <input type="email" class="form-control" placeholder="">
+                        <input name="email" class="form-control" placeholder="" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        @endif
+                        </span>
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Họ và tên</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input name="fullname" type="text" class="form-control" placeholder="" value="{{ old('fullname') }}"/>
                       </div>
 
                       <div class="form-group">
@@ -88,16 +98,21 @@
                           <label for="exampleInputFile">Giới tính</label>
                         </div>
                         <label class="radio-inline">
-                          <input type="radio" name="optradio">Nam
+                          <input type="radio" name="gender" value="nam">Nam
                         </label>
                         <label class="radio-inline">
-                          <input type="radio" name="optradio">Nữ
+                          <input type="radio" name="gender" value="nu">Nữ
                         </label>
+                        @if ($errors->has('gender'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('gender') }}</strong>
+                          </span>
+                        @endif
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Địa chỉ</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input name="address" type="text" class="form-control" placeholder="" value="{{ old('address') }}">
                       </div>
 
                       <div class="checkbox">
@@ -108,13 +123,12 @@
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Số điện thoại</label>
-                        <input type="number" class="form-control" placeholder="">
+                        <input name="phonenumber" type="number" class="form-control" placeholder="" value="{{ old('phonenumber') }}">
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputFile">Chọn tập tin ảnh</label>
+                        <label for="exampleInputFile">Chọn ảnh đại diện</label>
                         <input type="file" id="exampleInputFile">
-                        <p class="help-block">Vui lòng chọn ảnh mô tả sản phẩm và tải lên.</p>
                       </div>
 
                       <div class="form-group">
@@ -127,11 +141,6 @@
             </div>
           </div>
         </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
       </div>
       <!-- /.box -->
 
@@ -139,5 +148,16 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <script>
+      var confirmPassword = function() {
+          if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
+              document.getElementById('message').style.color = 'green';
+              document.getElementById('message').innerHTML = "<b>Mật khẩu khớp</b>";
+          } else {
+              document.getElementById('message').style.color = 'red';
+              document.getElementById('message').innerHTML = '<b>Mật khẩu không khớp</b>';
+          }
+      }
+  </script>
 @endsection
 

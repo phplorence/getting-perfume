@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Utilize\Helper;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 class AdminSuperController extends Controller
 {
@@ -39,5 +40,17 @@ class AdminSuperController extends Controller
         $this->helper = new Helper();
         $this->helper->validateUsername($request);
         $this->helper->validatePassword($request);
+        $this->helper->validateConfirmationPassword($request);
+        $this->helper->validateEmail($request);
+        $this->helper->validateRadioGender($request);
+
+        // Attempt add new database successfully
+        if (false) {
+            // If successful, then redirect to their intended location
+            return redirect()->intended(route('admin.super.dashboard'));
+        } else {
+            // if unsuccessful, then redirect back to the login with the form data
+            return redirect()->back()->withInput($request->only('username', 'permission'));
+        }
     }
 }

@@ -19,14 +19,12 @@ class CreateAdminsTable extends Migration
             $table->string('password');
             $table->string('user_type');
             $table->string('email')->unique();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('full_name');
             $table->integer('gender');
             $table->string('district');
             $table->string('address');
-            $table->string('postcode');
             $table->boolean('active');
-            $table->string('telephone');
+            $table->string('phone_number');
             $table->string('path_image');
             $table->rememberToken();
             $table->timestamps();

@@ -6,6 +6,7 @@ use App\Utilize\Helper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminLoginController extends Controller
 {
@@ -29,7 +30,6 @@ class AdminLoginController extends Controller
         $this->helper = new Helper();
         $this->helper->validateEmail($request);
         $this->helper->validatePassword($request);
-
         // Attempt to log the user in
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // If successful, then redirect to their intended location

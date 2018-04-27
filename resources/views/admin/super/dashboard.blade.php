@@ -58,13 +58,14 @@
                   <tr class="perfume_table_header">
                     <th class="text-center" style="width: 2.00%">STT </th>
                     <th class="text-center" style="width: 10.00%">Tên đăng nhập</th>
-                    <th class="text-center" style="width: 6.00%">Cấp bậc</th>
+                    <th class="text-center" style="width: 6.00%">Phân quyền</th>
                     <th class="text-center" style="width: 10.00%">Email</th>
                     <th class="text-center" style="width: 14.00%">Họ và tên</th>
-                    <th class="text-center" style="width: 10.00%">Giới tính</th>
+                    <th class="text-center" style="width: 7.00%">Giới tính</th>
                     <th class="text-center" style="width: 18.00%">Địa chỉ</th>
-                    <th class="text-center" style="width: 10.00%">Trạng thái</th>
+                    <th class="text-center" style="width: 5.00%">Trạng thái</th>
                     <th class="text-center" style="width: 10.00%">Số điện thoại</th>
+                    <th class="text-center" style="width: 8.00%">Thao tác</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -78,6 +79,7 @@
                     <td><i>California, United States</i></td>
                     <td class="text-center"><a href="#"><i class="fa fa-circle text-blue"></i></a></td>
                     <td class="text-center">+84972248187</td>
+                    <td class="text-center"><button class="btn btn-success">A</button><button class="btn btn-danger">B</button></td>
                   </tr>
                   </tbody>
                 </table>
