@@ -48,17 +48,19 @@ class Admin extends Authenticatable
         DB::table('admins')->insert($data);
     }
 
-    public function existEmail($request) {
-        $admin = DB::table('users')->where('email', '=', $request->email)->first();
-        if ($admin == null) {
-             $rules = [
-                 'email_existed'    => 'Tài khoản đã tồn tại trong hệ thống'
-             ];
-             return Validator::make($request, $rules);
+    public function isExistEmail($request) {
+        $admin = DB::table('admins')->where('email', '=', $request->email)->first();
+        if ($admin != null) {
+            return true;
         }
+        return false;
     }
 
-    public function existUsername() {
-
+    public function isExistUsername($request) {
+        $admin = DB::table('admins')->where('username', '=', $request->username)->first();
+        if ($admin != null) {
+            return true;
+        }
+        return false;
     }
 }

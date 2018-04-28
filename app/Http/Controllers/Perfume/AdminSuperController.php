@@ -7,9 +7,11 @@ use App\Model\Admin;
 use App\Model\Roles;
 use App\Utilize\Helper;
 use Auth;
+use Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert;
 
 class AdminSuperController extends Controller
 {
@@ -64,11 +66,10 @@ class AdminSuperController extends Controller
         $this->helper->validateRadioGender($request);
 
         // Insert database into mysql
-        $valiator = $this->modelAdmin->existEmail($request);
-        if ($valiator->fails()) {
-            dd("Email already existed in system");
+        if($this->modelAdmin->isExistEmail($request) || $this->modelAdmin->isExistUsername($request)) {
+            alert()->error('Người dùng đã tồn tại trong hệ thống. Vui lòng đăng nhập để bắt đầu phiên làm việc.', 'Error!');
+            return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
-
 
         $this->modelAdmin->addAll($this->getInfoUserFromDB($request));
 

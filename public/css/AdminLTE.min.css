@@ -254,9 +254,10 @@ a:hover,a:active,a:focus{
 }
 .content-header>h1{
     margin:0;
-    font-size:24px;
+    font-size:20px;
     font-weight:600;
-    color:#3985b3;
+    color:#000000;
+    text-transform:uppercase;
 }
 .content-header>h1>small{
     font-size:15px;
@@ -1403,8 +1404,9 @@ a:hover,a:active,a:focus{
     color:#fff
 }
 .box-header h3 {
-    color:red;
+    color:#000000;
     font-weight:600;
+    text-transform:uppercase;
 }
 .box.box-solid.box-danger{
     border:1px solid #dd4b39
