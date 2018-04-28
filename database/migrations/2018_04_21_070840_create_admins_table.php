@@ -20,9 +20,9 @@ class CreateAdminsTable extends Migration
             $table->string('user_type')->default("User");
             $table->string('email')->unique();
             $table->string('full_name')->nullable();
-            $table->integer('gender')->nullable();
+            $table->string('gender', 11)->nullable();
             $table->string('address')->nullable();
-            $table->boolean('active')->default(0);
+            $table->string('active')->default("off");
             $table->string('phone_number')->nullable();
             $table->string('path_image')->nullable();
             $table->rememberToken();

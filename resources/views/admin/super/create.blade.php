@@ -72,9 +72,14 @@
                       <div class="form-group">
                         <label>Phân quyền</label>
                         <select name="permission" class="form-control">
-                          <option>Guest</option>
-                          <option>Admin</option>
-                          <option>User</option>
+                          @unless($roles)
+                              <span class="help-block">
+                                  <strong>There is no data</strong>
+                              </span>
+                          @endunless
+                          <?php foreach($roles as $role) : ?>
+                            <option value="{{ $role->name }}" @if(old('permission') == $role->name) selected @endif> {{ $role->name }} </option>
+                          <?php endforeach ?>
                         </select>
                       </div>
 
@@ -90,7 +95,7 @@
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Họ và tên</label>
-                        <input name="full_name" type="text" class="form-control" placeholder="" value="{{ old('fullname') }}"/>
+                        <input name="full_name" type="text" class="form-control" placeholder="" value="{{ old('full_name') }}"/>
                       </div>
 
                       <div class="form-group">
@@ -98,10 +103,10 @@
                           <label for="exampleInputFile">Giới tính</label>
                         </div>
                         <label class="radio-inline">
-                          <input type="radio" name="gender" value="Nam">Nam
+                          <input type="radio" name="gender" value="Nam" {{ (old('gender') == 'Nam') ? 'checked' : '' }}>Nam
                         </label>
                         <label class="radio-inline">
-                          <input type="radio" name="gender" value="Nữ">Nữ
+                          <input type="radio" name="gender" value="Nữ" {{ (old('gender') == 'Nữ') ? 'checked' : '' }}>Nữ
                         </label>
                         @if ($errors->has('gender'))
                           <span class="help-block">
@@ -117,13 +122,13 @@
 
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox"> Kích hoạt
+                          <input type="checkbox" name="activate" {{ old('activate') ? 'checked' : '' }}> Kích hoạt
                         </label>
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputEmail1">Số điện thoại</label>
-                        <input name="phonenumber" type="number" class="form-control" placeholder="" value="{{ old('phonenumber') }}">
+                        <input name="phone_number" type="number" class="form-control" placeholder="" value="{{ old('phone_number') }}">
                       </div>
 
                       <div class="form-group">

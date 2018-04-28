@@ -43,7 +43,7 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function insert($data) {
+    public function addAll($data) {
         DB::table('admins')->insert($data);
     }
 }

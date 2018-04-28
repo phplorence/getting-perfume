@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Perfume;
 
 use App\Http\Controllers\Controller;
 use App\Model\Admin;
+use App\Model\Roles;
 use App\Utilize\Helper;
 use Auth;
 use Illuminate\Http\Request;
@@ -14,12 +15,14 @@ class AdminSuperController extends Controller
 {
     protected $helper;
     protected $modelAdmin;
+    protected $modelRole;
 
     public function __construct()
     {
         $this->middleware('auth:admin');
         $this->modelAdmin = new Admin();
         $this->helper = new Helper();
+        $this->modelRole = new Roles();
     }
 
     public function index()
@@ -41,7 +44,8 @@ class AdminSuperController extends Controller
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            return view('admin.super.create');
+            $roles = $this->modelRole->getAllRoles();
+            return view('admin.super.create', compact('roles'));
         }
     }
 
@@ -60,16 +64,14 @@ class AdminSuperController extends Controller
         $this->helper->validateRadioGender($request);
 
         // Insert database into mysql
-        $this->getInfoUserFromDB($request);
-        // $this->modelAdmin->insert($this->getInfoUserFromDB($request));
+        $this->modelAdmin->addAll($this->getInfoUserFromDB($request));
 
         // Attempt add new database successfully
         if (false) {
             // If successful, then redirect to their intended location
             return redirect()->intended(route('admin.super.dashboard'));
         } else {
-            // if unsuccessful, then redirect back to the login with the form data
-            return redirect()->back()->withInput($request->only('username', 'permission'));
+            return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
     }
 
@@ -86,9 +88,22 @@ class AdminSuperController extends Controller
         Log::info('Admin', ['gender' => $gender]);
         $full_name = $request->full_name;
         Log::info('Admin', ['full_name' => $full_name]);
+        $activate = $request->activate;
+        Log::info('Admin', ['activate' => $activate]);
+        $phone_number = $request->phone_number;
+        Log::info('Admin', ['phone_number' => $phone_number]);
+        $address = $request->address;
+        Log::info('Admin', ['address' => $address]);
         $data = array([
             'username' => $username,
-            'password' => $password
+            'password' => $password,
+            'user_type' => $user_type,
+            'email' => $email,
+            'gender' => $gender,
+            'full_name' => $full_name,
+            'active' => $activate,
+            'address' => $address,
+            'phone_number' => $phone_number
         ]);
         return $data;
     }

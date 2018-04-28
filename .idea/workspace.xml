@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31720278-20ef-494d-ac36-7d625be38225" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/Roles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Admin.php" afterPath="$PROJECT_DIR$/app/Model/Admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Utilize/Helper.php" afterPath="$PROJECT_DIR$/app/Utilize/Helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2018_04_21_070840_create_admins_table.php" afterPath="$PROJECT_DIR$/database/migrations/2018_04_21_070840_create_admins_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2018_04_27_110024_create_permissions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2018_04_27_110024_create_permissions_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/super/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/super/create.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,28 +21,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/super/create.blade.php">
+      <file leaf-file-name="AdminSuperController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="66" column="70" lean-forward="true" selection-start-line="66" selection-start-column="70" selection-end-line="66" selection-end-column="70" />
               <folding>
-                <marker date="1524826488026" expanded="true" signature="9:25" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="36:45" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="298:324" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="402:430" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="1389:1417" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="1458:1472" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="1748:1765" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="1915:1943" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="2427:2455" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="3011:3052" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="3820:3834" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="3981:4006" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="4337:4354" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="5037:5063" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="5392:5408" ph="..." />
-                <marker date="1524826488026" expanded="true" signature="5877:5897" ph="..." />
+                <element signature="e#48#84#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,53 +36,8 @@
       <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-              <folding>
-                <element signature="e#29#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminSuperController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-              <folding>
-                <element signature="e#48#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2018_04_27_110024_create_permissions_table.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2018_04_27_110024_create_permissions_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="laravel.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="289">
-              <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Utilize/Helper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+            <state relative-caret-position="453">
+              <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -143,8 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AdminRegisterController.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/admin-login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserPublicController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminHomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AdminLoginController.php" />
@@ -183,17 +128,19 @@
         <option value="$PROJECT_DIR$/resources/views/admin/super/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/admin/header/navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/super/add.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/super/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/app/Model/Admin.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
-        <option value="$PROJECT_DIR$/database/migrations/2018_04_21_070840_create_admins_table.php" />
-        <option value="$PROJECT_DIR$/app/Utilize/Helper.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/super/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_04_27_110024_create_permissions_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_04_27_113213_create_roles_table.php" />
+        <option value="$PROJECT_DIR$/app/Model/Roles.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
+        <option value="$PROJECT_DIR$/resources/views/admin/super/create.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_04_21_070840_create_admins_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php" />
+        <option value="$PROJECT_DIR$/app/Utilize/Helper.php" />
+        <option value="$PROJECT_DIR$/app/Model/Admin.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php" />
       </list>
     </option>
   </component>
@@ -252,7 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -839,29 +786,29 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../reference/multiauth_tutorial-part_2/multiauth_tutorial-part_2" />
-    <property name="SearchEverywhereHistoryKey" value="lar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;larav&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;web.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;Router&#9;null&#9;null&#10;head&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header.blade.php&#10;laravel.log&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Auth.php&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php&#10;RedirectIfAuthenticated&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Middleware/RedirectIfAuthenticated.php&#10;Handle&#9;null&#9;null&#10;LoginC&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/LoginController.php&#10;README.md&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/README.md&#10;ReadMe&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/vendor/swiftmailer/swiftmailer/README&#10;AppServiceProvider&#9;null&#9;null&#10;web.php&#9;FILE&#9;file://D:/Project/CauUt/getting-perfume/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;lar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;larav&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;web.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;Router&#9;null&#9;null&#10;head&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header.blade.php&#10;laravel.log&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Auth.php&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php&#10;RedirectIfAuthenticated&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Middleware/RedirectIfAuthenticated.php&#10;Handle&#9;null&#9;null&#10;LoginC&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/LoginController.php&#10;README.md&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/README.md&#10;ReadMe&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/vendor/swiftmailer/swiftmailer/README&#10;AppServiceProvider&#9;null&#9;null&#10;web.php&#9;FILE&#9;file://D:/Project/CauUt/getting-perfume/routes/web.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\super" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\users" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\perfume" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\auth\admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\super" />
       <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\perfume" />
       <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin" />
       <recent name="D:\Project\CauUt\git\getting-perfume\app\Model" />
       <recent name="D:\Project\CauUt\git\getting-perfume\app\Http\Controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\CauUt\git\getting-perfume\app\Model" />
+      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\super" />
+      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\users" />
+      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin" />
+      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\admin\perfume" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -966,12 +913,13 @@
       <workItem from="1524671214468" duration="4638000" />
       <workItem from="1524743004520" duration="2272000" />
       <workItem from="1524790774983" duration="15879000" />
-      <workItem from="1524820355090" duration="7317000" />
+      <workItem from="1524820355090" duration="12784000" />
+      <workItem from="1524841835990" duration="35670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112295000" />
+    <option name="totallyTimeSpent" value="153432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -990,10 +938,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4480712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1003,6 +950,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1049,20 +997,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/logs/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
@@ -1330,18 +1264,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/admin/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" column="115" lean-forward="false" selection-start-line="41" selection-start-column="90" selection-end-line="41" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Validator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="345" column="51" lean-forward="false" selection-start-line="345" selection-start-column="47" selection-end-line="345" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1349,12 +1275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="51" column="91" lean-forward="true" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="91" />
-          <folding>
-            <marker date="1524821866826" expanded="true" signature="352:387" ph="..." />
-            <marker date="1524821866826" expanded="true" signature="2053:2081" ph="..." />
-            <marker date="1524821866826" expanded="true" signature="4264:4288" ph="..." />
-            <marker date="1524821866826" expanded="true" signature="6438:6462" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1362,12 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="43" column="100" lean-forward="false" selection-start-line="43" selection-start-column="88" selection-end-line="43" selection-end-column="100" />
-          <folding>
-            <marker date="1524821722515" expanded="true" signature="9:25" ph="..." />
-            <marker date="1524821722515" expanded="true" signature="36:45" ph="..." />
-            <marker date="1524821722515" expanded="true" signature="374:401" ph="..." />
-            <marker date="1524821722515" expanded="true" signature="1833:1862" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1375,17 +1289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="59" column="94" lean-forward="false" selection-start-line="59" selection-start-column="89" selection-end-line="59" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#51#74#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1397,80 +1300,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Admin.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_04_27_113213_create_roles_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
-            <element signature="e#29#57#0#PHP" expanded="true" />
+            <element signature="e#7#45#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Utilize/Helper.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/admin/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-          <folding />
+        <state relative-caret-position="238">
+          <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/super/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_04_27_110024_create_permissions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="18" selection-end-column="41" />
           <folding>
-            <marker date="1524826488026" expanded="true" signature="9:25" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="36:45" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="298:324" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="402:430" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="1389:1417" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="1458:1472" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="1748:1765" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="1915:1943" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="2427:2455" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="3011:3052" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="3820:3834" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="3981:4006" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="4337:4354" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="5037:5063" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="5392:5408" ph="..." />
-            <marker date="1524826488026" expanded="true" signature="5877:5897" ph="..." />
+            <element signature="e#7#45#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_04_21_070840_create_admins_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="18" selection-end-column="39" />
+        <state relative-caret-position="340">
+          <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="289">
-          <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+    <entry file="file://$PROJECT_DIR$/app/Model/Roles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="e#29#69#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Utilize/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="68" column="10" lean-forward="true" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+          <folding>
+            <element signature="e#31#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#51#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/super/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding>
+            <marker date="1524832281179" expanded="true" signature="9:25" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="36:45" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="298:324" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="402:430" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="1389:1417" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="1458:1472" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="1748:1765" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="1915:1943" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="2427:2455" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="3011:3052" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="3744:3757" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="3818:3831" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="4168:4182" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="4329:4354" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="4685:4703" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="5048:5091" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="5257:5299" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="5481:5507" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="5836:5852" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="6031:6065" ph="..." />
+            <marker date="1524832281179" expanded="true" signature="6377:6398" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Perfume/AdminSuperController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="66" column="70" lean-forward="true" selection-start-line="66" selection-start-column="70" selection-end-line="66" selection-end-column="70" />
           <folding>
             <element signature="e#48#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_04_27_110024_create_permissions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

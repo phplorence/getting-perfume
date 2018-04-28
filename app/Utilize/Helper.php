@@ -61,6 +61,12 @@ class Helper extends Controller
             ['username' => 'required'],
             ['username.required' => 'Trường tên đăng nhập không được bỏ trống']
         );
+
+        $this->validate(
+            $request,
+            ['username' => 'regex:/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/'],
+            ['username.regex' => 'Tên đăng nhập chỉ có chữ cái in hoa, thường, ký tự gạch dưới và số']
+        );
     }
 
     public function validateRadioGender($request) {
