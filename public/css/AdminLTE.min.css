@@ -1538,14 +1538,11 @@ a:hover,a:active,a:focus{
     box-shadow:none
 }
 .box-body{
-    border-top-left-radius:0;
-    border-top-right-radius:0;
-    border-bottom-right-radius:3px;
-    border-bottom-left-radius:3px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:5px;
 }
 .no-header .box-body{
-    border-top-right-radius:3px;
-    border-top-left-radius:3px
 }
 .box-body>.table{
     margin-bottom:0

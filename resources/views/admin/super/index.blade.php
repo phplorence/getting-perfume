@@ -40,7 +40,7 @@
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                 </div>
                 <!-- /.btn-group -->
-                <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.create') }}" target="_blank"><i class="fa fa-user-plus"></i></a></button>
+                <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.create') }}"><i class="fa fa-user-plus"></i></a></button>
                 <div class="pull-right">
                   1-50/200
                   <div class="btn-group">
@@ -56,7 +56,7 @@
                   <thead>
                   <tr class="perfume_table_header">
                     <th class="text-center" style="width: 2.00%">STT </th>
-                    <th class="text-center" style="width: 10.00%">Tên đăng nhập</th>
+                    <th class="text-center" style="width: 8.00%">Tên đăng nhập</th>
                     <th class="text-center" style="width: 6.00%">Phân quyền</th>
                     <th class="text-center" style="width: 10.00%">Email</th>
                     <th class="text-center" style="width: 14.00%">Họ và tên</th>
@@ -64,22 +64,37 @@
                     <th class="text-center" style="width: 18.00%">Địa chỉ</th>
                     <th class="text-center" style="width: 5.00%">Trạng thái</th>
                     <th class="text-center" style="width: 10.00%">Số điện thoại</th>
-                    <th class="text-center" style="width: 8.00%">Thao tác</th>
+                    <th class="text-center" style="width: 10.00%">Thao tác</th>
                   </tr>
                   </thead>
                   <tbody>
+                  @unless($admins)
+                    <span class="help-block">
+                      <strong>Vui lòng cập nhập người dùng cấp cao</strong>
+                    </span>
+                  @endunless
+                  <?php foreach($admins as $admin) : ?>
                   <tr>
-                    <td class="text-center">1</td>
-                    <td><a href="read-mail.html">Jasmine</a></td>
-                    <td class="text-center"><b>ADMIN</b></td>
-                    <td class="text-center">jasmine@gmail.com</td>
-                    <td class="text-center">Nguyễn Văn Vương</td>
-                    <td class="text-center">Nam</td>
-                    <td><i>California, United States</i></td>
-                    <td class="text-center"><a href="#"><i class="fa fa-circle text-blue"></i></a></td>
-                    <td class="text-center">+84972248187</td>
-                    <td class="text-center"><button class="btn btn-success">A</button><button class="btn btn-danger">B</button></td>
-                  </tr>
+                      <td class="text-center">{{ ++$indexArr }}</td>
+                      <td><a href="read-mail.html">{{ $admin->username }}</a></td>
+                      <td class="text-center"><b>{{ $admin->user_type }}</b></td>
+                      <td class="text-center">{{ $admin->email }}</td>
+                      <td class="text-center">{{ $admin->full_name }}</td>
+                      <td class="text-center">{{ $admin->gender }}</td>
+                      <td><i>{{ $admin->address }}</i></td>
+                      <td class="text-center">
+                        @if($admin->active == "on")
+                          <a href="#"><i class="fa fa-circle text-blue"></i></a></td>
+                        @else
+                          <a href="#"><i class="fa fa-circle text-red"></i></a></td>
+                        @endif
+                      <td class="text-center">{{ $admin->phone_number }}</td>
+                      <td class="text-center">
+                        <img src="{{URL::asset('img/icon-control/icon_update.png')}}" class="img-circle" alt="Update Icon">
+                        <img src="{{URL::asset('img/icon-control/icon_delete.png')}}" class="img-circle" alt="Delete Icon">
+                      </td>
+                   </tr>
+                  <?php endforeach ?>
                   </tbody>
                 </table>
                 <!-- /.table -->

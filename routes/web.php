@@ -58,9 +58,10 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.index');
         Route::get('/cap-cao/them', 'Perfume\AdminSuperController@create')->name('admin.super.create');
         Route::post('/cap-cao', 'Perfume\AdminSuperController@store')->name('admin.super.store');
+        Route::get('/cap-cao/chi-tiet/{id_admin}', 'Perfume\AdminSuperController@create')->name('admin.super.detail');
 
         // https://laravel.com/docs/5.0/controllers#implicit-controllers
-
+        // https://www.youtube.com/watch?v=o-L-PMgPQOQ&index=12&list=PLzrVYRai0riS_Y2L0Ox_gUL9UjPDL8p2i
 
         Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 

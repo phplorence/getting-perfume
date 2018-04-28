@@ -34,7 +34,9 @@ class AdminSuperController extends Controller
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            return view('admin.super.index');
+            $admins = $this->modelAdmin->getAllAdmins();
+            $indexArr = 0;
+            return view('admin.super.index', compact('admins', 'indexArr'));
         }
     }
 
@@ -58,6 +60,11 @@ class AdminSuperController extends Controller
         //
     }
 
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
     public function store(Request $request)
     {
         // I want to check all data are valid for inserting new user
@@ -73,12 +80,10 @@ class AdminSuperController extends Controller
             return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
 
-        $this->modelAdmin->addAll($this->getInfoUserFromDB($request));
-
         // Attempt add new database successfully
-        if (false) {
+        if ($this->modelAdmin->addAll($this->getInfoUserFromDB($request)) > 0) {
             // If successful, then redirect to their intended location
-            return redirect()->intended(route('admin.super.dashboard'));
+            return redirect()->intended(route('admin.super.index'));
         } else {
             return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }

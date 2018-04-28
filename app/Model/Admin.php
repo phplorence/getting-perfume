@@ -43,8 +43,12 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getAllAdmins() {
+        return DB::table('admins')->get();
+    }
+
     public function addAll($data) {
-        DB::table('admins')->insert($data);
+        return DB::table('admins')->insert($data);
     }
 
     public function isExistEmail($request) {

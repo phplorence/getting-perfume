@@ -74,7 +74,7 @@
                         <select name="permission" class="form-control">
                           @unless($roles)
                               <span class="help-block">
-                                  <strong>There is no data</strong>
+                                  <strong>Vui lòng cập nhập vai trò trong hệ thống</strong>
                               </span>
                           @endunless
                           <?php foreach($roles as $role) : ?>
