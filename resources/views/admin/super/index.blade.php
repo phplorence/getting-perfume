@@ -5,8 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Người dùng cấp cao
-        <small>Chú ý cẩn thận khi thao tác ở trang này</small>
+        Cấp Cao
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{  route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang chủ</a></li>

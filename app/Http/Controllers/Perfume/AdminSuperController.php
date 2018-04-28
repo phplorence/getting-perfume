@@ -64,6 +64,12 @@ class AdminSuperController extends Controller
         $this->helper->validateRadioGender($request);
 
         // Insert database into mysql
+        $valiator = $this->modelAdmin->existEmail($request);
+        if ($valiator->fails()) {
+            dd("Email already existed in system");
+        }
+
+
         $this->modelAdmin->addAll($this->getInfoUserFromDB($request));
 
         // Attempt add new database successfully
@@ -101,7 +107,7 @@ class AdminSuperController extends Controller
             'email' => $email,
             'gender' => $gender,
             'full_name' => $full_name,
-            'active' => $activate,
+            'active' => $activate == null ?"off":$activate,
             'address' => $address,
             'phone_number' => $phone_number
         ]);

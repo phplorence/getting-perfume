@@ -2,10 +2,11 @@
 
 namespace App\Model;
 
-use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Validator;
 
 class Admin extends Authenticatable
 {
@@ -45,5 +46,19 @@ class Admin extends Authenticatable
 
     public function addAll($data) {
         DB::table('admins')->insert($data);
+    }
+
+    public function existEmail($request) {
+        $admin = DB::table('users')->where('email', '=', $request->email)->first();
+        if ($admin == null) {
+             $rules = [
+                 'email_existed'    => 'Tài khoản đã tồn tại trong hệ thống'
+             ];
+             return Validator::make($request, $rules);
+        }
+    }
+
+    public function existUsername() {
+
     }
 }
