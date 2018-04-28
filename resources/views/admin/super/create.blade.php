@@ -34,7 +34,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="box box-primary">
-                  <form role="form" action="{{ route('admin.super.store') }}" method="post">
+                  <form role="form" action="{{ route('admin.super.store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                     <div class="box-body">
@@ -129,11 +129,6 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Số điện thoại</label>
                         <input name="phone_number" type="number" class="form-control" placeholder="" value="{{ old('phone_number') }}">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="exampleInputFile">Chọn ảnh đại diện</label>
-                        <input type="file" id="exampleInputFile">
                       </div>
 
                       <div class="form-group">

@@ -5,7 +5,6 @@ namespace App\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 use Validator;
 
 class Admin extends Authenticatable

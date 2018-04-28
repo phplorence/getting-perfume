@@ -6,18 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin;
 use App\Model\Roles;
 use App\Utilize\Helper;
+use App\Utilize\ImageUtils;
 use Auth;
 use Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
-use UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert;
 
 class AdminSuperController extends Controller
 {
     protected $helper;
     protected $modelAdmin;
     protected $modelRole;
+    protected $modelImageUtils;
 
     public function __construct()
     {
@@ -25,6 +26,7 @@ class AdminSuperController extends Controller
         $this->modelAdmin = new Admin();
         $this->helper = new Helper();
         $this->modelRole = new Roles();
+        $this->modelImageUtils = new ImageUtils();
     }
 
     public function index()
@@ -67,7 +69,7 @@ class AdminSuperController extends Controller
 
         // Insert database into mysql
         if($this->modelAdmin->isExistEmail($request) || $this->modelAdmin->isExistUsername($request)) {
-            alert()->error('Người dùng đã tồn tại trong hệ thống. Vui lòng đăng nhập để bắt đầu phiên làm việc.', 'Error!');
+            alert()->error('Người dùng đã tồn tại trong hệ thống. Vui lòng đăng nhập để bắt đầu phiên làm việc.', 'Lỗi!');
             return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
 
