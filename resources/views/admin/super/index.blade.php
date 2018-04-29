@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
   <!-- Content Wrapper. Contains page content -->
+  @include('sweet::alert');
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -37,7 +38,7 @@
                 <div class="btn-group">
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                  <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.index') }}"><i class="fa fa-refresh"></i></a></button>
                 </div>
                 <!-- /.btn-group -->
                 <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.create') }}"><i class="fa fa-user-plus"></i></a></button>
@@ -56,12 +57,12 @@
                   <thead>
                   <tr class="perfume_table_header">
                     <th class="text-center" style="width: 2.00%">STT </th>
-                    <th class="text-center" style="width: 8.00%">Tên đăng nhập</th>
-                    <th class="text-center" style="width: 6.00%">Phân quyền</th>
-                    <th class="text-center" style="width: 10.00%">Email</th>
+                    <th class="text-center" style="width: 12.00%">Tên đăng nhập</th>
+                    <th class="text-center" style="width: 10.00%">Phân quyền</th>
+                    <th class="text-center" style="width: 6.00%">Email</th>
                     <th class="text-center" style="width: 14.00%">Họ và tên</th>
                     <th class="text-center" style="width: 7.00%">Giới tính</th>
-                    <th class="text-center" style="width: 18.00%">Địa chỉ</th>
+                    <th class="text-center" style="width: 14.00%">Địa chỉ</th>
                     <th class="text-center" style="width: 5.00%">Trạng thái</th>
                     <th class="text-center" style="width: 10.00%">Số điện thoại</th>
                     <th class="text-center" style="width: 10.00%">Thao tác</th>
@@ -76,7 +77,7 @@
                   <?php foreach($admins as $admin) : ?>
                   <tr>
                       <td class="text-center">{{ ++$indexArr }}</td>
-                      <td><a href="read-mail.html">{{ $admin->username }}</a></td>
+                      <td>{{ $admin->username }}</td>
                       <td class="text-center"><b>{{ $admin->user_type }}</b></td>
                       <td class="text-center">{{ $admin->email }}</td>
                       <td class="text-center">{{ $admin->full_name }}</td>
@@ -91,7 +92,7 @@
                       <td class="text-center">{{ $admin->phone_number }}</td>
                       <td class="text-center">
                         <a href="{{ route('admin.super.detail', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_update.png')}}" class="img-circle" alt="Update Icon"></a>
-                        <a href="{{ route('admin.super.detail', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_delete.png')}}" class="img-circle" alt="Delete Icon"></a>
+                        <a href="{{ route('admin.super.delete', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_delete.png')}}" class="img-circle" alt="Delete Icon"></a>
                       </td>
                    </tr>
                   <?php endforeach ?>

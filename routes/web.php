@@ -36,10 +36,6 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('user.password.request');;
 
         Route::get('/', 'HomeController@index')->name('home');
-
-
-
-
     });
 
     Route::prefix('quan-tri')->group(function () {
@@ -52,16 +48,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume');
         Route::get('/them-nuoc-hoa', 'Perfume\AdminPerfumeController@perfumeNew')->name('admin.perfume.add');
 
-        Route::get('/tai-khoan', 'Perfume\AdminProfileController@index')->name('admin.profile');
-
+        Route::get('/tai-khoan', 'Perfume\AdminProfileController@show')->name('admin.profile');
 
         Route::get('/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.index');
         Route::get('/cap-cao/them', 'Perfume\AdminSuperController@create')->name('admin.super.create');
         Route::post('/cap-cao', 'Perfume\AdminSuperController@store')->name('admin.super.store');
         Route::get('/cap-cao/chi-tiet/{id_admin}', 'Perfume\AdminSuperController@show')->name('admin.super.detail');
         Route::post('/cap-cao/sua', 'Perfume\AdminSuperController@update')->name('admin.super.update');
-        // https://laravel.com/docs/5.0/controllers#implicit-controllers
-        // https://www.youtube.com/watch?v=o-L-PMgPQOQ&index=12&list=PLzrVYRai0riS_Y2L0Ox_gUL9UjPDL8p2i
+        Route::get('/cap-cao/xoa/{id_admin}', 'Perfume\AdminSuperController@delete')->name('admin.super.delete');
 
         Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 

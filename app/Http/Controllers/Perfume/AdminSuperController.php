@@ -67,10 +67,56 @@ class AdminSuperController extends Controller
         }
     }
 
-    // https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request)
     {
-        dd($request);
+        $adminExistedDB = $this->modelAdmin->getAdmin($request->id);
+        if (!empty($request->username)) {
+            $this->helper->validateUsername($request);
+            // Check Username or Email existed in Database
+            if($this->modelAdmin->isExistUsernameCaseUpdated($request, $request->username)) {
+                alert()->error('Tên người dùng đã tồn tại trong hệ thống.', 'Lỗi!');
+                return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
+            }
+        } else  {
+            $request->username = $adminExistedDB->username;
+        }
+        if (!empty($request->password)) {
+            $this->helper->validatePassword($request);
+            $this->helper->validateConfirmationPassword($request);
+        } else {
+            $request->password = $adminExistedDB->password;
+        }
+        if (!empty($request->email)) {
+            $this->helper->validateEmail($request);
+            if($this->modelAdmin->isExistEmailCaseUpdated($request, $request->email)) {
+                alert()->error('Địa chỉ email đã tồn tại trong hệ thống.', 'Lỗi!');
+                return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
+            }
+        } else {
+            $request->email = $adminExistedDB->email;
+        }
+
+        // Attempt add update admin successfully
+        if ($this->modelAdmin->updateAdmin($this->getInfoUserFromDB($request)) > 0) {
+            alert()->success('Cập nhật người dùng cấp cao thành công.', 'Thông tin!');
+            return redirect()->intended(route('admin.super.index'));
+        } else {
+            alert()->error('Cập nhật người dùng cấp cao thất bại.', 'Lỗi!');
+            return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
+        }
+    }
+
+    public function delete($id_admin) {
+        if ($this->modelAdmin->deleteAdmin($id_admin) > 0) {
+            alert()->success('Xóa người dùng cấp cao thành công.', 'Thông tin!');
+            return redirect()->intended(route('admin.super.index'));
+        } else {
+            alert()->error('Xóa người dùng cấp cao thất bại.', 'Lỗi!');
+        }
     }
 
     public function store(Request $request)
@@ -116,17 +162,32 @@ class AdminSuperController extends Controller
         Log::info('Admin', ['phone_number' => $phone_number]);
         $address = $request->address;
         Log::info('Admin', ['address' => $address]);
-        $data = array([
-            'username' => $username,
-            'password' => $password,
-            'user_type' => $user_type,
-            'email' => $email,
-            'gender' => $gender,
-            'full_name' => $full_name,
-            'active' => $activate == null ?"off":$activate,
-            'address' => $address,
-            'phone_number' => $phone_number
-        ]);
+        if (empty($request->id)) {
+            $data = array([
+                'username' => $username,
+                'password' => $password,
+                'user_type' => $user_type,
+                'email' => $email,
+                'gender' => $gender,
+                'full_name' => $full_name,
+                'active' => $activate == null ?"off":$activate,
+                'address' => $address,
+                'phone_number' => $phone_number
+            ]);
+        } else {
+            $data = array([
+                'id' => $request->id,
+                'username' => $username,
+                'password' => $password,
+                'user_type' => $user_type,
+                'email' => $email,
+                'gender' => $gender,
+                'full_name' => $full_name,
+                'active' => $activate == null ?"off":$activate,
+                'address' => $address,
+                'phone_number' => $phone_number
+            ]);
+        }
         return $data;
     }
 }

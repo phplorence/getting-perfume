@@ -20,4 +20,8 @@ class AdminProfileController extends Controller
             return view('admin.profile');
         }
     }
+
+    public function show($id_admin){
+
+    }
 }

@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+  @include('sweet::alert');
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -39,7 +40,8 @@
 
                     <div class="box-body">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Tên đăng nhập<span style="color:red;">(*)</span></label>
+                        <label for="exampleInputEmail1">Tên đăng nhập</label>
+                        <input type="hidden" name="id" value="{{ $admin->id }}" />
                         <input name="username" type="text" class="form-control" placeholder="" value="{{ old('username') == null ? $admin->username : old('username')}}">
                         @if ($errors->has('username'))
                           <span class="help-block">
@@ -49,7 +51,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Mật khẩu<span style="color:red;">(*)</span></label>
+                        <label for="exampleInputEmail1">Mật khẩu</label>
                         <input name="password" id="password" type="password" class="form-control" placeholder="">
                         @if ($errors->has('password'))
                           <span class="help-block">
@@ -59,7 +61,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Xác nhận mật khẩu<span style="color:red;">(*)</span></label>
+                        <label for="exampleInputEmail1">Xác nhận mật khẩu</label>
                         <input name="password_confirmation" id="confirm_password" type="password" class="form-control" placeholder="" onkeyup='confirmPassword();'>
                         @if ($errors->has('password_confirmation'))
                           <span class="help-block">
@@ -84,7 +86,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Địa chỉ email<span style="color:red;">(*)</span></label>
+                        <label for="exampleInputEmail1">Địa chỉ email</label>
                         <input name="email" class="form-control" placeholder="" value="{{ old('email') == null ? $admin->email : old('email') }}">
                         @if ($errors->has('email'))
                           <span class="help-block">
@@ -100,7 +102,7 @@
 
                       <div class="form-group">
                         <div>
-                          <label for="exampleInputFile">Giới tính<span style="color:red;">(*)</span></label>
+                          <label for="exampleInputFile">Giới tính</label>
                         </div>
                         <label class="radio-inline">
                           <input type="radio" name="gender" value="Nam" {{ ((old('gender') == null ? $admin->gender : old('gender')) == 'Nam') ? 'checked' : '' }}>Nam

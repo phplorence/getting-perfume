@@ -67,7 +67,51 @@ class Admin extends Authenticatable
         return false;
     }
 
+    public function isExistUsernameCaseUpdated($request, $username) {
+        $admin = DB::table('admins')
+            ->where('username', '=', $username)
+            ->where('id', '!=', $request->id)
+            ->first();
+        if ($admin != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public function isExistEmailCaseUpdated($request, $email) {
+        $admin = DB::table('admins')
+            ->where('email', '=', $email)
+            ->where('id', '!=', $request->id)
+            ->first();
+        if ($admin != null) {
+            return true;
+        }
+        return false;
+    }
+
     public function getAdmin($id_admin){
         return DB::table('admins')->where('id', $id_admin)->first();
+    }
+
+    public function updateAdmin($data) {
+        return DB::table('admins')
+            ->where('id', $data[0]['id'])
+            ->update([
+                'username' => $data[0]['username'],
+                'password' => $data[0]['password'],
+                'user_type' => $data[0]['user_type'],
+                'email' => $data[0]['email'],
+                'full_name' => $data[0]['full_name'],
+                'gender' => $data[0]['gender'],
+                'address' => $data[0]['address'],
+                'active' => $data[0]['active'],
+                'phone_number' => $data[0]['phone_number']
+                ]);
+    }
+
+    public function deleteAdmin($id_admin) {
+        return DB::table('admins')
+            ->where('id', $id_admin)
+            ->delete();
     }
 }
