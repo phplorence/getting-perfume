@@ -66,4 +66,8 @@ class Admin extends Authenticatable
         }
         return false;
     }
+
+    public function getAdmin($id_admin){
+        return DB::table('admins')->where('id', $id_admin)->first();
+    }
 }

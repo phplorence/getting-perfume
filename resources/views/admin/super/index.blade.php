@@ -90,8 +90,8 @@
                         @endif
                       <td class="text-center">{{ $admin->phone_number }}</td>
                       <td class="text-center">
-                        <img src="{{URL::asset('img/icon-control/icon_update.png')}}" class="img-circle" alt="Update Icon">
-                        <img src="{{URL::asset('img/icon-control/icon_delete.png')}}" class="img-circle" alt="Delete Icon">
+                        <a href="{{ route('admin.super.detail', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_update.png')}}" class="img-circle" alt="Update Icon"></a>
+                        <a href="{{ route('admin.super.detail', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_delete.png')}}" class="img-circle" alt="Delete Icon"></a>
                       </td>
                    </tr>
                   <?php endforeach ?>

@@ -55,14 +55,22 @@ class AdminSuperController extends Controller
         }
     }
 
-    public function show($id)
+    public function show($id_admin)
     {
-        //
+        if($this->modelAdmin->getAdmin($id_admin) != null) {
+            $roles = $this->modelRole->getAllRoles();
+            $admin = $this->modelAdmin->getAdmin($id_admin);
+            return view('admin.super.edit', compact('admin','roles'));
+        } else {
+            alert()->error('Người dùng đã không tồn tại trong hệ thống.', 'Lỗi!');
+            return redirect()->intended(route('admin.super.index'));
+        }
     }
 
-    public function update(Request $request, $id)
+    // https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
+    public function update(Request $request)
     {
-        //
+        dd($request);
     }
 
     public function store(Request $request)
