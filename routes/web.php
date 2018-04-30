@@ -65,7 +65,7 @@ Route::group(['middleware' => 'web'], function () {
         // TAB PERFUME
         Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume.index');
         Route::get('/nuoc-hoa/them', 'Perfume\AdminPerfumeController@create')->name('admin.perfume.create');
-
+        Route::post('/nuoc-hoa', 'Perfume\AdminPerfumeController@store')->name('admin.perfume.store');
     });
 });
 

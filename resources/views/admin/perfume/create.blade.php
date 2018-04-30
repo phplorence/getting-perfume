@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+  @include('sweet::alert');
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -8,9 +9,9 @@
         Chuyên Trang Nước Hoa
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
-        <li><a href="post.html" target="blank"> Bài Viết</a></li>
-        <li class="active">Thêm Mới Nước Hoa</li>
+        <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
+        <li><a href="{{ route('admin.perfume.index') }}" target="blank"> Nước hoa</a></li>
+        <li class="active">Thêm mới</li>
       </ol>
     </section>
 
@@ -35,45 +36,76 @@
           <div class="row">
             <div class="col-md-12">
               <div class="box box-primary">
-                  <form role="form">
+                  <form role="form" action="{{ route('admin.perfume.store') }}" method="post">
+                    {{ csrf_field() }}
                     <div class="box-body">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Tên sản phẩm</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label>Mô tả</label>
-                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                        <label for="exampleInputEmail1">Tên sản phẩm<span style="color:red;">(*)</span></label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ old('name') }}">
+                        @if ($errors->has('name'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
                       <div class="form-group">
-                        <h3 class="box-title">Thông tin chi tiết sản phẩm
+                        <label>Mô tả<span style="color:red;">(*)</span></label>
+                        <textarea name="description" class="form-control" rows="3" placeholder="">{{ old('description') }}</textarea>
+                        @if ($errors->has('description'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('description') }}</strong>
+                        </span>
+                        @endif
+                      </div>
+
+                      <div class="form-group">
+                        <h3 class="box-title">Thông tin chi tiết sản phẩm<span style="color:red;">(*)</span>
                           <small>CK Editor có hổ trợ định dạng page. Cách sử dụng xem thêm ở đây: <a href="www.google.com" href="blank">Support</a></small>
                         </h3>
-                        <textarea id = "editor1"  name="editor1" class="form-control" rows="5" id="comment"></textarea>
-                        <!-- /. tools -->
+                        <textarea id = "editor1"  name="editor1" class="form-control" rows="5" id="comment">{{ old('detail') }}</textarea>
+                        @if ($errors->has('detail'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('detail') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
-                      <label for="exampleInputEmail1">Giá gốc sản phẩm</label>
+                      <label for="exampleInputEmail1">Giá gốc sản phẩm<span style="color:red;">(*)</span></label>
                       <div class="input-group">
-                        <input type="number" class="form-control" placeholder="">
+                        <input type="number" class="form-control" placeholder="" value="{{ old('original_price') }}>
                         <span class="input-group-addon">VND</span>
+                        @if ($errors->has('original_price'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('original_price') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
-                      <label for="exampleInputEmail1">Giá gốc khuyến mãi</label>
+                      <label for="exampleInputEmail1">Giá gốc khuyến mãi<span style="color:red;">(*)</span></label>
                       <div class="input-group">
-                        <input type="number" class="form-control" placeholder="">
+                        <input type="number" class="form-control" placeholder="" value="{{ old('promotion_price') }}">
                         <span class="input-group-addon">VND</span>
+                        @if ($errors->has('promotion_price'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('promotion_price') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
-                      <label for="exampleInputEmail1">Dung tích</label>
+                      <label for="exampleInputEmail1">Dung tích<span style="color:red;">(*)</span></label>
                       <div class="input-group">
-                        <input type="number" class="form-control" placeholder="">
+                        <input type="number" class="form-control" placeholder="" value="{{ old('dore') }}">
                         <span class="input-group-addon">ml</span>
+                        @if ($errors->has('dore'))
+                          <span class="help-block">
+                            <strong>{{ $errors->first('dore') }}</strong>
+                        </span>
+                        @endif
                       </div>
 
                       <div class="form-group">
-                        <label>Nồng độ</label>
+                        <label>Nồng độ<span style="color:red;">(*)</span></label>
                         <select class="form-control">
                           <option>option 1</option>
                           <option>option 2</option>
@@ -84,7 +116,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Ngày phát hành</label>
+                        <label>Ngày phát hành<span style="color:red;">(*)</span></label>
                         <div class="input-group">
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
@@ -94,7 +126,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Hạn sử dụng</label>
+                        <label>Hạn sử dụng<span style="color:red;">(*)</span></label>
                         <div class="input-group">
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
@@ -104,7 +136,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Nhóm hương</label>
+                        <label>Nhóm hương<span style="color:red;">(*)</span></label>
                         <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
                                 style="width: 100%;">
                           <option>Alabama</option>
@@ -118,7 +150,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Phong cách</label>
+                        <label>Phong cách<span style="color:red;">(*)</span></label>
                         <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
                                 style="width: 100%;">
                           <option>Alabama</option>
@@ -132,7 +164,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Nhà pha chế</label>
+                        <label>Nhà pha chế<span style="color:red;">(*)</span></label>
                         <select class="form-control">
                           <option>Alberto Morillas</option>
                           <option>Alberto Morillas</option>
@@ -141,20 +173,20 @@
                       </div>
 
                       <div class="form-group">
-                        <label>Trạng thái</label>
+                        <label>Trạng thái<span style="color:red;">(*)</span></label>
                         <select class="form-control">
                           <option>Còn hàng</option>
                           <option>Hết hàng</option>
                         </select>
                       </div>
 
-                      <label for="exampleInputEmail1">Số lượng</label>
+                      <label for="exampleInputEmail1">Số lượng<span style="color:red;">(*)</span></label>
                       <div class="form-group">
                         <input type="number" class="form-control" placeholder="">
                       </div>
 
                       <div class="form-group">
-                        <label>Loại sản phẩm (Nhãn hiệu)</label>
+                        <label>Loại sản phẩm (Nhãn hiệu)<span style="color:red;">(*)</span></label>
                         <select class="form-control">
                           <option>Alberto Morillas</option>
                           <option>Alberto Morillas</option>
@@ -164,7 +196,7 @@
 
                       <div class="form-group">
                         <div>
-                          <label for="exampleInputFile">Giới tính</label>
+                          <label for="exampleInputFile">Giới tính<span style="color:red;">(*)</span></label>
                         </div>
                         <label class="radio-inline">
                           <input type="radio" name="optradio">Nam
@@ -172,10 +204,13 @@
                         <label class="radio-inline">
                           <input type="radio" name="optradio">Nữ
                         </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio">Nam và Nữ
+                        </label>
                       </div>
 
                       <div class="form-group">
-                        <label>Xuất xứ</label>
+                        <label>Xuất xứ<span style="color:red;">(*)</span></label>
                         <select class="form-control">
                           <option>Alberto Morillas</option>
                           <option>Alberto Morillas</option>

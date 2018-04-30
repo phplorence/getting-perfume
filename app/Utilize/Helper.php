@@ -76,4 +76,18 @@ class Helper extends Controller
             ['gender.required' => 'Vui lòng chọn giới tính']
         );
     }
+
+    public function validRequiredFields($request) {
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => 'Trường tên sản phẩm không được bỏ trống']
+        );
+
+        $this->validate(
+            $request,
+            ['description' => 'required'],
+            ['description.required' => 'Trường mô tả sản phẩm không được bỏ trống']
+        );
+    }
 }
