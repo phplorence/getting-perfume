@@ -56,6 +56,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/cap-cao/chi-tiet/{id_admin}', 'Perfume\AdminSuperController@show')->name('admin.super.detail');
         Route::post('/cap-cao/sua', 'Perfume\AdminSuperController@update')->name('admin.super.update');
         Route::get('/cap-cao/xoa/{id_admin}', 'Perfume\AdminSuperController@delete')->name('admin.super.delete');
+        Route::get('/cap-cap/tim-kiem', 'Perfume\AdminSuperController@search')->name('admin.super.search');
 
         Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 

@@ -37,7 +37,8 @@ class AdminSuperController extends Controller
             $admins = $this->modelAdmin->getAllAdmins();
             $admin_paginations = $this->modelAdmin->getAdminPaginations();
             $indexArr = 0;
-            return view('admin.super.index', compact('admins','admin_paginations', 'indexArr'));
+            $searchKey = null;
+            return view('admin.super.index', compact('admins','admin_paginations', 'indexArr', 'searchKey'));
         }
     }
 
@@ -65,6 +66,19 @@ class AdminSuperController extends Controller
         } else {
             alert()->error('Người dùng đã không tồn tại trong hệ thống.', 'Lỗi!');
             return redirect()->intended(route('admin.super.index'));
+        }
+    }
+
+    public function search(Request $reguest)
+    {
+        $admins = $this->modelAdmin->getAllAdmins();
+        $admin_paginations = $this->modelAdmin->getResultSearch($reguest->search);
+        if (count($admin_paginations) > 0) {
+            $indexArr = 0;
+            $searchKey = $reguest->search;
+            return view('admin.super.index', compact('admins','admin_paginations', 'indexArr', 'searchKey'));
+        } else {
+            alert()->success('Không tìm thấy thông tin bạn cần.', 'Thông tin!');
         }
     }
 

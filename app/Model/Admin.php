@@ -44,7 +44,7 @@ class Admin extends Authenticatable
     ];
 
     public function getAdminPaginations() {
-        $admins = DB::table('admins')->paginate(10);
+        $admins = DB::table('admins')->paginate(20);
         return $admins;
     }
 
@@ -96,6 +96,12 @@ class Admin extends Authenticatable
 
     public function getAdmin($id_admin){
         return DB::table('admins')->where('id', $id_admin)->first();
+    }
+
+    public function getResultSearch($keySearch) {
+        return DB::table('admins')->where('username','like','%'.$keySearch.'%')
+            ->orWhere('full_name','like','%'.$keySearch.'%')
+            ->paginate(20);
     }
 
     public function updateAdmin($data) {

@@ -25,8 +25,10 @@
 
               <div class="box-tools pull-right">
                 <div class="has-feedback">
-                  <input type="text" class="form-control input-sm" placeholder="Tìm kiếm theo tên">
-                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  <form role="search" method="get" action="{{ route('admin.super.search') }}">
+                    <input type="text" name="search" class="form-control input-sm" placeholder="Tìm kiếm theo tên" value="{{ $searchKey != null ? $searchKey : ""}}">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </form>
                 </div>
               </div>
               <!-- /.box-tools -->
