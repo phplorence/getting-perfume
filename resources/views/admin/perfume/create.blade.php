@@ -73,12 +73,12 @@
 
                       <label for="exampleInputEmail1">Giá gốc sản phẩm<span style="color:red;">(*)</span></label>
                       <div class="input-group">
-                        <input type="number" class="form-control" placeholder="" value="{{ old('original_price') }}>
+                        <input type="number" class="form-control" placeholder="" value="{{ old('original_price') }}">
                         <span class="input-group-addon">VND</span>
                         @if ($errors->has('original_price'))
                           <span class="help-block">
                             <strong>{{ $errors->first('original_price') }}</strong>
-                        </span>
+                          </span>
                         @endif
                       </div>
 
