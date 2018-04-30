@@ -11,7 +11,7 @@
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
         <li><a href="{{ route('admin.super.index') }}"> Danh sách người dùng cấp cao</a></li>
-        <li class="active">Thêm mới</li>
+        <li class="active">Cập nhật</li>
       </ol>
     </section>
 
@@ -21,7 +21,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Form Đăng Ký</h3>
+          <h3 class="box-title">Form Cập nhật thông tin</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">

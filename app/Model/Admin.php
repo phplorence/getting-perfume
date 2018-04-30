@@ -23,14 +23,11 @@ class Admin extends Authenticatable
         'password',
         'user_type',
         'email',
-        'first_name',
-        'last_name',
+        'full_name',
         'gender',
-        'district',
         'address',
-        'postcode',
         'active',
-        'telephone',
+        'phone_number',
         'path_image',
     ];
 

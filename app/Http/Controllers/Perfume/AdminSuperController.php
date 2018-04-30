@@ -78,7 +78,7 @@ class AdminSuperController extends Controller
             $searchKey = $reguest->search;
             return view('admin.super.index', compact('admins','admin_paginations', 'indexArr', 'searchKey'));
         } else {
-            alert()->success('Không tìm thấy thông tin bạn cần.', 'Thông tin!');
+            return redirect()->intended(route('admin.super.index'));
         }
     }
 
@@ -163,7 +163,15 @@ class AdminSuperController extends Controller
     public function getInfoUserFromDB(Request $request) {
         $username = $request->username;
         Log::info('Admin', ['username' => $username]);
-        $password = Hash::make($request->password);
+        if (empty($request->id)) {
+            $password = Hash::make($request->password);
+        } else {
+            if(count($request->password) < 30) {
+                $password = Hash::make($request->password);
+            } else {
+                $password = $request->password;
+            }
+        }
         Log::info('Admin', ['password' => $password]);
         $user_type = $request->permission;
         Log::info('Admin', ['user_type' => $user_type]);
