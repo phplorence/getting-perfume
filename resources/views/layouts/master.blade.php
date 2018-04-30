@@ -16,6 +16,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{URL::asset('components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ URL::asset('components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{URL::asset('components/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
@@ -76,6 +78,8 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{ URL::asset('components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{ URL::asset('components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <!-- Select2 -->
 <script src="{{ URL::asset('components/select2/dist/js/select2.full.min.js') }}"></script>
 <!-- Morris.js charts -->
@@ -95,6 +99,9 @@
 <script src="{{ URL::asset('components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ URL::asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{ URL::asset('components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <!-- Slimscroll -->
 <script src="{{ URL::asset('components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
@@ -127,6 +134,17 @@
         $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
         //Money Euro
         $('[data-mask]').inputmask()
+    })
+
+    $(function () {
+        $('#example1').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
     })
 
 </script>

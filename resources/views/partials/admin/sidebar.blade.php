@@ -32,39 +32,16 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"><strong>Thanh Điều Hướng</strong></li>
-
-            <li class="treeview menu-open">
-                <a href="#">
-                    <i class="fa fa-user"></i> <span>Quản trị</span>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-user"></i> <span>Quản trị</span>
                     <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu" style="display: block;">
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-list"></i> Danh sách
-                            <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="{{ route('admin.super.index') }}"><i class="fa fa-user-secret"></i> Cấp cao</a></li>
-                            <li><a href="#"><i class="fa fa-users"></i> Người dùng</a></li>
-                            <li class="treeview">
-                                <a href="#"><i class="fa fa-user-plus"></i> Cộng tác
-                                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-user-secret"></i> Nước hoa</a></li>
-                                    <li><a href="#"><i class="fa fa-user-secret"></i> Phân phối</a></li>
-                                    <li><a href="#"><i class="fa fa-user-secret"></i> Quảng cáo</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-address-book"></i> Phân quyền</a></li>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.super.index') }}"><i class="fa fa-user-secret"></i> Cấp cao</a></li>
+                    <li><a href="#"><i class="fa fa-users"></i> Người dùng</a></li>
+                    <li><a href="#"><i class="fa fa-user-plus"></i> Cộng tác</a></li>
                 </ul>
             </li>
 
@@ -97,14 +74,28 @@
             </li>
 
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-table"></i> <span>Bảng biểu</span>
+                <a href="#"><i class="fa fa-list"></i> <span>Bảng biểu</span>
                     <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="perfumeadvance.html" target="_blank"><i class="fa fa-table"></i> Nước Hoa</a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-user-plus"></i> Nước hoa
+                            <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ route('admin.perfume.concentration') }}"><i class="fa fa-user-secret"></i> Nồng độ</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Nhóm hương</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Phong cách</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Nhà pha chế</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Loại sản phẩm</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Xuất xứ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-users"></i> Phân quyền</a></li>
                 </ul>
             </li>
 
