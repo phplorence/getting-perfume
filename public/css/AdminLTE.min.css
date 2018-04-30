@@ -2270,6 +2270,11 @@ a:hover,a:active,a:focus{
 .pagination.pagination-flat>li>a{
     border-radius:0 !important
 }
+.countText {
+    color:#000;
+    font-weight:600;
+    padding:6px;
+}
 .products-list{
     list-style:none;
     margin:0;

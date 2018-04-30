@@ -36,17 +36,16 @@
               <div class="mailbox-controls">
                 </button>
                 <div class="btn-group">
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
                   <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.index') }}"><i class="fa fa-refresh"></i></a></button>
                 </div>
                 <!-- /.btn-group -->
-                <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.create') }}"><i class="fa fa-user-plus"></i></a></button>
+                <button type="button" class="btn btn-default btn-sm"><a href="{{ route('admin.super.create') }}">
+                    <i class="fa fa-user-plus"></i></a>
+                </button>
                 <div class="pull-right">
-                  1-50/200
+                  {{ count($admin_paginations) }}/{{ count($admins) }}
                   <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                      {{ $admin_paginations->links('custom.pagination') }}
                   </div>
                   <!-- /.btn-group -->
                 </div>
@@ -69,12 +68,12 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @unless($admins)
+                  @unless($admin_paginations)
                     <span class="help-block">
                       <strong>Vui lòng cập nhập người dùng cấp cao</strong>
                     </span>
                   @endunless
-                  <?php foreach($admins as $admin) : ?>
+                  <?php foreach($admin_paginations as $admin) : ?>
                   <tr>
                       <td class="text-center">{{ ++$indexArr }}</td>
                       <td>{{ $admin->username }}</td>

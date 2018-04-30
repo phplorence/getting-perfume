@@ -35,8 +35,9 @@ class AdminSuperController extends Controller
             return redirect()->intended(route('admin.login'));
         } else {
             $admins = $this->modelAdmin->getAllAdmins();
+            $admin_paginations = $this->modelAdmin->getAdminPaginations();
             $indexArr = 0;
-            return view('admin.super.index', compact('admins', 'indexArr'));
+            return view('admin.super.index', compact('admins','admin_paginations', 'indexArr'));
         }
     }
 
@@ -137,8 +138,10 @@ class AdminSuperController extends Controller
         // Attempt add new database successfully
         if ($this->modelAdmin->addAll($this->getInfoUserFromDB($request)) > 0) {
             // If successful, then redirect to their intended location
+            alert()->success('Thêm người dùng cấp cao thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.super.index'));
         } else {
+            alert()->error('Thêm người dùng cấp cao thất bại.', 'Lỗi!');
             return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
     }

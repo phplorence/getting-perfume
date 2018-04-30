@@ -43,6 +43,11 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getAdminPaginations() {
+        $admins = DB::table('admins')->paginate(10);
+        return $admins;
+    }
+
     public function getAllAdmins() {
         return DB::table('admins')->get();
     }
