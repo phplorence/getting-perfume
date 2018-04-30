@@ -90,7 +90,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.perfume') }}"><i class="fa fa-table"></i> Nước hoa</a></li>
+                    <li><a href="{{ route('admin.perfume.index') }}"><i class="fa fa-table"></i> Nước hoa</a></li>
                     <li><a href="pages/examples/profile.html"><i class="fa fa-table"></i> Thời trang</a></li>
                     <li><a href="pages/examples/login.html"><i class="fa fa-table"></i> Trị mụn</a></li>
                 </ul>

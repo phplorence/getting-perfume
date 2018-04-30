@@ -17,16 +17,16 @@ class AdminPerfumeController extends Controller
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            return view('admin.perfume.perfume');
+            return view('admin.perfume.index');
         }
     }
 
-    public function perfumeNew()
+    public function create()
     {
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            return view('admin.perfume.add');
+            return view('admin.perfume.create');
         }
     }
 }

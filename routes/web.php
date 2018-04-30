@@ -50,8 +50,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 
         // Content Navigation Bar
-        Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume');
-        Route::get('/them-nuoc-hoa', 'Perfume\AdminPerfumeController@perfumeNew')->name('admin.perfume.add');
+
 
 
         // TAB ADMIN
@@ -63,8 +62,9 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/cap-cao/xoa/{id_admin}', 'Perfume\AdminSuperController@delete')->name('admin.super.delete');
         Route::get('/cap-cap/tim-kiem', 'Perfume\AdminSuperController@search')->name('admin.super.search');
 
-        // TAB USER
-
+        // TAB PERFUME
+        Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume.index');
+        Route::get('/nuoc-hoa/them', 'Perfume\AdminPerfumeController@create')->name('admin.perfume.create');
 
     });
 });
