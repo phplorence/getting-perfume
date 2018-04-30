@@ -42,14 +42,19 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/dang-nhap', 'Auth\Admin\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/dang-xuat', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
+
         Route::get('/', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
+
+        // Un development
+        Route::get('/tai-khoan', 'Perfume\AdminProfileController@show')->name('admin.profile');
+        Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
 
         // Content Navigation Bar
         Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume');
         Route::get('/them-nuoc-hoa', 'Perfume\AdminPerfumeController@perfumeNew')->name('admin.perfume.add');
 
-        Route::get('/tai-khoan', 'Perfume\AdminProfileController@show')->name('admin.profile');
 
+        // TAB ADMIN
         Route::get('/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.index');
         Route::get('/cap-cao/them', 'Perfume\AdminSuperController@create')->name('admin.super.create');
         Route::post('/cap-cao', 'Perfume\AdminSuperController@store')->name('admin.super.store');
@@ -58,7 +63,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/cap-cao/xoa/{id_admin}', 'Perfume\AdminSuperController@delete')->name('admin.super.delete');
         Route::get('/cap-cap/tim-kiem', 'Perfume\AdminSuperController@search')->name('admin.super.search');
 
-        Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
+        // TAB USER
+
 
     });
 });
