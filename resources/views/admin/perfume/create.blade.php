@@ -6,7 +6,6 @@
     <section class="content-header">
       <h1>
         Chuyên Trang Nước Hoa
-        <small>Dữ liệu nước hoa được cập nhật tại đây</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.html"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
