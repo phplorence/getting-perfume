@@ -35,11 +35,12 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
+                                    <th class="text-center">STT</th>
+                                    <th class="text-center">Tên nồng độ</th>
+                                    <th class="text-center">Mô tả</th>
+                                    <th class="text-center">Chi tiết</th>
+                                    <th class="text-center">Link bài viết</th>
+                                    <th class="text-center">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,71 +48,111 @@
                                     <td>Tasman</td>
                                     <td>Internet Explorer 5.1</td>
                                     <td>Mac OS 7.6-9</td>
+                                    <td></td>
                                     <td>1</td>
-                                    <td>C</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Tasman</td>
-                                    <td>Internet Explorer 5.2</td>
-                                    <td>Mac OS 8-X</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
                                     <td>1</td>
-                                    <td>C</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>NetFront 3.1</td>
-                                    <td>Embedded devices</td>
-                                    <td>-</td>
-                                    <td>C</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>NetFront 3.4</td>
-                                    <td>Embedded devices</td>
-                                    <td>-</td>
-                                    <td>A</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>Dillo 0.8</td>
-                                    <td>Embedded devices</td>
-                                    <td>-</td>
-                                    <td>X</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>Links</td>
-                                    <td>Text only</td>
-                                    <td>-</td>
-                                    <td>X</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>Lynx</td>
-                                    <td>Text only</td>
-                                    <td>-</td>
-                                    <td>X</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>IE Mobile</td>
-                                    <td>Windows Mobile 6</td>
-                                    <td>-</td>
-                                    <td>C</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Misc</td>
-                                    <td>PSP browser</td>
-                                    <td>PSP</td>
-                                    <td>-</td>
-                                    <td>C</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Other browsers</td>
-                                    <td>All others</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>U</td>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.1</td>
+                                    <td>Mac OS 7.6-9</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -120,30 +161,48 @@
                         <div class="box-body">
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Cập nhật thông tin</h3>
+                                    <h3 class="box-title">Thêm mới thông tin</h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <!-- form start -->
                                 <form role="form">
                                     <div class="box-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            <label for="exampleInputEmail1">Tên nồng độ</label>
+                                            <input type="text" style="text-transform: uppercase" class="form-control" id="exampleInputEmail1" placeholder="">
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <label>Mô tả<span style="color:red;">(*)</span></label>
+                                            <textarea name="description" class="form-control" rows="3" placeholder="">{{ old('description') }}</textarea>
+                                            @if ($errors->has('description'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('description') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Check me out
-                                            </label>
+
+                                        <div class="form-group">
+                                            <h3 class="box-title">Thông tin chi tiết sản phẩm<span style="color:red;">(*)</span>
+                                                <small>CK Editor có hổ trợ định dạng page. Cách sử dụng xem thêm ở đây: <a href="www.google.com" href="blank">Support</a></small>
+                                            </h3>
+                                            <textarea id = "editor1"  name="editor1" class="form-control" rows="5" id="comment">{{ old('detail') }}</textarea>
+                                            @if ($errors->has('detail'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('detail') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Liên bài viết</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
                                         </div>
                                     </div>
                                     <!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Thêm mới</button>
                                     </div>
                                 </form>
                             </div>

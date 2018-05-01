@@ -72,7 +72,8 @@ body{
 .content-wrapper{
     min-height:100%;
     background-color:#ffffff;
-    z-index:800
+    z-index:800;
+    margin-top:-20px;
 }
 .main-footer{
     background:#fff;
