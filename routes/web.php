@@ -66,7 +66,8 @@ Route::group(['middleware' => 'web'], function () {
         // TAB TABLES
         Route::get('/nuoc-hoa/nong-do', 'Backend\Tables\ConcentrationController@index')->name('admin.perfume.concentration.index');
         Route::post('/nuoc-hoa/nong-do', 'Backend\Tables\ConcentrationController@store')->name('admin.perfume.concentration.store');
-
+        Route::post('/nuoc-hoa/nong-do/sua', 'Backend\Tables\ConcentrationController@update')->name('admin.perfume.concentration.update');
+        Route::get('/nuoc-hoa/nong-do/xoa/{id}', 'Backend\Tables\ConcentrationController@delete')->name('admin.perfume.concentration.delete');
 
     });
 });

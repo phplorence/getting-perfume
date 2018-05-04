@@ -65,6 +65,8 @@
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
+
+    @include('modal.concentration')
 </div>
 <!-- ./wrapper -->
 
@@ -123,6 +125,7 @@
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
         CKEDITOR.replace('editor1')
+        CKEDITOR.replace('editor2')
         //bootstrap WYSIHTML5 - text editor
         $('.textarea').wysihtml5()
     })
@@ -146,7 +149,6 @@
             'autoWidth'   : false
         })
     })
-
 </script>
 </body>
 </html>

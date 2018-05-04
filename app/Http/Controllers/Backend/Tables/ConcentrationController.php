@@ -7,6 +7,7 @@ use App\Utilize\Helper;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class ConcentrationController extends Controller
 {
@@ -54,6 +55,40 @@ class ConcentrationController extends Controller
         }
     }
 
+    public function update(Request $request)
+    {
+        $conExistedDB = $this->modelConcentration->getConcentration($request->id);
+        if (!empty($request->name)) {
+            $this->helper->validateConcentrationName($request);
+            // Check name existed in Database
+            if($this->modelConcentration->isExistNameCaseUpdated($request, $request->name)) {
+                alert()->error('Nồng độ đã tồn tại trong hệ thống.', 'Lỗi!');
+                return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+            }
+        } else  {
+            $request->name = $conExistedDB->name;
+        }
+
+        // Attempt add update admin successfully
+        if ($this->modelConcentration->updateConcentration($this->getInfoConcentrationFromDB($request)) > 0) {
+            alert()->success('Cập nhật nồng độ thành công.', 'Thông tin!');
+            return redirect()->intended(route('admin.perfume.concentration.index'));
+        } else {
+            alert()->error('Cập nhật nồng độ thất bại.', 'Lỗi!');
+            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+        }
+    }
+
+    public function delete($id) {
+        if ($this->modelConcentration->deleteConcentration($id) > 0) {
+            alert()->success('Xóa nồng độ thành công.', 'Thông tin!');
+            return redirect()->intended(route('admin.perfume.concentration.index'));
+        } else {
+            alert()->error('Xóa nồng độ thất bại.', 'Lỗi!');
+            return redirect()->intended(route('admin.perfume.concentration.index'));
+        }
+    }
+
     public function getInfoConcentrationFromDB(Request $request) {
         $name = $request->name;
         Log::info('Admin', ['name' => $name]);
@@ -63,12 +98,22 @@ class ConcentrationController extends Controller
         Log::info('Admin', ['detail' => $detail]);
         $link = $request->link;
         Log::info('Admin', ['link' => $link]);
-        $data = array([
-            'name' => $name,
-            'description' => $description,
-            'detail' => $detail,
-            'link' => $link
-        ]);
+        if (empty($request->id)) {
+            $data = array([
+                'name' => $name,
+                'description' => $description,
+                'detail' => $detail,
+                'link' => $link
+            ]);
+        } else {
+            $data = array([
+                'id' => $request->id,
+                'name' => $name,
+                'description' => $description,
+                'detail' => $detail,
+                'link' => $link
+            ]);
+        }
         return $data;
     }
 }

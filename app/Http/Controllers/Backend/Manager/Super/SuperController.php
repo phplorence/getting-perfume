@@ -131,6 +131,7 @@ class SuperController extends Controller
             return redirect()->intended(route('admin.super.index'));
         } else {
             alert()->error('Xóa người dùng cấp cao thất bại.', 'Lỗi!');
+            return redirect()->intended(route('admin.super.index'));
         }
     }
 

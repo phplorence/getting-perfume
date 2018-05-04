@@ -38,4 +38,36 @@ class Concentrations extends Authenticatable
     public function addAll($data) {
         return DB::table('concentrations')->insert($data);
     }
+
+    public function getConcentration($id_concentration){
+        return DB::table('concentrations')->where('id', $id_concentration)->first();
+    }
+
+    public function isExistNameCaseUpdated($request, $name) {
+        $concentration = DB::table('concentrations')
+            ->where('name', '=', $name)
+            ->where('id', '!=', $request->id)
+            ->first();
+        if ($concentration != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public function updateConcentration($data) {
+        return DB::table('concentrations')
+            ->where('id', $data[0]['id'])
+            ->update([
+                'name' => $data[0]['name'],
+                'description' => $data[0]['description'],
+                'detail' => $data[0]['detail'],
+                'link' => $data[0]['link']
+            ]);
+    }
+
+    public function deleteConcentration($id) {
+        return DB::table('concentrations')
+            ->where('id', $id)
+            ->delete();
+    }
 }

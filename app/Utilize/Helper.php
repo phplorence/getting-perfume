@@ -92,17 +92,10 @@ class Helper extends Controller
     }
 
     public function validateConcentrationName($request) {
-
         $this->validate(
             $request,
             ['name' => 'required'],
             ['name.required' => 'Nồng độ không được bỏ trống']
-        );
-
-        $this->validate(
-            $request,
-            ['name' => 'regex:/[~`!@#$%^&()_={}[\]:;,.<>+\/?-]/'],
-            ['name.regex' => 'Nồng độ không chứa ký tự đặc biệt']
         );
     }
 }
