@@ -90,4 +90,19 @@ class Helper extends Controller
             ['description.required' => 'Trường mô tả sản phẩm không được bỏ trống']
         );
     }
+
+    public function validateConcentrationName($request) {
+
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => 'Nồng độ không được bỏ trống']
+        );
+
+        $this->validate(
+            $request,
+            ['name' => 'regex:/[~`!@#$%^&()_={}[\]:;,.<>+\/?-]/'],
+            ['name.regex' => 'Nồng độ không chứa ký tự đặc biệt']
+        );
+    }
 }

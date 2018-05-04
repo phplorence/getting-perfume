@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Perfume;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Auth;

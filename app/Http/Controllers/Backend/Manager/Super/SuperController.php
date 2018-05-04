@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Perfume;
+namespace App\Http\Controllers\Backend\Manager\Super;
 
 use App\Http\Controllers\Controller;
 use App\Model\Admin;
@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
-class AdminSuperController extends Controller
+class SuperController extends Controller
 {
     protected $helper;
     protected $modelAdmin;

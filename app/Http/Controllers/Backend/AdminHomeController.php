@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Perfume;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Auth;
 
-class AdminInvoiceController extends Controller
+class AdminHomeController extends Controller
 {
     public function __construct()
     {
@@ -17,7 +17,7 @@ class AdminInvoiceController extends Controller
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            return view('admin.invoice');
+            return view('admin.index');
         }
     }
 }

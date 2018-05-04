@@ -43,32 +43,30 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/dang-xuat', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
 
-        Route::get('/', 'Perfume\AdminHomeController@index')->name('admin.dashboard');
+        Route::get('/', 'Backend\AdminHomeController@index')->name('admin.dashboard');
 
         // Un development
-        Route::get('/tai-khoan', 'Perfume\AdminProfileController@show')->name('admin.profile');
-        Route::get('/thanh-toan', 'Perfume\AdminInvoiceController@index')->name('admin.invoice');
-
-        // Content Navigation Bar
-
-
+        Route::get('/tai-khoan', 'Backend\AdminProfileController@show')->name('admin.profile');
+        Route::get('/thanh-toan', 'Backend\AdminInvoiceController@index')->name('admin.invoice');
 
         // TAB ADMIN
-        Route::get('/cap-cao', 'Perfume\AdminSuperController@index')->name('admin.super.index');
-        Route::get('/cap-cao/them', 'Perfume\AdminSuperController@create')->name('admin.super.create');
-        Route::post('/cap-cao', 'Perfume\AdminSuperController@store')->name('admin.super.store');
-        Route::get('/cap-cao/chi-tiet/{id_admin}', 'Perfume\AdminSuperController@show')->name('admin.super.detail');
-        Route::post('/cap-cao/sua', 'Perfume\AdminSuperController@update')->name('admin.super.update');
-        Route::get('/cap-cao/xoa/{id_admin}', 'Perfume\AdminSuperController@delete')->name('admin.super.delete');
-        Route::get('/cap-cap/tim-kiem', 'Perfume\AdminSuperController@search')->name('admin.super.search');
+        Route::get('/cap-cao', 'Backend\Manager\Super\SuperController@index')->name('admin.super.index');
+        Route::get('/cap-cao/them', 'Backend\Manager\Super\SuperController@create')->name('admin.super.create');
+        Route::post('/cap-cao', 'Backend\Manager\Super\SuperController@store')->name('admin.super.store');
+        Route::get('/cap-cao/chi-tiet/{id_admin}', 'Backend\Manager\Super\SuperController@show')->name('admin.super.detail');
+        Route::post('/cap-cao/sua', 'Backend\Manager\Super\SuperController@update')->name('admin.super.update');
+        Route::get('/cap-cao/xoa/{id_admin}', 'Backend\Manager\Super\SuperController@delete')->name('admin.super.delete');
+        Route::get('/cap-cap/tim-kiem', 'Backend\Manager\Super\SuperController@search')->name('admin.super.search');
 
         // TAB PERFUME
-        Route::get('/nuoc-hoa', 'Perfume\AdminPerfumeController@perfume')->name('admin.perfume.index');
-        Route::get('/nuoc-hoa/them', 'Perfume\AdminPerfumeController@create')->name('admin.perfume.create');
-        Route::post('/nuoc-hoa', 'Perfume\AdminPerfumeController@store')->name('admin.perfume.store');
+        Route::get('/nuoc-hoa', 'Backend\AdminPerfumeController@perfume')->name('admin.perfume.index');
+        Route::get('/nuoc-hoa/them', 'Backend\AdminPerfumeController@create')->name('admin.perfume.create');
+        Route::post('/nuoc-hoa', 'Backend\AdminPerfumeController@store')->name('admin.perfume.store');
 
         // TAB TABLES
-        Route::get('/nuoc-hoa/nong-do', 'Perfume\AdminTablePerfumeController@concentration')->name('admin.perfume.concentration');
+        Route::get('/nuoc-hoa/nong-do', 'Backend\Tables\ConcentrationController@index')->name('admin.perfume.concentration.index');
+        Route::post('/nuoc-hoa/nong-do', 'Backend\Tables\ConcentrationController@store')->name('admin.perfume.concentration.store');
+
 
     });
 });
