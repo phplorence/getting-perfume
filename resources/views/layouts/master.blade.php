@@ -75,7 +75,8 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{URL::asset('components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- jQuery Validation -->
-<script src="{{URL::asset('components/jquery-ui/jquery.validate.js')}}"></script>
+<script src="{{URL::asset('js/jquery.validate.js')}}"></script>
+<script src="{{URL::asset('js/jquery.validate.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button);
@@ -197,17 +198,18 @@
 
     $('#incenseFormCreate').validate({
         rules: {
-            incense_name: {
-                required: true
+            name: {
+                required: true,
+                maxlength:50
             }
         },
         messages:{
-            incense_name: {
-                required:"Tên nhóm hương không được để trống"
-            }
+            name: {
+                required:"Tiêu đề không được để trống và có độ dài dưới 50 ký tự"
+            },
         },
         success:function() {
-            document.getElementById('incenseFormCreate').submit();
+
         }
     });
 
