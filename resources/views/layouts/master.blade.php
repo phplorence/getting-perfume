@@ -192,7 +192,6 @@
 
     /** VALIDATE JQUERY CLIENT */
     $('#btnSubmitNewIncense').click(function () {
-        alert($('#incense_name').val());
         $('#incenseFormCreate').valid();
     });
 
