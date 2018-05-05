@@ -74,6 +74,8 @@
 <script src="{{URL::asset('components/jquery/dist/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{URL::asset('components/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- jQuery Validation -->
+<script src="{{URL::asset('components/jquery-ui/jquery.validate.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button);
@@ -188,24 +190,25 @@
         $('#incenseModalCreate').modal('show')
     });
 
-    $("#btnSubmitNewIncense").submit(function(event) {
-        $('#incenseFormCreate').validate();
+    /** VALIDATE JQUERY CLIENT */
+    $('#btnSubmitNewIncense').click(function () {
+        alert($('#incense_name').val());
+        $('#incenseFormCreate').valid();
     });
 
     $('#incenseFormCreate').validate({
         rules: {
-            description: {
-                required: true,
-                maxlength:50
+            incense_name: {
+                required: true
             }
         },
         messages:{
-            description: {
-                required:"Tiêu đề không được để trống và có độ dài dưới 50 ký tự"
+            incense_name: {
+                required:"Tên nhóm hương không được để trống"
             }
         },
         success:function() {
-
+            document.getElementById('incenseFormCreate').submit();
         }
     });
 
