@@ -149,6 +149,12 @@
             'autoWidth'   : false
         })
     })
+
+
+    $('#formConcentration').on('show.bs.modal', function (event) {
+        $(this).find('.box-title').text('NGUYEN VAN VUONG');
+    });
+
 </script>
 </body>
 </html>

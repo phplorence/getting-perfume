@@ -49,7 +49,7 @@
                                     <td>{{ $concentration->detail }}</td>
                                     <td class="text-center">{{ $concentration->link }}</td>
                                     <td class="text-center">
-                                        <a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="{{ $concentration->id }}"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
+                                        <a href="#" data-toggle="modal" data-target="#formConcentration" data-whatever="{{ $concentration->id }}"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
                                         <a href="{{ route('admin.perfume.concentration.delete', $concentration->id) }}"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
                                     </td>
                                 </tr>
@@ -109,13 +109,6 @@
         </section>
         <!-- /.content -->
     </div>
-    <script type="text/javascript">
-        $('#exampleModal').on('show.bs.modal', function (event){
-            var id = $(event.relatedTarget).data('whatever')
-            alert("Id"+id)
-            $(this).find('.m_name input').text("NGUYEN VAN VUONG")
-        })
-    </script>
     <!-- /.content-wrapper -->
 @endsection
 

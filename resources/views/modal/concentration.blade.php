@@ -1,14 +1,14 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="formConcentration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h3 class="box-title" style="margin-top: -2px;">CẬP NHẬT NỒNG ĐỘ</h3>
+                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT NỒNG ĐỘ</h3>
                 <form role="form" method="post" action="{{ route('admin.perfume.concentration.store') }}">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên nồng độ<span style="color:red;">(*)</span></label>
-                            <input name="name" type="text" class="form-control m_name" id="name">
+                            <input name="name" type="text" class="form-control" id="name">
                         </div>
 
                         <div class="form-group">
