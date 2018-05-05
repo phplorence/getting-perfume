@@ -177,6 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
     ],
 
     /*
