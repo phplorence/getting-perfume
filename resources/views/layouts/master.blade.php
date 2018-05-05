@@ -124,6 +124,7 @@
     $(function () {
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
+        CKEDITOR.replace('incenseCreate')
         CKEDITOR.replace('editor1')
         CKEDITOR.replace('editor2')
         //bootstrap WYSIHTML5 - text editor
@@ -185,24 +186,23 @@
 
     $('#btnCreateNewIncense').click(function(){
         $('#incenseModalCreate').modal('show')
-        CKEDITOR.replace('incenseCreate')
     });
 
-    $('#btnSubmitNewIncense').click(function () {
-        $('#incenseFormCreate').valid();
+    $("#btnSubmitNewIncense").submit(function(event) {
+        $('#incenseFormCreate').validate();
     });
 
     $('#incenseFormCreate').validate({
         rules: {
-            name: {
+            description: {
                 required: true,
                 maxlength:50
             }
         },
         messages:{
-            name: {
+            description: {
                 required:"Tiêu đề không được để trống và có độ dài dưới 50 ký tự"
-            },
+            }
         },
         success:function() {
 
