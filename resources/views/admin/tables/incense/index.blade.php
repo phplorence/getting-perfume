@@ -22,7 +22,7 @@
                         <div class="box-header">
                             <h3 class="box-title">Danh sách nhóm hương</h3>
                             <button id="btnCreateNewIncense" type="button" class="btn btn-default btn-sm">
-                                    <i class="fa fa-user-plus"></i>
+                                    <i class="fas fa-plus"></i>
                             </button>
                         </div>
                         <!-- /.box-header -->

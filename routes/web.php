@@ -74,6 +74,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/nuoc-hoa/nhom-huong', 'Backend\Tables\IncenseController@store')->name('admin.perfume.incense.store');
         Route::get('/nuoc-hoa/nhom-huong/{id}', 'Backend\Tables\IncenseController@show')->name('admin.perfume.incense.detail');
         Route::post('/nuoc-hoa/nhom-huong/sua', 'Backend\Tables\IncenseController@update')->name('admin.perfume.incense.update');
+        Route::get('/nuoc-hoa/nhom-huong/xoa/{id_incense}', 'Backend\Tables\IncenseController@delete')->name('admin.perfume.incense.delete');
     });
 });
 

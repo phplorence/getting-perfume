@@ -55,7 +55,7 @@ class Incenses extends Authenticatable
     }
 
     public function updateIncense($data) {
-        return DB::table('concentrations')
+        return DB::table('incenses')
             ->where('id', $data[0]['id'])
             ->update([
                 'name' => $data[0]['name'],
@@ -63,5 +63,11 @@ class Incenses extends Authenticatable
                 'detail' => $data[0]['detail'],
                 'link' => $data[0]['link']
             ]);
+    }
+
+    public function deleteIncense($id_incense) {
+        return DB::table('incenses')
+            ->where('id', $id_incense)
+            ->delete();
     }
 }

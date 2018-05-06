@@ -110,7 +110,6 @@ class IncenseController extends Controller
 
     public function update(Request $request)
     {
-        dd('Go to update');
         $incenseExistedDB = $this->modelIncense->getIncense($request->id);
         if (!empty($request->name)) {
             $this->helper->validateIncenseName($request);
@@ -131,5 +130,14 @@ class IncenseController extends Controller
             alert()->error('Cập nhật nhóm hương thất bại.', 'Lỗi!');
             return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
         }
+    }
+
+    public function delete($id_incense) {
+        if ($this->modelIncense->deleteIncense($id_incense) > 0) {
+            alert()->success('Xóa nhóm hương thành công.', 'Thông tin!');
+        } else {
+            alert()->error('Xóa nhóm hương thất bại.', 'Lỗi!');
+        }
+        return redirect()->intended(route('admin.perfume.incense.index'));
     }
 }

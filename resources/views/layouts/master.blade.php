@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{URL::asset('components/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{URL::asset('components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{URL::asset('components/select2/dist/css/select2.min.css')}}">
     <!-- Theme style -->
@@ -168,9 +169,9 @@
                 { "data": "description" },
                 { "data": "detail" },
                 { "data": "link" },
-                { "data": "manipulation", "render": function ( data) {
-                    return '<div class="text-center"><a onclick= "showEditIncense('+data+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a onclick= "showViewAnnouncement('+data+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
+                { "data": "manipulation", "render": function ( id) {
+                    return '<div class="text-center"><a onclick= "showEditIncense('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
+                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+id+'"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
                 }}
             ],
 
@@ -220,16 +221,9 @@
             },
             submitHandler: function(form) {
                 /** We want to hidden id when edit object in form => No need using normally */
-                var id_incense =  document.getElementById('hiddenEditIncenseID').value
-                form.ajaxForm({url: '{!! route('admin.perfume.incense.update') !!}', type: 'post'});
-//                form.submit( function(eventObj) {
-//
-//                    $('<input />').attr('type', 'hidden')
-//                        .attr('name', "id")
-//                        .attr('value', id_incense)
-//                        .appendTo('#incenseFormEdit');
-//                    return true;
-//                });
+                // Will submit automated
+                document.incenseFormEdit.id.value = document.getElementById('hiddenEditIncenseID').value;
+                form.submit();
             }
         });
     });
