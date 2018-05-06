@@ -128,6 +128,7 @@
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
         CKEDITOR.replace('incenseCreate')
+        CKEDITOR.replace('incenseDetailEdit')
         CKEDITOR.replace('editor1')
         CKEDITOR.replace('editor2')
         //bootstrap WYSIHTML5 - text editor
@@ -153,6 +154,8 @@
             'ordering'    : true,
             'info'        : true,
             'autoWidth'   : false,
+            "processing": true,
+            "serverSide": true,
 
             "ajax": {
                 url: "{!! route('admin.perfume.incense.index.incenseDataTables') !!}",
@@ -165,9 +168,9 @@
                 { "data": "description" },
                 { "data": "detail" },
                 { "data": "link" },
-                { "render": function (id) {
-                    return '<div class="text-center"><a onclick= "showViewAnnouncement(".$id.")"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a onclick= "showViewAnnouncement(".$id.")"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
+                { "data": "manipulation", "render": function ( data) {
+                    return '<div class="text-center"><a onclick= "showEditIncense('+data+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
+                        +'<span>  </span>'+'<a onclick= "showViewAnnouncement('+data+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
                 }}
             ],
 
@@ -206,7 +209,50 @@
                 form.submit();
             }
         });
+        $("form[name='incenseFormEdit']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên nhóm hương không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                /** We want to hidden id when edit object in form => No need using normally */
+                var id_incense =  document.getElementById('hiddenEditIncenseID').value
+                form.ajaxForm({url: '{!! route('admin.perfume.incense.update') !!}', type: 'post'});
+//                form.submit( function(eventObj) {
+//
+//                    $('<input />').attr('type', 'hidden')
+//                        .attr('name', "id")
+//                        .attr('value', id_incense)
+//                        .appendTo('#incenseFormEdit');
+//                    return true;
+//                });
+            }
+        });
     });
+
+    function showEditIncense(id) {
+        $.ajax({
+            url:'{!! url('quan-tri/nuoc-hoa/nhom-huong')!!}'+'/'+id,
+            dataType: 'json',
+            type:"GET",
+            beforeSend: function(){
+                $('#hiddenEditIncenseID').val(id);
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(incense){
+                $('#incenseNameEdit').val(incense['incense']['name']);
+                $('#incenseDescriptionEdit').val(incense['incense']['description']);
+                CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });
+                $('#incenseLinkEdit').val(incense['incense']['link']);
+                $('#modal-loading').modal('hide');
+                $('#incenseModalEdit').modal('show');
+            });
+    }
 
 </script>
 </body>

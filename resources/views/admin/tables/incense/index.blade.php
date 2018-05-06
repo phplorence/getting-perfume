@@ -61,5 +61,7 @@
     </div>
     <!-- /.content-wrapper -->
     @include('modal.incense.create')
+    @include('modal.incense.edit')
+    @include('modal.dialog.loading')
 @endsection
 

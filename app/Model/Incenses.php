@@ -38,4 +38,30 @@ class Incenses extends Authenticatable
         }
         return false;
     }
+
+    public function getIncense($id_incense){
+        return DB::table('incenses')->where('id', $id_incense)->first();
+    }
+
+    public function isExistNameCaseUpdated($request, $name) {
+        $concentration = DB::table('incenses')
+            ->where('name', '=', $name)
+            ->where('id', '!=', $request->id)
+            ->first();
+        if ($concentration != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public function updateIncense($data) {
+        return DB::table('concentrations')
+            ->where('id', $data[0]['id'])
+            ->update([
+                'name' => $data[0]['name'],
+                'description' => $data[0]['description'],
+                'detail' => $data[0]['detail'],
+                'link' => $data[0]['link']
+            ]);
+    }
 }

@@ -37,9 +37,6 @@ class IncenseController extends Controller
         $collections = collect();
         foreach ($incenses as $incense){
             $arr = array(
-                /**
-                 * From server: Name of object is Name of table in database Laravel
-                 */
                 'id' => $incense->id,
                 'name'    => $incense->name,
                 'description'   => $incense->description,
@@ -98,5 +95,41 @@ class IncenseController extends Controller
             ]);
         }
         return $data;
+    }
+
+    public function show($id)
+    {
+        if($this->modelIncense->getIncense($id) != null) {
+            $incense = $this->modelIncense->getIncense($id);
+            return json_encode(['incense' => $incense]);
+        } else {
+            alert()->error('Tên nhóm hương đã không tồn tại trong hệ thống.', 'Lỗi!');
+            return redirect()->intended(route('admin.perfume.incense.index'));
+        }
+    }
+
+    public function update(Request $request)
+    {
+        dd('Go to update');
+        $incenseExistedDB = $this->modelIncense->getIncense($request->id);
+        if (!empty($request->name)) {
+            $this->helper->validateIncenseName($request);
+            // Check name existed in Database
+            if($this->modelIncense->isExistNameCaseUpdated($request, $request->name)) {
+                alert()->error('Nhóm hương đã tồn tại trong hệ thống.', 'Lỗi!');
+                return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+            }
+        } else  {
+            $request->name = $incenseExistedDB->name;
+        }
+
+        // Attempt add update admin successfully
+        if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) > 0) {
+            alert()->success('Cập nhật nhóm hương thành công.', 'Thông tin!');
+            return redirect()->intended(route('admin.perfume.incense.index'));
+        } else {
+            alert()->error('Cập nhật nhóm hương thất bại.', 'Lỗi!');
+            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+        }
     }
 }
