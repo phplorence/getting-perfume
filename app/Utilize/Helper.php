@@ -95,7 +95,15 @@ class Helper extends Controller
         $this->validate(
             $request,
             ['name' => 'required'],
-            ['name.required' => 'Nồng độ không được bỏ trống']
+            ['name.required' => 'Tên nồng độ không được bỏ trống']
+        );
+    }
+
+    public function validateIncenseName($request) {
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => 'Tên nhóm hương không được bỏ trống']
         );
     }
 }

@@ -69,6 +69,12 @@ body{
         transform:translate(230px, 0)
     }
 }
+/** Validation Error */
+.error {
+  color: #F00;
+  font-weight:500;
+  background-color: #FFF;
+}
 .content-wrapper{
     min-height:100%;
     background-color:#ffffff;

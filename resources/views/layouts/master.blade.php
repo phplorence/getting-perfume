@@ -192,25 +192,20 @@
     });
 
     /** VALIDATE JQUERY CLIENT */
-    $('#btnSubmitNewIncense').click(function () {
-        $('#incenseFormCreate').valid();
-    });
-
-    $('#incenseFormCreate').validate({
-        rules: {
-            name: {
-                required: true,
-                maxlength:50
-            }
-        },
-        messages:{
-            name: {
-                required:"Tiêu đề không được để trống và có độ dài dưới 50 ký tự"
+    $(function() {
+        $("form[name='incenseFormCreate']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
             },
-        },
-        success:function() {
-
-        }
+            // Specify validation error messages
+            messages: {
+                name: "Tên nhóm hương không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
     });
 
 </script>

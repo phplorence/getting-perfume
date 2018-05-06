@@ -26,4 +26,16 @@ class Incenses extends Authenticatable
     public function getAllIncenses() {
         return DB::table('incenses')->get();
     }
+
+    public function addAll($data) {
+        return DB::table('incenses')->insert($data);
+    }
+
+    public function isExistIncense($request) {
+        $incense = DB::table('incenses')->where('name', '=', $request->name)->first();
+        if ($incense != null) {
+            return true;
+        }
+        return false;
+    }
 }
