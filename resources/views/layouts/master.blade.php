@@ -130,6 +130,8 @@
         // instance, using default configuration.
         CKEDITOR.replace('incenseCreate')
         CKEDITOR.replace('incenseDetailEdit')
+        CKEDITOR.replace('styleCreate')
+        CKEDITOR.replace('styleDetailEdit')
         CKEDITOR.replace('editor1')
         CKEDITOR.replace('editor2')
         //bootstrap WYSIHTML5 - text editor
@@ -171,7 +173,51 @@
                 { "data": "link" },
                 { "data": "manipulation", "render": function ( id) {
                     return '<div class="text-center"><a onclick= "showEditIncense('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+id+'"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
+                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+id+'" onclick="deleteIncenseFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
+                }}
+            ],
+
+            "language": {
+                "lengthMenu": "Hiển thị các bản ghi _MENU_ trên mỗi trang",
+                "zeroRecords": "Không tìm thấy - xin lỗi",
+                "info": "Hiển thị _START_ đến _END_ trong số _TOTAL_ mục",
+                "infoEmpty": "Không có bản ghi nào",
+                "search": "Tìm kiếm: ",
+                "paginate": {
+                    "previous": "Trước",
+                    "next": "Sau"
+                },
+                "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
+            }
+
+        });
+
+        $('#styleTable').dataTable({
+            "pageLength": 10,
+            "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
+            'paging'      : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false,
+            "processing": true,
+            "serverSide": true,
+
+            "ajax": {
+                url: "{!! route('admin.perfume.style.index.styleDataTables') !!}",
+                type: "GET"
+            },
+
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "description" },
+                { "data": "detail" },
+                { "data": "link" },
+                { "data": "manipulation", "render": function ( id) {
+                    return '<div class="text-center"><a onclick= "showEditStyle('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
+                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/phong-cach/xoa/'+id+'" onclick="deleteStyleFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
                 }}
             ],
 
@@ -193,6 +239,10 @@
 
     $('#btnCreateNewIncense').click(function(){
         $('#incenseModalCreate').modal('show')
+    });
+
+    $('#btnCreateNewStyle').click(function(){
+        $('#styleModalCreate').modal('show')
     });
 
     /** VALIDATE JQUERY CLIENT */
@@ -228,6 +278,38 @@
         });
     });
 
+    $(function() {
+        $("form[name='styleFormCreate']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên phong cách không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+        $("form[name='styleFormEdit']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên phong cách không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                /** We want to hidden id when edit object in form => No need using normally */
+                // Will submit automated
+                document.incenseFormEdit.id.value = document.getElementById('hiddenEditStyleID').value;
+                form.submit();
+            }
+        });
+    });
+
     function showEditIncense(id) {
         $.ajax({
             url:'{!! url('quan-tri/nuoc-hoa/nhom-huong')!!}'+'/'+id,
@@ -245,6 +327,64 @@
                 $('#incenseLinkEdit').val(incense['incense']['link']);
                 $('#modal-loading').modal('hide');
                 $('#incenseModalEdit').modal('show');
+            });
+    }
+
+    function showEditStyle(id) {
+        $.ajax({
+            url:'{!! url('quan-tri/nuoc-hoa/phong-cach')!!}'+'/'+id,
+            dataType: 'json',
+            type:"GET",
+            beforeSend: function(){
+                $('#hiddenEditStyleID').val(id);
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(incense){
+                $('#styleNameEdit').val(incense['style']['name']);
+                $('#styleDescriptionEdit').val(incense['style']['description']);
+                CKEDITOR.instances.incenseDetailEdit.setData(incense['style']['detail'], function() {this.checkDirty(); });
+                $('#styleLinkEdit').val(incense['style']['link']);
+                $('#modal-loading').modal('hide');
+                $('#styleModalEdit').modal('show');
+            });
+    }
+
+    function deleteIncenseFunction(id) {
+        event.preventDefault();
+        swal({
+                title: "",
+                text: "Bạn có muốn xóa nhóm hương này không?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Xóa",
+                cancelButtonText: "Hủy bỏ",
+                closeOnConfirm: true
+            },
+            function(isConfirm){
+                if(isConfirm){
+                    window.location =  '{{ url('/quan-tri/nuoc-hoa/nhom-huong/xoa/')}}' +'/'+ id;
+                }
+            });
+    }
+
+    function deleteStyleFunction(id) {
+        event.preventDefault();
+        swal({
+                title: "",
+                text: "Bạn có muốn xóa phong cách này không?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Xóa",
+                cancelButtonText: "Hủy bỏ",
+                closeOnConfirm: true
+            },
+            function(isConfirm){
+                if(isConfirm){
+                    window.location =  '{{ url('/quan-tri/nuoc-hoa/phong-cach/xoa/')}}' +'/'+ id;
+                }
             });
     }
 

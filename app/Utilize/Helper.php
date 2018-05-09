@@ -106,4 +106,12 @@ class Helper extends Controller
             ['name.required' => 'Tên nhóm hương không được bỏ trống']
         );
     }
+
+    public function validateStyleName($request) {
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => 'Tên phong cách không được bỏ trống']
+        );
+    }
 }
