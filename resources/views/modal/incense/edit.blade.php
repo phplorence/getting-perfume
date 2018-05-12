@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT NHÓM HƯƠNG</h3>
+                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT</h3>
                 <form name="incenseFormEdit"  role="form" action="{{ route('admin.perfume.incense.update') }}" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">

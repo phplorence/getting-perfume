@@ -71,13 +71,9 @@ class StyleController extends Controller
 
     public function getInfoStyle(Request $request) {
         $name = $request->name;
-        Log::info('Admin', ['name' => $name]);
         $description = $request->description;
-        Log::info('Admin', ['description' => $description]);
         $detail = $request->detail;
-        Log::info('Admin', ['detail' => $detail]);
         $link = $request->link;
-        Log::info('Admin', ['link' => $link]);
         if (empty($request->id)) {
             $data = array([
                 'name' => $name,

@@ -20,14 +20,14 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Danh sách phong cách</h3>
-                            <button id="btnCreateNewIncense" type="button" class="btn btn-default btn-sm">
+                            <h3 class="box-title">Danh sách</h3>
+                            <button id="btnCreateNewStyle" type="button" class="btn btn-default btn-sm">
                                     <i class="fas fa-plus"></i>
                             </button>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="incenseTable" class="table table-bordered table-striped">
+                            <table id="styleTable" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th class="text-center" style="width: 5.00%">STT</th>

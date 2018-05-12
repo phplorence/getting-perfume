@@ -130,6 +130,15 @@
         // instance, using default configuration.
         CKEDITOR.replace('incenseCreate')
         CKEDITOR.replace('incenseDetailEdit')
+        CKEDITOR.replace('editor1')
+        CKEDITOR.replace('editor2')
+        //bootstrap WYSIHTML5 - text editor
+        $('.textarea').wysihtml5()
+    })
+
+    $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
         CKEDITOR.replace('styleCreate')
         CKEDITOR.replace('styleDetailEdit')
         CKEDITOR.replace('editor1')
@@ -340,11 +349,11 @@
                 $('#modal-loading').modal('show');
             }
         })
-            .done(function(incense){
-                $('#styleNameEdit').val(incense['style']['name']);
-                $('#styleDescriptionEdit').val(incense['style']['description']);
-                CKEDITOR.instances.incenseDetailEdit.setData(incense['style']['detail'], function() {this.checkDirty(); });
-                $('#styleLinkEdit').val(incense['style']['link']);
+            .done(function(style){
+                $('#styleNameEdit').val(style['style']['name']);
+                $('#styleDescriptionEdit').val(style['style']['description']);
+                CKEDITOR.instances.styleDetailEdit.setData(style['style']['detail'], function() {this.checkDirty(); });
+                $('#styleLinkEdit').val(style['style']['link']);
                 $('#modal-loading').modal('hide');
                 $('#styleModalEdit').modal('show');
             });

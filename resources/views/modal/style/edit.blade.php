@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT PHONG CÁCH</h3>
+                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT</h3>
                 <form name="styleFormEdit"  role="form" action="{{ route('admin.perfume.style.update') }}" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">

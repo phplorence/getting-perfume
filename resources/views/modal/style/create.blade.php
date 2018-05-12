@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">THÊM MỚI PHONG CÁCH</h3>
+                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">THÊM MỚI</h3>
                 <form name="styleFormCreate" action="{{ route('admin.perfume.style.store') }}" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">

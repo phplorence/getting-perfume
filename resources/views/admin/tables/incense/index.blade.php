@@ -20,7 +20,7 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Danh sách nhóm hương</h3>
+                            <h3 class="box-title">Danh sách</h3>
                             <button id="btnCreateNewIncense" type="button" class="btn btn-default btn-sm">
                                     <i class="fas fa-plus"></i>
                             </button>
