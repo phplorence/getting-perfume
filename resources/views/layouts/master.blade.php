@@ -244,6 +244,47 @@
             }
 
         });
+
+        $('#authorTable').dataTable({
+            "pageLength": 10,
+            "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
+            'paging'      : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false,
+            "processing": true,
+            "serverSide": true,
+
+            "ajax": {
+                url: "{!! route('admin.perfume.author.index.authorDataTables') !!}",
+                type: "GET"
+            },
+
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "manipulation", "render": function ( id) {
+                    return '<div class="text-center"><a onclick= "showEditAuthor('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
+                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nha-pha-che/xoa/'+id+'" onclick="deleteAuthorFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
+                }}
+            ],
+
+            "language": {
+                "lengthMenu": "Hiển thị các bản ghi _MENU_ trên mỗi trang",
+                "zeroRecords": "Không tìm thấy - xin lỗi",
+                "info": "Hiển thị _START_ đến _END_ trong số _TOTAL_ mục",
+                "infoEmpty": "Không có bản ghi nào",
+                "search": "Tìm kiếm: ",
+                "paginate": {
+                    "previous": "Trước",
+                    "next": "Sau"
+                },
+                "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
+            }
+
+        });
     });
 
     $('#btnCreateNewIncense').click(function(){
@@ -252,6 +293,10 @@
 
     $('#btnCreateNewStyle').click(function(){
         $('#styleModalCreate').modal('show')
+    });
+
+    $('#btnCreateNewAuthor').click(function(){
+        $('#authorModalCreate').modal('show')
     });
 
     /** VALIDATE JQUERY CLIENT */
@@ -319,6 +364,39 @@
         });
     });
 
+    // AUTHOR
+    $(function() {
+        $("form[name='authorFormCreate']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Nhà pha chế không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+        $("form[name='authorFormEdit']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Nhà pha chế không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                /** We want to hidden id when edit object in form => No need using normally */
+                // Will submit automated
+                document.authorFormEdit.id.value = document.getElementById('hiddenEditAuthorID').value;
+                form.submit();
+            }
+        });
+    });
+
     function showEditIncense(id) {
         $.ajax({
             url:'{!! url('quan-tri/nuoc-hoa/nhom-huong')!!}'+'/'+id,
@@ -359,6 +437,23 @@
             });
     }
 
+    function showEditAuthor(id) {
+        $.ajax({
+            url:'{!! url('quan-tri/nuoc-hoa/nha-pha-che')!!}'+'/'+id,
+            dataType: 'json',
+            type:"GET",
+            beforeSend: function(){
+                $('#hiddenEditAuthorID').val(id);
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(author){
+                $('#authorNameEdit').val(author['style']['name']);
+                $('#modal-loading').modal('hide');
+                $('#authorModalEdit').modal('show');
+            });
+    }
+
     function deleteIncenseFunction(id) {
         event.preventDefault();
         swal({
@@ -393,6 +488,25 @@
             function(isConfirm){
                 if(isConfirm){
                     window.location =  '{{ url('/quan-tri/nuoc-hoa/phong-cach/xoa/')}}' +'/'+ id;
+                }
+            });
+    }
+
+    function deleteAuthorFunction(id) {
+        event.preventDefault();
+        swal({
+                title: "",
+                text: "Bạn có muốn xóa nha pha chế này không?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Xóa",
+                cancelButtonText: "Hủy bỏ",
+                closeOnConfirm: true
+            },
+            function(isConfirm){
+                if(isConfirm){
+                    window.location =  '{{ url('/quan-tri/nuoc-hoa/nha-pha-che/xoa/')}}' +'/'+ id;
                 }
             });
     }

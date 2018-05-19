@@ -82,6 +82,13 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/nuoc-hoa/phong-cach/{id}', 'Backend\Tables\StyleController@show')->name('admin.perfume.style.detail');
         Route::post('/nuoc-hoa/phong-cach/sua', 'Backend\Tables\StyleController@update')->name('admin.perfume.style.update');
         Route::get('/nuoc-hoa/phong-cach/xoa/{id_style}', 'Backend\Tables\StyleController@delete')->name('admin.perfume.style.delete');
+
+        Route::get('/nuoc-hoa/nha-pha-che', 'Backend\Tables\AuthorController@index')->name('admin.perfume.author.index');
+        Route::get('/nuoc-hoa/nha-pha-che/loading_author', 'Backend\Tables\AuthorController@authorDataTables')->name('admin.perfume.author.index.authorDataTables');
+        Route::post('/nuoc-hoa/nha-pha-che', 'Backend\Tables\AuthorController@store')->name('admin.perfume.author.store');
+        Route::get('/nuoc-hoa/nha-pha-che/{id}', 'Backend\Tables\AuthorController@show')->name('admin.perfume.author.detail');
+        Route::post('/nuoc-hoa/nha-pha-che/sua', 'Backend\Tables\AuthorController@update')->name('admin.perfume.author.update');
+        Route::get('/nuoc-hoa/nha-pha-che/xoa/{id_style}', 'Backend\Tables\AuthorController@delete')->name('admin.perfume.author.delete');
     });
 });
 

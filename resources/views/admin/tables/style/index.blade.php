@@ -6,10 +6,13 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Phong cách
+                PHONG CÁCH
+                <button id="btnCreateNewStyle" type="button" class="btn btn-default btn-sm">
+                    <i class="fas fa-plus"></i>
+                </button>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{  route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+                <li><a href="{{  route('admin.dashboard') }}"><i class="fas fa-home"></i> Trang chủ</a></li>
                 <li class="active">Nước hoa</li>
             </ol>
         </section>
@@ -19,12 +22,6 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">Danh sách</h3>
-                            <button id="btnCreateNewStyle" type="button" class="btn btn-default btn-sm">
-                                    <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="styleTable" class="table table-bordered table-striped">

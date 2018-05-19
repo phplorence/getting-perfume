@@ -90,7 +90,7 @@
                             <li><a href="{{ route('admin.perfume.concentration.index') }}"><i class="fa fa-user-secret"></i> Nồng độ</a></li>
                             <li><a href="{{ route('admin.perfume.incense.index') }}"><i class="fa fa-users"></i> Nhóm hương</a></li>
                             <li><a href="{{ route('admin.perfume.style.index') }}"><i class="fa fa-users"></i> Phong cách</a></li>
-                            <li><a href="#"><i class="fa fa-users"></i> Nhà pha chế</a></li>
+                            <li><a href="{{ route('admin.perfume.author.index') }}"><i class="fa fa-users"></i> Nhà pha chế</a></li>
                             <li><a href="#"><i class="fa fa-users"></i> Loại sản phẩm</a></li>
                             <li><a href="#"><i class="fa fa-users"></i> Xuất xứ</a></li>
                         </ul>
