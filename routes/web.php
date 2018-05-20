@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'web'], function () {
 
-    Route::get('/trang-chu', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
 
     Auth::routes();
     Route::prefix('trang-chu')->group(function () {
