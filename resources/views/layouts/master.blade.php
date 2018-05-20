@@ -448,7 +448,7 @@
             }
         })
             .done(function(author){
-                $('#authorNameEdit').val(author['style']['name']);
+                $('#authorNameEdit').val(author['author']['name']);
                 $('#modal-loading').modal('hide');
                 $('#authorModalEdit').modal('show');
             });
@@ -496,7 +496,7 @@
         event.preventDefault();
         swal({
                 title: "",
-                text: "Bạn có muốn xóa nha pha chế này không?",
+                text: "Bạn có muốn xóa nhà pha chế này không?",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",

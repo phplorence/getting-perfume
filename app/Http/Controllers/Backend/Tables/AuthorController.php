@@ -32,13 +32,13 @@ class AuthorController extends Controller
     }
 
     public function authorDataTables(){
-        $styles = $this->modelAuthor->getAllAuthors();
+        $authors = $this->modelAuthor->getAllAuthors();
         $collections = collect();
-        foreach ($styles as $style){
+        foreach ($authors as $author){
             $arr = array(
-                'id' => $style->id,
-                'name'    => $style->name,
-                'manipulation' => $style->id
+                'id' => $author->id,
+                'name'    => $author->name,
+                'manipulation' => $author->id
             );
             $collections->push($arr);
         }
