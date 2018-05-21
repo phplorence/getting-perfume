@@ -123,7 +123,7 @@ class IncenseController extends Controller
         }
 
         // Attempt add update admin successfully
-        if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) > 0) {
+        if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) >= 0) {
             alert()->success('Cập nhật nhóm hương thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.perfume.incense.index'));
         } else {

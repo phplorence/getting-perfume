@@ -106,7 +106,7 @@ class AuthorController extends Controller
         }
 
         // Attempt add update admin successfully
-        if ($this->modelAuthor->updateAuthor($this->getInfoAuthor($request)) > 0) {
+        if ($this->modelAuthor->updateAuthor($this->getInfoAuthor($request)) >= 0) {
             alert()->success('Cập nhật nhà pha chế thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.perfume.author.index'));
         } else {

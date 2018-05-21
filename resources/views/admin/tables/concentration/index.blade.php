@@ -6,10 +6,10 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Nồng độ
+                NỒNG ĐỘ
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{  route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+                <li><a href="{{  route('admin.dashboard') }}"><i class="fas fa-home"></i> Trang chủ</a></li>
                 <li class="active">Nước hoa</li>
             </ol>
         </section>

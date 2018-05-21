@@ -119,7 +119,7 @@ class StyleController extends Controller
         }
 
         // Attempt add update admin successfully
-        if ($this->modelStyle->updateStyle($this->getInfoStyle($request)) > 0) {
+        if ($this->modelStyle->updateStyle($this->getInfoStyle($request)) >= 0) {
             alert()->success('Cập nhật phong cách thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.perfume.style.index'));
         } else {

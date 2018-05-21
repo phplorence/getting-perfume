@@ -70,7 +70,7 @@ class ConcentrationController extends Controller
         }
 
         // Attempt add update admin successfully
-        if ($this->modelConcentration->updateConcentration($this->getInfoConcentrationFromDB($request)) > 0) {
+        if ($this->modelConcentration->updateConcentration($this->getInfoConcentrationFromDB($request)) >= 0) {
             alert()->success('Cập nhật nồng độ thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.perfume.concentration.index'));
         } else {

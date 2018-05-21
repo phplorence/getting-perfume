@@ -158,7 +158,7 @@
 
     $(document).ready(function(){
         $('#incenseTable').dataTable({
-            "pageLength": 10,
+            "pageLength": 18,
             "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
             'paging'      : true,
             'lengthChange': true,
@@ -202,7 +202,7 @@
         });
 
         $('#styleTable').dataTable({
-            "pageLength": 10,
+            "pageLength": 18,
             "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
             'paging'      : true,
             'lengthChange': true,
@@ -246,7 +246,7 @@
         });
 
         $('#authorTable').dataTable({
-            "pageLength": 10,
+            "pageLength": 18,
             "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
             'paging'      : true,
             'lengthChange': true,
@@ -285,6 +285,47 @@
             }
 
         });
+
+        $('#typePerfumeTable').dataTable({
+            "pageLength": 18,
+            "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
+            'paging'      : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false,
+            "processing": true,
+            "serverSide": true,
+
+            "ajax": {
+                url: "{!! route('admin.perfume.typeperfume.index.typePerfumeDataTables') !!}",
+                type: "GET"
+            },
+
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "manipulation", "render": function ( id) {
+                    return '<div class="text-center"><a onclick= "showEditTypePerfume('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
+                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/'+id+'" onclick="deleteTypePerfumeFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
+                }}
+            ],
+
+            "language": {
+                "lengthMenu": "Hiển thị các bản ghi _MENU_ trên mỗi trang",
+                "zeroRecords": "Không tìm thấy - xin lỗi",
+                "info": "Hiển thị _START_ đến _END_ trong số _TOTAL_ mục",
+                "infoEmpty": "Không có bản ghi nào",
+                "search": "Tìm kiếm: ",
+                "paginate": {
+                    "previous": "Trước",
+                    "next": "Sau"
+                },
+                "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
+            }
+
+        });
     });
 
     $('#btnCreateNewIncense').click(function(){
@@ -297,6 +338,10 @@
 
     $('#btnCreateNewAuthor').click(function(){
         $('#authorModalCreate').modal('show')
+    });
+
+    $('#btnCreateNewTypePerfume').click(function(){
+        $('#typePerfumeModalCreate').modal('show')
     });
 
     /** VALIDATE JQUERY CLIENT */
@@ -397,6 +442,39 @@
         });
     });
 
+    // TYPE PERFUME
+    $(function() {
+        $("form[name='typePerfumeFormCreate']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên loại hương không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+        $("form[name='typePerfumeFormEdit']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên loại hương không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                /** We want to hidden id when edit object in form => No need using normally */
+                // Will submit automated
+                document.authorFormEdit.id.value = document.getElementById('hiddenEditTypePerfumeID').value;
+                form.submit();
+            }
+        });
+    });
+
     function showEditIncense(id) {
         $.ajax({
             url:'{!! url('quan-tri/nuoc-hoa/nhom-huong')!!}'+'/'+id,
@@ -454,6 +532,23 @@
             });
     }
 
+    function showEditTypePerfume(id) {
+        $.ajax({
+            url:'{!! url('quan-tri/nuoc-hoa/loai-nuoc-hoa')!!}'+'/'+id,
+            dataType: 'json',
+            type:"GET",
+            beforeSend: function(){
+                $('#hiddenEditTypePerfumeID').val(id);
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(typeperfume){
+                $('#typePerfumeNameEdit').val(typeperfume['typeperfume']['name']);
+                $('#modal-loading').modal('hide');
+                $('#typePerfumeModalEdit').modal('show');
+            });
+    }
+
     function deleteIncenseFunction(id) {
         event.preventDefault();
         swal({
@@ -507,6 +602,25 @@
             function(isConfirm){
                 if(isConfirm){
                     window.location =  '{{ url('/quan-tri/nuoc-hoa/nha-pha-che/xoa/')}}' +'/'+ id;
+                }
+            });
+    }
+
+    function deleteTypePerfumeFunction(id) {
+        event.preventDefault();
+        swal({
+                title: "",
+                text: "Bạn có muốn xóa loại nước hoa này không?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Xóa",
+                cancelButtonText: "Hủy bỏ",
+                closeOnConfirm: true
+            },
+            function(isConfirm){
+                if(isConfirm){
+                    window.location =  '{{ url('/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/')}}' +'/'+ id;
                 }
             });
     }

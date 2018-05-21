@@ -122,4 +122,12 @@ class Helper extends Controller
             ['name.required' => 'Tên nhà pha chế không được bỏ trống']
         );
     }
+
+    public function validateTypePerfumeName($request) {
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => 'Tên loại nước hoa không được bỏ trống']
+        );
+    }
 }
