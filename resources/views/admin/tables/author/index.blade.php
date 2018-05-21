@@ -27,8 +27,8 @@
                             <table id="authorTable" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th class="text-center" style="width: 5.00%">STT</th>
-                                    <th class="text-center" style="width: 15.00%">Tên nhà pha chế</th>
+                                    <th class="text-center" style="width: 10.00%">STT</th>
+                                    <th class="text-center" style="width: 80.00%">Tên nhà pha chế</th>
                                     <th class="text-center" style="width: 10.00%">Thao tác</th>
                                 </tr>
                                 </thead>
