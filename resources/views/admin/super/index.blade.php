@@ -6,10 +6,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Cấp Cao
+        CẤP CAO
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{  route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="{{  route('admin.dashboard') }}"><i class="fas fa-home"></i> Trang chủ</a></li>
         <li class="active">Cấp cao</li>
       </ol>
     </section>
@@ -62,8 +62,6 @@
                     <th class="text-center" style="width: 10.00%">Phân quyền</th>
                     <th class="text-center" style="width: 6.00%">Email</th>
                     <th class="text-center" style="width: 14.00%">Họ và tên</th>
-                    <th class="text-center" style="width: 7.00%">Giới tính</th>
-                    <th class="text-center" style="width: 14.00%">Địa chỉ</th>
                     <th class="text-center" style="width: 5.00%">Trạng thái</th>
                     <th class="text-center" style="width: 10.00%">Số điện thoại</th>
                     <th class="text-center" style="width: 10.00%">Thao tác</th>
@@ -82,8 +80,6 @@
                       <td class="text-center"><b>{{ $admin->user_type }}</b></td>
                       <td class="text-center">{{ $admin->email }}</td>
                       <td class="text-center">{{ $admin->full_name }}</td>
-                      <td class="text-center">{{ $admin->gender }}</td>
-                      <td><i>{{ $admin->address }}</i></td>
                       <td class="text-center">
                         @if($admin->active == "on")
                           <a href="#"><i class="fa fa-circle text-blue"></i></a></td>
@@ -94,7 +90,7 @@
                       <td class="text-center">
                         <a href="{{ route('admin.super.detail', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_view.svg')}}"  width="24px" height="24px" alt="View Icon"></a>
                         <a href="{{ route('admin.super.detail', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>
-                        <a href="{{ route('admin.super.delete', $admin->id) }}"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
+                        <a href="{{ route('admin.super.delete', $admin->id) }}" onclick="deleteSuperFunction('+{{ $admin->id }}+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}" width="24px" height="24px" alt="Delete Icon"></a>
                       </td>
                    </tr>
                   <?php endforeach ?>

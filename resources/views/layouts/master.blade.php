@@ -625,6 +625,25 @@
             });
     }
 
+    function deleteSuperFunction(id) {
+        event.preventDefault();
+        swal({
+                title: "",
+                text: "Bạn có muốn xóa tài khoản này không?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Xóa",
+                cancelButtonText: "Hủy bỏ",
+                closeOnConfirm: true
+            },
+            function(isConfirm){
+                if(isConfirm){
+                    window.location =  '{{ url('/quan-tri/cap-cao/xoa/')}}' +'/'+ id;
+                }
+            });
+    }
+
 </script>
 </body>
 </html>
