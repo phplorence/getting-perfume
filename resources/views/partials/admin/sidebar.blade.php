@@ -53,9 +53,6 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="perfume.html" target="_blank"><i class="fa fa-table"></i> Nước hoa</a></li>
-                    <li><a href="pages/examples/profile.html"><i class="fa fa-table"></i> Thời trang</a></li>
-                    <li><a href="pages/examples/login.html"><i class="fa fa-table"></i> Trị mụn</a></li>
                 </ul>
             </li>
 
@@ -81,20 +78,20 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-user-plus"></i> Nước hoa
+                        <a href="#"><i class="fa fa-table"></i> Nước hoa
                             <span class="pull-right-container">
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{ route('admin.perfume.concentration.index') }}"><i class="fa fa-user-secret"></i> Nồng độ</a></li>
-                            <li><a href="{{ route('admin.perfume.incense.index') }}"><i class="fa fa-users"></i> Nhóm hương</a></li>
-                            <li><a href="{{ route('admin.perfume.style.index') }}"><i class="fa fa-users"></i> Phong cách</a></li>
-                            <li><a href="{{ route('admin.perfume.author.index') }}"><i class="fa fa-users"></i> Nhà pha chế</a></li>
-                            <li><a href="{{ route('admin.perfume.typeperfume.index') }}"><i class="fa fa-users"></i> Loại nước hoa</a></li>
+                            <li><a href="{{ route('admin.perfume.concentration.index') }}"><i class="fa fa-table"></i> Nồng độ</a></li>
+                            <li><a href="{{ route('admin.perfume.incense.index') }}"><i class="fa fa-table"></i> Nhóm hương</a></li>
+                            <li><a href="{{ route('admin.perfume.style.index') }}"><i class="fa fa-table"></i> Phong cách</a></li>
+                            <li><a href="{{ route('admin.perfume.author.index') }}"><i class="fa fa-table"></i> Nhà pha chế</a></li>
+                            <li><a href="{{ route('admin.perfume.typeperfume.index') }}"><i class="fa fa-table"></i> Loại nước hoa</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fa fa-users"></i> Phân quyền</a></li>
+                    <li><a href="#"><i class="fa fa-table"></i> Phân quyền</a></li>
                 </ul>
             </li>
 
@@ -106,7 +103,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                    <li><a href="pages/examples/invoice.html"><i class="far fa-circle"></i> Invoice</a></li>
                 </ul>
             </li>
 
@@ -118,7 +115,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                    <li><a href="pages/examples/invoice.html"><i class="far fa-circle"></i> Rao vặt</a></li>
                 </ul>
             </li>
 
@@ -130,7 +127,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.invoice') }}"><i class="fa fa-circle-o"></i> Thanh toán</a></li>
+                    <li><a href="{{ route('admin.invoice') }}"><i class="far fa-circle"></i> Thanh toán</a></li>
                 </ul>
             </li>
 
@@ -142,7 +139,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                    <li><a href="pages/examples/invoice.html"><i class="far fa-circle"></i> Liên hệ</a></li>
                 </ul>
             </li>
 

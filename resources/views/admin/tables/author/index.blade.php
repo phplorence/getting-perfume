@@ -7,9 +7,6 @@
         <section class="content-header">
             <h1>
                 NHÀ PHA CHẾ
-                <button id="btnCreateNewAuthor" type="button" class="btn btn-default btn-sm">
-                    <i class="fas fa-plus"></i>
-                </button>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{  route('admin.dashboard') }}"><i class="fas fa-home"></i> Trang chủ</a></li>
@@ -23,6 +20,7 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <!-- /.box-header -->
+                        <button id="btnCreateNewAuthor" type="button" class="btn btn-default btn-sm">Thêm mới</button>
                         <div class="box-body">
                             <table id="authorTable" class="table table-bordered table-striped">
                                 <thead>
