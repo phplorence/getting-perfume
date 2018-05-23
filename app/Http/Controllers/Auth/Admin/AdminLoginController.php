@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth\Admin;
 
-use App\Utilize\Helper;
-use Illuminate\Http\Request;
+use Alert;
 use App\Http\Controllers\Controller;
+use App\Utilize\Helper;
 use Auth;
+use Illuminate\Http\Request;
 
 class AdminLoginController extends Controller
 {
@@ -34,6 +35,7 @@ class AdminLoginController extends Controller
             return redirect()->intended(route('admin.dashboard'));
         } else {
             // if unsuccessful, then redirect back to the login with the form data
+            alert()->error('Đăng nhập hệ thống thất bại. Vui lòng thử lại', 'Lỗi!');
             return redirect()->back()->withInput($request->only('email', 'remember'));
         }
     }

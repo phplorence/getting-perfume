@@ -116,7 +116,7 @@ class SuperController extends Controller
         }
 
         // Attempt add update admin successfully
-        if ($this->modelAdmin->updateAdmin($this->getInfoUserFromDB($request)) > 0) {
+        if ($this->modelAdmin->updateAdmin($this->getInfoUserFromDB($request, true)) > 0) {
             alert()->success('Cập nhật người dùng cấp cao thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.super.index'));
         } else {
@@ -151,7 +151,7 @@ class SuperController extends Controller
         }
 
         // Attempt add new database successfully
-        if ($this->modelAdmin->addAll($this->getInfoUserFromDB($request)) > 0) {
+        if ($this->modelAdmin->addAll($this->getInfoUserFromDB($request, false)) > 0) {
             // If successful, then redirect to their intended location
             alert()->success('Thêm người dùng cấp cao thành công.', 'Thông tin!');
             return redirect()->intended(route('admin.super.index'));
@@ -161,17 +161,18 @@ class SuperController extends Controller
         }
     }
 
-    public function getInfoUserFromDB(Request $request) {
+    public function getInfoUserFromDB(Request $request, $isUpdated) {
         $username = $request->username;
         Log::info('Admin', ['username' => $username]);
-        if (empty($request->id)) {
-            $password = Hash::make($request->password);
-        } else {
-            if(count($request->password) < 30) {
-                $password = Hash::make($request->password);
+        Log::info('Admin', ['password' => $request->password]);
+        if ($isUpdated) {
+            if(empty($password)) {
+                $password =  $request->password;
             } else {
-                $password = $request->password;
+                $password =  Hash::make($request->password);
             }
+        } else {
+            $password = Hash::make($request->password);
         }
         Log::info('Admin', ['password' => $password]);
         $user_type = $request->permission;

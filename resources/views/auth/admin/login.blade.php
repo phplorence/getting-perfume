@@ -35,7 +35,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Đăng nhập để bắt đầu phiên làm việc</p>
-
+    @include('sweet::alert');
     <form action="{{ route('admin.login.submit') }}" method="post">
       {{ csrf_field() }}
       <div class="form-group has-feedback">
