@@ -102,8 +102,6 @@ class SuperController extends Controller
         if (!empty($request->password)) {
             $this->helper->validatePassword($request);
             $this->helper->validateConfirmationPassword($request);
-        } else {
-            $request->password = $adminExistedDB->password;
         }
         if (!empty($request->email)) {
             $this->helper->validateEmail($request);
@@ -165,14 +163,15 @@ class SuperController extends Controller
         $username = $request->username;
         Log::info('Admin', ['username' => $username]);
         Log::info('Admin', ['password' => $request->password]);
+        $password = $request->password;
         if ($isUpdated) {
-            if(empty($password)) {
-                $password =  $request->password;
-            } else {
+            if(!empty($password)) {
                 $password =  Hash::make($request->password);
+            } else {
+                $password = $this->modelAdmin->getAdmin($request->id)->password;
             }
         } else {
-            $password = Hash::make($request->password);
+            $password = Hash::make($password);
         }
         Log::info('Admin', ['password' => $password]);
         $user_type = $request->permission;
