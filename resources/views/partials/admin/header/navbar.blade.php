@@ -17,11 +17,11 @@
             <!-- Messages: style can be found in dropdown.less-->
             <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fas fa-comments"></i>
                     <span class="label label-success">4</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="header">You have 4 messages</li>
+                    <li class="header">Bạn có 4 tin nhắn</li>
                     <li>
                         <!-- inner menu: contains the actual data -->
                         <ul class="menu">
@@ -94,7 +94,7 @@
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bell-o"></i>
+                    <i class="fas fa-bullhorn"></i>
                     <span class="label label-warning">10</span>
                 </a>
                 <ul class="dropdown-menu">
