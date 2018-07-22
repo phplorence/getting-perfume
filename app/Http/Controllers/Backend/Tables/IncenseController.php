@@ -28,7 +28,8 @@ class IncenseController extends Controller
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            return view('admin.tables.incense.index');
+            $dataTable = 'aaaaaabbbb';
+            return view('admin.tables.incense.index', compact('dataTable'));
         }
     }
 
@@ -58,14 +59,27 @@ class IncenseController extends Controller
             return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
         }
 
-        // Attempt add new database successfully
-        if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
-            // If successful, then redirect to their intended location
-            alert()->success('Thêm nhóm hương thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.incense.index'));
+        $dataTable = 'aaaaaaaaaa';
+
+        if($request->ajax()) {
+            if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
+                // If successful, then redirect to their intended location
+                alert()->success('Thêm nhóm hương thành công.', 'Thông tin!');
+                return view('admin.tables.incense.incense_table', compact('dataTable'));
+            } else {
+                alert()->error('Thêm nhóm hương thất bại.', 'Lỗi!');
+                return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+            }
         } else {
-            alert()->error('Thêm nhóm hương thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+            // Attempt add new database successfully
+            if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
+                // If successful, then redirect to their intended location
+                alert()->success('Thêm nhóm hương thành công.', 'Thông tin!');
+                return redirect()->intended(route('admin.perfume.incense.index'));
+            } else {
+                alert()->error('Thêm nhóm hương thất bại.', 'Lỗi!');
+                return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+            }
         }
     }
 

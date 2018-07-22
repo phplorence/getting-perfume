@@ -57,51 +57,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- /.box-body -->
-                        <div class="box-body">
-                            <div class="box box-primary">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Thêm mới thông tin</h3>
-                                </div>
-                                <!-- /.box-header -->
-                                <!-- form start -->
-                                <form role="form" method="post" action="{{ route('admin.perfume.concentration.store') }}">
-                                    {{ csrf_field() }}
-                                    <div class="box-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Tên nồng độ<span style="color:red;">(*)</span></label>
-                                            <input name="name" type="text" class="form-control" id="i_name" value="{{ old('name') }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('name') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Mô tả</label>
-                                            <textarea name="description" id="i_description" class="form-control" rows="3" placeholder="">{{ old('description') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <h3 class="box-title">Thông tin chi tiết sản phẩm</h3>
-                                            <textarea id = "editor1"  name="detail" class="form-control" rows="5" id="comment">{{ old('detail') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Liên bài viết</label>
-                                            <input type="text" name="link" class="form-control" id="i_link" value="{{ old('link') }}">
-                                        </div>
-                                    </div>
-                                    <!-- /.box-body -->
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Thêm mới</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.box -->
                 </div>
                 <!-- /.col -->
             </div>

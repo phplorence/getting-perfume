@@ -1,0 +1,224 @@
+/** Setup common components in Website */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+div.wrapper {
+    border: none;
+    background: none;
+    background-color: #0f1422;
+}
+
+div.headerOuter {    
+    background-color: #0f1422;
+    border-bottom: 1px solid #828282;
+}
+
+ul.headerUlOuter {
+    max-height:36px;
+    border: none;
+}
+
+ul.headerUlOuter > li:nth-child(2) {
+    padding-right: 24px;
+    border-right: 1px solid #828282;
+}
+
+ul.headerUlOuter > li:nth-child(9) {
+    border-left: 1px solid #828282;
+}
+
+ul.headerUlOuter > li:nth-child(8) {
+    border-right: 1px solid #828282;
+}
+
+li.headerLiOuter > a{
+    padding: 0px; 
+    margin: 0px;
+    text-decoration: none; 
+    color: white;
+}
+
+li.headerLiOuter > a:hover {
+    color: white;
+}
+
+ul.headerUlOuter > li > a:hover {
+    border-color: transparent;
+    background-color:#0f1422;
+    max-height: 36px;
+    color:red;
+}
+
+li.headerLiOuter {
+    align-content: center;
+    text-align: center;
+}
+
+li.headerLiOuter > a {
+    align-content: center;
+    text-align: center;
+    padding: 8px; /*(36 - 24)/2*/
+}
+
+li.headerLiOuter > a > i {
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 20px;
+}
+
+/**
+ * MENU BAR
+ */
+.menuBarOuter {
+    margin-top: 18px;
+    padding-bottom: 8px;
+}
+
+.menuNavInner {
+    background:none;
+    background-color: #0f1422;
+    border-radius: 0px;
+    padding: 4px 0px;
+    border-width: 0px;
+}
+.menuBrandInner {
+    background:none;
+    width: 250px;
+    background-image: url('../img/ic_logo.png');
+    background-size: cover;
+}
+.menuItemOuter{
+    color:white;
+    padding: 0px 32px;
+}
+.menuItemOuter> a > span {
+    text-shadow: none;
+    color:white;
+    font-size: 16px;
+}
+
+/**
+ *  Carousel Pannel
+ */
+.carouselOuter {
+    margin: 0px;
+    padding: 0px;
+    margin-top: -20px;
+    border-top: 1px solid #828282;
+}
+.carouselInner {
+    max-height: 550px;
+    background-color: #0f1422;
+}
+.carouselInner img {
+    margin: auto;
+    display:block;
+    max-height: 550px;
+    width: 100%;
+}
+.carouselContentInner {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: 20;
+  color: black;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+#overlay1 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bg_blur.png');
+    background-size: cover;
+    z-index: 2;
+    cursor: pointer;
+}
+#overlay2 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15,20,34,0.85);
+    z-index: 3;
+}
+
+#titleExplore {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+.titleExploreInner {
+    border:none;
+    background: none;
+    color:white;
+}
+
+.titleExploreInner:first-child {
+    margin-top: 48px;
+}
+
+#ajdustImageTitle {
+    text-align: center; 
+    width: 32px; 
+    height: 52px;
+}
+
+#ajdustTitleName {
+    text-align: center; 
+    margin-top: 32px;
+    width: 780px; 
+    height: 60px;
+}
+
+.ajdustDescription {
+    font-style: italic;
+    color: #c64d9c;
+    font-weight: 400;
+}
+
+.exploreInner {
+    margin-top: 48px;
+}
+
+.exploreInner > a:hover {
+    text-decoration: none;
+}
+
+#ajdustBtnExplore {
+    border: 1px solid white;
+    color:white;
+    padding: 8px 24px;
+}
+
+#ajdustImageReadmore {
+    text-align: center; 
+    padding-top: 80px;
+    width: 36px; 
+    height: 36px;
+}
+
+/**
+ * Product Hot
+ */
+.hotOuter {
+    margin-top: -48px;
+    background-color: white;
+}
+
+.hotOuter .titleExploreInner {
+    color:black;
+}
+p.sologan {
+    font-weight: 300;
+    font-size: 26px;
+    font-style: normal;
+}
+div.hotPerfumeOuter {
+    margin-top: 32px;
+    background-color: red;
+}
