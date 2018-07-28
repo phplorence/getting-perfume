@@ -49,28 +49,18 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     @include('partials.admin.header')
-
     <!-- Left side column. contains the logo and sidebar -->
     @include('partials.admin.sidebar')
-
     <!-- Content Wrapper. Contains page content -->
     @yield('content')
     <!-- /.content-wrapper -->
-
     @include('partials.admin.footer')
-
-    <!-- Control Sidebar -->
-    @include('partials.admin.setting.sidebar')
-    <!-- /.control-sidebar -->
-
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
-
     @include('modal.concentration')
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery 3 -->
 <script src="{{URL::asset('components/jquery/dist/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -116,8 +106,8 @@
 <script src="{{ URL::asset('js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ URL::asset('js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ URL::asset('js/demo.js')}}"></script>
+{{--<!-- AdminLTE for demo purposes -->
+<script src="{{ URL::asset('js/demo.js')}}"></script>--}}
 <!-- CK Editor -->
 <script src="{{ URL::asset('components/ckeditor/ckeditor.js') }}"></script>
 <!-- InputMask -->
@@ -126,8 +116,6 @@
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 <script src="{{ URL::asset('js/incense.js') }}"></script>
 <script>
-
-
     $(function () {
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
