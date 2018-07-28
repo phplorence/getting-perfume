@@ -77,7 +77,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/nuoc-hoa/nhom-huong/xoa/{id_incense}', 'Backend\Tables\IncenseController@delete')->name('admin.perfume.incense.delete');
 
         Route::get('/nuoc-hoa/phong-cach', 'Backend\Tables\StyleController@index')->name('admin.perfume.style.index');
-        Route::get('/nuoc-hoa/phong-cach/loading_incense', 'Backend\Tables\StyleController@styleDataTables')->name('admin.perfume.style.index.styleDataTables');
+        Route::get('/nuoc-hoa/phong-cach/loading_style', 'Backend\Tables\StyleController@styleDataTables')->name('admin.perfume.style.index.styleDataTables');
         Route::post('/nuoc-hoa/phong-cach', 'Backend\Tables\StyleController@store')->name('admin.perfume.style.store');
         Route::get('/nuoc-hoa/phong-cach/{id}', 'Backend\Tables\StyleController@show')->name('admin.perfume.style.detail');
         Route::post('/nuoc-hoa/phong-cach/sua', 'Backend\Tables\StyleController@update')->name('admin.perfume.style.update');

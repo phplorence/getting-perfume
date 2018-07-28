@@ -115,18 +115,10 @@
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 <script src="{{ URL::asset('js/incense.js') }}"></script>
+<script src="{{ URL::asset('js/style.js') }}"></script>
+<script src="{{ URL::asset('js/author.js') }}"></script>
+<script src="{{ URL::asset('js/type.js') }}"></script>
 <script>
-    $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace('styleCreate')
-        CKEDITOR.replace('styleDetailEdit')
-        CKEDITOR.replace('editor1')
-        CKEDITOR.replace('editor2')
-        //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
-    });
-
     $(function () {
         //Initialize Select2 Elements
         $('.select2').select2()
@@ -136,137 +128,7 @@
         $('[data-mask]').inputmask()
     });
 
-    $(document).ready(function(){
-        $('#styleTable').dataTable({
-            "pageLength": 18,
-            "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
-            'paging'      : true,
-            'lengthChange': true,
-            'searching'   : true,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false,
-            "processing": true,
-            "serverSide": true,
 
-            "ajax": {
-                url: "{!! route('admin.perfume.style.index.styleDataTables') !!}",
-                type: "GET"
-            },
-
-            "columns": [
-                { "data": "id" },
-                { "data": "name" },
-                { "data": "description" },
-                { "data": "detail" },
-                { "data": "link" },
-                { "data": "manipulation", "render": function (id) {
-                    return '<div class="text-center"><a onclick= "showEditStyle('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/phong-cach/xoa/'+id+'" onclick="deleteStyleFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
-                }}
-            ],
-
-            "language": {
-                "lengthMenu": "Hiển thị các bản ghi _MENU_ trên mỗi trang",
-                "zeroRecords": "Không tìm thấy - xin lỗi",
-                "info": "Hiển thị _START_ đến _END_ trong số _TOTAL_ mục",
-                "infoEmpty": "Không có bản ghi nào",
-                "search": "Tìm kiếm: ",
-                "paginate": {
-                    "previous": "Trước",
-                    "next": "Sau"
-                },
-                "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
-            }
-
-        });
-
-        $('#authorTable').dataTable({
-            "pageLength": 18,
-            "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
-            'paging'      : true,
-            'lengthChange': true,
-            'searching'   : true,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false,
-            "processing": true,
-            "serverSide": true,
-
-            "ajax": {
-                url: "{!! route('admin.perfume.author.index.authorDataTables') !!}",
-                type: "GET"
-            },
-
-            "columns": [
-                { "data": "id" },
-                { "data": "name" },
-                { "data": "manipulation", "render": function ( id) {
-                    return '<div class="text-center"><a onclick= "showEditAuthor('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nha-pha-che/xoa/'+id+'" onclick="deleteAuthorFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
-                }}
-            ],
-
-            "language": {
-                "lengthMenu": "Hiển thị các bản ghi _MENU_ trên mỗi trang",
-                "zeroRecords": "Không tìm thấy - xin lỗi",
-                "info": "Hiển thị _START_ đến _END_ trong số _TOTAL_ mục",
-                "infoEmpty": "Không có bản ghi nào",
-                "search": "Tìm kiếm: ",
-                "paginate": {
-                    "previous": "Trước",
-                    "next": "Sau"
-                },
-                "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
-            }
-
-        });
-
-        $('#typePerfumeTable').dataTable({
-            "pageLength": 18,
-            "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
-            'paging'      : true,
-            'lengthChange': true,
-            'searching'   : true,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false,
-            "processing": true,
-            "serverSide": true,
-
-            "ajax": {
-                url: "{!! route('admin.perfume.typeperfume.index.typePerfumeDataTables') !!}",
-                type: "GET"
-            },
-
-            "columns": [
-                { "data": "id" },
-                { "data": "name" },
-                { "data": "manipulation", "render": function ( id) {
-                    return '<div class="text-center"><a onclick= "showEditTypePerfume('+id+')"><img src="{{URL::asset('img/icon-control/icon_edit.svg')}}"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/'+id+'" onclick="deleteTypePerfumeFunction('+id+')"><img src="{{URL::asset('img/icon-control/icon_delete.svg')}}"  width="24px" height="24px" alt="Update Icon"></a></div>';
-                }}
-            ],
-
-            "language": {
-                "lengthMenu": "Hiển thị các bản ghi _MENU_ trên mỗi trang",
-                "zeroRecords": "Không tìm thấy - xin lỗi",
-                "info": "Hiển thị _START_ đến _END_ trong số _TOTAL_ mục",
-                "infoEmpty": "Không có bản ghi nào",
-                "search": "Tìm kiếm: ",
-                "paginate": {
-                    "previous": "Trước",
-                    "next": "Sau"
-                },
-                "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
-            }
-
-        });
-    });
-
-    $('#btnCreateNewIncense').click(function(){
-        $('#incenseModalCreate').modal('show')
-    });
 
     $('#btnCreateNewStyle').click(function(){
         $('#styleModalCreate').modal('show')
@@ -278,39 +140,6 @@
 
     $('#btnCreateNewTypePerfume').click(function(){
         $('#typePerfumeModalCreate').modal('show')
-    });
-
-    /** VALIDATE JQUERY CLIENT */
-    $(function() {
-        $("form[name='incenseFormCreate']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Tên nhóm hương không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
-        });
-        $("form[name='incenseFormEdit']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Tên nhóm hương không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                /** We want to hidden id when edit object in form => No need using normally */
-                // Will submit automated
-                document.incenseFormEdit.id.value = document.getElementById('hiddenEditIncenseID').value;
-                form.submit();
-            }
-        });
     });
 
     $(function() {

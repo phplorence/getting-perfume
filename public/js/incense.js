@@ -55,4 +55,42 @@ $(document).ready(function () {
             "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
         }
     });
+
+    $('#btnCreateNewIncense').click(function(){
+        $('#incenseModalCreate').modal('show')
+    });
+
+    /** VALIDATE JQUERY CLIENT */
+    $(function() {
+        $("form[name='incenseFormCreate']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên nhóm hương không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+
+        $("form[name='incenseFormEdit']").validate({
+            // Specify validation rules
+            rules: {
+                name: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                name: "Tên nhóm hương không được bỏ trống!"
+            },
+            submitHandler: function(form) {
+                /** We want to hidden id when edit object in form => No need using normally */
+                // Will submit automated
+                document.incenseFormEdit.id.value = document.getElementById('hiddenEditIncenseID').value;
+                form.submit();
+            }
+        });
+    });
 });
