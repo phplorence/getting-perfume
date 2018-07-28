@@ -3,13 +3,10 @@
  */
 $(document).ready(function () {
     $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
         CKEDITOR.replace('incenseCreate')
         CKEDITOR.replace('incenseDetailEdit')
         CKEDITOR.replace('editor1')
         CKEDITOR.replace('editor2')
-        //bootstrap WYSIHTML5 - text editor
         $('.textarea').wysihtml5()
     });
 
@@ -55,42 +52,57 @@ $(document).ready(function () {
             "infoFiltered": "(được lọc từ tổng số bản ghi _MAX_)"
         }
     });
-
-    $('#btnCreateNewIncense').click(function(){
-        $('#incenseModalCreate').modal('show')
-    });
-
-    /** VALIDATE JQUERY CLIENT */
-    $(function() {
-        $("form[name='incenseFormCreate']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Tên nhóm hương không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
-        });
-
-        $("form[name='incenseFormEdit']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Tên nhóm hương không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                /** We want to hidden id when edit object in form => No need using normally */
-                // Will submit automated
-                document.incenseFormEdit.id.value = document.getElementById('hiddenEditIncenseID').value;
-                form.submit();
-            }
-        });
-    });
 });
+
+$('#btnCreateNewIncense').click(function(){
+    $('#incenseModalCreate').modal('show')
+});
+
+/** VALIDATE JQUERY CLIENT */
+$("#incenseFormCreate").validate({
+    rules: {
+        name: "required"
+    },
+    messages: {
+        name: "Tên nhóm hương không được bỏ trống!"
+    }
+});
+
+function submitNewIncense(){
+    if($("#incenseFormCreate").valid()){
+        event.preventDefault();
+        var form = $(this).closest('form');
+        var formData = form.serializeArray();
+        console.log(formData);
+        $.ajax({
+            url: '/quan-tri/nuoc-hoa/nhom-huong',
+            method: 'POST',
+            dataType: 'html',
+            data: formData
+        })
+            .done(function (data) {
+                console.log(data);
+                $('#incense-data-table').html(data);
+            })
+            .fail(function (error) {
+                console.log(error);
+            });
+    }
+}
+
+/*$("form[name='incenseFormEdit']").validate({
+    // Specify validation rules
+    rules: {
+        name: "required"
+    },
+    // Specify validation error messages
+    messages: {
+        name: "Tên nhóm hương không được bỏ trống!"
+    },
+    submitHandler: function(form) {
+        /!** We want to hidden id when edit object in form => No need using normally *!/
+        // Will submit automated
+        document.incenseFormEdit.id.value = document.getElementById('hiddenEditIncenseID').value;
+        form.submit();
+    }
+});*/

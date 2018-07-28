@@ -119,6 +119,7 @@
 <script src="{{ URL::asset('js/author.js') }}"></script>
 <script src="{{ URL::asset('js/type.js') }}"></script>
 <script>
+$(document).ready(function () {
     $(function () {
         //Initialize Select2 Elements
         $('.select2').select2()
@@ -127,8 +128,6 @@
         //Money Euro
         $('[data-mask]').inputmask()
     });
-
-
 
     $('#btnCreateNewStyle').click(function(){
         $('#styleModalCreate').modal('show')
@@ -408,7 +407,7 @@
                 }
             });
     }
-
+});
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">THÊM MỚI</h3>
-                <form name="incenseFormCreate" action="{{ route('admin.perfume.incense.store') }}" method="post">
+                <form id="incenseFormCreate">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
-                        <button type="submit" class="btn btn-primary" id="btnSubmitNewIncense">Thêm mới</button>
+                        <button type="button" class="btn btn-primary" onclick="submitNewIncense()">Thêm mới</button>
                     </div>
                 </form>
             </div>
