@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31720278-20ef-494d-ac36-7d625be38225" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Incenses.php" afterPath="$PROJECT_DIR$/app/Model/Incenses.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/incense.js" afterPath="$PROJECT_DIR$/public/js/incense.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,8 +86,8 @@
       <file leaf-file-name="incense.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/incense.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+            <state relative-caret-position="353">
+              <caret line="97" column="48" lean-forward="true" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -139,18 +135,18 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/tables/incense/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="51" />
+            <state relative-caret-position="-167">
+              <caret line="24" column="94" lean-forward="true" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="94" />
               <folding>
-                <marker date="1532855410929" expanded="true" signature="9:25" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="36:45" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="112:126" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="379:406" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="2555:2577" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="2592:2612" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="2627:2649" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="2672:2680" ph="..." />
-                <marker date="1532855410929" expanded="true" signature="2701:2730" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="9:25" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="36:45" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="112:126" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="379:406" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="2555:2577" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="2592:2612" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="2627:2649" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="2672:2680" ph="..." />
+                <marker date="1532863652543" expanded="true" signature="2701:2730" ph="..." />
               </folding>
             </state>
           </provider>
@@ -257,10 +253,10 @@
         <option value="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" />
         <option value="$PROJECT_DIR$/public/js/style.js" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/tables/incense/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/app/Model/Incenses.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/tables/incense/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/incense.js" />
       </list>
     </option>
@@ -1159,12 +1155,12 @@
       <workItem from="1532360171556" duration="4265000" />
       <workItem from="1532708730505" duration="26398000" />
       <workItem from="1532763969922" duration="19024000" />
-      <workItem from="1532854783572" duration="8236000" />
+      <workItem from="1532854783572" duration="9008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475519000" />
+    <option name="totallyTimeSpent" value="476291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1187,7 +1183,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.305638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.305638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1246,13 +1242,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/modal/typeperfume/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_05_19_085420_create_authors_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1570,24 +1559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/tables/incense/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="51" />
-          <folding>
-            <marker date="1532855410929" expanded="true" signature="9:25" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="36:45" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="112:126" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="379:406" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="2555:2577" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="2592:2612" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="2627:2649" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="2672:2680" ph="..." />
-            <marker date="1532855410929" expanded="true" signature="2701:2730" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/Incenses.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1678,10 +1649,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/components/bootstrap/less/tables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="112" column="1" lean-forward="false" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/tables/incense/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-167">
+          <caret line="24" column="94" lean-forward="true" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="94" />
+          <folding>
+            <marker date="1532863652543" expanded="true" signature="9:25" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="36:45" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="112:126" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="379:406" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="2555:2577" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="2592:2612" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="2627:2649" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="2672:2680" ph="..." />
+            <marker date="1532863652543" expanded="true" signature="2701:2730" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/incense.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        <state relative-caret-position="353">
+          <caret line="97" column="48" lean-forward="true" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
           <folding />
         </state>
       </provider>
