@@ -93,14 +93,16 @@ function submitNewIncense(){
                 if(data['message']['status'] == 'success') {
                     swal("", data['message']['description'], "success");
                     var table = $('#incenseTable').DataTable();
+                    $.fn.dataTable.ext.errMode = 'none';
                     table.row.add( [
                         data['incense']['id'],
                         data['incense']['name'],
                         data['incense']['description'],
                         data['incense']['detail'],
                         data['incense']['link'],
-                        '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'
+                        function (id) {
+                            return '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
                     ]).draw();
                 } else if(data.status == 'error') {
                     swal("", data['message']['description'], "error");
