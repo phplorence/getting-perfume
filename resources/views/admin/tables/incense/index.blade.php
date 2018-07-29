@@ -59,5 +59,7 @@
     @include('modal.incense.edit')
     @include('modal.dialog.loading')
 @endsection
-<script src="{{ URL::asset('js/incense.js') }}"></script>
+@section('script')
+    <script src="{{ URL::asset('js/incense.js') }}"></script>
+@endsection
 

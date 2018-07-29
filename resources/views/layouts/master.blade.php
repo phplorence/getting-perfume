@@ -111,6 +111,7 @@
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+@yield('script')
 <script src="{{ URL::asset('js/style.js') }}"></script>
 <script src="{{ URL::asset('js/author.js') }}"></script>
 <script src="{{ URL::asset('js/type.js') }}"></script>
