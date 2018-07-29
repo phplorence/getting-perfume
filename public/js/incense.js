@@ -2,14 +2,6 @@
  * Created by vuongluis on 7/22/2018.
  */
 $(document).ready(function () {
-    $(function () {
-        CKEDITOR.replace('incenseCreate')
-        CKEDITOR.replace('incenseDetailEdit')
-        CKEDITOR.replace('editor1')
-        CKEDITOR.replace('editor2')
-        $('.textarea').wysihtml5()
-    });
-
     $('#incenseTable').dataTable({
         "pageLength": 18,
         "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
@@ -56,6 +48,19 @@ $(document).ready(function () {
 
 $('#btnCreateNewIncense').click(function(){
     $('#incenseModalCreate').modal('show')
+});
+
+$(function () {
+    CKEDITOR.replace('incenseCreate' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    CKEDITOR.replace('incenseDetailEdit' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+    $('.textarea').wysihtml5()
 });
 
 /** VALIDATE JQUERY CLIENT */

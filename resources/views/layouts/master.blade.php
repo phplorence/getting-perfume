@@ -83,9 +83,6 @@
 <script src="{{ URL::asset('components/morris.js/morris.min.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{ URL::asset('components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
-<!-- jvectormap -->
-<script src="{{ URL::asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script src="{{ URL::asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ URL::asset('components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
@@ -114,7 +111,6 @@
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
-<script src="{{ URL::asset('js/incense.js') }}"></script>
 <script src="{{ URL::asset('js/style.js') }}"></script>
 <script src="{{ URL::asset('js/author.js') }}"></script>
 <script src="{{ URL::asset('js/type.js') }}"></script>

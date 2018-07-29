@@ -2,17 +2,6 @@
  * Created by vuongluis on 7/28/2018.
  */
 $(document).ready(function () {
-    $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace('styleCreate')
-        CKEDITOR.replace('styleDetailEdit')
-        CKEDITOR.replace('editor1')
-        CKEDITOR.replace('editor2')
-        //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
-    });
-
     $('#styleTable').dataTable({
         "pageLength": 18,
         "lengthMenu": [[5,10,15,-1], [5,10,15,'All']],
@@ -57,3 +46,21 @@ $(document).ready(function () {
 
     });
 });
+
+/*
+$(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('styleCreate' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    CKEDITOR.replace('styleDetailEdit' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+});*/

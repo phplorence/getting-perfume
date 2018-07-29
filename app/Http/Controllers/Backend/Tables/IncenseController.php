@@ -62,7 +62,7 @@ class IncenseController extends Controller
         if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
             // If successful, then redirect to their intended location
             alert()->success('Thêm nhóm hương thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.incense.index'));
+            return view('admin.tables.incense.index');
         } else {
             alert()->error('Thêm nhóm hương thất bại.', 'Lỗi!');
             return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
