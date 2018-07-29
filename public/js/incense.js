@@ -79,12 +79,25 @@ function submitNewIncense(){
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong',
             method: 'POST',
-            dataType: 'html',
+            dataType: 'json',
             data: $('#incenseFormCreate').serialize()
         })
             .done(function (data) {
-                $('#incenseModalCreate').modal('hide')
                 console.log(data);
+                $('#incenseModalCreate').modal('hide')
+                if(data.status == 'invalid') {
+                    alert("Tên nhóm hương không được bỏ trống!");
+                } else if(data.status == 'valid') {
+                    if(data.status == 'existed') {
+                        alert("Tên nhóm hương đã tồn tại trong hệ thống!");
+                    } else if(data.status == 'new') {
+                        if(data.status == 'success') {
+                            alert("Thêm nhóm hương thành công!");
+                        } else if(data.status == 'error') {
+                            alert("Thêm nhóm hương thất bại!");
+                        }
+                    }
+                }
             })
             .fail(function (error) {
                 console.log(error);

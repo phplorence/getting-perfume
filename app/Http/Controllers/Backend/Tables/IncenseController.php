@@ -51,22 +51,22 @@ class IncenseController extends Controller
 
     public function store(Request $request)
     {
-        $this->helper->validateIncenseName($request);
-        // Insert database into mysql
-        if($this->modelIncense->isExistIncense($request)) {
-            alert()->error('Tên nhóm hương đã tồn tại trong hệ thống.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+        if($this->helper->validateIncenseName($request)){
+            $response_array['status'] = 'valid';
+            if($this->modelIncense->isExistIncense($request)) {
+                $response_array['status'] = 'existed';
+            } else {
+                $response_array['status'] = 'new';
+                if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
+                    $response_array['status'] = 'success';
+                } else {
+                    $response_array['status'] = 'error';
+                }
+            }
+        }else {
+            $response_array['status'] = 'invalid';
         }
-
-        // Attempt add new database successfully
-        if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
-            // If successful, then redirect to their intended location
-            alert()->success('Thêm nhóm hương thành công.', 'Thông tin!');
-            return view('admin.tables.incense.index');
-        } else {
-            alert()->error('Thêm nhóm hương thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-        }
+        echo json_encode($response_array);
     }
 
     public function getInfoIncense(Request $request) {
