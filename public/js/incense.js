@@ -86,17 +86,15 @@ function submitNewIncense(){
                 console.log(data);
                 $('#incenseModalCreate').modal('hide')
                 if(data.status == 'invalid') {
-                    alert("Tên nhóm hương không được bỏ trống!");
-                } else if(data.status == 'valid') {
-                    if(data.status == 'existed') {
-                        alert("Tên nhóm hương đã tồn tại trong hệ thống!");
-                    } else if(data.status == 'new') {
-                        if(data.status == 'success') {
-                            alert("Thêm nhóm hương thành công!");
-                        } else if(data.status == 'error') {
-                            alert("Thêm nhóm hương thất bại!");
-                        }
-                    }
+                    swal("", "Tên nhóm hương không được bỏ trống!", "error");
+                }
+                if(data.status == 'existed') {
+                    swal("", "Tên nhóm hương đã tồn tại trong hệ thống!", "error");
+                }
+                if(data.status == 'success') {
+                    swal("", "Thêm nhóm hương thành công!", "success");
+                } else if(data.status == 'error') {
+                    swal("", "Thêm nhóm hương thất bại!", "error");
                 }
             })
             .fail(function (error) {

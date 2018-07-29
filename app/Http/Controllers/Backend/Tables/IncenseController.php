@@ -52,19 +52,19 @@ class IncenseController extends Controller
     public function store(Request $request)
     {
         if($this->helper->validateIncenseName($request)){
-            $response_array['status'] = 'valid';
-            if($this->modelIncense->isExistIncense($request)) {
-                $response_array['status'] = 'existed';
-            } else {
-                $response_array['status'] = 'new';
-                if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
-                    $response_array['status'] = 'success';
-                } else {
-                    $response_array['status'] = 'error';
-                }
-            }
-        }else {
             $response_array['status'] = 'invalid';
+        }else {
+            $response_array['status'] = 'valid';
+        }
+        if($this->modelIncense->isExistIncense($request)) {
+            $response_array['status'] = 'existed';
+        } else {
+            $response_array['status'] = 'new';
+        }
+        if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
+            $response_array['status'] = 'success';
+        } else {
+            $response_array['status'] = 'error';
         }
         echo json_encode($response_array);
     }
