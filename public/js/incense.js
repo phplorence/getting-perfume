@@ -74,20 +74,17 @@ $("#incenseFormCreate").validate({
 });
 
 function submitNewIncense(){
-    if($("#incenseFormCreate").valid()){
+    if($('#incenseFormCreate').valid()){
         event.preventDefault();
-        var form = $(this).closest('form');
-        var formData = form.serializeArray();
-        console.log(formData);
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong',
             method: 'POST',
             dataType: 'html',
-            data: formData
+            data: $('#incenseFormCreate').serialize()
         })
             .done(function (data) {
+                $('#incenseModalCreate').modal('hide')
                 console.log(data);
-                $('#incense-data-table').html(data);
             })
             .fail(function (error) {
                 console.log(error);

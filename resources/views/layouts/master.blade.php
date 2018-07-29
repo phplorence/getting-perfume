@@ -11,6 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Chuyên Trang Nước Hoa</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -116,6 +117,7 @@
 <script src="{{ URL::asset('js/author.js') }}"></script>
 <script src="{{ URL::asset('js/type.js') }}"></script>
 <script>
+$.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
 $(document).ready(function () {
     $(function () {
         //Initialize Select2 Elements
