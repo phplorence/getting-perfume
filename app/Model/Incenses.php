@@ -43,6 +43,10 @@ class Incenses extends Authenticatable
         return DB::table('incenses')->where('id', $id_incense)->first();
     }
 
+    public function getIncenseByName($incense_name){
+        return DB::table('incenses')->where('name', $incense_name)->first();
+    }
+
     public function isExistNameCaseUpdated($request, $name) {
         $concentration = DB::table('incenses')
             ->where('name', '=', $name)

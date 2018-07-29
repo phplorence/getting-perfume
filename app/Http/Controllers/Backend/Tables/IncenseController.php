@@ -52,19 +52,38 @@ class IncenseController extends Controller
     public function store(Request $request)
     {
         if($this->helper->validateIncenseName($request)){
-            $response_array['status'] = 'invalid';
-        }else {
-            $response_array['status'] = 'valid';
-        }
-        if($this->modelIncense->isExistIncense($request)) {
-            $response_array['status'] = 'existed';
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên nhóm hương không được bỏ trống!"
+                ]
+            ]);
         } else {
-            $response_array['status'] = 'new';
-        }
-        if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
-            $response_array['status'] = 'success';
-        } else {
-            $response_array['status'] = 'error';
+            if($this->modelIncense->isExistIncense($request)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "existed",
+                        'description'   => "Tên nhóm hương đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelIncense->addAll($this->getInfoIncense($request)) > 0) {
+                    $response_array = ([
+                        'incense'      => $this->modelIncense->getIncenseByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Thêm nhóm hương thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Thêm nhóm hương thất bại!"
+                        ]
+                    ]);
+                }
+            }
         }
         echo json_encode($response_array);
     }

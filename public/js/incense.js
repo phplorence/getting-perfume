@@ -83,18 +83,27 @@ function submitNewIncense(){
             data: $('#incenseFormCreate').serialize()
         })
             .done(function (data) {
-                console.log(data);
                 $('#incenseModalCreate').modal('hide')
-                if(data.status == 'invalid') {
-                    swal("", "Tên nhóm hương không được bỏ trống!", "error");
+                if(data['message']['status'] == 'invalid') {
+                    swal("", data['message']['description'], "error");
                 }
-                if(data.status == 'existed') {
-                    swal("", "Tên nhóm hương đã tồn tại trong hệ thống!", "error");
+                if(data['message']['status'] == 'existed') {
+                    swal("", data['message']['description'], "error");
                 }
-                if(data.status == 'success') {
-                    swal("", "Thêm nhóm hương thành công!", "success");
+                if(data['message']['status'] == 'success') {
+                    swal("", data['message']['description'], "success");
+                    var table = $('#incenseTable').DataTable();
+                    table.row.add( [
+                        data['incense']['id'],
+                        data['incense']['name'],
+                        data['incense']['description'],
+                        data['incense']['detail'],
+                        data['incense']['link'],
+                        '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'
+                    ]).draw();
                 } else if(data.status == 'error') {
-                    swal("", "Thêm nhóm hương thất bại!", "error");
+                    swal("", data['message']['description'], "error");
                 }
             })
             .fail(function (error) {
