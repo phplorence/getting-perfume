@@ -129,26 +129,33 @@ class IncenseController extends Controller
 
     public function update(Request $request)
     {
-        $incenseExistedDB = $this->modelIncense->getIncense($request->id);
-        if (!empty($request->name)) {
-            $this->helper->validateIncenseName($request);
-            // Check name existed in Database
-            if($this->modelIncense->isExistNameCaseUpdated($request, $request->name)) {
-                alert()->error('Nhóm hương đã tồn tại trong hệ thống.', 'Lỗi!');
-                return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-            }
-        } else  {
-            $request->name = $incenseExistedDB->name;
-        }
-
-        // Attempt add update admin successfully
-        if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) >= 0) {
-            alert()->success('Cập nhật nhóm hương thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.incense.index'));
+        if($this->helper->validateIncenseName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên nhóm hương không được bỏ trống!"
+                ]
+            ]);
         } else {
-            alert()->error('Cập nhật nhóm hương thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+            if($this->modelIncense->isExistNameCaseUpdated($request, $request->name)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "invalid",
+                        'description'   => "Nhóm hương đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            }
         }
+        echo json_encode($response_array);
+
+//        // Attempt add update admin successfully
+//        if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) >= 0) {
+//            alert()->success('Cập nhật nhóm hương thành công.', 'Thông tin!');
+//            return redirect()->intended(route('admin.perfume.incense.index'));
+//        } else {
+//            alert()->error('Cập nhật nhóm hương thất bại.', 'Lỗi!');
+//            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+//        }
     }
 
     public function delete($id_incense) {

@@ -1,6 +1,20 @@
 /**
  * Created by vuongluis on 7/22/2018.
  */
+
+$(function () {
+    CKEDITOR.replace('incenseCreate' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    CKEDITOR.replace('incenseDetailEdit' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+    $('.textarea').wysihtml5()
+});
+
 $(document).ready(function () {
     $('#incenseTable').dataTable({
         "pageLength": 18,
@@ -48,19 +62,6 @@ $(document).ready(function () {
 
 $('#btnCreateNewIncense').click(function(){
     $('#incenseModalCreate').modal('show')
-});
-
-$(function () {
-    CKEDITOR.replace('incenseCreate' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
-    });
-
-    CKEDITOR.replace('incenseDetailEdit' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
-    });
-    $('.textarea').wysihtml5()
 });
 
 /** VALIDATE JQUERY CLIENT */
@@ -114,19 +115,72 @@ function submitNewIncense(){
     }
 }
 
-/*$("form[name='incenseFormEdit']").validate({
-    // Specify validation rules
+function showEditIncense(id) {
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/nhom-huong/'+id,
+        dataType: 'json',
+        type:"GET",
+        beforeSend: function(){
+            $('#hiddenEditIncenseID').val(id);
+            $('#modal-loading').modal('show');
+        }
+    })
+        .done(function(incense){
+            $('#incenseNameEdit').val(incense['incense']['name']);
+            $('#incenseDescriptionEdit').val(incense['incense']['description']);
+            CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });
+            $('#incenseLinkEdit').val(incense['incense']['link']);
+            $('#modal-loading').modal('hide');
+            $('#incenseModalEdit').modal('show');
+        });
+}
+
+$("#incenseFormEdit").validate({
     rules: {
         name: "required"
     },
-    // Specify validation error messages
     messages: {
         name: "Tên nhóm hương không được bỏ trống!"
-    },
-    submitHandler: function(form) {
-        /!** We want to hidden id when edit object in form => No need using normally *!/
-        // Will submit automated
-        document.incenseFormEdit.id.value = document.getElementById('hiddenEditIncenseID').value;
-        form.submit();
     }
-});*/
+});
+
+function submitUpdateIncense(){
+    if($('#incenseFormEdit').valid()){
+        event.preventDefault();
+        $.ajax({
+            url: '/quan-tri/nuoc-hoa/nhom-huong/sua',
+            method: 'POST',
+            dataType: 'json',
+            data: $('#incenseFormEdit').serialize()
+        })
+            .done(function (data) {
+                $('#incenseFormEdit').modal('hide')
+                if(data['message']['status'] == 'invalid') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'existed') {
+                    swal("", data['message']['description'], "error");
+                }
+                // if(data['message']['status'] == 'success') {
+                //     swal("", data['message']['description'], "success");
+                //     var table = $('#incenseTable').DataTable();
+                //     $.fn.dataTable.ext.errMode = 'none';
+                //     table.row.add( [
+                //         data['incense']['id'],
+                //         data['incense']['name'],
+                //         data['incense']['description'],
+                //         data['incense']['detail'],
+                //         data['incense']['link'],
+                //         function (id) {
+                //             return '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                //                 +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                //     ]).draw();
+                // } else if(data.status == 'error') {
+                //     swal("", data['message']['description'], "error");
+                // }
+            })
+            .fail(function (error) {
+                console.log(error);
+            });
+    }
+}

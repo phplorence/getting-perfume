@@ -238,26 +238,6 @@ $(document).ready(function () {
         });
     });
 
-    function showEditIncense(id) {
-        $.ajax({
-            url:'{!! url('quan-tri/nuoc-hoa/nhom-huong')!!}'+'/'+id,
-            dataType: 'json',
-            type:"GET",
-            beforeSend: function(){
-                $('#hiddenEditIncenseID').val(id);
-                $('#modal-loading').modal('show');
-            }
-        })
-            .done(function(incense){
-                $('#incenseNameEdit').val(incense['incense']['name']);
-                $('#incenseDescriptionEdit').val(incense['incense']['description']);
-                CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });
-                $('#incenseLinkEdit').val(incense['incense']['link']);
-                $('#modal-loading').modal('hide');
-                $('#incenseModalEdit').modal('show');
-            });
-    }
-
     function showEditStyle(id) {
         $.ajax({
             url:'{!! url('quan-tri/nuoc-hoa/phong-cach')!!}'+'/'+id,
