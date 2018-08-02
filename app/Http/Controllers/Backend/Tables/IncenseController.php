@@ -144,18 +144,26 @@ class IncenseController extends Controller
                         'description'   => "Nhóm hương đã tồn tại trong hệ thống!"
                     ]
                 ]);
+            } else {
+                if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) >= 0) {
+                    $response_array = ([
+                        'incense'      => $this->modelIncense->getIncenseByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Cập nhật nhóm hương thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Cập nhật nhóm hương thất bại!"
+                        ]
+                    ]);
+                }
             }
         }
         echo json_encode($response_array);
-
-//        // Attempt add update admin successfully
-//        if ($this->modelIncense->updateIncense($this->getInfoIncense($request)) >= 0) {
-//            alert()->success('Cập nhật nhóm hương thành công.', 'Thông tin!');
-//            return redirect()->intended(route('admin.perfume.incense.index'));
-//        } else {
-//            alert()->error('Cập nhật nhóm hương thất bại.', 'Lỗi!');
-//            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-//        }
     }
 
     public function delete($id_incense) {

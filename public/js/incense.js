@@ -1,20 +1,6 @@
 /**
  * Created by vuongluis on 7/22/2018.
  */
-
-$(function () {
-    CKEDITOR.replace('incenseCreate' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
-    });
-
-    CKEDITOR.replace('incenseDetailEdit' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
-    });
-    $('.textarea').wysihtml5()
-});
-
 $(document).ready(function () {
     $('#incenseTable').dataTable({
         "pageLength": 18,
@@ -60,31 +46,40 @@ $(document).ready(function () {
     });
 });
 
+$(function () {
+    CKEDITOR.replace('incenseCreate' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    CKEDITOR.replace('incenseDetailEdit' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+    $('.textarea').wysihtml5()
+});
+
 $('#btnCreateNewIncense').click(function(){
     $('#incenseModalCreate').modal('show')
 });
 
-/** VALIDATE JQUERY CLIENT */
-$("#incenseFormCreate").validate({
+$('#incenseFormCreate').validate({
     rules: {
         name: "required"
     },
     messages: {
         name: "Tên nhóm hương không được bỏ trống!"
-    }
-});
-
-function submitNewIncense(){
-    if($('#incenseFormCreate').valid()){
+    },
+    submitHandler: function(form) {
         event.preventDefault();
+        $('#incenseModalCreate').modal('hide');
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong',
             method: 'POST',
             dataType: 'json',
-            data: $('#incenseFormCreate').serialize()
+            data: $(form).serialize()
         })
             .done(function (data) {
-                $('#incenseModalCreate').modal('hide')
                 if(data['message']['status'] == 'invalid') {
                     swal("", data['message']['description'], "error");
                 }
@@ -103,7 +98,7 @@ function submitNewIncense(){
                         data['incense']['link'],
                         function (id) {
                             return '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                                +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
                     ]).draw();
                 } else if(data.status == 'error') {
                     swal("", data['message']['description'], "error");
@@ -113,7 +108,7 @@ function submitNewIncense(){
                 console.log(error);
             });
     }
-}
+});
 
 function showEditIncense(id) {
     $.ajax({
@@ -121,11 +116,11 @@ function showEditIncense(id) {
         dataType: 'json',
         type:"GET",
         beforeSend: function(){
-            $('#hiddenEditIncenseID').val(id);
             $('#modal-loading').modal('show');
         }
     })
         .done(function(incense){
+            $('#incenseID').val(id);
             $('#incenseNameEdit').val(incense['incense']['name']);
             $('#incenseDescriptionEdit').val(incense['incense']['description']);
             CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });
@@ -135,52 +130,46 @@ function showEditIncense(id) {
         });
 }
 
-$("#incenseFormEdit").validate({
+$('#incenseFormEdit').validate({
     rules: {
         name: "required"
     },
     messages: {
         name: "Tên nhóm hương không được bỏ trống!"
-    }
-});
-
-function submitUpdateIncense(){
-    if($('#incenseFormEdit').valid()){
+    },
+    submitHandler: function(form) {
         event.preventDefault();
+        $('#incenseModalEdit').modal('hide');
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong/sua',
             method: 'POST',
             dataType: 'json',
-            data: $('#incenseFormEdit').serialize()
+            data: $(form).serialize()
         })
             .done(function (data) {
-                $('#incenseFormEdit').modal('hide')
                 if(data['message']['status'] == 'invalid') {
                     swal("", data['message']['description'], "error");
                 }
                 if(data['message']['status'] == 'existed') {
                     swal("", data['message']['description'], "error");
                 }
-                // if(data['message']['status'] == 'success') {
-                //     swal("", data['message']['description'], "success");
-                //     var table = $('#incenseTable').DataTable();
-                //     $.fn.dataTable.ext.errMode = 'none';
-                //     table.row.add( [
-                //         data['incense']['id'],
-                //         data['incense']['name'],
-                //         data['incense']['description'],
-                //         data['incense']['detail'],
-                //         data['incense']['link'],
-                //         function (id) {
-                //             return '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                //                 +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
-                //     ]).draw();
-                // } else if(data.status == 'error') {
-                //     swal("", data['message']['description'], "error");
-                // }
+                if(data['message']['status'] == 'success') {
+                    swal("", data['message']['description'], "success");
+                    var table = $('#incenseTable').DataTable();
+                    $.fn.dataTable.ext.errMode = 'none';
+                    console.log();
+                    var rows = table.rows().data();
+                    for (var i = 0; i < rows.length; i++) {
+                        if (rows[i].id == data['incense']['id']) {
+                            alert( 'Pupil name in the first row is: '+ rows[i].name );
+                        }
+                    }
+                } else if(data.status == 'error') {
+                    swal("", data['message']['description'], "error");
+                }
             })
             .fail(function (error) {
                 console.log(error);
             });
     }
-}
+});

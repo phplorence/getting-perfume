@@ -5,6 +5,7 @@ namespace App\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class Incenses extends Authenticatable
 {
@@ -51,8 +52,8 @@ class Incenses extends Authenticatable
         $concentration = DB::table('incenses')
             ->where('name', '=', $name)
             ->where('id', '!=', $request->id)
-            ->first();
-        if ($concentration != null) {
+            ->count();
+        if ($concentration > 0) {
             return true;
         }
         return false;

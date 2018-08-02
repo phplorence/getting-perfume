@@ -29,7 +29,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
-                        <button type="button" class="btn btn-primary" onclick="submitNewIncense()">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary">Thêm mới</button>
                     </div>
                 </form>
             </div>

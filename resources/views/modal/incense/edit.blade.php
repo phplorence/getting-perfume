@@ -3,13 +3,13 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT</h3>
-                <form name="incenseFormEdit">
+                <form id="incenseFormEdit">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên nhóm hương<span style="color:red;">(*)</span></label>
                             <input type="text" name="name"  class="form-control" id="incenseNameEdit">
-                            <input type="hidden" id="hiddenEditIncenseID" name="id">
+                            <input type="hidden" name="id" id="incenseID" value="">
                         </div>
 
                         <div class="form-group">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
-                        <button type="button" class="btn btn-primary" onclick="submitUpdateIncense()">Cập nhật</button>
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </div>
                 </form>
             </div>

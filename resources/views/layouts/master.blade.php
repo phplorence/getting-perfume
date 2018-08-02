@@ -166,7 +166,7 @@ $(document).ready(function () {
             submitHandler: function(form) {
                 /** We want to hidden id when edit object in form => No need using normally */
                 // Will submit automated
-                document.incenseFormEdit.id.value = document.getElementById('hiddenEditStyleID').value;
+                document.styleFormEdit.id.value = document.getElementById('hiddenEditStyleID').value;
                 form.submit();
             }
         });
