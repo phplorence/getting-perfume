@@ -137,7 +137,6 @@ $('#incenseFormEdit').validate({
                     swal("", data['message']['description'], "success");
                     var table = $('#incenseTable').DataTable();
                     $.fn.dataTable.ext.errMode = 'none';
-                    console.log();
                     var rows = table.rows().data();
                     for (var i = 0; i < rows.length; i++) {
                         if (rows[i].id == data['incense']['id']) {
@@ -209,10 +208,12 @@ function deleteIncenseFunction(id) {
                     .done(function(data){
                         if(data['message']['status'] == 'success') {
                             swal("", data['message']['description'], "success");
+                            var table = $('#incenseTable').DataTable();
+                            $.fn.dataTable.ext.errMode = 'none';
                             var rows = table.rows().data();
                             for (var i = 0; i < rows.length; i++) {
                                 if (rows[i].id == data['incense']['id']) {
-                                    table.row(this).delete();
+                                    table.row(this).remove().draw();
                                 }
                             }
                         }
