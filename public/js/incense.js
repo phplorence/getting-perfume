@@ -204,13 +204,18 @@ function deleteIncenseFunction(id) {
                     dataType: 'json',
                     type:"GET",
                     beforeSend: function(){
-                        $('#modal-loading').modal('show');
                     }
                 })
                     .done(function(data){
-                        $('#modal-loading').modal('hidden');
                         if(data['message']['status'] == 'success') {
-                            swal("", data['message']['description'], "error");
+                            swal("", data['message']['description'], "success");
+                            var rows = table.rows().data();
+                            for (var i = 0; i < rows.length; i++) {
+                                if (rows[i].id == data['incense']['id']) {
+                                    table.row( $(this).parents('tr') ).remove()
+                                    .draw();
+                                }
+                            }
                         }
                         if(data['message']['status'] == 'error') {
                             swal("", data['message']['description'], "error");
