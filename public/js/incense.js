@@ -161,7 +161,18 @@ $('#incenseFormEdit').validate({
                     var rows = table.rows().data();
                     for (var i = 0; i < rows.length; i++) {
                         if (rows[i].id == data['incense']['id']) {
-                            alert( 'Pupil name in the first row is: '+ rows[i].name );
+                            table.row( this ).data(
+                                [
+                                    data['incense']['id'],
+                                    data['incense']['name'],
+                                    data['incense']['description'],
+                                    data['incense']['detail'],
+                                    data['incense']['link'],
+                                    function (id) {
+                                        return '<div class="text-center"><a onclick= "showEditIncense('+data['incense']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['incense']['id']+'" onclick="deleteIncenseFunction('+data['incense']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                                ]
+                            ).draw();
                         }
                     }
                 } else if(data.status == 'error') {

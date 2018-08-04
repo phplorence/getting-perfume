@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31720278-20ef-494d-ac36-7d625be38225" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Incenses.php" afterPath="$PROJECT_DIR$/app/Model/Incenses.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/incense.js" afterPath="$PROJECT_DIR$/public/js/incense.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modal/incense/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/modal/incense/edit.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +14,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="IncenseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2176">
+            <state relative-caret-position="68">
               <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding>
                 <element signature="e#55#91#0#PHP" expanded="true" />
@@ -36,8 +30,8 @@
       <file leaf-file-name="incense.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/incense.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="160" column="51" lean-forward="true" selection-start-line="160" selection-start-column="51" selection-end-line="160" selection-end-column="51" />
+            <state relative-caret-position="397">
+              <caret line="172" column="33" lean-forward="false" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -219,8 +213,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -887,6 +881,62 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auth" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auth" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -894,8 +944,8 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/xampp/htdocs/apilawrence" />
-    <property name="SearchEverywhereHistoryKey" value="Incense&#9;null&#9;null&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;lar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;Ince&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/IncenseController.php&#10;mas&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;create&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/incense/create.blade.php&#10;ind&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/incense/index.blade.php&#10;dashboard.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/pages/dashboard.js&#10;master&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;Incens&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/IncenseController.php&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;logo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/logo.blade.php&#10;index&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/super/index.blade.php&#10;AdmiNLogin&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/Admin/AdminLoginController.php&#10;LoginA&#9;null&#9;null&#10;SuperCo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;Author&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;log&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;side&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;Help&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Utilize/Helper.php&#10;inde&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/typeperfume/index.blade.php&#10;edit&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/typeperfume/edit.blade.php&#10;TypePerfumeController&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/TypePerfumeController.php&#10;sideb&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;TypePer&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/TypePerfumeController.php&#10;TypeP&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/TypePerfumeController.php&#10;index.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/author/index.blade.php&#10;AdminHomeController&#9;null&#9;null&#10;demo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/demo.js&#10;mast&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;Auth&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;maste&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;AdminLTE&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;FileSys&#9;null&#9;null&#10;laravl&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;AppServiceProvider &#9;null&#9;null&#10;mastẻ&#9;null&#9;null&#10;super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;app&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/config/app.php&#10;Helpe&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Utilize/Helper.php&#10;AdminTablePerfumeController&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Perfume/AdminTablePerfumeController.php&#10;create.bl&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/perfume/create.blade.php&#10;demo.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/demo.js&#10;fastclick.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/components/fastclick/lib/fastclick.js&#10;adminlte.min.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/adminlte.min.js&#10;SideB&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;creat&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/super/create.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../getting-blog" />
+    <property name="SearchEverywhereHistoryKey" value="incen&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/incense.js&#10;Incense&#9;null&#9;null&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;lar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;Ince&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/IncenseController.php&#10;mas&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;create&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/incense/create.blade.php&#10;ind&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/incense/index.blade.php&#10;dashboard.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/pages/dashboard.js&#10;master&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;Incens&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/IncenseController.php&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;logo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/logo.blade.php&#10;index&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/super/index.blade.php&#10;AdmiNLogin&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/Admin/AdminLoginController.php&#10;LoginA&#9;null&#9;null&#10;SuperCo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;Author&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;log&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;side&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;Help&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Utilize/Helper.php&#10;inde&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/typeperfume/index.blade.php&#10;edit&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/typeperfume/edit.blade.php&#10;TypePerfumeController&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/TypePerfumeController.php&#10;sideb&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;TypePer&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/TypePerfumeController.php&#10;TypeP&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/TypePerfumeController.php&#10;index.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/author/index.blade.php&#10;AdminHomeController&#9;null&#9;null&#10;demo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/demo.js&#10;mast&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;Auth&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;maste&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;AdminLTE&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;FileSys&#9;null&#9;null&#10;laravl&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;AppServiceProvider &#9;null&#9;null&#10;mastẻ&#9;null&#9;null&#10;super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;app&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/config/app.php&#10;Helpe&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Utilize/Helper.php&#10;AdminTablePerfumeController&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Perfume/AdminTablePerfumeController.php&#10;create.bl&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/perfume/create.blade.php&#10;demo.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/demo.js&#10;fastclick.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/components/fastclick/lib/fastclick.js&#10;adminlte.min.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/adminlte.min.js&#10;SideB&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
@@ -1053,12 +1103,17 @@
       <workItem from="1533005031071" duration="2891000" />
       <workItem from="1533060470091" duration="2974000" />
       <workItem from="1533128884608" duration="7065000" />
-      <workItem from="1533137086388" duration="3921000" />
+      <workItem from="1533137086388" duration="4094000" />
+      <workItem from="1533215384957" duration="84000" />
+      <workItem from="1533322476591" duration="1421000" />
+      <workItem from="1533360350433" duration="600000" />
+      <workItem from="1533361476354" duration="86000" />
+      <workItem from="1533362192547" duration="2645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="503419000" />
+    <option name="totallyTimeSpent" value="508428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1103,10 +1158,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.305638" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19472913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2635432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6869436" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1232,13 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="40" lean-forward="false" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1426,7 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="101" column="20" lean-forward="false" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1480,9 +1527,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2176">
+        <state relative-caret-position="68">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#55#91#0#PHP" expanded="true" />
@@ -1492,8 +1547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/incense.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="160" column="51" lean-forward="true" selection-start-line="160" selection-start-column="51" selection-end-line="160" selection-end-column="51" />
+        <state relative-caret-position="397">
+          <caret line="172" column="33" lean-forward="false" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="33" />
           <folding />
         </state>
       </provider>
