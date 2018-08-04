@@ -82,6 +82,7 @@ $('#incenseFormCreate').validate({
             data: $(form).serialize()
         })
             .done(function (data) {
+                CKEDITOR.instances.incenseCreate.setData('', function() {this.checkDirty(); });
                 if(data['message']['status'] == 'invalid') {
                     swal("", data['message']['description'], "error");
                 }
