@@ -170,6 +170,7 @@ class IncenseController extends Controller
     public function delete($id_incense) {
         if ($this->modelIncense->deleteIncense($id_incense) > 0) {
             $response_array = ([
+                'incense'      => $this->modelIncense->getIncense($id_incense),
                 'message'       => [
                     'status'        => "success",
                     'description'   => "Xóa nhóm hương thành công!"

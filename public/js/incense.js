@@ -212,8 +212,7 @@ function deleteIncenseFunction(id) {
                             var rows = table.rows().data();
                             for (var i = 0; i < rows.length; i++) {
                                 if (rows[i].id == data['incense']['id']) {
-                                    table.row( $(this).parents('tr') ).remove()
-                                    .draw();
+                                    table.row(this).delete();
                                 }
                             }
                         }
