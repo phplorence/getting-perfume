@@ -61,6 +61,8 @@ $(function () {
 
 $('#btnCreateNewIncense').click(function(){
     $('#incenseModalCreate').modal('show')
+    $('#incenseFormCreate').find('input[type=text], input[type=password], input[type=number], ' +
+        'input[type=email], textarea').val('');
 });
 
 $('#incenseFormCreate').validate({
