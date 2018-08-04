@@ -4,6 +4,7 @@
     <list default="true" id="31720278-20ef-494d-ac36-7d625be38225" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/incense.js" afterPath="$PROJECT_DIR$/public/js/incense.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,8 +50,8 @@
       <file leaf-file-name="incense.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/incense.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="77" column="55" lean-forward="true" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+            <state relative-caret-position="323">
+              <caret line="124" column="29" lean-forward="false" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -59,10 +60,22 @@
       <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/modal/incense/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="357">
+              <caret line="21" column="118" lean-forward="false" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="118" />
               <folding>
                 <marker date="1533134765803" expanded="true" signature="393:407" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/modal/incense/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="69" lean-forward="false" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+              <folding>
+                <marker date="1533374401180" expanded="true" signature="397:411" ph="..." />
               </folding>
             </state>
           </provider>
@@ -170,9 +183,9 @@
         <option value="$PROJECT_DIR$/app/Model/Incenses.php" />
         <option value="$PROJECT_DIR$/resources/views/modal/incense/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
+        <option value="$PROJECT_DIR$/resources/views/modal/incense/create.blade.php" />
         <option value="$PROJECT_DIR$/public/js/incense.js" />
       </list>
     </option>
@@ -1139,12 +1152,12 @@
       <workItem from="1533322476591" duration="1421000" />
       <workItem from="1533360350433" duration="600000" />
       <workItem from="1533361476354" duration="86000" />
-      <workItem from="1533362192547" duration="11265000" />
+      <workItem from="1533362192547" duration="12318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517048000" />
+    <option name="totallyTimeSpent" value="518101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1595,14 +1608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Incenses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1620,20 +1625,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/Incenses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/modal/incense/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="69" />
+        <state relative-caret-position="289">
+          <caret line="20" column="69" lean-forward="false" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
           <folding>
-            <marker date="1533366122150" expanded="true" signature="397:411" ph="..." />
+            <marker date="1533374401180" expanded="true" signature="397:411" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/modal/incense/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        <state relative-caret-position="357">
+          <caret line="21" column="118" lean-forward="false" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="118" />
           <folding>
             <marker date="1533134765803" expanded="true" signature="393:407" ph="..." />
           </folding>
@@ -1642,8 +1655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/incense.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="77" column="55" lean-forward="true" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+        <state relative-caret-position="323">
+          <caret line="124" column="29" lean-forward="false" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
           <folding />
         </state>
       </provider>

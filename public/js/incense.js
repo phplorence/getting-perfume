@@ -74,9 +74,7 @@ $('#incenseFormCreate').validate({
     submitHandler: function(form) {
         event.preventDefault();
         $('#incenseModalCreate').modal('hide');
-
-        console.log($('textarea#incenseCreate').val());
-        // CKEDITOR.instances.incenseCreate.setData(incense['incense']['detail'], function() {this.checkDirty(); });
+        $('#incenseCreate').val(CKEDITOR.instances.incenseCreate.getData());
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong',
             method: 'POST',
@@ -124,6 +122,7 @@ $('#incenseFormEdit').validate({
     submitHandler: function(form) {
         event.preventDefault();
         $('#incenseModalEdit').modal('hide');
+        $('#incenseDetailEdit').val(CKEDITOR.instances.incenseDetailEdit.getData());
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong/sua',
             method: 'POST',
