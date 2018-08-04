@@ -19,7 +19,7 @@
 
                         <div class="form-group">
                             <label class="box-title">Chi tiết</label>
-                            <textarea id="incenseCreate" name="detail" class="form-control" rows="5"></textarea>
+                            <textarea name="detail" id="incenseCreate" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">

@@ -199,7 +199,26 @@ function deleteIncenseFunction(id) {
         },
         function(isConfirm){
             if(isConfirm){
-                window.location =  '{{ url('/quan-tri/nuoc-hoa/nhom-huong/xoa/')}}' +'/'+ id;
+                $.ajax({
+                    url: '/quan-tri/nuoc-hoa/nhom-huong/xoa/'+id,
+                    dataType: 'json',
+                    type:"GET",
+                    beforeSend: function(){
+                        $('#modal-loading').modal('show');
+                    }
+                })
+                    .done(function(data){
+                        $('#modal-loading').modal('hidden');
+                        if(data['message']['status'] == 'success') {
+                            swal("", data['message']['description'], "error");
+                        }
+                        if(data['message']['status'] == 'error') {
+                            swal("", data['message']['description'], "error");
+                        }
+                    })
+                    .fail(function (error) {
+                        console.log(error);
+                    });
             }
         });
 }

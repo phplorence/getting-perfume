@@ -79,6 +79,7 @@ class IncenseController extends Controller
 
     public function store(Request $request)
     {
+        Log::info($request);
         if($this->helper->validateIncenseName($request)){
             $response_array = ([
                 'message'       => [
@@ -168,10 +169,20 @@ class IncenseController extends Controller
 
     public function delete($id_incense) {
         if ($this->modelIncense->deleteIncense($id_incense) > 0) {
-            alert()->success('Xóa nhóm hương thành công.', 'Thông tin!');
+            $response_array = ([
+                'message'       => [
+                    'status'        => "success",
+                    'description'   => "Xóa nhóm hương thành công!"
+                ]
+            ]);
         } else {
-            alert()->error('Xóa nhóm hương thất bại.', 'Lỗi!');
+            $response_array = ([
+                'message'       => [
+                    'status'        => "error",
+                    'description'   => "Xóa nhóm hương thất bại!"
+                ]
+            ]);
         }
-        return redirect()->intended(route('admin.perfume.incense.index'));
+        echo json_encode($response_array);
     }
 }
