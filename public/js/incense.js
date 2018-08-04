@@ -61,8 +61,7 @@ $(function () {
 
 $('#btnCreateNewIncense').click(function(){
     $('#incenseModalCreate').modal('show')
-    $('#incenseFormCreate').find('input[type=text], input[type=password], input[type=number], ' +
-        'input[type=email], textarea').val('');
+    $('#incenseFormCreate').find('input[type=text], input[type=password], input[type=number], input[type=email], textarea').val('');
 });
 
 $('#incenseFormCreate').validate({
@@ -75,6 +74,9 @@ $('#incenseFormCreate').validate({
     submitHandler: function(form) {
         event.preventDefault();
         $('#incenseModalCreate').modal('hide');
+
+        console.log($('textarea#incenseCreate').val());
+        // CKEDITOR.instances.incenseCreate.setData(incense['incense']['detail'], function() {this.checkDirty(); });
         $.ajax({
             url: '/quan-tri/nuoc-hoa/nhom-huong',
             method: 'POST',
