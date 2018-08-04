@@ -110,26 +110,6 @@ $('#incenseFormCreate').validate({
     }
 });
 
-function showEditIncense(id) {
-    $.ajax({
-        url: '/quan-tri/nuoc-hoa/nhom-huong/'+id,
-        dataType: 'json',
-        type:"GET",
-        beforeSend: function(){
-            $('#modal-loading').modal('show');
-        }
-    })
-        .done(function(incense){
-            $('#incenseID').val(id);
-            $('#incenseNameEdit').val(incense['incense']['name']);
-            $('#incenseDescriptionEdit').val(incense['incense']['description']);
-            CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });
-            $('#incenseLinkEdit').val(incense['incense']['link']);
-            $('#modal-loading').modal('hide');
-            $('#incenseModalEdit').modal('show');
-        });
-}
-
 $('#incenseFormEdit').validate({
     rules: {
         name: "required"
@@ -184,3 +164,42 @@ $('#incenseFormEdit').validate({
             });
     }
 });
+
+function showEditIncense(id) {
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/nhom-huong/'+id,
+        dataType: 'json',
+        type:"GET",
+        beforeSend: function(){
+            $('#modal-loading').modal('show');
+        }
+    })
+        .done(function(incense){
+            $('#incenseID').val(id);
+            $('#incenseNameEdit').val(incense['incense']['name']);
+            $('#incenseDescriptionEdit').val(incense['incense']['description']);
+            CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });
+            $('#incenseLinkEdit').val(incense['incense']['link']);
+            $('#modal-loading').modal('hide');
+            $('#incenseModalEdit').modal('show');
+        });
+}
+
+function deleteIncenseFunction(id) {
+    event.preventDefault();
+    swal({
+            title: "",
+            text: "Bạn có muốn xóa nhóm hương này không?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Xóa",
+            cancelButtonText: "Hủy bỏ",
+            closeOnConfirm: true
+        },
+        function(isConfirm){
+            if(isConfirm){
+                window.location =  '{{ url('/quan-tri/nuoc-hoa/nhom-huong/xoa/')}}' +'/'+ id;
+            }
+        });
+}

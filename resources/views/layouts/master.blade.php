@@ -292,25 +292,6 @@ $(document).ready(function () {
             });
     }
 
-    function deleteIncenseFunction(id) {
-        event.preventDefault();
-        swal({
-                title: "",
-                text: "Bạn có muốn xóa nhóm hương này không?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Xóa",
-                cancelButtonText: "Hủy bỏ",
-                closeOnConfirm: true
-            },
-            function(isConfirm){
-                if(isConfirm){
-                    window.location =  '{{ url('/quan-tri/nuoc-hoa/nhom-huong/xoa/')}}' +'/'+ id;
-                }
-            });
-    }
-
     function deleteStyleFunction(id) {
         event.preventDefault();
         swal({

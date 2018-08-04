@@ -49,6 +49,34 @@ class IncenseController extends Controller
         return Datatables::collection($collections)->make();
     }
 
+    public function getInfoIncense(Request $request) {
+        $name = $request->name;
+        Log::info('Admin', ['name' => $name]);
+        $description = $request->description;
+        Log::info('Admin', ['description' => $description]);
+        $detail = $request->detail;
+        Log::info('Admin', ['detail' => $detail]);
+        $link = $request->link;
+        Log::info('Admin', ['link' => $link]);
+        if (empty($request->id)) {
+            $data = array([
+                'name' => $name,
+                'description' => $description,
+                'detail' => $detail,
+                'link' => $link
+            ]);
+        } else {
+            $data = array([
+                'id' => $request->id,
+                'name' => $name,
+                'description' => $description,
+                'detail' => $detail,
+                'link' => $link
+            ]);
+        }
+        return $data;
+    }
+
     public function store(Request $request)
     {
         if($this->helper->validateIncenseName($request)){
@@ -86,34 +114,6 @@ class IncenseController extends Controller
             }
         }
         echo json_encode($response_array);
-    }
-
-    public function getInfoIncense(Request $request) {
-        $name = $request->name;
-        Log::info('Admin', ['name' => $name]);
-        $description = $request->description;
-        Log::info('Admin', ['description' => $description]);
-        $detail = $request->detail;
-        Log::info('Admin', ['detail' => $detail]);
-        $link = $request->link;
-        Log::info('Admin', ['link' => $link]);
-        if (empty($request->id)) {
-            $data = array([
-                'name' => $name,
-                'description' => $description,
-                'detail' => $detail,
-                'link' => $link
-            ]);
-        } else {
-            $data = array([
-                'id' => $request->id,
-                'name' => $name,
-                'description' => $description,
-                'detail' => $detail,
-                'link' => $link
-            ]);
-        }
-        return $data;
     }
 
     public function show($id)
