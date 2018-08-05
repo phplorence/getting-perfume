@@ -53,4 +53,6 @@
     @include('modal.typeperfume.edit')
     @include('modal.dialog.loading')
 @endsection
-
+@section('script')
+    <script src="{{ URL::asset('js/type.js') }}"></script>
+@endsection

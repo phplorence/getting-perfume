@@ -113,7 +113,6 @@
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 @yield('script')
-<script src="{{ URL::asset('js/type.js') }}"></script>
 <script>
 $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
 $(document).ready(function () {

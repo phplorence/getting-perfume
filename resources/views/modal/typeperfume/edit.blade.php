@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT</h3>
-                <form name="typePerfumeFormEdit"  role="form" action="{{ route('admin.perfume.typeperfume.update') }}" method="post">
+                <form id="typePerfumeFormEdit">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">

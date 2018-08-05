@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">THÊM MỚI</h3>
-                <form name="typePerfumeFormCreate" action="{{ route('admin.perfume.typeperfume.store') }}" method="post">
+                <form id="typePerfumeFormCreate">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
