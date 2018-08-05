@@ -79,8 +79,8 @@ $('#typePerfumeFormCreate').validate({
                         data['typeperfume']['id'],
                         data['typeperfume']['name'],
                         function (id) {
-                            return '<div class="text-center"><a onclick= "showEditTypePerfume('+data['type']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                                +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/'+data['type']['id']+'" onclick="deleteTypePerfumeFunction('+data['type']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                            return '<div class="text-center"><a onclick= "showEditTypePerfume('+data['typeperfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/'+data['typeperfume']['id']+'" onclick="deleteTypePerfumeFunction('+data['typeperfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
                     ]).draw();
                 } else if(data.status == 'error') {
                     swal("", data['message']['description'], "error");
@@ -127,8 +127,8 @@ $('#typePerfumeFormEdit').validate({
                                     data['typeperfume']['id'],
                                     data['typeperfume']['name'],
                                     function (id) {
-                                        return '<div class="text-center"><a onclick= "showEditTypePerfume('+data['type']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/'+data['type']['id']+'" onclick="deleteTypePerfumeFunction('+data['type']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                                        return '<div class="text-center"><a onclick= "showEditTypePerfume('+data['typeperfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/loai-nuoc-hoa/xoa/'+data['typeperfume']['id']+'" onclick="deleteTypePerfumeFunction('+data['typeperfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
                                 ]
                             ).draw();
                         }
