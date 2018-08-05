@@ -47,10 +47,7 @@ $(document).ready(function () {
     });
 });
 
-/*
 $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
     CKEDITOR.replace('styleCreate' ,{
         filebrowserUploadUrl : '/admin/panel/upload-image',
         filebrowserImageUploadUrl :  '/admin/panel/upload-image'
@@ -61,6 +58,59 @@ $(function () {
         filebrowserImageUploadUrl :  '/admin/panel/upload-image'
     });
 
-    //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5()
-});*/
+});
+
+$('#btnCreateNewStyle').click(function(){
+    $('#styleModalCreate').modal('show');
+    $('#styleFormCreate').find('input[type=text], input[type=password], input[type=number], input[type=email], textarea').val('');
+});
+
+$('#styleFormCreate').validate({
+    rules: {
+        name: "required"
+    },
+    messages: {
+        name: "Tên phong cách không được bỏ trống!"
+    },
+    submitHandler: function(form) {
+        event.preventDefault();
+        $('#styleModalCreate').modal('hide');
+        $('#styleCreate').val(CKEDITOR.instances.styleCreate.getData());
+        $.ajax({
+            url: '/quan-tri/nuoc-hoa/phong-cach',
+            method: 'POST',
+            dataType: 'json',
+            data: $(form).serialize()
+        })
+            .done(function (data) {
+                CKEDITOR.instances.styleCreate.setData('', function() {this.checkDirty(); });
+                if(data['message']['status'] == 'invalid') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'existed') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'success') {
+                    swal("", data['message']['description'], "success");
+                    var table = $('#styleTable').DataTable();
+                    $.fn.dataTable.ext.errMode = 'none';
+                    table.row.add( [
+                        data['style']['id'],
+                        data['style']['name'],
+                        data['style']['description'],
+                        data['style']['detail'],
+                        data['style']['link'],
+                        function (id) {
+                            return '<div class="text-center"><a onclick= "showEditStyle('+data['style']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/phong-cach/xoa/'+data['style']['id']+'" onclick="deleteStyleFunction('+data['style']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                    ]).draw();
+                } else if(data.status == 'error') {
+                    swal("", data['message']['description'], "error");
+                }
+            })
+            .fail(function (error) {
+                console.log(error);
+            });
+    }
+});

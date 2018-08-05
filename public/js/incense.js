@@ -56,6 +56,7 @@ $(function () {
         filebrowserUploadUrl : '/admin/panel/upload-image',
         filebrowserImageUploadUrl :  '/admin/panel/upload-image'
     });
+
     $('.textarea').wysihtml5()
 });
 
