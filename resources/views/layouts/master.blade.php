@@ -125,9 +125,7 @@ $(document).ready(function () {
         $('[data-mask]').inputmask()
     });
 
-    $('#btnCreateNewTypePerfume').click(function(){
-        $('#typePerfumeModalCreate').modal('show')
-    });
+
 
     // TYPE PERFUME
     $(function() {
