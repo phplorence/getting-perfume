@@ -43,6 +43,10 @@ class Concentrations extends Authenticatable
         return DB::table('concentrations')->where('id', $id_concentration)->first();
     }
 
+    public function getConcentrationByName($concentration_name){
+        return DB::table('concentrations')->where('name', $concentration_name)->first();
+    }
+
     public function isExistNameCaseUpdated($request, $name) {
         $concentration = DB::table('concentrations')
             ->where('name', '=', $name)

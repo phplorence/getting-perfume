@@ -55,9 +55,9 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    {{--@include('modal.incense.create')
-    @include('modal.incense.edit')
-    @include('modal.dialog.loading')--}}
+    @include('modal.concentration.create')
+    @include('modal.concentration.edit')
+    @include('modal.dialog.loading')
 @endsection
 @section('script')
     <script src="{{ URL::asset('js/concentration.js') }}"></script>
