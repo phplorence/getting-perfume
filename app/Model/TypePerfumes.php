@@ -40,6 +40,10 @@ class TypePerfumes extends Authenticatable
         return DB::table('typeperfumes')->where('id', $id_type_perfume)->first();
     }
 
+    public function getTypePerfumeByName($type_name){
+        return DB::table('typeperfumes')->where('name', $type_name)->first();
+    }
+
     public function isExistNameCaseUpdated($request, $name) {
         $typePerfume = DB::table('typeperfumes')
             ->where('name', '=', $name)

@@ -45,26 +45,6 @@ class TypePerfumeController extends Controller
         return Datatables::collection($collections)->make();
     }
 
-    public function store(Request $request)
-    {
-        $this->helper->validateTypePerfumeName($request);
-        // Insert database into mysql
-        if($this->modelTypePerfume->isExistTypePerfume($request)) {
-            alert()->error('Tên loại nước hoa đã tồn tại trong hệ thống.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name'));
-        }
-
-        // Attempt add new database successfully
-        if ($this->modelTypePerfume->addAll($this->getInfoTypePerfume($request)) > 0) {
-            // If successful, then redirect to their intended location
-            alert()->success('Thêm loại nước hoa thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.typeperfume.index'));
-        } else {
-            alert()->error('Thêm loại nước hoa thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name'));
-        }
-    }
-
     public function getInfoTypePerfume(Request $request) {
         $name = $request->name;
         if (empty($request->id)) {
@@ -80,6 +60,45 @@ class TypePerfumeController extends Controller
         return $data;
     }
 
+    public function store(Request $request)
+    {
+        if($this->helper->validateTypePerfumeName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên loại nước hoa không được bỏ trống!"
+                ]
+            ]);
+        } else {
+            if($this->modelTypePerfume->isExistTypePerfume($request)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "existed",
+                        'description'   => "Tên loại nước hoa đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelTypePerfume->addAll($this->getInfoTypePerfume($request)) > 0) {
+                    $response_array = ([
+                        'typeperfume'      => $this->modelTypePerfume->getTypePerfumeByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Thêm loại nước hoa thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Thêm loại nước hoa thất bại!"
+                        ]
+                    ]);
+                }
+            }
+        }
+        echo json_encode($response_array);
+    }
+
     public function show($id)
     {
         if($this->modelTypePerfume->getTypePerfume($id) != null) {
@@ -93,34 +112,62 @@ class TypePerfumeController extends Controller
 
     public function update(Request $request)
     {
-        $typePerfumeExistedDB = $this->modelTypePerfume->getTypePerfume($request->id);
-        if (!empty($request->name)) {
-            $this->helper->validateTypePerfumeName($request);
-            // Check name existed in Database
-            if($this->modelTypePerfume->isExistNameCaseUpdated($request, $request->name)) {
-                alert()->error('Loại nước hoa đã tồn tại trong hệ thống.', 'Lỗi!');
-                return redirect()->back()->withInput($request->only('name'));
-            }
-        } else  {
-            $request->name = $typePerfumeExistedDB->name;
-        }
-
-        // Attempt add update admin successfully
-        if ($this->modelTypePerfume->updateTypePerfume($this->getInfoTypePerfume($request)) >= 0) {
-            alert()->success('Cập nhật loại nước hoa thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.typeperfume.index'));
+        if($this->helper->validateTypePerfumeName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên loại nước hoa không được bỏ trống!"
+                ]
+            ]);
         } else {
-            alert()->error('Cập nhật loại nước hoa thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name'));
+            if($this->modelTypePerfume->isExistNameCaseUpdated($request, $request->name)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "invalid",
+                        'description'   => "Loại nước hoa đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelTypePerfume->updateTypePerfume($this->getInfoTypePerfume($request)) >= 0) {
+                    $response_array = ([
+                        'typeperfume'      => $this->modelTypePerfume->getTypePerfumeByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Cập nhật loại nước hoa thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Cập nhật loại nước hoa thất bại!"
+                        ]
+                    ]);
+                }
+            }
         }
+        echo json_encode($response_array);
     }
 
     public function delete($id_type_perfume) {
         if ($this->modelTypePerfume->deleteTypePerfume($id_type_perfume) > 0) {
-            alert()->success('Xóa loại nước hoa thành công.', 'Thông tin!');
+            $response_array = ([
+                'typeperfume'      => [
+                    'id'        =>  $id_type_perfume
+                ],
+                'message'       => [
+                    'status'        => "success",
+                    'description'   => "Xóa loại nước hoa thành công!"
+                ]
+            ]);
         } else {
-            alert()->error('Xóa loại nước hoa thất bại.', 'Lỗi!');
+            $response_array = ([
+                'message'       => [
+                    'status'        => "error",
+                    'description'   => "Xóa loại nước hoa thất bại!"
+                ]
+            ]);
         }
-        return redirect()->intended(route('admin.perfume.typeperfume.index'));
+        echo json_encode($response_array);
     }
 }
