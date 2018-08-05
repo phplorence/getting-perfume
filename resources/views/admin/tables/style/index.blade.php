@@ -59,4 +59,6 @@
     @include('modal.style.edit')
     @include('modal.dialog.loading')
 @endsection
-
+@section('script')
+    <script src="{{ URL::asset('js/style.js') }}"></script>
+@endsection

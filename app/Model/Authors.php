@@ -36,6 +36,10 @@ class Authors extends Authenticatable
         return false;
     }
 
+    public function getAuthorByName($author_name){
+        return DB::table('authors')->where('name', $author_name)->first();
+    }
+
     public function getAuthor($id_author){
         return DB::table('authors')->where('id', $id_author)->first();
     }

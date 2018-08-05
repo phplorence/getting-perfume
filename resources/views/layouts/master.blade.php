@@ -113,8 +113,6 @@
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ URL::asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 @yield('script')
-<script src="{{ URL::asset('js/style.js') }}"></script>
-<script src="{{ URL::asset('js/author.js') }}"></script>
 <script src="{{ URL::asset('js/type.js') }}"></script>
 <script>
 $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
@@ -128,45 +126,8 @@ $(document).ready(function () {
         $('[data-mask]').inputmask()
     });
 
-    $('#btnCreateNewAuthor').click(function(){
-        $('#authorModalCreate').modal('show')
-    });
-
     $('#btnCreateNewTypePerfume').click(function(){
         $('#typePerfumeModalCreate').modal('show')
-    });
-
-    // AUTHOR
-    $(function() {
-        $("form[name='authorFormCreate']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Nhà pha chế không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
-        });
-        $("form[name='authorFormEdit']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Nhà pha chế không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                /** We want to hidden id when edit object in form => No need using normally */
-                // Will submit automated
-                document.authorFormEdit.id.value = document.getElementById('hiddenEditAuthorID').value;
-                form.submit();
-            }
-        });
     });
 
     // TYPE PERFUME
@@ -202,23 +163,6 @@ $(document).ready(function () {
         });
     });
 
-    function showEditAuthor(id) {
-        $.ajax({
-            url:'{!! url('quan-tri/nuoc-hoa/nha-pha-che')!!}'+'/'+id,
-            dataType: 'json',
-            type:"GET",
-            beforeSend: function(){
-                $('#hiddenEditAuthorID').val(id);
-                $('#modal-loading').modal('show');
-            }
-        })
-            .done(function(author){
-                $('#authorNameEdit').val(author['author']['name']);
-                $('#modal-loading').modal('hide');
-                $('#authorModalEdit').modal('show');
-            });
-    }
-
     function showEditTypePerfume(id) {
         $.ajax({
             url:'{!! url('quan-tri/nuoc-hoa/loai-nuoc-hoa')!!}'+'/'+id,
@@ -233,25 +177,6 @@ $(document).ready(function () {
                 $('#typePerfumeNameEdit').val(typeperfume['typeperfume']['name']);
                 $('#modal-loading').modal('hide');
                 $('#typePerfumeModalEdit').modal('show');
-            });
-    }
-
-    function deleteAuthorFunction(id) {
-        event.preventDefault();
-        swal({
-                title: "",
-                text: "Bạn có muốn xóa nhà pha chế này không?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Xóa",
-                cancelButtonText: "Hủy bỏ",
-                closeOnConfirm: true
-            },
-            function(isConfirm){
-                if(isConfirm){
-                    window.location =  '{{ url('/quan-tri/nuoc-hoa/nha-pha-che/xoa/')}}' +'/'+ id;
-                }
             });
     }
 

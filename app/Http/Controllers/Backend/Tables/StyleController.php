@@ -124,28 +124,6 @@ class StyleController extends Controller
 
     public function update(Request $request)
     {
-        /*$styleExistedDB = $this->modelStyle->getStyle($request->id);
-        if (!empty($request->name)) {
-            $this->helper->validateStyleName($request);
-            // Check name existed in Database
-            if($this->modelStyle->isExistNameCaseUpdated($request, $request->name)) {
-                alert()->error('Phong cách đã tồn tại trong hệ thống.', 'Lỗi!');
-                return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-            }
-        } else  {
-            $request->name = $styleExistedDB->name;
-        }
-
-        // Attempt add update admin successfully
-        if ($this->modelStyle->updateStyle($this->getInfoStyle($request)) >= 0) {
-            alert()->success('Cập nhật phong cách thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.style.index'));
-        } else {
-            alert()->error('Cập nhật phong cách thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-        }*/
-
-
         if($this->helper->validateStyleName($request)){
             $response_array = ([
                 'message'       => [

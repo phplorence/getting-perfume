@@ -53,4 +53,6 @@
     @include('modal.author.edit')
     @include('modal.dialog.loading')
 @endsection
-
+@section('script')
+    <script src="{{ URL::asset('js/author.js') }}"></script>
+@endsection

@@ -45,26 +45,6 @@ class AuthorController extends Controller
         return Datatables::collection($collections)->make();
     }
 
-    public function store(Request $request)
-    {
-        $this->helper->validateAuthorName($request);
-        // Insert database into mysql
-        if($this->modelAuthor->isExistAuthor($request)) {
-            alert()->error('Tên nhà pha chế đã tồn tại trong hệ thống.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name'));
-        }
-
-        // Attempt add new database successfully
-        if ($this->modelAuthor->addAll($this->getInfoAuthor($request)) > 0) {
-            // If successful, then redirect to their intended location
-            alert()->success('Thêm nhà pha chế thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.author.index'));
-        } else {
-            alert()->error('Thêm nhà pha chế thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name'));
-        }
-    }
-
     public function getInfoAuthor(Request $request) {
         $name = $request->name;
         if (empty($request->id)) {
@@ -80,6 +60,45 @@ class AuthorController extends Controller
         return $data;
     }
 
+    public function store(Request $request)
+    {
+        if($this->helper->validateAuthorName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên nhà pha chế không được bỏ trống!"
+                ]
+            ]);
+        } else {
+            if($this->modelAuthor->isExistAuthor($request)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "existed",
+                        'description'   => "Tên nhà pha chế đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelAuthor->addAll($this->getInfoAuthor($request)) > 0) {
+                    $response_array = ([
+                        'author'      => $this->modelAuthor->getAuthorByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Thêm nhà pha chế thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Thêm nhà pha chế thất bại!"
+                        ]
+                    ]);
+                }
+            }
+        }
+        echo json_encode($response_array);
+    }
+
     public function show($id)
     {
         if($this->modelAuthor->getAuthor($id) != null) {
@@ -93,34 +112,62 @@ class AuthorController extends Controller
 
     public function update(Request $request)
     {
-        $authorExistedDB = $this->modelAuthor->getAuthor($request->id);
-        if (!empty($request->name)) {
-            $this->helper->validateAuthorName($request);
-            // Check name existed in Database
-            if($this->modelAuthor->isExistNameCaseUpdated($request, $request->name)) {
-                alert()->error('Nhà pha chế đã tồn tại trong hệ thống.', 'Lỗi!');
-                return redirect()->back()->withInput($request->only('name'));
-            }
-        } else  {
-            $request->name = $authorExistedDB->name;
-        }
-
-        // Attempt add update admin successfully
-        if ($this->modelAuthor->updateAuthor($this->getInfoAuthor($request)) >= 0) {
-            alert()->success('Cập nhật nhà pha chế thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.author.index'));
+        if($this->helper->validateAuthorName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên nhà pha chế không được bỏ trống!"
+                ]
+            ]);
         } else {
-            alert()->error('Cập nhật nhà pha chế thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name'));
+            if($this->modelAuthor->isExistNameCaseUpdated($request, $request->name)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "invalid",
+                        'description'   => "Nhà pha chế đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelAuthor->updateAuthor($this->getInfoAuthor($request)) >= 0) {
+                    $response_array = ([
+                        'author'      => $this->modelAuthor->getAuthorByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Cập nhật nhà pha chế thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Cập nhật nhà pha chế thất bại!"
+                        ]
+                    ]);
+                }
+            }
         }
+        echo json_encode($response_array);
     }
 
     public function delete($id_author) {
         if ($this->modelAuthor->deleteAuthor($id_author) > 0) {
-            alert()->success('Xóa nhà pha chế thành công.', 'Thông tin!');
+            $response_array = ([
+                'style'      => [
+                    'id'        =>  $id_author
+                ],
+                'message'       => [
+                    'status'        => "success",
+                    'description'   => "Xóa nha pha chế thành công!"
+                ]
+            ]);
         } else {
-            alert()->error('Xóa nhà pha chế thất bại.', 'Lỗi!');
+            $response_array = ([
+                'message'       => [
+                    'status'        => "error",
+                    'description'   => "Xóa nhà pha chế thất bại!"
+                ]
+            ]);
         }
-        return redirect()->intended(route('admin.perfume.author.index'));
+        echo json_encode($response_array);
     }
 }
