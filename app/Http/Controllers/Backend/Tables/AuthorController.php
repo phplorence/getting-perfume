@@ -152,7 +152,7 @@ class AuthorController extends Controller
     public function delete($id_author) {
         if ($this->modelAuthor->deleteAuthor($id_author) > 0) {
             $response_array = ([
-                'style'      => [
+                'author'      => [
                     'id'        =>  $id_author
                 ],
                 'message'       => [
