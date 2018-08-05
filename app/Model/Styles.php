@@ -43,6 +43,10 @@ class Styles extends Authenticatable
         return DB::table('styles')->where('id', $id_style)->first();
     }
 
+    public function getStyleByName($style_name){
+        return DB::table('styles')->where('name', $style_name)->first();
+    }
+
     public function isExistNameCaseUpdated($request, $name) {
         $concentration = DB::table('styles')
             ->where('name', '=', $name)

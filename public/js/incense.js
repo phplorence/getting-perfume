@@ -176,10 +176,10 @@ function showEditIncense(id) {
         type:"GET",
         beforeSend: function(){
             $('#modal-loading').modal('show');
+            $('#incenseID').val(id);
         }
     })
         .done(function(incense){
-            $('#incenseID').val(id);
             $('#incenseNameEdit').val(incense['incense']['name']);
             $('#incenseDescriptionEdit').val(incense['incense']['description']);
             CKEDITOR.instances.incenseDetailEdit.setData(incense['incense']['detail'], function() {this.checkDirty(); });

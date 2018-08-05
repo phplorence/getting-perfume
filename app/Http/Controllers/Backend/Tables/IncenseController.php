@@ -79,7 +79,6 @@ class IncenseController extends Controller
 
     public function store(Request $request)
     {
-        Log::info($request);
         if($this->helper->validateIncenseName($request)){
             $response_array = ([
                 'message'       => [

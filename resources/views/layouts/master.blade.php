@@ -128,48 +128,12 @@ $(document).ready(function () {
         $('[data-mask]').inputmask()
     });
 
-    $('#btnCreateNewStyle').click(function(){
-        $('#styleModalCreate').modal('show')
-    });
-
     $('#btnCreateNewAuthor').click(function(){
         $('#authorModalCreate').modal('show')
     });
 
     $('#btnCreateNewTypePerfume').click(function(){
         $('#typePerfumeModalCreate').modal('show')
-    });
-
-    $(function() {
-        $("form[name='styleFormCreate']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Tên phong cách không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
-        });
-        $("form[name='styleFormEdit']").validate({
-            // Specify validation rules
-            rules: {
-                name: "required"
-            },
-            // Specify validation error messages
-            messages: {
-                name: "Tên phong cách không được bỏ trống!"
-            },
-            submitHandler: function(form) {
-                /** We want to hidden id when edit object in form => No need using normally */
-                // Will submit automated
-                document.styleFormEdit.id.value = document.getElementById('hiddenEditStyleID').value;
-                form.submit();
-            }
-        });
     });
 
     // AUTHOR
@@ -238,26 +202,6 @@ $(document).ready(function () {
         });
     });
 
-    function showEditStyle(id) {
-        $.ajax({
-            url:'{!! url('quan-tri/nuoc-hoa/phong-cach')!!}'+'/'+id,
-            dataType: 'json',
-            type:"GET",
-            beforeSend: function(){
-                $('#hiddenEditStyleID').val(id);
-                $('#modal-loading').modal('show');
-            }
-        })
-            .done(function(style){
-                $('#styleNameEdit').val(style['style']['name']);
-                $('#styleDescriptionEdit').val(style['style']['description']);
-                CKEDITOR.instances.styleDetailEdit.setData(style['style']['detail'], function() {this.checkDirty(); });
-                $('#styleLinkEdit').val(style['style']['link']);
-                $('#modal-loading').modal('hide');
-                $('#styleModalEdit').modal('show');
-            });
-    }
-
     function showEditAuthor(id) {
         $.ajax({
             url:'{!! url('quan-tri/nuoc-hoa/nha-pha-che')!!}'+'/'+id,
@@ -289,25 +233,6 @@ $(document).ready(function () {
                 $('#typePerfumeNameEdit').val(typeperfume['typeperfume']['name']);
                 $('#modal-loading').modal('hide');
                 $('#typePerfumeModalEdit').modal('show');
-            });
-    }
-
-    function deleteStyleFunction(id) {
-        event.preventDefault();
-        swal({
-                title: "",
-                text: "Bạn có muốn xóa phong cách này không?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Xóa",
-                cancelButtonText: "Hủy bỏ",
-                closeOnConfirm: true
-            },
-            function(isConfirm){
-                if(isConfirm){
-                    window.location =  '{{ url('/quan-tri/nuoc-hoa/phong-cach/xoa/')}}' +'/'+ id;
-                }
             });
     }
 

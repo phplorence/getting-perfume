@@ -114,3 +114,122 @@ $('#styleFormCreate').validate({
             });
     }
 });
+
+$('#styleFormEdit').validate({
+    rules: {
+        name: "required"
+    },
+    messages: {
+        name: "Tên phong cách không được bỏ trống!"
+    },
+    submitHandler: function(form) {
+        event.preventDefault();
+        $('#styleModalEdit').modal('hide');
+        $('#styleDetailEdit').val(CKEDITOR.instances.styleDetailEdit.getData());
+        $.ajax({
+            url: '/quan-tri/nuoc-hoa/phong-cach/sua',
+            method: 'POST',
+            dataType: 'json',
+            data: $(form).serialize()
+        })
+            .done(function (data) {
+                if(data['message']['status'] == 'invalid') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'existed') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'success') {
+                    swal("", data['message']['description'], "success");
+                    var table = $('#styleTable').DataTable();
+                    $.fn.dataTable.ext.errMode = 'none';
+                    var rows = table.rows().data();
+                    for (var i = 0; i < rows.length; i++) {
+                        if (rows[i].id == data['style']['id']) {
+                            table.row( this ).data(
+                                [
+                                    data['style']['id'],
+                                    data['style']['name'],
+                                    data['style']['description'],
+                                    data['style']['detail'],
+                                    data['style']['link'],
+                                    function (id) {
+                                        return '<div class="text-center"><a onclick= "showEditStyle('+data['style']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/phong-cach/xoa/'+data['style']['id']+'" onclick="deleteStyleFunction('+data['style']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                                ]
+                            ).draw();
+                        }
+                    }
+                } else if(data.status == 'error') {
+                    swal("", data['message']['description'], "error");
+                }
+            })
+            .fail(function (error) {
+                console.log(error);
+            });
+    }
+});
+
+function showEditStyle(id) {
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/phong-cach/'+id,
+        dataType: 'json',
+        type:"GET",
+        beforeSend: function(){
+            $('#modal-loading').modal('show');
+            $('#hiddenEditStyleID').val(id);
+        }
+    })
+        .done(function(style){
+            $('#styleNameEdit').val(style['style']['name']);
+            $('#styleDescriptionEdit').val(style['style']['description']);
+            CKEDITOR.instances.styleDetailEdit.setData(style['style']['detail'], function() {this.checkDirty(); });
+            $('#styleLinkEdit').val(style['style']['link']);
+            $('#modal-loading').modal('hide');
+            $('#styleModalEdit').modal('show');
+        });
+}
+
+function deleteStyleFunction(id) {
+    event.preventDefault();
+    swal({
+            title: "",
+            text: "Bạn có muốn xóa phong cách này không?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Xóa",
+            cancelButtonText: "Hủy bỏ",
+            closeOnConfirm: true
+        },
+        function(isConfirm){
+            if(isConfirm){
+                $.ajax({
+                    url: '/quan-tri/nuoc-hoa/phong-cach/xoa/'+id,
+                    dataType: 'json',
+                    type:"GET",
+                    beforeSend: function(){
+                    }
+                })
+                    .done(function(data){
+                        if(data['message']['status'] == 'success') {
+                            swal("", data['message']['description'], "success");
+                            var table = $('#styleTable').DataTable();
+                            $.fn.dataTable.ext.errMode = 'none';
+                            var rows = table.rows().data();
+                            for (var i = 0; i < rows.length; i++) {
+                                if (rows[i].id == data['style']['id']) {
+                                    table.row(this).remove().draw();
+                                }
+                            }
+                        }
+                        if(data['message']['status'] == 'error') {
+                            swal("", data['message']['description'], "error");
+                        }
+                    })
+                    .fail(function (error) {
+                        console.log(error);
+                    });
+            }
+        });
+}

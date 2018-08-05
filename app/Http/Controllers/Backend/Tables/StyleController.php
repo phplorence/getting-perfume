@@ -8,7 +8,6 @@ use App\Utilize\Helper;
 use Illuminate\Http\Request;
 use Auth;
 use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Support\Facades\Log;
 
 class StyleController extends Controller
 {
@@ -49,26 +48,6 @@ class StyleController extends Controller
         return Datatables::collection($collections)->make();
     }
 
-    public function store(Request $request)
-    {
-        $this->helper->validateStyleName($request);
-        // Insert database into mysql
-        if($this->modelStyle->isExistStyle($request)) {
-            alert()->error('Tên phong cách đã tồn tại trong hệ thống.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-        }
-
-        // Attempt add new database successfully
-        if ($this->modelStyle->addAll($this->getInfoStyle($request)) > 0) {
-            // If successful, then redirect to their intended location
-            alert()->success('Thêm phong cách thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.perfume.style.index'));
-        } else {
-            alert()->error('Thêm phong cách thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
-        }
-    }
-
     public function getInfoStyle(Request $request) {
         $name = $request->name;
         $description = $request->description;
@@ -93,6 +72,45 @@ class StyleController extends Controller
         return $data;
     }
 
+    public function store(Request $request)
+    {
+        if($this->helper->validateStyleName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên phong cách không được bỏ trống!"
+                ]
+            ]);
+        } else {
+            if($this->modelStyle->isExistStyle($request)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "existed",
+                        'description'   => "Tên phong cách đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelStyle->addAll($this->getInfoStyle($request)) > 0) {
+                    $response_array = ([
+                        'style'      => $this->modelStyle->getStyleByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Thêm phong cách thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Thêm phong cách thất bại!"
+                        ]
+                    ]);
+                }
+            }
+        }
+        echo json_encode($response_array);
+    }
+
     public function show($id)
     {
         if($this->modelStyle->getStyle($id) != null) {
@@ -106,7 +124,7 @@ class StyleController extends Controller
 
     public function update(Request $request)
     {
-        $styleExistedDB = $this->modelStyle->getStyle($request->id);
+        /*$styleExistedDB = $this->modelStyle->getStyle($request->id);
         if (!empty($request->name)) {
             $this->helper->validateStyleName($request);
             // Check name existed in Database
@@ -125,15 +143,65 @@ class StyleController extends Controller
         } else {
             alert()->error('Cập nhật phong cách thất bại.', 'Lỗi!');
             return redirect()->back()->withInput($request->only('name', 'description', 'detail', 'link'));
+        }*/
+
+
+        if($this->helper->validateStyleName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên phong cách không được bỏ trống!"
+                ]
+            ]);
+        } else {
+            if($this->modelStyle->isExistNameCaseUpdated($request, $request->name)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "invalid",
+                        'description'   => "Phong cách đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                if ($this->modelStyle->updateStyle($this->getInfoStyle($request)) >= 0) {
+                    $response_array = ([
+                        'style'      => $this->modelStyle->getStyleByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Cập nhật phong cách thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Cập nhật phong cách thất bại!"
+                        ]
+                    ]);
+                }
+            }
         }
+        echo json_encode($response_array);
     }
 
     public function delete($id_style) {
         if ($this->modelStyle->deleteStyle($id_style) > 0) {
-            alert()->success('Xóa phong cách thành công.', 'Thông tin!');
+            $response_array = ([
+                'style'      => [
+                    'id'        =>  $id_style
+                ],
+                'message'       => [
+                    'status'        => "success",
+                    'description'   => "Xóa phong cách thành công!"
+                ]
+            ]);
         } else {
-            alert()->error('Xóa phong cách thất bại.', 'Lỗi!');
+            $response_array = ([
+                'message'       => [
+                    'status'        => "error",
+                    'description'   => "Xóa phong cách thất bại!"
+                ]
+            ]);
         }
-        return redirect()->intended(route('admin.perfume.style.index'));
+        echo json_encode($response_array);
     }
 }
