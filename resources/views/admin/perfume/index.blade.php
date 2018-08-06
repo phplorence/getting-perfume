@@ -63,6 +63,8 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+    @include('modal.perfume.create')
+    @include('modal.dialog.loading')
 @endsection
 @section('script')
     <script src="{{ URL::asset('js/perfume.js') }}"></script>

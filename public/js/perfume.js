@@ -49,3 +49,8 @@ $(document).ready(function () {
         }
     });
 });
+
+$('#btnCreateNewPerfume').click(function(){
+    $('#perfumeModalCreate').modal('show')
+    $('#perfumeFormCreate').find('input[type=text], input[type=password], input[type=number], input[type=email], textarea').val('');
+});
