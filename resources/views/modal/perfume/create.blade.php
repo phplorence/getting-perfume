@@ -84,7 +84,7 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div id="ajax_author" class="form-group">
                             <label>Nhà pha chế</label>
                             <select class="form-control">
                                 <option>Alberto Morillas</option>

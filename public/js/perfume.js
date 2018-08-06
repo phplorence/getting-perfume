@@ -97,6 +97,21 @@ $('#btnCreateNewPerfume').click(function(){
             $('#ajax_style').replaceWith(data['html']);
             $('.select2').select2();
         });
+
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/nha-pha-che/all',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        type: "POST",
+        beforeSend: function(){
+        }
+    })
+        .done(function(data){
+            $('#ajax_author').replaceWith(data['html']);
+            $('.select2').select2();
+        });
 });
 
 $('#perfumeFormCreate').validate({
