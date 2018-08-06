@@ -41,14 +41,10 @@
                             <span class="input-group-addon">ml</span>
                         </div>
 
-                        <div class="form-group">
+                        <div id="ajax_concentration" class="form-group">
                             <label>Nồng độ</label>
                             <select class="form-control">
-                                <option>option 1</option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option>option 4</option>
-                                <option>option 5</option>
+                                <option></option>
                             </select>
                         </div>
 

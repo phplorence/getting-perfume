@@ -65,7 +65,7 @@ $('#btnCreateNewPerfume').click(function(){
         }
     })
         .done(function(data){
-            console.log(data['html']);
+            $('#ajax_concentration').replaceWith(data['html']);
         });
 });
 

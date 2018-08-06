@@ -34,7 +34,7 @@ class ConcentrationController extends Controller
 
     public function indexAll() {
         $concentrations = $this->modelConcentration->getAllConcentrations();
-        $returnHTML = view('custom.widget.selectoption_concentration', ["concentrations" => $concentrations])->render();
+        $returnHTML = view('custom.widget.selectoption_concentration')->with(compact('concentrations'))->render();
         $response_array = ([
             'success' => true,
             'html'      => $returnHTML
