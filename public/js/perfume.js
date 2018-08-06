@@ -50,6 +50,20 @@ $(document).ready(function () {
     });
 });
 
+$(function () {
+    CKEDITOR.replace('editor1' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    CKEDITOR.replace('editor2' ,{
+        filebrowserUploadUrl : '/admin/panel/upload-image',
+        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+    });
+
+    $('.textarea').wysihtml5()
+});
+
 $('#btnCreateNewPerfume').click(function(){
     $('#perfumeModalCreate').modal('show')
     $('#perfumeFormCreate').find('input[type=text], input[type=password], input[type=number], input[type=email], textarea').val('');

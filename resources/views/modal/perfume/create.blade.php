@@ -13,14 +13,14 @@
 
                         <div class="form-group">
                             <label>Mô tả<span style="color:red;">(*)</span></label>
-                            <textarea name="description" class="form-control" rows="3" placeholder=""></textarea>
+                            <textarea id = "editor1" name="description" class="form-control" rows="3" placeholder=""></textarea>
                         </div>
 
                         <div class="form-group">
                             <h3 class="box-title">Thông tin chi tiết sản phẩm
                                 <small>CK Editor có hổ trợ định dạng page. Cách sử dụng xem thêm ở đây: <a href="www.google.com" href="blank">Support</a></small>
                             </h3>
-                            <textarea id = "editor1"  name="editor1" class="form-control" rows="5" id="comment"></textarea>
+                            <textarea id = "editor2"  name="editor1" class="form-control" rows="5" id="comment"></textarea>
                         </div>
 
                         <label for="exampleInputEmail1">Giá gốc sản phẩm<span style="color:red;">(*)</span></label>
