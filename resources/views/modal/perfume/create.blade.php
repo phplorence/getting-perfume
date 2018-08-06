@@ -144,10 +144,6 @@
                             <input type="file" id="exampleInputFile">
                             <p class="help-block">Vui lòng chọn ảnh mô tả sản phẩm và tải lên.</p>
                         </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Thêm mới</button>
-                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>

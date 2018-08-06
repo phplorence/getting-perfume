@@ -4404,3 +4404,14 @@ div.perfume_head_useful_tool {
 	border: 0.5px outset #000000;
 	padding-top: 6px;
 }
+#logoImageDashboard {
+    padding: 10px;
+}
+
+@media (max-width:767px) {
+    #logoImageDashboard > img {
+        width: 50%;
+        height: 50%;
+        margin: 0px auto;
+    }
+}
