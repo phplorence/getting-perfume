@@ -31,6 +31,16 @@ class AuthorController extends Controller
         }
     }
 
+    public function indexAll() {
+        $authors = $this->modelAuthor->getAllAuthors();
+        $returnHTML = view('custom.widget.selectoption_author')->with(compact('authors'))->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
+
     public function authorDataTables(){
         $authors = $this->modelAuthor->getAllAuthors();
         $collections = collect();

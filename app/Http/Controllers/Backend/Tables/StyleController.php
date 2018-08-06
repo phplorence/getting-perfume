@@ -31,6 +31,16 @@ class StyleController extends Controller
         }
     }
 
+    public function indexAll() {
+        $styles = $this->modelStyle->getAllStyles();
+        $returnHTML = view('custom.widget.selectoption_style')->with(compact('styles'))->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
+
     public function styleDataTables(){
         $styles = $this->modelStyle->getAllStyles();
         $collections = collect();

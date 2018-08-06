@@ -32,7 +32,17 @@ class IncenseController extends Controller
         }
     }
 
-    public function incenseDataTables(){
+    public function indexAll() {
+        $incenses = $this->modelIncense->getAllIncenses();
+        $returnHTML = view('custom.widget.selectoption_incense')->with(compact('incenses'))->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
+
+    public function incenseDataTables() {
         $incenses = $this->modelIncense->getAllIncenses();
         $collections = collect();
         foreach ($incenses as $incense){

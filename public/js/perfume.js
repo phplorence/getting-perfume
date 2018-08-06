@@ -67,6 +67,36 @@ $('#btnCreateNewPerfume').click(function(){
         .done(function(data){
             $('#ajax_concentration').replaceWith(data['html']);
         });
+
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/nhom-huong/all',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        type: "POST",
+        beforeSend: function(){
+        }
+    })
+        .done(function(data){
+            $('#ajax_incense').replaceWith(data['html']);
+            $('.select2').select2();
+        });
+
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/phong-cach/all',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        type: "POST",
+        beforeSend: function(){
+        }
+    })
+        .done(function(data){
+            $('#ajax_style').replaceWith(data['html']);
+            $('.select2').select2();
+        });
 });
 
 $('#perfumeFormCreate').validate({

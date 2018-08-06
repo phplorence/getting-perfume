@@ -68,31 +68,19 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div id="ajax_incense" class="form-group">
                             <label>Nhóm hương<span style="color:red;">(*)</span></label>
-                            <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            <select class="form-control select2" multiple="multiple"
                                     style="width: 100%;">
-                                <option>Alabama</option>
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
+                                <option></option>
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div id="ajax_style" class="form-group">
                             <label>Phong cách<span style="color:red;">(*)</span></label>
-                            <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            <select class="form-control select2" multiple="multiple"
                                     style="width: 100%;">
-                                <option>Alabama</option>
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
+                                <option></option>
                             </select>
                         </div>
 
