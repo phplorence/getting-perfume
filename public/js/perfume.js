@@ -53,4 +53,72 @@ $(document).ready(function () {
 $('#btnCreateNewPerfume').click(function(){
     $('#perfumeModalCreate').modal('show')
     $('#perfumeFormCreate').find('input[type=text], input[type=password], input[type=number], input[type=email], textarea').val('');
+
+    $.ajax({
+        url: '/quan-tri/nuoc-hoa/nong-do/all',
+        dataType: 'json',
+        type: "POST",
+        beforeSend: function(){
+        }
+    })
+        .done(function(data){
+            console.log(data['html']);
+        });
+});
+
+$('#perfumeFormCreate').validate({
+    rules: {
+        name: "required",
+        description: "required",
+        original_price: "required",
+        promotion_price: "required",
+        dore: "required"
+    },
+    messages: {
+        name: "Tên sản phẩm không được bỏ trống!",
+        description: "Mô tả sản phẩm không được bỏ trống!",
+        original_price: "Vui lòng nhập giá gốc sản phẩm!",
+        promotion_price: "Vui lòng nhập giá khuyến mãi",
+        dore: "Vui lòng nhập dung tích"
+    },
+    submitHandler: function(form) {
+        event.preventDefault();
+        $('#concentrationModalCreate').modal('hide');
+        $('#concentrationCreate').val(CKEDITOR.instances.concentrationCreate.getData());
+        $.ajax({
+            url: '/quan-tri/nuoc-hoa/nong-do',
+            method: 'POST',
+            dataType: 'json',
+            data: $(form).serialize()
+        })
+            .done(function (data) {
+                CKEDITOR.instances.concentrationCreate.setData('', function() {this.checkDirty(); });
+                if(data['message']['status'] == 'invalid') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'existed') {
+                    swal("", data['message']['description'], "error");
+                }
+                if(data['message']['status'] == 'success') {
+                    swal("", data['message']['description'], "success");
+                    var table = $('#concentrationTable').DataTable();
+                    $.fn.dataTable.ext.errMode = 'none';
+                    table.row.add( [
+                        data['concentration']['id'],
+                        data['concentration']['name'],
+                        data['concentration']['description'],
+                        data['concentration']['detail'],
+                        data['concentration']['link'],
+                        function (id) {
+                            return '<div class="text-center"><a onclick= "showEditConcentration('+data['concentration']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['concentration']['id']+'" onclick="deleteConcentrationFunction('+data['concentration']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                    ]).draw();
+                } else if(data.status == 'error') {
+                    swal("", data['message']['description'], "error");
+                }
+            })
+            .fail(function (error) {
+                console.log(error);
+            });
+    }
 });

@@ -8,71 +8,41 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm<span style="color:red;">(*)</span></label>
-                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ old('name') }}">
-                            @if ($errors->has('name'))
-                                <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                            @endif
+                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="" value="">
                         </div>
 
                         <div class="form-group">
                             <label>Mô tả<span style="color:red;">(*)</span></label>
-                            <textarea name="description" class="form-control" rows="3" placeholder="">{{ old('description') }}</textarea>
-                            @if ($errors->has('description'))
-                                <span class="help-block">
-                            <strong>{{ $errors->first('description') }}</strong>
-                        </span>
-                            @endif
+                            <textarea name="description" class="form-control" rows="3" placeholder=""></textarea>
                         </div>
 
                         <div class="form-group">
-                            <h3 class="box-title">Thông tin chi tiết sản phẩm<span style="color:red;">(*)</span>
+                            <h3 class="box-title">Thông tin chi tiết sản phẩm
                                 <small>CK Editor có hổ trợ định dạng page. Cách sử dụng xem thêm ở đây: <a href="www.google.com" href="blank">Support</a></small>
                             </h3>
-                            <textarea id = "editor1"  name="editor1" class="form-control" rows="5" id="comment">{{ old('detail') }}</textarea>
-                            @if ($errors->has('detail'))
-                                <span class="help-block">
-                            <strong>{{ $errors->first('detail') }}</strong>
-                        </span>
-                            @endif
+                            <textarea id = "editor1"  name="editor1" class="form-control" rows="5" id="comment"></textarea>
                         </div>
 
                         <label for="exampleInputEmail1">Giá gốc sản phẩm<span style="color:red;">(*)</span></label>
                         <div class="input-group">
-                            <input type="number" class="form-control" placeholder="" value="{{ old('original_price') }}">
+                            <input type="number" name="original_price" class="form-control" placeholder="" value="">
                             <span class="input-group-addon">VND</span>
-                            @if ($errors->has('original_price'))
-                                <span class="help-block">
-                            <strong>{{ $errors->first('original_price') }}</strong>
-                          </span>
-                            @endif
                         </div>
 
                         <label for="exampleInputEmail1">Giá gốc khuyến mãi<span style="color:red;">(*)</span></label>
                         <div class="input-group">
-                            <input type="number" class="form-control" placeholder="" value="{{ old('promotion_price') }}">
+                            <input type="number" name="promotion_price" class="form-control" placeholder="" value="">
                             <span class="input-group-addon">VND</span>
-                            @if ($errors->has('promotion_price'))
-                                <span class="help-block">
-                            <strong>{{ $errors->first('promotion_price') }}</strong>
-                        </span>
-                            @endif
                         </div>
 
                         <label for="exampleInputEmail1">Dung tích<span style="color:red;">(*)</span></label>
                         <div class="input-group">
-                            <input type="number" class="form-control" placeholder="" value="{{ old('dore') }}">
+                            <input type="number" name="dore" class="form-control" placeholder="" value="">
                             <span class="input-group-addon">ml</span>
-                            @if ($errors->has('dore'))
-                                <span class="help-block">
-                            <strong>{{ $errors->first('dore') }}</strong>
-                        </span>
-                            @endif
                         </div>
 
                         <div class="form-group">
-                            <label>Nồng độ<span style="color:red;">(*)</span></label>
+                            <label>Nồng độ</label>
                             <select class="form-control">
                                 <option>option 1</option>
                                 <option>option 2</option>
@@ -83,7 +53,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Ngày phát hành<span style="color:red;">(*)</span></label>
+                            <label>Ngày phát hành</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
@@ -93,7 +63,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Hạn sử dụng<span style="color:red;">(*)</span></label>
+                            <label>Hạn sử dụng</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
@@ -131,7 +101,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Nhà pha chế<span style="color:red;">(*)</span></label>
+                            <label>Nhà pha chế</label>
                             <select class="form-control">
                                 <option>Alberto Morillas</option>
                                 <option>Alberto Morillas</option>
@@ -140,7 +110,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Trạng thái<span style="color:red;">(*)</span></label>
+                            <label>Trạng thái</label>
                             <select class="form-control">
                                 <option>Còn hàng</option>
                                 <option>Hết hàng</option>
@@ -153,7 +123,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Loại sản phẩm (Nhãn hiệu)<span style="color:red;">(*)</span></label>
+                            <label>Loại sản phẩm (Nhãn hiệu)</label>
                             <select class="form-control">
                                 <option>Alberto Morillas</option>
                                 <option>Alberto Morillas</option>
@@ -177,7 +147,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Xuất xứ<span style="color:red;">(*)</span></label>
+                            <label>Xuất xứ</label>
                             <select class="form-control">
                                 <option>Alberto Morillas</option>
                                 <option>Alberto Morillas</option>

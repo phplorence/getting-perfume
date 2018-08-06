@@ -31,6 +31,16 @@ class ConcentrationController extends Controller
         }
     }
 
+    public function indexAll() {
+        $returnHTML = view('custom.widget.selectoption_concentration')
+            ->with('concentrations', $concentrations)->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
+
     public function concentrationDataTables()
     {
         $concentrations = $this->modelConcentration->getAllConcentrations();

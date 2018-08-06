@@ -64,6 +64,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/nuoc-hoa/them', 'Backend\AdminPerfumeController@create')->name('admin.perfume.create');
         Route::post('/nuoc-hoa', 'Backend\AdminPerfumeController@store')->name('admin.perfume.store');
 
+        Route::post('/nuoc-hoa/nong-do/all', 'Backend\Tables\ConcentrationController@indexAll')->name('admin.perfume.concentration.indexAll');
+
         // TAB TABLES
         Route::get('/nuoc-hoa/nong-do', 'Backend\Tables\ConcentrationController@index')->name('admin.perfume.concentration.index');
         Route::get('/nuoc-hoa/nong-do/loading_concentration', 'Backend\Tables\ConcentrationController@concentrationDataTables')->name('admin.perfume.concentration.index.concentrationDataTables');
