@@ -12,8 +12,9 @@
         <script>
             console.log($concentration);
         </script>
-        <?php foreach ($conentrations as $conentration) : ?>
-        <option>{{!! $concentraion->name }}</option>
+        <?php foreach ($concentrations as $concentration) : ?>
+        <option>{{!! $concentration->name }}</option>
         <?php endforeach ?>
+
     </select>
 </div>

@@ -56,6 +56,9 @@ $('#btnCreateNewPerfume').click(function(){
 
     $.ajax({
         url: '/quan-tri/nuoc-hoa/nong-do/all',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
         dataType: 'json',
         type: "POST",
         beforeSend: function(){

@@ -7,6 +7,7 @@ use App\Model\Concentrations;
 use App\Utilize\Helper;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
 
 class ConcentrationController extends Controller
@@ -32,8 +33,8 @@ class ConcentrationController extends Controller
     }
 
     public function indexAll() {
-        $returnHTML = view('custom.widget.selectoption_concentration')
-            ->with('concentrations', $concentrations)->render();
+        $concentrations = $this->modelConcentration->getAllConcentrations();
+        $returnHTML = view('custom.widget.selectoption_concentration', ["concentrations" => $concentrations])->render();
         $response_array = ([
             'success' => true,
             'html'      => $returnHTML
