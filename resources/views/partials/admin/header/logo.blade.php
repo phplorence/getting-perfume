@@ -10,5 +10,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>H</b>TP</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Quản Trị</b></span>
+    <p style="padding: 10px;">
+        <img class="img-responsive wow slideInLeft" src="{{URL::asset('img/ic_logo.png')}}" alt="logoSite"/>
+    </p>
 </a>

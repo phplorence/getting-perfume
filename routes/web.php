@@ -59,7 +59,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/cap-cap/tim-kiem', 'Backend\Manager\Super\SuperController@search')->name('admin.super.search');
 
         // TAB PERFUME
-        Route::get('/nuoc-hoa', 'Backend\AdminPerfumeController@perfume')->name('admin.perfume.index');
+        Route::get('/nuoc-hoa', 'Backend\AdminPerfumeController@index')->name('admin.perfume.index');
+        Route::get('/nuoc-hoa/loading_perfume', 'Backend\AdminPerfumeController@perfumeDataTables')->name('admin.perfume.index.perfumeDataTables');
         Route::get('/nuoc-hoa/them', 'Backend\AdminPerfumeController@create')->name('admin.perfume.create');
         Route::post('/nuoc-hoa', 'Backend\AdminPerfumeController@store')->name('admin.perfume.store');
 
