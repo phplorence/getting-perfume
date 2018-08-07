@@ -48,13 +48,13 @@ $(document).ready(function () {
 
 $(function () {
     CKEDITOR.replace('incenseCreate' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+        filebrowserUploadUrl : '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files',
+        filebrowserImageUploadUrl :  '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images'
     });
 
     CKEDITOR.replace('incenseDetailEdit' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+        filebrowserUploadUrl : '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files',
+        filebrowserImageUploadUrl :  '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images'
     });
 
     $('.textarea').wysihtml5()

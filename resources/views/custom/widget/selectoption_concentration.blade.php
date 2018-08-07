@@ -8,9 +8,9 @@
 ?>
 <div class="form-group">
     <label>Nồng độ</label>
-    <select class="form-control">
+    <select name="concentration" class="form-control">
         <?php foreach ($concentrations as $concentration) : ?>
-        <option>{{ $concentration->name }}</option>
+        <option value="{{ $concentration->name }}">{{ $concentration->name }}</option>
         <?php endforeach ?>
     </select>
 </div>

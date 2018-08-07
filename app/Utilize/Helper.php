@@ -107,6 +107,14 @@ class Helper extends Controller
         );
     }
 
+    public function validatePerfumeName($request) {
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => 'Tên nước hoa không được bỏ trống']
+        );
+    }
+
     public function validateStyleName($request) {
         $this->validate(
             $request,

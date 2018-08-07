@@ -31,6 +31,16 @@ class TypePerfumeController extends Controller
         }
     }
 
+    public function indexAll() {
+        $typeperfumes = $this->modelTypePerfume->getAllTypePerfumes();
+        $returnHTML = view('custom.widget.selectoption_typeperfume')->with(compact('typeperfumes'))->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
+
     public function typePerfumeDataTables(){
         $typePerfumes = $this->modelTypePerfume->getAllTypePerfumes();
         $collections = collect();

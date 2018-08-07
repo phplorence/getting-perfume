@@ -52,15 +52,14 @@ $(document).ready(function () {
 
 $(function () {
     CKEDITOR.replace('editor1' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+        filebrowserUploadUrl : '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files',
+        filebrowserImageUploadUrl :  '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images'
     });
 
     CKEDITOR.replace('editor2' ,{
-        filebrowserUploadUrl : '/admin/panel/upload-image',
-        filebrowserImageUploadUrl :  '/admin/panel/upload-image'
+        filebrowserUploadUrl : '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files',
+        filebrowserImageUploadUrl :  '../components/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images'
     });
-
     $('.textarea').wysihtml5()
 });
 
@@ -113,6 +112,20 @@ $('#btnCreateNewPerfume').click(function(){
         });
 
     $.ajax({
+        url: '/quan-tri/nuoc-hoa/loai-nuoc-hoa/all',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        type: "POST",
+        beforeSend: function(){
+        }
+    })
+        .done(function(data){
+            $('#ajax_typeperfume').replaceWith(data['html']);
+        });
+
+    $.ajax({
         url: '/quan-tri/nuoc-hoa/nha-pha-che/all',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -124,63 +137,62 @@ $('#btnCreateNewPerfume').click(function(){
     })
         .done(function(data){
             $('#ajax_author').replaceWith(data['html']);
-            $('.select2').select2();
         });
 });
 
-$('#perfumeFormCreate').validate({
-    rules: {
-        name: "required",
-        description: "required",
-        original_price: "required",
-        promotion_price: "required",
-        dore: "required"
-    },
-    messages: {
-        name: "Tên sản phẩm không được bỏ trống!",
-        description: "Mô tả sản phẩm không được bỏ trống!",
-        original_price: "Vui lòng nhập giá gốc sản phẩm!",
-        promotion_price: "Vui lòng nhập giá khuyến mãi",
-        dore: "Vui lòng nhập dung tích"
-    },
-    submitHandler: function(form) {
+$(document).ready(function () {
+    $('#perfumeFormCreate').on('submit', function (event) {
         event.preventDefault();
-        $('#concentrationModalCreate').modal('hide');
-        $('#concentrationCreate').val(CKEDITOR.instances.concentrationCreate.getData());
+        $('#editor1').val(CKEDITOR.instances.editor1.getData());
+        $('#editor2').val(CKEDITOR.instances.editor2.getData());
+        $('#perfumeModalCreate').modal('hide');
+        var formData = new FormData(this);
+
+        $(document).on('change', '#concentration', function() {
+            var value = $(this).val();
+            formData.append('concentration', value);
+        });
+
+        $(document).on('change', '#author', function() {
+            var value = $(this).val();
+            formData.append('author', value);
+        });
+
+        $(document).on('change', '#typeperfume', function() {
+            var value = $(this).val();
+            formData.append('typeperfume', value);
+        });
+
+        $(document).on('change', '#status', function() {
+            var value = $(this).val();
+            formData.append('status', value);
+        });
+
+        $(document).on('change', '#country', function() {
+            var value = $(this).val();
+            formData.append('country', value);
+        });
+
+        formData.append('incense', $('#incense').val());
+        formData.append('style', $('#style').val());
+        formData.append('gender', $('input[name=optradio]:checked').val());
+
         $.ajax({
-            url: '/quan-tri/nuoc-hoa/nong-do',
-            method: 'POST',
+            url: '/quan-tri/nuoc-hoa',
+            method: "POST",
             dataType: 'json',
-            data: $(form).serialize()
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
         })
             .done(function (data) {
-                CKEDITOR.instances.concentrationCreate.setData('', function() {this.checkDirty(); });
-                if(data['message']['status'] == 'invalid') {
-                    swal("", data['message']['description'], "error");
-                }
-                if(data['message']['status'] == 'existed') {
-                    swal("", data['message']['description'], "error");
-                }
-                if(data['message']['status'] == 'success') {
-                    swal("", data['message']['description'], "success");
-                    var table = $('#concentrationTable').DataTable();
-                    $.fn.dataTable.ext.errMode = 'none';
-                    table.row.add( [
-                        data['concentration']['id'],
-                        data['concentration']['name'],
-                        data['concentration']['description'],
-                        data['concentration']['detail'],
-                        data['concentration']['link'],
-                        function (id) {
-                            return '<div class="text-center"><a onclick= "showEditConcentration('+data['concentration']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                                +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['concentration']['id']+'" onclick="deleteConcentrationFunction('+data['concentration']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
-                    ]).draw();
-                } else if(data.status == 'error') {
-                    swal("", data['message']['description'], "error");
-                }
+                console.log(data);
+                CKEDITOR.instances.editor1.setData('', function() {this.checkDirty(); });
+                CKEDITOR.instances.editor2.setData('', function() {this.checkDirty(); });
             })
             .fail(function (error) {
                 console.log(error);
             });
-    }
+    });
 });

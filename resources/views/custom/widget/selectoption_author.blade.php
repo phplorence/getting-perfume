@@ -8,9 +8,9 @@
 ?>
 <div class="form-group">
     <label>Nhà pha chế</label>
-    <select class="form-control">
+    <select name="author" class="form-control">
         <?php foreach ($authors as $author) : ?>
-        <option>{{ $author->name }}</option>
+        <option value="{{ $author->name }}">{{ $author->name }}</option>
         <?php endforeach ?>
     </select>
 </div>

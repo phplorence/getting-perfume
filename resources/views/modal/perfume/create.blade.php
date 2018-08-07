@@ -20,7 +20,7 @@
                             <h3 class="box-title">Thông tin chi tiết sản phẩm
                                 <small>CK Editor có hổ trợ định dạng page. Cách sử dụng xem thêm ở đây: <a href="www.google.com" href="blank">Support</a></small>
                             </h3>
-                            <textarea id = "editor2"  name="editor1" class="form-control" rows="5" id="comment"></textarea>
+                            <textarea id = "editor2"  name="detail" class="form-control" rows="5"></textarea>
                         </div>
 
                         <label for="exampleInputEmail1">Giá gốc sản phẩm<span style="color:red;">(*)</span></label>
@@ -43,7 +43,7 @@
 
                         <div id="ajax_concentration" class="form-group">
                             <label>Nồng độ</label>
-                            <select class="form-control">
+                            <select id="concentration" class="form-control">
                                 <option></option>
                             </select>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                <input name="date_created" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                             </div>
                         </div>
 
@@ -64,13 +64,13 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                <input name="date_expiration" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                             </div>
                         </div>
 
                         <div id="ajax_incense" class="form-group">
                             <label>Nhóm hương<span style="color:red;">(*)</span></label>
-                            <select class="form-control select2" multiple="multiple"
+                            <select name="incense" id="incense" class="form-control select2" multiple="multiple"
                                     style="width: 100%;">
                                 <option></option>
                             </select>
@@ -78,7 +78,7 @@
 
                         <div id="ajax_style" class="form-group">
                             <label>Phong cách<span style="color:red;">(*)</span></label>
-                            <select class="form-control select2" multiple="multiple"
+                            <select name="style" id="style" class="form-control select2" multiple="multiple"
                                     style="width: 100%;">
                                 <option></option>
                             </select>
@@ -86,16 +86,14 @@
 
                         <div id="ajax_author" class="form-group">
                             <label>Nhà pha chế</label>
-                            <select class="form-control">
-                                <option>Alberto Morillas</option>
-                                <option>Alberto Morillas</option>
-                                <option>Alberto Morillas</option>
+                            <select id="author" class="form-control">
+                                <option></option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label>Trạng thái</label>
-                            <select class="form-control">
+                            <select name="status" class="form-control">
                                 <option>Còn hàng</option>
                                 <option>Hết hàng</option>
                             </select>
@@ -103,15 +101,13 @@
 
                         <label for="exampleInputEmail1">Số lượng<span style="color:red;">(*)</span></label>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="">
+                            <input name="count" type="number" class="form-control" placeholder="">
                         </div>
 
-                        <div class="form-group">
+                        <div id="ajax_typeperfume" class="form-group">
                             <label>Loại sản phẩm (Nhãn hiệu)</label>
-                            <select class="form-control">
-                                <option>Alberto Morillas</option>
-                                <option>Alberto Morillas</option>
-                                <option>Alberto Morillas</option>
+                            <select id="typeperfume" class="form-control">
+                                <option></option>
                             </select>
                         </div>
 
@@ -120,19 +116,19 @@
                                 <label for="exampleInputFile">Giới tính<span style="color:red;">(*)</span></label>
                             </div>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio">Nam
+                                <input type="radio" name="optradio" value="Nam" checked>Nam
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio">Nữ
+                                <input type="radio" name="optradio" value="Nữ">Nữ
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio">Nam và Nữ
+                                <input type="radio" name="optradio" value="Nam và Nữ">Nam và Nữ
                             </label>
                         </div>
 
                         <div class="form-group">
                             <label>Xuất xứ</label>
-                            <select class="form-control">
+                            <select name="country" class="form-control">
                                 <option>Alberto Morillas</option>
                                 <option>Alberto Morillas</option>
                                 <option>Alberto Morillas</option>
@@ -141,7 +137,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputFile">Chọn tập tin ảnh</label>
-                            <input type="file" id="exampleInputFile">
+                            <input name="image" type="file" id="exampleInputFile">
                             <p class="help-block">Vui lòng chọn ảnh mô tả sản phẩm và tải lên.</p>
                         </div>
                     </div>

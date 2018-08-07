@@ -37,7 +37,23 @@ class Perfumes extends Authenticatable
         'date_expiration'
     ];
 
+    public function addAll($data) {
+        return DB::table('perfumes')->insert($data);
+    }
+
     public function getAllPerfumes() {
         return DB::table('perfumes')->get();
+    }
+
+    public function isExistIncense($request) {
+        $perfume = DB::table('perfumes')->where('name', '=', $request->name)->first();
+        if ($perfume != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public function getPerfumeByName($perfume_name){
+        return DB::table('perfumes')->where('name', $perfume_name)->first();
     }
 }
