@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+  @include('sweet::alert');
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header" style="margin-top:15px;">

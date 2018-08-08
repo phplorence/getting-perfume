@@ -8,11 +8,11 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm<span style="color:red;">(*)</span></label>
-                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="" value="">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="" value="">
                         </div>
 
                         <div class="form-group">
-                            <label>Mô tả<span style="color:red;">(*)</span></label>
+                            <label>Mô tả</label>
                             <textarea id = "editor1" name="description" class="form-control" rows="3" placeholder=""></textarea>
                         </div>
 
@@ -35,7 +35,7 @@
                             <span class="input-group-addon">VND</span>
                         </div>
 
-                        <label for="exampleInputEmail1">Dung tích<span style="color:red;">(*)</span></label>
+                        <label for="exampleInputEmail1">Dung tích</label>
                         <div class="input-group">
                             <input type="number" name="dore" class="form-control" placeholder="" value="">
                             <span class="input-group-addon">ml</span>
@@ -69,7 +69,7 @@
                         </div>
 
                         <div id="ajax_incense" class="form-group">
-                            <label>Nhóm hương<span style="color:red;">(*)</span></label>
+                            <label>Nhóm hương</label>
                             <select name="incense" id="incense" class="form-control select2" multiple="multiple"
                                     style="width: 100%;">
                                 <option></option>
@@ -77,7 +77,7 @@
                         </div>
 
                         <div id="ajax_style" class="form-group">
-                            <label>Phong cách<span style="color:red;">(*)</span></label>
+                            <label>Phong cách</label>
                             <select name="style" id="style" class="form-control select2" multiple="multiple"
                                     style="width: 100%;">
                                 <option></option>
@@ -99,7 +99,7 @@
                             </select>
                         </div>
 
-                        <label for="exampleInputEmail1">Số lượng<span style="color:red;">(*)</span></label>
+                        <label for="exampleInputEmail1">Số lượng</label>
                         <div class="form-group">
                             <input name="count" type="number" class="form-control" placeholder="">
                         </div>
@@ -113,7 +113,7 @@
 
                         <div class="form-group">
                             <div>
-                                <label for="exampleInputFile">Giới tính<span style="color:red;">(*)</span></label>
+                                <label for="exampleInputFile">Giới tính</label>
                             </div>
                             <label class="radio-inline">
                                 <input type="radio" name="optradio" value="Nam" checked>Nam
@@ -138,7 +138,6 @@
                         <div class="form-group">
                             <label for="exampleInputFile">Chọn tập tin ảnh</label>
                             <input name="image" type="file" id="exampleInputFile">
-                            <p class="help-block">Vui lòng chọn ảnh mô tả sản phẩm và tải lên.</p>
                         </div>
                     </div>
                     <div class="modal-footer">
