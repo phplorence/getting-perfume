@@ -418,7 +418,6 @@ function showEditPerfume(id) {
         }
     })
         .done(function(perfume){
-            console.log(perfume);
             $('#nameEdit').val(perfume['perfume']['name']);
             CKEDITOR.instances.editor1Edit.setData(perfume['perfume']['description'], function() {this.checkDirty(); });
             CKEDITOR.instances.editor2Edit.setData(perfume['perfume']['detail'], function() {this.checkDirty(); });
@@ -426,8 +425,30 @@ function showEditPerfume(id) {
             $('#promotion_price_edit').val(+perfume['perfume']['promotion_price']);
             $('#doreEdit').val(+perfume['perfume']['dore']);
             $("#concentration option[value="+perfume['perfume']['concentration']+"]").prop("selected", "selected");
-            /** date-created */
+            if (perfume['perfume']['date_created'] != null ) {
+                var date_created_format = perfume['perfume']['date_created'].substring(8, 10) + "/" + perfume['perfume']['date_created'].substring(5, 7) + "/" + perfume['perfume']['date_created'].substring(0, 4);
+                $("#date_created").val("\""+date_created_format+"\"");
+            }
+            if (perfume['perfume']['date_expiration'] != null) {
+                var date_expiration_format = perfume['perfume']['date_expiration'].substring(8, 10) + "/" + perfume['perfume']['date_expiration'].substring(5, 7) + "/" + perfume['perfume']['date_expiration'].substring(0, 4);
+                $("#date_expiration").val("\""+date_expiration_format+"\"");
+            }
             $("#author option[value="+perfume['perfume']['bartender']+"]").prop("selected", "selected");
+            $("#status option[value=\""+perfume['perfume']['status']+"\"]").prop("selected", "selected");
+            $("#typeperfume option[value=\""+perfume['perfume']['typeofProduct']+"\"]").prop("selected", "selected");
+            $("#count").val(+perfume['perfume']['count']);
+            $("input[name=optradio][value=\"" + perfume['perfume']['gender'] + "\"]").prop('checked', true);
+
+            var incenses = perfume['perfume']['groupofincense'];
+            $.each(incenses.split(","), function(i,e){
+                $("#incense option[value=\"" + e + "\"]").prop("selected", "selected");
+            });
+
+            var styles = perfume['perfume']['style'];
+            $.each(styles.split(","), function(i,e){
+                $("#style option[value=\"" + e + "\"]").prop("selected", "selected");
+            });
+
             $('#modal-loading').modal('hide');
             $('#perfumeModalEdit').modal('show');
         });

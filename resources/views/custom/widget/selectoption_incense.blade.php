@@ -11,7 +11,7 @@
     <select name="incense" id="incense" class="form-control select2" multiple="multiple"
             style="width: 100%;">
         <?php foreach ($incenses as $incense) : ?>
-        <option>{{ $incense->name }}</option>
+        <option value="{{ $incense->name }}">{{ $incense->name }}</option>
         <?php endforeach ?>
     </select>
 </div>

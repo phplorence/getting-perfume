@@ -93,7 +93,7 @@
 
                         <div class="form-group">
                             <label>Trạng thái</label>
-                            <select name="status" class="form-control">
+                            <select name="status" id="status" class="form-control">
                                 <option>Còn hàng</option>
                                 <option>Hết hàng</option>
                             </select>

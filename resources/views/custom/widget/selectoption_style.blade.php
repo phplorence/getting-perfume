@@ -11,7 +11,7 @@
     <select name="style" id="style" class="form-control select2" multiple="multiple"
             style="width: 100%;">
         <?php foreach ($styles as $style) : ?>
-        <option>{{ $style->name }}</option>
+        <option value="{{ $style->name }}">{{ $style->name }}</option>
         <?php endforeach ?>
     </select>
 </div>

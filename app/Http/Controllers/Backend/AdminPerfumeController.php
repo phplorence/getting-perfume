@@ -73,7 +73,7 @@ class AdminPerfumeController extends Controller
         $concentration = $request->concentration;
         $date_created = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_created, '/', '-')));
         $date_created = $date_created == '1970-01-01 00:00:00' ? NULL : $date_created;
-        $groupofincense = $request->groupofincense;
+        $groupofincense = $request->incense;
         $style = $request->style;
         $bartender = $request->author;
         $status = $request->status;

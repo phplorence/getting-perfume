@@ -8,7 +8,7 @@
 ?>
 <div class="form-group">
     <label>Loại sản phẩm (Nhãn hiệu)</label>
-    <select name="typeperfume" class="form-control">
+    <select name="typeperfume" id="typeperfume" class="form-control">
         <?php foreach ($typeperfumes as $typeperfume) : ?>
             <option value="{{ $typeperfume->name }}">{{ $typeperfume->name }}</option>
         <?php endforeach ?>

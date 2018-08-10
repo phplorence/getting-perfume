@@ -54,7 +54,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input name="date_created" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                <input name="date_created" id="date_created" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input name="date_expiration" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                <input name="date_expiration" id="date_expiration" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                             </div>
                         </div>
 
@@ -93,15 +93,15 @@
 
                         <div class="form-group">
                             <label>Trạng thái</label>
-                            <select name="status" class="form-control">
-                                <option>Còn hàng</option>
-                                <option>Hết hàng</option>
+                            <select name="status" id="status" class="form-control">
+                                <option value="Còn hàng">Còn hàng</option>
+                                <option value="Hết hàng">Hết hàng</option>
                             </select>
                         </div>
 
                         <label for="exampleInputEmail1">Số lượng</label>
                         <div class="form-group">
-                            <input name="count" type="number" class="form-control" placeholder="">
+                            <input name="count" id="count" type="number" class="form-control" placeholder="">
                         </div>
 
                         <div id="ajax_typeperfumex" class="form-group">
@@ -116,13 +116,13 @@
                                 <label for="exampleInputFile">Giới tính</label>
                             </div>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio" value="Nam" checked>Nam
+                                <input type="radio" name="optradio" id="optradio" value="Nam" checked>Nam
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio" value="Nữ">Nữ
+                                <input type="radio" name="optradio" id="optradio" value="Nữ">Nữ
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="optradio" value="Nam và Nữ">Nam và Nữ
+                                <input type="radio" name="optradio" id="optradio" value="Nam và Nữ">Nam và Nữ
                             </label>
                         </div>
 
