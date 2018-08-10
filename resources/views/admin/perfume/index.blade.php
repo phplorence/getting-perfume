@@ -64,6 +64,7 @@
     </div>
     <!-- /.content-wrapper -->
     @include('modal.perfume.create')
+    @include('modal.perfume.edit')
     @include('modal.dialog.loading')
 @endsection
 @section('script')

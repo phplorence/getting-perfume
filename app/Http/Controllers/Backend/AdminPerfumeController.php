@@ -7,7 +7,6 @@ use App\Model\Perfumes;
 use App\Utilize\Helper;
 use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
 
 class AdminPerfumeController extends Controller
@@ -133,9 +132,19 @@ class AdminPerfumeController extends Controller
         return $data;
     }
 
+    public function show($id)
+    {
+        if($this->modelPerfume->getPerfume($id) != null) {
+            $perfume = $this->modelPerfume->getPerfume($id);
+            return json_encode(['perfume' => $perfume]);
+        } else {
+            alert()->error('Nước hoa đã không tồn tại trong hệ thống.', 'Lỗi!');
+            return redirect()->intended(route('admin.perfume.index'));
+        }
+    }
+
     public function store(Request $request)
     {
-        Log::info($request);
         $image_path = '';
         if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
         } else {

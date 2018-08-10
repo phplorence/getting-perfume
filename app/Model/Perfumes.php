@@ -53,6 +53,10 @@ class Perfumes extends Authenticatable
         return false;
     }
 
+    public function getPerfume($id_perfume){
+        return DB::table('perfumes')->where('id', $id_perfume)->first();
+    }
+
     public function getPerfumeByName($perfume_name){
         return DB::table('perfumes')->where('name', $perfume_name)->first();
     }
