@@ -60,4 +60,21 @@ class Perfumes extends Authenticatable
     public function getPerfumeByName($perfume_name){
         return DB::table('perfumes')->where('name', $perfume_name)->first();
     }
+
+    public function updatePerfume($data) {
+//        return DB::table('perfumes')
+//            ->where('id', $data[0]['id'])
+//            ->update([
+//                'name' => $data[0]['name'],
+//                'description' => $data[0]['description'],
+//                'detail' => $data[0]['detail'],
+//                'link' => $data[0]['link']
+//            ]);
+    }
+
+    public function deletePerfume($id_perfume) {
+        return DB::table('perfumes')
+            ->where('id', $id_perfume)
+            ->delete();
+    }
 }

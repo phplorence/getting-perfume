@@ -191,4 +191,26 @@ class AdminPerfumeController extends Controller
         }
         echo json_encode($response_array);
     }
+
+    public function delete($id_perfume) {
+        if ($this->modelPerfume->deletePerfume($id_perfume) > 0) {
+            $response_array = ([
+                'perfume'      => [
+                    'id'        =>  $id_perfume
+                ],
+                'message'       => [
+                    'status'        => "success",
+                    'description'   => "Xóa nước hoa thành công!"
+                ]
+            ]);
+        } else {
+            $response_array = ([
+                'message'       => [
+                    'status'        => "error",
+                    'description'   => "Xóa nước hoa thất bại!"
+                ]
+            ]);
+        }
+        echo json_encode($response_array);
+    }
 }

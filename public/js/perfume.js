@@ -453,3 +453,47 @@ function showEditPerfume(id) {
             $('#perfumeModalEdit').modal('show');
         });
 }
+
+function deletePerfumeFunction(id) {
+    event.preventDefault();
+    swal({
+            title: "",
+            text: "Bạn có muốn xóa nước hoa này không?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Xóa",
+            cancelButtonText: "Hủy bỏ",
+            closeOnConfirm: true
+        },
+        function(isConfirm){
+            if(isConfirm){
+                $.ajax({
+                    url: '/quan-tri/nuoc-hoa/xoa/'+id,
+                    dataType: 'json',
+                    type:"GET",
+                    beforeSend: function(){
+                    }
+                })
+                    .done(function(data){
+                        if(data['message']['status'] == 'success') {
+                            swal("", data['message']['description'], "success");
+                            var table = $('#perfumeTable').DataTable();
+                            $.fn.dataTable.ext.errMode = 'none';
+                            var rows = table.rows().data();
+                            for (var i = 0; i < rows.length; i++) {
+                                if (rows[i].id == data['perfume']['id']) {
+                                    table.row(this).remove().draw();
+                                }
+                            }
+                        }
+                        if(data['message']['status'] == 'error') {
+                            swal("", data['message']['description'], "error");
+                        }
+                    })
+                    .fail(function (error) {
+                        console.log(error);
+                    });
+            }
+        });
+}
