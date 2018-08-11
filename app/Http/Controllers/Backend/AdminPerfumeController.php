@@ -7,6 +7,7 @@ use App\Model\Perfumes;
 use App\Utilize\Helper;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
 
 class AdminPerfumeController extends Controller
@@ -84,7 +85,6 @@ class AdminPerfumeController extends Controller
         $path_image = $target;
         $date_expiration = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_expiration, '/', '-')));
         $date_expiration = $date_expiration == '1970-01-01 00:00:00' ? NULL : $date_expiration;
-
         if (empty($request->id)) {
             $data = array([
                 'name' => $name == NULL ? '': $name,
@@ -110,8 +110,8 @@ class AdminPerfumeController extends Controller
             $data = array([
                 'id' => $request->id,
                 'name' => $name,
-                'description' => $description,
-                'detail' => $detail,
+                'description' => $description == NULL ? '' : $description,
+                'detail' => $detail == NULL ? '' : $detail,
                 'original_price' => $original_price,
                 'promotion_price' => $promotion_price,
                 'dore' => $dore,
@@ -128,6 +128,7 @@ class AdminPerfumeController extends Controller
                 'path_image' => $path_image,
                 'date_expiration' => $date_expiration
             ]);
+            Log::info($data);
         }
         return $data;
     }
@@ -183,7 +184,57 @@ class AdminPerfumeController extends Controller
                     $response_array = ([
                         'message' => [
                             'status' => "error",
-                            'description' => "Thêm nhóm hương thất bại!"
+                            'description' => "Thêm nước hoa thất bại!"
+                        ]
+                    ]);
+                }
+            }
+        }
+        echo json_encode($response_array);
+    }
+
+    public function update(Request $request)
+    {
+        $image_path = '';
+        if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
+        } else {
+            $info = pathinfo($_FILES['image']['name']);
+            $ext = $info['extension'];
+            $newname = $request->name."_".time().$ext;
+            $image_path = $newname;
+            $target = 'perfume/' . $newname;
+            move_uploaded_file($_FILES['image']['tmp_name'], $target);
+        }
+        if($this->helper->validatePerfumeName($request)){
+            $response_array = ([
+                'message'       => [
+                    'status'        => "invalid",
+                    'description'   => "Tên nước hoa không được bỏ trống!"
+                ]
+            ]);
+        } else {
+            if($this->modelPerfume->isExistNameCaseUpdated($request, $request->name)) {
+                $response_array = ([
+                    'message'       => [
+                        'status'        => "invalid",
+                        'description'   => "Nước hoa đã tồn tại trong hệ thống!"
+                    ]
+                ]);
+            } else {
+                Log::info($request);
+                if ($this->modelPerfume->updatePerfume($this->getInfoPerfume($request, $image_path)) >= 0) {
+                    $response_array = ([
+                        'perfume'      => $this->modelPerfume->getPerfumeByName($request->name),
+                        'message'       => [
+                            'status'        => "success",
+                            'description'   => "Cập nhật nước hoa thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message'       => [
+                            'status'        => "error",
+                            'description'   => "Cập nhật nước hoa thất bại!"
                         ]
                     ]);
                 }

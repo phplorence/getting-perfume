@@ -5,6 +5,7 @@ namespace App\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class Perfumes extends Authenticatable
 {
@@ -61,15 +62,40 @@ class Perfumes extends Authenticatable
         return DB::table('perfumes')->where('name', $perfume_name)->first();
     }
 
+    public function isExistNameCaseUpdated($request, $name) {
+        $perfume = DB::table('perfumes')
+            ->where('name', '=', $name)
+            ->where('id', '!=', $request->id)
+            ->count();
+        if ($perfume > 0) {
+            return true;
+        }
+        return false;
+    }
+
     public function updatePerfume($data) {
-//        return DB::table('perfumes')
-//            ->where('id', $data[0]['id'])
-//            ->update([
-//                'name' => $data[0]['name'],
-//                'description' => $data[0]['description'],
-//                'detail' => $data[0]['detail'],
-//                'link' => $data[0]['link']
-//            ]);
+        return DB::table('perfumes')
+            ->where('id', $data[0]['id'])
+            ->update([
+                'name' => $data[0]['name'],
+                'description' => $data[0]['description'],
+                'detail' => $data[0]['detail'],
+                'original_price' => $data[0]['original_price'],
+                'promotion_price' => $data[0]['promotion_price'],
+                'dore' => $data[0]['dore'],
+                'concentration' => $data[0]['concentration'],
+                'date_created' => $data[0]['date_created'],
+                'groupofincense' => $data[0]['groupofincense'],
+                'style' => $data[0]['style'],
+                'bartender' => $data[0]['bartender'],
+                'status' => $data[0]['status'],
+                'count' => $data[0]['count'],
+                'typeofProduct' => $data[0]['typeofProduct'],
+                'gender' => $data[0]['gender'],
+                'country' => $data[0]['country'],
+                'path_image' => $data[0]['path_image'],
+                'date_expiration' => $data[0]['date_expiration']
+            ]);
     }
 
     public function deletePerfume($id_perfume) {

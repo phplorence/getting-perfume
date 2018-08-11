@@ -206,6 +206,7 @@ $(document).ready(function () {
             processData: false
         })
             .done(function (data) {
+                console.log(data);
                 CKEDITOR.instances.editor1.setData('', function() {this.checkDirty(); });
                 CKEDITOR.instances.editor2.setData('', function() {this.checkDirty(); });
                 if(data['message']['status'] == 'invalid') {
@@ -218,25 +219,22 @@ $(document).ready(function () {
                     swal("", data['message']['description'], "success");
                     var table = $('#perfumeTable').DataTable();
                     $.fn.dataTable.ext.errMode = 'none';
-                    var rows = table.rows().data();
-                    for (var i = 0; i < rows.length; i++) {
-                        table.row( this ).data(
-                            [
-                                data['perfume']['id'],
-                                data['perfume']['name'],
-                                data['perfume']['original_price'],
-                                data['perfume']['promotion_price'],
-                                data['perfume']['dore'],
-                                data['perfume']['typeofProduct'],
-                                data['perfume']['status'],
-                                data['perfume']['count'],
-                                data['perfume']['path_image'],
-                                function (id) {
-                                    return '<div class="text-center"><a onclick= "showEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['perfume']['id']+'" onclick="deletePerfumeFunction('+data['perfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
-                            ]
-                        ).draw();
-                    }
+                    table.row.add(
+                        [
+                            data['perfume']['id'],
+                            data['perfume']['name'],
+                            data['perfume']['original_price'],
+                            data['perfume']['promotion_price'],
+                            data['perfume']['dore'],
+                            data['perfume']['typeofProduct'],
+                            data['perfume']['status'],
+                            data['perfume']['count'],
+                            data['perfume']['path_image'],
+                            function (id) {
+                                return '<div class="text-center"><a onclick= "showEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                    +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/xoa/'+data['perfume']['id']+'" onclick="deletePerfumeFunction('+data['perfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                        ]
+                    ).draw();
                 } else if(data.status == 'error') {
                     swal("", data['message']['description'], "error");
                 }
@@ -246,11 +244,11 @@ $(document).ready(function () {
             });
     });
 
-    /*$('#perfumeFormEdit').on('submit', function (event) {
+    $('#perfumeFormEdit').on('submit', function (event) {
         if (!$(this).valid()) return false;
         event.preventDefault();
-        $('#editor1').val(CKEDITOR.instances.editor1.getData());
-        $('#editor2').val(CKEDITOR.instances.editor2.getData());
+        $('#editor1Edit').val(CKEDITOR.instances.editor1.getData());
+        $('#editor2Edit').val(CKEDITOR.instances.editor2.getData());
         $('#perfumeModalEdit').modal('hide');
         var formData = new FormData(this);
 
@@ -282,9 +280,10 @@ $(document).ready(function () {
         formData.append('incense', $('#incense').val());
         formData.append('style', $('#style').val());
         formData.append('gender', $('input[name=optradio]:checked').val());
+        formData.append('id', $('#perfumeID').val());
 
         $.ajax({
-            url: '/quan-tri/nuoc-hoa',
+            url: '/quan-tri/nuoc-hoa/sua',
             method: "POST",
             dataType: 'json',
             data: formData,
@@ -293,9 +292,8 @@ $(document).ready(function () {
             processData: false
         })
             .done(function (data) {
-                console.log(data);
-                CKEDITOR.instances.editor1.setData('', function() {this.checkDirty(); });
-                CKEDITOR.instances.editor2.setData('', function() {this.checkDirty(); });
+                CKEDITOR.instances.editor1Edit.setData('', function() {this.checkDirty(); });
+                CKEDITOR.instances.editor2Edit.setData('', function() {this.checkDirty(); });
                 if(data['message']['status'] == 'invalid') {
                     swal("", data['message']['description'], "error");
                 }
@@ -308,22 +306,24 @@ $(document).ready(function () {
                     $.fn.dataTable.ext.errMode = 'none';
                     var rows = table.rows().data();
                     for (var i = 0; i < rows.length; i++) {
-                        table.row( this ).data(
-                            [
-                                data['perfume']['id'],
-                                data['perfume']['name'],
-                                data['perfume']['original_price'],
-                                data['perfume']['promotion_price'],
-                                data['perfume']['dore'],
-                                data['perfume']['typeofProduct'],
-                                data['perfume']['status'],
-                                data['perfume']['count'],
-                                data['perfume']['path_image'],
-                                function (id) {
-                                    return '<div class="text-center"><a onclick= "showEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
-                                        +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['perfume']['id']+'" onclick="deletePerfumeFunction('+data['perfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
-                            ]
-                        ).draw();
+                        if (rows[i].id == data['perfume']['id']) {
+                            table.row( this ).data(
+                                [
+                                    data['perfume']['id'],
+                                    data['perfume']['name'],
+                                    data['perfume']['original_price'],
+                                    data['perfume']['promotion_price'],
+                                    data['perfume']['dore'],
+                                    data['perfume']['typeofProduct'],
+                                    data['perfume']['status'],
+                                    data['perfume']['count'],
+                                    data['perfume']['path_image'],
+                                    function (id) {
+                                        return '<div class="text-center"><a onclick= "showEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                            +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['perfume']['id']+'" onclick="deletePerfumeFunction('+data['perfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
+                                ]
+                            ).draw();
+                        }
                     }
                 } else if(data.status == 'error') {
                     swal("", data['message']['description'], "error");
@@ -332,7 +332,7 @@ $(document).ready(function () {
             .fail(function (error) {
                 console.log(error);
             });
-    });*/
+    });
 });
 
 function showEditPerfume(id) {
@@ -414,7 +414,7 @@ function showEditPerfume(id) {
                     $('#ajax_authorx').replaceWith(data['html']);
                 });
             $('#modal-loading').modal('show');
-            /*$('#perfumeID').val(id);*/
+            $('#perfumeID').val(id);
         }
     })
         .done(function(perfume){
@@ -440,14 +440,18 @@ function showEditPerfume(id) {
             $("input[name=optradio][value=\"" + perfume['perfume']['gender'] + "\"]").prop('checked', true);
 
             var incenses = perfume['perfume']['groupofincense'];
-            $.each(incenses.split(","), function(i,e){
-                $("#incense option[value=\"" + e + "\"]").prop("selected", "selected");
-            });
+            if (incenses != null) {
+                $.each(incenses.split(","), function(i,e){
+                    $("#incense option[value=\"" + e + "\"]").prop("selected", "selected");
+                });
+            }
 
             var styles = perfume['perfume']['style'];
-            $.each(styles.split(","), function(i,e){
-                $("#style option[value=\"" + e + "\"]").prop("selected", "selected");
-            });
+            if (styles != null) {
+                $.each(styles.split(","), function(i,e){
+                    $("#style option[value=\"" + e + "\"]").prop("selected", "selected");
+                });
+            }
 
             $('#modal-loading').modal('hide');
             $('#perfumeModalEdit').modal('show');

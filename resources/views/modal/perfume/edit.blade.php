@@ -9,6 +9,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm<span style="color:red;">(*)</span></label>
                             <input type="text" name="name" class="form-control" id="nameEdit" placeholder="" value="">
+                            <input type="hidden" id="perfumeID">
                         </div>
 
                         <div class="form-group">
