@@ -419,6 +419,8 @@ function showEditPerfume(id) {
     })
         .done(function(perfume){
             $('#nameEdit').val(perfume['perfume']['name']);
+            console.log(perfume['perfume']['count']);
+            $('#countEdit').val(+perfume['perfume']['count']);
             CKEDITOR.instances.editor1Edit.setData(perfume['perfume']['description'], function() {this.checkDirty(); });
             CKEDITOR.instances.editor2Edit.setData(perfume['perfume']['detail'], function() {this.checkDirty(); });
             $('#original_price_edit').val(+perfume['perfume']['original_price']);
@@ -436,7 +438,6 @@ function showEditPerfume(id) {
             $("#author option[value="+perfume['perfume']['bartender']+"]").prop("selected", "selected");
             $("#status option[value=\""+perfume['perfume']['status']+"\"]").prop("selected", "selected");
             $("#typeperfume option[value=\""+perfume['perfume']['typeofProduct']+"\"]").prop("selected", "selected");
-            $("#count").val(+perfume['perfume']['count']);
             $("input[name=optradio][value=\"" + perfume['perfume']['gender'] + "\"]").prop('checked', true);
 
             var incenses = perfume['perfume']['groupofincense'];
@@ -451,6 +452,11 @@ function showEditPerfume(id) {
                 $.each(styles.split(","), function(i,e){
                     $("#style option[value=\"" + e + "\"]").prop("selected", "selected");
                 });
+            }
+            if (perfume['perfume']['path_image'] == null || perfume['perfume']['path_image'] == '') {
+                $('#photo').attr('src', location.protocol + '//' + location.host+'/img/'+'image_place_holder.png');
+            } else {
+                $('#photo').attr('src', location.protocol + '//' + location.host+'/perfume/'+perfume['perfume']['path_image']);
             }
 
             $('#modal-loading').modal('hide');

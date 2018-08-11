@@ -7,6 +7,7 @@ use App\Model\Perfumes;
 use App\Utilize\Helper;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -45,7 +46,7 @@ class AdminPerfumeController extends Controller
                 'dore' => $perfume->dore,
                 'typeofProduct' => $perfume->typeofProduct,
                 'status' => $perfume->status,
-                'count' => $perfume->status,
+                'count' => $perfume->count,
                 'path_image' => $perfume->path_image,
                 'manipulation' => $perfume->id
             );
@@ -65,7 +66,6 @@ class AdminPerfumeController extends Controller
 
     public function getInfoPerfume(Request $request, $target)
     {
-        Log::info($request->gender);
         $name = $request->name;
         $description = $request->description;
         $detail = $request->detail;
@@ -201,6 +201,7 @@ class AdminPerfumeController extends Controller
     {
         $image_path = '';
         if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
+            $image_path = $this->modelPerfume->getPerfume($request->id)->path_image;
         } else {
             $info = pathinfo($_FILES['image']['name']);
             $ext = $info['extension'];
@@ -208,6 +209,15 @@ class AdminPerfumeController extends Controller
             $image_path = $newname;
             $target = 'perfume/' . $newname;
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
+            // Delete old image
+//            Log::info($_SERVER['REQUEST_URI']);
+//            Log::info($this->modelPerfume->getPerfume($request->id)->path_image);
+//            $filename = $_SERVER['REQUEST_URI'].$this->modelPerfume->getPerfumeById($request->id)->image_path;
+//            Log::info($filename);
+//            if (file_exists($filename)) {
+//                unlink($filename);
+//            }
         }
         if($this->helper->validatePerfumeName($request)){
             $response_array = ([
@@ -225,7 +235,6 @@ class AdminPerfumeController extends Controller
                     ]
                 ]);
             } else {
-                Log::info($request);
                 if ($this->modelPerfume->updatePerfume($this->getInfoPerfume($request, $image_path)) >= 0) {
                     $response_array = ([
                         'perfume'      => $this->modelPerfume->getPerfumeByName($request->name),

@@ -94,14 +94,14 @@
                         <div class="form-group">
                             <label>Trạng thái</label>
                             <select name="status" id="status" class="form-control">
-                                <option>Còn hàng</option>
-                                <option>Hết hàng</option>
+                                <option value="Còn hàng">Còn hàng</option>
+                                <option value="Hết hàng"></option>
                             </select>
                         </div>
 
                         <label for="exampleInputEmail1">Số lượng</label>
                         <div class="form-group">
-                            <input name="count" type="number" class="form-control" placeholder="">
+                            <input name="count" id="count" type="number" class="form-control" placeholder="">
                         </div>
 
                         <div id="ajax_typeperfume" class="form-group">
@@ -129,9 +129,12 @@
                         <div class="form-group">
                             <label>Xuất xứ</label>
                             <select name="country" class="form-control">
-                                <option>Alberto Morillas</option>
-                                <option>Alberto Morillas</option>
-                                <option>Alberto Morillas</option>
+                                <option value="Pháp">Pháp</option>
+                                <option value="Anh">Anh</option>
+                                <option value="Mỹ">Mỹ</option>
+                                <option value="Hàn Quốc">Hàn Quốc</option>
+                                <option value="Thái Lan">Thái Lan</option>
+                                <option value="Việt Nam">Việt Nam</option>
                             </select>
                         </div>
 

@@ -104,3 +104,4 @@ class Perfumes extends Authenticatable
             ->delete();
     }
 }
+
