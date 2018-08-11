@@ -30,7 +30,7 @@ $(document).ready(function () {
             { "data": "count" },
             { "data": "path_image" },
             { "data": "manipulation", "render": function (id) {
-                return '<div class="text-center"><a onclick= "xshowEditPerfume('+id+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                return '<div class="text-center"><a onclick= "showEditPerfume('+id+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
                     +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/xoa/'+id+'" onclick="deletePerfumeFunction('+id+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>';
             }}
         ],
@@ -233,7 +233,7 @@ $(document).ready(function () {
                             data['perfume']['count'],
                             data['perfume']['path_image'],
                             function (id) {
-                                return '<div class="text-center"><a onclick= "xshowEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                return '<div class="text-center"><a onclick= "showEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
                                     +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/xoa/'+data['perfume']['id']+'" onclick="deletePerfumeFunction('+data['perfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
                         ]
                     ).draw();
@@ -319,7 +319,7 @@ $(document).ready(function () {
                                     data['perfume']['count'],
                                     data['perfume']['path_image'],
                                     function (id) {
-                                        return '<div class="text-center"><a onclick= "xshowEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
+                                        return '<div class="text-center"><a onclick= "showEditPerfume('+data['perfume']['id']+')"><img src="/img/icon-control/icon_edit.svg"  width="24px" height="24px" alt="Update Icon"></a>'
                                             +'<span>  </span>'+'<a href="/quan-tri/nuoc-hoa/nhom-huong/xoa/'+data['perfume']['id']+'" onclick="deletePerfumeFunction('+data['perfume']['id']+')"><img src="/img/icon-control/icon_delete.svg"  width="24px" height="24px" alt="Update Icon"></a></div>'}
                                 ]
                             ).draw();
