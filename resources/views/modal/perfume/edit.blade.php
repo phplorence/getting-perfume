@@ -129,7 +129,7 @@
 
                         <div class="form-group">
                             <label>Xuất xứ</label>
-                            <select name="country" class="form-control">
+                            <select name="country" id="country" class="form-control">
                                 <option value="Pháp">Pháp</option>
                                 <option value="Anh">Anh</option>
                                 <option value="Mỹ">Mỹ</option>
@@ -142,7 +142,7 @@
                         <div class="form-group">
                             <label for="exampleInputFile">Chọn tập tin ảnh</label>
                             <input name="image" type="file" id="exampleInputFile">
-                            <img id="photo" class="img-responsive pad" src="" alt="Photo">
+                            <img id="photo" class="img-responsive pad" src="" alt=" Vui lòng cập nhật lại hình ảnh nước hoa. Dường như bạn đã xóa nó trước đó!">
                         </div>
                     </div>
                     <div class="modal-footer">

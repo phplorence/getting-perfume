@@ -95,7 +95,7 @@
                             <label>Trạng thái</label>
                             <select name="status" id="status" class="form-control">
                                 <option value="Còn hàng">Còn hàng</option>
-                                <option value="Hết hàng"></option>
+                                <option value="Hết hàng">Hết hàng</option>
                             </select>
                         </div>
 

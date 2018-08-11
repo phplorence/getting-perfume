@@ -437,6 +437,7 @@ function showEditPerfume(id) {
             }
             $("#author option[value="+perfume['perfume']['bartender']+"]").prop("selected", "selected");
             $("#status option[value=\""+perfume['perfume']['status']+"\"]").prop("selected", "selected");
+            $("#country option[value=\""+perfume['perfume']['country']+"\"]").prop("selected", "selected");
             $("#typeperfume option[value=\""+perfume['perfume']['typeofProduct']+"\"]").prop("selected", "selected");
             $("input[name=optradio][value=\"" + perfume['perfume']['gender'] + "\"]").prop('checked', true);
 
@@ -458,7 +459,6 @@ function showEditPerfume(id) {
             } else {
                 $('#photo').attr('src', location.protocol + '//' + location.host+'/perfume/'+perfume['perfume']['path_image']);
             }
-
             $('#modal-loading').modal('hide');
             $('#perfumeModalEdit').modal('show');
         });

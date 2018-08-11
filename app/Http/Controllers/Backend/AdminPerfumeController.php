@@ -211,13 +211,14 @@ class AdminPerfumeController extends Controller
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
 
             // Delete old image
-//            Log::info($_SERVER['REQUEST_URI']);
-//            Log::info($this->modelPerfume->getPerfume($request->id)->path_image);
-//            $filename = $_SERVER['REQUEST_URI'].$this->modelPerfume->getPerfumeById($request->id)->image_path;
-//            Log::info($filename);
-//            if (file_exists($filename)) {
-//                unlink($filename);
-//            }
+
+            $original_image = $this->modelPerfume->getPerfume($request->id)->path_image;
+
+            if(strcmp($original_image,$image_path) != 0) {
+                if (file_exists('perfume/'.$original_image)) {
+                    unlink('perfume/'.$original_image);
+                }
+            }
         }
         if($this->helper->validatePerfumeName($request)){
             $response_array = ([
