@@ -206,9 +206,11 @@ $(document).ready(function () {
             processData: false
         })
             .done(function (data) {
-                console.log(data);
                 CKEDITOR.instances.editor1.setData('', function() {this.checkDirty(); });
                 CKEDITOR.instances.editor2.setData('', function() {this.checkDirty(); });
+                $('#incense').val('');
+                $('#style').val('');
+                document.getElementById("exampleInputFile").value = "";
                 if(data['message']['status'] == 'invalid') {
                     swal("", data['message']['description'], "error");
                 }
@@ -247,8 +249,8 @@ $(document).ready(function () {
     $('#perfumeFormEdit').on('submit', function (event) {
         if (!$(this).valid()) return false;
         event.preventDefault();
-        $('#editor1Edit').val(CKEDITOR.instances.editor1.getData());
-        $('#editor2Edit').val(CKEDITOR.instances.editor2.getData());
+        $('#editor1Edit').val(CKEDITOR.instances.editor1Edit.getData());
+        $('#editor2Edit').val(CKEDITOR.instances.editor2Edit.getData());
         $('#perfumeModalEdit').modal('hide');
         var formData = new FormData(this);
 
@@ -292,8 +294,6 @@ $(document).ready(function () {
             processData: false
         })
             .done(function (data) {
-                CKEDITOR.instances.editor1Edit.setData('', function() {this.checkDirty(); });
-                CKEDITOR.instances.editor2Edit.setData('', function() {this.checkDirty(); });
                 if(data['message']['status'] == 'invalid') {
                     swal("", data['message']['description'], "error");
                 }

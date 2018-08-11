@@ -65,6 +65,7 @@ class AdminPerfumeController extends Controller
 
     public function getInfoPerfume(Request $request, $target)
     {
+        Log::info($request->gender);
         $name = $request->name;
         $description = $request->description;
         $detail = $request->detail;
@@ -80,7 +81,11 @@ class AdminPerfumeController extends Controller
         $status = $request->status;
         $count = $request->count;
         $typeofProduct = $request->typeperfume;
-        $gender = $request->gender;
+        if (empty($request->id)) {
+            $gender = $request->gender;
+        } else {
+            $gender = $request->optradio;
+        }
         $country = $request->country;
         $path_image = $target;
         $date_expiration = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_expiration, '/', '-')));
@@ -128,7 +133,6 @@ class AdminPerfumeController extends Controller
                 'path_image' => $path_image,
                 'date_expiration' => $date_expiration
             ]);
-            Log::info($data);
         }
         return $data;
     }
@@ -151,7 +155,7 @@ class AdminPerfumeController extends Controller
         } else {
             $info = pathinfo($_FILES['image']['name']);
             $ext = $info['extension'];
-            $newname = $request->name."_".time().$ext;
+            $newname = trim(strtolower($request->name))."_".time().".".$ext;
             $image_path = $newname;
             $target = 'perfume/' . $newname;
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
@@ -200,7 +204,7 @@ class AdminPerfumeController extends Controller
         } else {
             $info = pathinfo($_FILES['image']['name']);
             $ext = $info['extension'];
-            $newname = $request->name."_".time().$ext;
+            $newname = trim(strtolower($request->name))."_".time().".".$ext;
             $image_path = $newname;
             $target = 'perfume/' . $newname;
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
