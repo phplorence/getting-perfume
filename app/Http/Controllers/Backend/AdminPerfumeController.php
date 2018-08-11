@@ -143,7 +143,7 @@ class AdminPerfumeController extends Controller
             $perfume = $this->modelPerfume->getPerfume($id);
             return json_encode(['perfume' => $perfume]);
         } else {
-            alert()->error('Nước hoa đã không tồn tại trong hệ thống.', 'Lỗi!');
+            alert()->error('Nước hoa đã không tồn tại trong hệ thống!', 'Lỗi!');
             return redirect()->intended(route('admin.perfume.index'));
         }
     }

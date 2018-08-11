@@ -25,6 +25,7 @@ class ConcentrationController extends Controller
 
     public function index()
     {
+        Log::info("Me!!");
         if (Auth::guest()) {
             return redirect()->intended(route('admin.login'));
         } else {

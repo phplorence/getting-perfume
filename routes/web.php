@@ -63,7 +63,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/nuoc-hoa/loading_perfume', 'Backend\AdminPerfumeController@perfumeDataTables')->name('admin.perfume.index.perfumeDataTables');
         Route::get('/nuoc-hoa/them', 'Backend\AdminPerfumeController@create')->name('admin.perfume.create');
         Route::post('/nuoc-hoa', 'Backend\AdminPerfumeController@store')->name('admin.perfume.store');
-        Route::get('/nuoc-hoa/{id}', 'Backend\AdminPerfumeController@show')->name('admin.perfume.detail');
+        Route::get('/nuoc-hoa/detail/{id}', 'Backend\AdminPerfumeController@show')->name('admin.perfume.detail');
         Route::post('/nuoc-hoa/sua', 'Backend\AdminPerfumeController@update')->name('admin.perfume.update');
         Route::get('/nuoc-hoa/xoa/{id}', 'Backend\AdminPerfumeController@delete')->name('admin.perfume.delete');
 
