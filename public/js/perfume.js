@@ -337,7 +337,7 @@ $(document).ready(function () {
 
 function showEditPerfume(id) {
     $.ajax({
-        url: '/quan-tri/nuoc-hoa/'+id,
+        url: '/quan-tri/nuoc-hoa/detail/'+id,
         dataType: 'json',
         type:"GET",
         beforeSend: function(){
@@ -425,7 +425,7 @@ function showEditPerfume(id) {
             $('#original_price_edit').val(+perfume['perfume']['original_price']);
             $('#promotion_price_edit').val(+perfume['perfume']['promotion_price']);
             $('#doreEdit').val(+perfume['perfume']['dore']);
-            $("#concentration option[value="+perfume['perfume']['concentration']+"]").prop("selected", "selected");
+            $("#concentration option[value=\""+perfume['perfume']['concentration']+"\"]").prop("selected", "selected");
             if (perfume['perfume']['date_created'] != null ) {
                 var date_created_format = perfume['perfume']['date_created'].substring(8, 10) + "/" + perfume['perfume']['date_created'].substring(5, 7) + "/" + perfume['perfume']['date_created'].substring(0, 4);
                 $("#date_created").val("\""+date_created_format+"\"");
@@ -434,7 +434,7 @@ function showEditPerfume(id) {
                 var date_expiration_format = perfume['perfume']['date_expiration'].substring(8, 10) + "/" + perfume['perfume']['date_expiration'].substring(5, 7) + "/" + perfume['perfume']['date_expiration'].substring(0, 4);
                 $("#date_expiration").val("\""+date_expiration_format+"\"");
             }
-            $("#author option[value="+perfume['perfume']['bartender']+"]").prop("selected", "selected");
+            $("#author option[value=\""+perfume['perfume']['bartender']+"\"]").prop("selected", "selected");
             $("#status option[value=\""+perfume['perfume']['status']+"\"]").prop("selected", "selected");
             $("#country option[value=\""+perfume['perfume']['country']+"\"]").prop("selected", "selected");
             $("#typeperfume option[value=\""+perfume['perfume']['typeofProduct']+"\"]").prop("selected", "selected");
