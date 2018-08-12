@@ -52,7 +52,7 @@
       </form>
       <div class="row social-network">
         <div class="col-md-4">
-          <p style="margin-right: 0px;">Or login with</p>
+          <p style="margin-right: 0px;">Hoặc </p>
         </div>
         <div class="col-md-8">
           <p class="pull-right" style="margin-right: 24px;">
@@ -66,13 +66,15 @@
     <div class="col-md-6 imgWelcome">
     </div>
   </div>
-<script src="{{URL::asset('js/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{URL::asset('js/jquery-ui.min.js')}}"></script>
-<!-- jQuery Validation -->
-<script src="{{URL::asset('js/jquery.validate.js')}}"></script>
-<script src="{{URL::asset('js/jquery.validate.min.js')}}"></script>
-<script>
+  <!-- jQuery 3 -->
+  <script src="{{URL::asset('components/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{URL::asset('js/jquery.validate.js')}}"></script>
+  <script src="{{URL::asset('js/jquery.validate.min.js')}}"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="{{URL::asset('components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+  <!-- iCheck -->
+  <script src="{{URL::asset('plugins/iCheck/icheck.min.js')}}"></script>
+  <script>
 
     jQuery.validator.addMethod("validateEmail", function (value, element) {
         if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(value)) {
@@ -98,7 +100,7 @@
             if (!$(this).valid()) return false;
             event.preventDefault();
             $.ajax({
-                url: 'login',
+                url: '{{route("admin.login.submit")}}',
                 method: 'POST',
                 dataType: 'json',
                 data: $(this).serialize()
@@ -106,13 +108,12 @@
                 .done(function (data) {
                     if(data['message']['status'] == 'success') {
                         swal("", data['message']['description'], "success");
-                        window.location.href="http://localhost:8000";
+                        window.location.href="http://localhost:8000/quan-tri";
                     }
                     if(data['message']['status'] == 'error') {
                         swal("", data['message']['description'], "error");
                         $('#email').val(data['profile']['email']);
                         $('#password').val(data['profile']['password']);
-                        $('#remember').checked(data['profile']['password'] == 1);
                     }
                 })
                 .fail(function (error) {
@@ -120,6 +121,6 @@
                 });
         });
     });
-</script>
+  </script>
 </body>
 </html>

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Auth\Admin;
 
-use Alert;
 use App\Http\Controllers\Controller;
 use App\Utilize\Helper;
-use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminLoginController extends Controller
 {
@@ -25,19 +24,30 @@ class AdminLoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function login(Request $request) {
-
         $this->helper = new Helper();
         $this->helper->validateEmail($request);
         $this->helper->validatePassword($request);
-        // Attempt to log the user in
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            // If successful, then redirect to their intended location
-            return redirect()->intended(route('admin.dashboard'));
+            $response_array = ([
+                'message' => [
+                    'status' => "success",
+                    'description' => "Login Successful!"
+                ]
+            ]);
         } else {
-            // if unsuccessful, then redirect back to the login with the form data
-            alert()->error('Đăng nhập hệ thống thất bại. Vui lòng thử lại', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('email', 'remember'));
+            $response_array = ([
+                'account' => [
+                    'email' => $request->email,
+                    'password' => $request->password,
+                    'remember' => $request->remember
+                ],
+                'message' => [
+                    'status' => "error",
+                    'description' => "Wrong information!"
+                ]
+            ]);
         }
+        echo json_encode($response_array);
     }
 
     /**
