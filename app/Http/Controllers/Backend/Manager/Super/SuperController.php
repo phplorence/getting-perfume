@@ -7,11 +7,11 @@ use App\Model\Admin;
 use App\Model\Roles;
 use App\Utilize\Helper;
 use App\Utilize\ImageUtils;
-use Auth;
-use Alert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Yajra\DataTables\Facades\DataTables;
 
 class SuperController extends Controller
 {
@@ -34,19 +34,149 @@ class SuperController extends Controller
         if (Auth::guest()){
             return redirect()->intended(route('admin.login'));
         } else {
-            $admins = $this->modelAdmin->getAllAdmins();
-            $admin_paginations = $this->modelAdmin->getAdminPaginations();
-            $indexArr = 0;
-            $searchKey = null;
-            return view('admin.super.index', compact('admins','admin_paginations', 'indexArr', 'searchKey'));
+            return view('admin.super.index');
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
+    public function superDataTables() {
+        $admins = $this->modelAdmin->getAllAdmins();
+        $collections = collect();
+        foreach ($admins as $admin){
+            $arr = array(
+                'id' => $admin->id,
+                'username'    => $admin->username,
+                'user_type'   => $admin->user_type,
+                'email'   => $admin->email,
+                'full_name' => $admin->full_name,
+                'phone_number' => $admin->phone_number,
+                'address' => $admin->address,
+                'path_image' => $admin->path_image
+            );
+            $collections->push($arr);
+        }
+        return Datatables::collection($collections)->make();
+    }
+
+    public function getInfoSuper(Request $request, $target)
+    {
+//        $name = $request->name;
+//        $description = $request->description;
+//        $detail = $request->detail;
+//        $original_price = $request->original_price;
+//        $promotion_price = $request->promotion_price;
+//        $dore = $request->dore;
+//        $concentration = $request->concentration;
+//        $date_created = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_created, '/', '-')));
+//        $date_created = $date_created == '1970-01-01 00:00:00' ? NULL : $date_created;
+//        $groupofincense = $request->incense;
+//        $style = $request->style;
+//        $bartender = $request->author;
+//        $status = $request->status;
+//        $count = $request->count;
+//        $typeofProduct = $request->typeperfume;
+//        if (empty($request->id)) {
+//            $gender = $request->gender;
+//        } else {
+//            $gender = $request->optradio;
+//        }
+//        $country = $request->country;
+//        $path_image = $target;
+//        $date_expiration = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_expiration, '/', '-')));
+//        $date_expiration = $date_expiration == '1970-01-01 00:00:00' ? NULL : $date_expiration;
+//        if (empty($request->id)) {
+//            $data = array([
+//                'name' => $name == NULL ? '': $name,
+//                'description' => $description == NULL ? '' : $description,
+//                'detail' => $detail == NULL ? '' : $detail,
+//                'original_price' => $original_price == NULL ? '' : $original_price,
+//                'promotion_price' => $promotion_price == NULL ? '' : $promotion_price,
+//                'dore' => $dore == NULL ? '' : $dore,
+//                'concentration' => $concentration,
+//                'date_created' => $date_created,
+//                'groupofincense' => $groupofincense == NULL ? '' : $groupofincense,
+//                'style' => $style == NULL ? '' : $style,
+//                'bartender' => $bartender == NULL ? '' : $bartender,
+//                'status' => $status,
+//                'count' => $count == NULL ? 0 : $count,
+//                'typeofProduct' => $typeofProduct,
+//                'gender' => $gender,
+//                'country' => $country,
+//                'path_image' => $path_image,
+//                'date_expiration' => $date_expiration
+//            ]);
+//        } else {
+//            $data = array([
+//                'id' => $request->id,
+//                'name' => $name,
+//                'description' => $description == NULL ? '' : $description,
+//                'detail' => $detail == NULL ? '' : $detail,
+//                'original_price' => $original_price,
+//                'promotion_price' => $promotion_price,
+//                'dore' => $dore == NULL ? '' : $dore,
+//                'concentration' => $concentration,
+//                'date_created' => $date_created,
+//                'groupofincense' => $groupofincense == NULL ? '' : $groupofincense,
+//                'style' => $style == NULL ? '' : $style,
+//                'bartender' => $bartender == NULL ? '' : $bartender,
+//                'status' => $status,
+//                'count' => $count == NULL ? 0 : $count,
+//                'typeofProduct' => $typeofProduct,
+//                'gender' => $gender,
+//                'country' => $country,
+//                'path_image' => $path_image,
+//                'date_expiration' => $date_expiration
+//            ]);
+//        }
+        return $data;
+    }
+
+    public function store(Request $request)
+    {
+        // Validate from server
+        $this->helper->validateUsername($request);
+        $this->helper->validatePassword($request);
+        $this->helper->validateConfirmationPassword($request);
+        $this->helper->validateEmail($request);
+        $this->helper->validateRadioGender($request);
+
+        $image_path = '';
+        if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
+        } else {
+            $info = pathinfo($_FILES['image']['name']);
+            $ext = $info['extension'];
+            $newname = trim(strtolower($request->name))."_".time().".".$ext;
+            $image_path = $newname;
+            $target = 'avatar/' . $newname;
+            move_uploaded_file($_FILES['image']['tmp_name'], $target);
+        }
+        if ($this->modelAdmin->isExistUsername($request)) {
+            $response_array = ([
+                'message' => [
+                    'status' => "existed",
+                    'description' => "Tên người dùng đã tồn tại trong hệ thống!"
+                ]
+            ]);
+        } else {
+            if ($this->modelAdmin->addAll($this->getInfoSuper($request, $image_path)) > 0) {
+                $response_array = ([
+                    'admin' => $this->modelAdmin->getAdminByName($request->username),
+                    'message' => [
+                        'status' => "success",
+                        'description' => "Thêm người dùng thành công!"
+                    ]
+                ]);
+            } else {
+                $response_array = ([
+                    'message' => [
+                        'status' => "error",
+                        'description' => "Thêm người dùng thất bại!"
+                    ]
+                ]);
+            }
+        }
+        echo json_encode($response_array);
+    }
+
     public function create()
     {
         if (Auth::guest()){
@@ -130,32 +260,6 @@ class SuperController extends Controller
         } else {
             alert()->error('Xóa người dùng cấp cao thất bại.', 'Lỗi!');
             return redirect()->intended(route('admin.super.index'));
-        }
-    }
-
-    public function store(Request $request)
-    {
-        // I want to check all data are valid for inserting new user
-        $this->helper->validateUsername($request);
-        $this->helper->validatePassword($request);
-        $this->helper->validateConfirmationPassword($request);
-        $this->helper->validateEmail($request);
-        $this->helper->validateRadioGender($request);
-
-        // Insert database into mysql
-        if($this->modelAdmin->isExistEmail($request) || $this->modelAdmin->isExistUsername($request)) {
-            alert()->error('Người dùng đã tồn tại trong hệ thống. Vui lòng đăng nhập để bắt đầu phiên làm việc.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
-        }
-
-        // Attempt add new database successfully
-        if ($this->modelAdmin->addAll($this->getInfoUserFromDB($request, false)) > 0) {
-            // If successful, then redirect to their intended location
-            alert()->success('Thêm người dùng cấp cao thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.super.index'));
-        } else {
-            alert()->error('Thêm người dùng cấp cao thất bại.', 'Lỗi!');
-            return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
     }
 

@@ -26,12 +26,148 @@
 .layout-boxed html,.layout-boxed body{
     height:100%
 }
-body{
+
+/**
+ * CSS Login Template
+ * @author: Lorence NGUYEN
+ */
+
+body {
     font-family: helveticaneuelight;
     font-weight:400;
     overflow-x:hidden;
-    overflow-y:auto
+    overflow-y:auto;
+    background-image: url('../img/bg_login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.login_wrapper {
+    width: 65%;
+    margin: 80px auto;
+}
+
+.formLogin {
+    background-color: white;
+    height: 480px;
+    -webkit-box-shadow: 0px 0px 55px 22px rgba(199,200,204,0.49);
+    -moz-box-shadow: 0px 0px 55px 22px rgba(199,200,204,0.49);
+    box-shadow: 0px 0px 55px 22px rgba(199,200,204,0.49);
+}
+
+.formLogin h2 {
+    font-style: bold;
+    color: #464646;
+    font-size: 30px;
+    font-family: roboto;
+    font-weight: 600;
+    margin-top: 48px;
+    margin-left: 24px;
+}
+
+.formLogin p {
+    margin-top: 20px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+form .has-feedback, .checkbox {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 20px;
+}
+
+form button[type="submit"] {
+    margin-top: 20px;
+    margin-left: 24px;
+    border-radius: 50px;
+}
+
+.formLogin input[type="text"], .formLogin input[type="password"] {
+    width: 100%;
+    margin-top: 20px;
+    border-width:0px;
+    border:none;
+    box-shadow: inset 0px 0px 0px 0px red;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.buttonLogin {
+    background-color: #1C6BCF;
+    color: white;
+    padding: 8px 30px;
+    box-shadow: #1C6BCF;
+    font-weight: 600;
+    font-family: roboto;
+    font-size: 14px;
+}
+
+.buttonLogin:enabled {
+    color: white;
+}
+
+.buttonLogin:hover {
+    background-color: white;
+    color: #1C6BCF;
+}
+
+.social-network {
+    margin-bottom: 36px;
+}
+
+.socialLogin {
+    background-color: #1C6BCF;
+    color: white;
+    padding: 6px 20px;
+    box-shadow: #1C6BCF;
+    font-weight: 600;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #1254ab;
+    color: white;
+}
+
+.fa-facebook:hover {
+    background: white;
+    color: #1254ab;
+}
+
+.fa-twitter {
+    background: #0aaafe;
+    color: white;
+}
+
+.fa-twitter:hover {
+    background: white;
+    color: #0aaafe;
+}
+
+.fa-google-plus {
+    background: #f65a5b;
+    color: white;
+}
+
+.fa-google-plus:hover {
+    background: white;
+    color: #f65a5b;
+}
+
+.imgWelcome {
+    background-image: url("../img/welcome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 480px;
+    -webkit-box-shadow: 0px 0px 55px 22px rgba(199,200,204,0.49);
+    -moz-box-shadow: 0px 0px 55px 22px rgba(199,200,204,0.49);
+    box-shadow: 0px 0px 55px 22px rgba(199,200,204,0.49);
+}
+
 .wrapper{
     height:100%;
     position:relative;
@@ -2900,44 +3036,7 @@ table.text-center,table.text-center td,table.text-center th{
 .lockscreen-footer{
     margin-top:10px
 }
-.login-logo,.register-logo{
-    font-size:35px;
-    text-align:center;
-    margin-bottom:25px;
-    font-weight:300
-}
-.login-logo a,.register-logo a{
-    color:#4a8cb3
-}
-.login-page,.register-page{
-    background:#ffffff
-}
-.login-box,.register-box{
-    width:360px;
-    margin:7% auto
-}
-@media (max-width:768px){
-    .login-box,.register-box{
-        width:90%;
-        margin-top:20px
-    }
-}
-.login-box-body,.register-box-body{
-    padding:20px;
-    border-top:0;
-    color:#a9a5a5
-}
-.login-box-body .form-control-feedback,.register-box-body .form-control-feedback{
-    color:#3b8cbc
-}
-.help-block{
-    color:red;
-}
-.login-box-msg,.register-box-msg{
-    margin:0;
-    text-align:center;
-    padding:0 20px 20px 20px
-}
+
 .social-auth-links{
     margin:10px 0
 }

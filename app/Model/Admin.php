@@ -95,6 +95,10 @@ class Admin extends Authenticatable
         return DB::table('admins')->where('id', $id_admin)->first();
     }
 
+    public function getAdminByName($username){
+        return DB::table('admins')->where('username', $username)->first();
+    }
+
     public function getResultSearch($keySearch) {
         return DB::table('admins')->where('username','like','%'.$keySearch.'%')
             ->orWhere('full_name','like','%'.$keySearch.'%')

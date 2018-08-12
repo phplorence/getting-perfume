@@ -49,8 +49,11 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/tai-khoan', 'Backend\AdminProfileController@show')->name('admin.profile');
         Route::get('/thanh-toan', 'Backend\AdminInvoiceController@index')->name('admin.invoice');
 
-        // TAB ADMIN
+        // ADMIN
         Route::get('/cap-cao', 'Backend\Manager\Super\SuperController@index')->name('admin.super.index');
+        Route::get('/cap-cao/loading_super', 'Backend\Manager\Super\SuperController@superDataTables')->name('admin.super.superDataTables');
+        Route::post('/cap-cao', 'Backend\Manager\Super\SuperController@store')->name('admin.super.store');
+
         Route::get('/cap-cao/them', 'Backend\Manager\Super\SuperController@create')->name('admin.super.create');
         Route::post('/cap-cao', 'Backend\Manager\Super\SuperController@store')->name('admin.super.store');
         Route::get('/cap-cao/chi-tiet/{id_admin}', 'Backend\Manager\Super\SuperController@show')->name('admin.super.detail');
@@ -58,7 +61,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/cap-cao/xoa/{id_admin}', 'Backend\Manager\Super\SuperController@delete')->name('admin.super.delete');
         Route::get('/cap-cap/tim-kiem', 'Backend\Manager\Super\SuperController@search')->name('admin.super.search');
 
-        // TAB PERFUME
+        // PERFUME
         Route::get('/nuoc-hoa', 'Backend\AdminPerfumeController@index')->name('admin.perfume.index');
         Route::get('/nuoc-hoa/loading_perfume', 'Backend\AdminPerfumeController@perfumeDataTables')->name('admin.perfume.index.perfumeDataTables');
         Route::get('/nuoc-hoa/them', 'Backend\AdminPerfumeController@create')->name('admin.perfume.create');
