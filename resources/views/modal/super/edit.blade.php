@@ -1,14 +1,15 @@
-<div class="modal fade" id="superModalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="superModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">THÊM MỚI</h3>
-                <form id="superFormCreate">
+                <h3 class="box-title" style="margin-top: -2px;" id="exampleModalLabel">CẬP NHẬT</h3>
+                <form id="superFormEdit">
                     {{ csrf_field() }}
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên đăng nhập<span style="color:red;">(*)</span></label>
-                            <input name="username" type="text" class="form-control" placeholder="" value="">
+                            <input name="username" id="usernameEdit" type="text" class="form-control" placeholder="" value="">
+                            <input type="hidden" id="superID">
                             @if ($errors->has('username'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('username') }}</strong>

@@ -62,6 +62,8 @@
   </div>
   <!-- /.content-wrapper -->
   @include('modal.super.create')
+  @include('modal.super.edit')
+  @include('modal.dialog.loading')
 @endsection
 @section('script')
   <script src="{{ URL::asset('js/super.js') }}"></script>

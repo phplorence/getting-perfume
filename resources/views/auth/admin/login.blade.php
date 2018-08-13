@@ -100,7 +100,6 @@
             })
                 .done(function (data) {
                     if(data['message']['status'] == 'success') {
-                        swal("", data['message']['description'], "success");
                         window.location.href="http://localhost:8000/quan-tri";
                     }
                     if(data['message']['status'] == 'error') {

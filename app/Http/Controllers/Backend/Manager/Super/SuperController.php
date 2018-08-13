@@ -48,9 +48,10 @@ class SuperController extends Controller
                 'user_type'   => $admin->user_type,
                 'email'   => $admin->email,
                 'full_name' => $admin->full_name,
+                'activate' => $admin->active,
                 'phone_number' => $admin->phone_number,
-                'address' => $admin->address,
-                'path_image' => $admin->path_image
+                'path_image' => $admin->path_image,
+                'manipulation' => $admin->id
             );
             $collections->push($arr);
         }
@@ -59,92 +60,59 @@ class SuperController extends Controller
 
     public function getInfoSuper(Request $request, $target)
     {
-//        $name = $request->name;
-//        $description = $request->description;
-//        $detail = $request->detail;
-//        $original_price = $request->original_price;
-//        $promotion_price = $request->promotion_price;
-//        $dore = $request->dore;
-//        $concentration = $request->concentration;
-//        $date_created = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_created, '/', '-')));
-//        $date_created = $date_created == '1970-01-01 00:00:00' ? NULL : $date_created;
-//        $groupofincense = $request->incense;
-//        $style = $request->style;
-//        $bartender = $request->author;
-//        $status = $request->status;
-//        $count = $request->count;
-//        $typeofProduct = $request->typeperfume;
-//        if (empty($request->id)) {
-//            $gender = $request->gender;
-//        } else {
-//            $gender = $request->optradio;
-//        }
-//        $country = $request->country;
-//        $path_image = $target;
-//        $date_expiration = strftime("%Y-%m-%d %H:%M:%S", strtotime(strtr($request->date_expiration, '/', '-')));
-//        $date_expiration = $date_expiration == '1970-01-01 00:00:00' ? NULL : $date_expiration;
-//        if (empty($request->id)) {
-//            $data = array([
-//                'name' => $name == NULL ? '': $name,
-//                'description' => $description == NULL ? '' : $description,
-//                'detail' => $detail == NULL ? '' : $detail,
-//                'original_price' => $original_price == NULL ? '' : $original_price,
-//                'promotion_price' => $promotion_price == NULL ? '' : $promotion_price,
-//                'dore' => $dore == NULL ? '' : $dore,
-//                'concentration' => $concentration,
-//                'date_created' => $date_created,
-//                'groupofincense' => $groupofincense == NULL ? '' : $groupofincense,
-//                'style' => $style == NULL ? '' : $style,
-//                'bartender' => $bartender == NULL ? '' : $bartender,
-//                'status' => $status,
-//                'count' => $count == NULL ? 0 : $count,
-//                'typeofProduct' => $typeofProduct,
-//                'gender' => $gender,
-//                'country' => $country,
-//                'path_image' => $path_image,
-//                'date_expiration' => $date_expiration
-//            ]);
-//        } else {
-//            $data = array([
-//                'id' => $request->id,
-//                'name' => $name,
-//                'description' => $description == NULL ? '' : $description,
-//                'detail' => $detail == NULL ? '' : $detail,
-//                'original_price' => $original_price,
-//                'promotion_price' => $promotion_price,
-//                'dore' => $dore == NULL ? '' : $dore,
-//                'concentration' => $concentration,
-//                'date_created' => $date_created,
-//                'groupofincense' => $groupofincense == NULL ? '' : $groupofincense,
-//                'style' => $style == NULL ? '' : $style,
-//                'bartender' => $bartender == NULL ? '' : $bartender,
-//                'status' => $status,
-//                'count' => $count == NULL ? 0 : $count,
-//                'typeofProduct' => $typeofProduct,
-//                'gender' => $gender,
-//                'country' => $country,
-//                'path_image' => $path_image,
-//                'date_expiration' => $date_expiration
-//            ]);
-//        }
+        $username = $request->username;
+        $password = Hash::make($request->password);
+        $user_type = $request->user_type;
+        $email = $request->email;
+        $full_name = $request->full_name;
+        $gender = $request->gender;
+        $address = $request->address;
+        if(empty($request->activate)) {
+            $activate = 'off';
+        } else {
+            $activate = $request->activate;
+        }
+        $phone_number = $request->phone_number;
+        $path_image = $target;
+        if (empty($request->id)) {
+            $data = array([
+                'username' => $username,
+                'password' => $password,
+                'user_type' => $user_type,
+                'email' => $email,
+                'full_name' => $full_name,
+                'gender' => $gender,
+                'address' => $address,
+                'active' => $activate,
+                'phone_number' => $phone_number,
+                'path_image' => $path_image
+            ]);
+        } else {
+            $data = array([
+                'id' => $request->id,
+                'username' => $username,
+                'password' => $password,
+                'user_type' => $user_type,
+                'email' => $email,
+                'full_name' => $full_name,
+                'gender' => $gender,
+                'address' => $address,
+                'active' => $activate,
+                'phone_number' => $phone_number,
+                'path_image' => $path_image
+            ]);
+        }
         return $data;
     }
 
     public function store(Request $request)
     {
-        // Validate from server
-        $this->helper->validateUsername($request);
-        $this->helper->validatePassword($request);
-        $this->helper->validateConfirmationPassword($request);
-        $this->helper->validateEmail($request);
-        $this->helper->validateRadioGender($request);
-
         $image_path = '';
         if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
         } else {
             $info = pathinfo($_FILES['image']['name']);
             $ext = $info['extension'];
-            $newname = trim(strtolower($request->name))."_".time().".".$ext;
+            $newname = trim(strtolower($request->username))."_".time().".".$ext;
             $image_path = $newname;
             $target = 'avatar/' . $newname;
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
@@ -157,65 +125,69 @@ class SuperController extends Controller
                 ]
             ]);
         } else {
-            if ($this->modelAdmin->addAll($this->getInfoSuper($request, $image_path)) > 0) {
+            if ($this->modelAdmin->isExistEmail($request)) {
                 $response_array = ([
-                    'admin' => $this->modelAdmin->getAdminByName($request->username),
                     'message' => [
-                        'status' => "success",
-                        'description' => "Thêm người dùng thành công!"
+                        'status' => "existed",
+                        'description' => "Địa chỉ email đã tồn tại trong hệ thống!"
                     ]
                 ]);
             } else {
-                $response_array = ([
-                    'message' => [
-                        'status' => "error",
-                        'description' => "Thêm người dùng thất bại!"
-                    ]
-                ]);
+                if ($this->modelAdmin->addAll($this->getInfoSuper($request, $image_path)) > 0) {
+                    $response_array = ([
+                        'admin' => $this->modelAdmin->getAdminByName($request->username),
+                        'message' => [
+                            'status' => "success",
+                            'description' => "Thêm người dùng thành công!"
+                        ]
+                    ]);
+                } else {
+                    $response_array = ([
+                        'message' => [
+                            'status' => "error",
+                            'description' => "Thêm người dùng thất bại!"
+                        ]
+                    ]);
+                }
             }
         }
         echo json_encode($response_array);
     }
 
-    public function create()
-    {
-        if (Auth::guest()){
-            return redirect()->intended(route('admin.login'));
+    public function delete($id) {
+        Log::info($id);
+        if ($this->modelAdmin->deleteAdmin($id) > 0) {
+            $response_array = ([
+                'admin'      => [
+                    'id'        =>  $id
+                ],
+                'message'       => [
+                    'status'        => "success",
+                    'description'   => "Xóa người dùng thành công!"
+                ]
+            ]);
         } else {
-            $roles = $this->modelRole->getAllRoles();
-            return view('admin.super.create', compact('roles'));
+            $response_array = ([
+                'message'       => [
+                    'status'        => "error",
+                    'description'   => "Xóa người dùng thất bại!"
+                ]
+            ]);
         }
+        echo json_encode($response_array);
     }
 
-    public function show($id_admin)
+    public function show($id)
     {
-        if($this->modelAdmin->getAdmin($id_admin) != null) {
-            $roles = $this->modelRole->getAllRoles();
-            $admin = $this->modelAdmin->getAdmin($id_admin);
-            return view('admin.super.edit', compact('admin','roles'));
+        if($this->modelAdmin->getAdmin($id) != null) {
+            $admin = $this->modelAdmin->getAdmin($id);
+            return json_encode(['admin' => $admin]);
         } else {
-            alert()->error('Người dùng đã không tồn tại trong hệ thống.', 'Lỗi!');
+            alert()->error('Người dùng đã không tồn tại trong hệ thống!', 'Lỗi!');
             return redirect()->intended(route('admin.super.index'));
         }
     }
 
-    public function search(Request $reguest)
-    {
-        $admins = $this->modelAdmin->getAllAdmins();
-        $admin_paginations = $this->modelAdmin->getResultSearch($reguest->search);
-        if (count($admin_paginations) > 0) {
-            $indexArr = 0;
-            $searchKey = $reguest->search;
-            return view('admin.super.index', compact('admins','admin_paginations', 'indexArr', 'searchKey'));
-        } else {
-            return redirect()->intended(route('admin.super.index'));
-        }
-    }
-
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function update(Request $request)
     {
         $adminExistedDB = $this->modelAdmin->getAdmin($request->id);
@@ -251,73 +223,5 @@ class SuperController extends Controller
             alert()->error('Cập nhật người dùng cấp cao thất bại.', 'Lỗi!');
             return redirect()->back()->withInput($request->only('username', 'email', 'activate', 'address', 'full_name', 'gender', 'phone_number','permission'));
         }
-    }
-
-    public function delete($id_admin) {
-        if ($this->modelAdmin->deleteAdmin($id_admin) > 0) {
-            alert()->success('Xóa người dùng cấp cao thành công.', 'Thông tin!');
-            return redirect()->intended(route('admin.super.index'));
-        } else {
-            alert()->error('Xóa người dùng cấp cao thất bại.', 'Lỗi!');
-            return redirect()->intended(route('admin.super.index'));
-        }
-    }
-
-    public function getInfoUserFromDB(Request $request, $isUpdated) {
-        $username = $request->username;
-        Log::info('Admin', ['username' => $username]);
-        Log::info('Admin', ['password' => $request->password]);
-        $password = $request->password;
-        if ($isUpdated) {
-            if(!empty($password)) {
-                $password =  Hash::make($request->password);
-            } else {
-                $password = $this->modelAdmin->getAdmin($request->id)->password;
-            }
-        } else {
-            $password = Hash::make($password);
-        }
-        Log::info('Admin', ['password' => $password]);
-        $user_type = $request->permission;
-        Log::info('Admin', ['user_type' => $user_type]);
-        $email = $request->email;
-        Log::info('Admin', ['email' => $email]);
-        $gender = $request->gender;
-        Log::info('Admin', ['gender' => $gender]);
-        $full_name = $request->full_name;
-        Log::info('Admin', ['full_name' => $full_name]);
-        $activate = $request->activate;
-        Log::info('Admin', ['activate' => $activate]);
-        $phone_number = $request->phone_number;
-        Log::info('Admin', ['phone_number' => $phone_number]);
-        $address = $request->address;
-        Log::info('Admin', ['address' => $address]);
-        if (empty($request->id)) {
-            $data = array([
-                'username' => $username,
-                'password' => $password,
-                'user_type' => $user_type,
-                'email' => $email,
-                'gender' => $gender,
-                'full_name' => $full_name,
-                'active' => $activate == null ?"off":$activate,
-                'address' => $address,
-                'phone_number' => $phone_number
-            ]);
-        } else {
-            $data = array([
-                'id' => $request->id,
-                'username' => $username,
-                'password' => $password,
-                'user_type' => $user_type,
-                'email' => $email,
-                'gender' => $gender,
-                'full_name' => $full_name,
-                'active' => $activate == null ?"off":$activate,
-                'address' => $address,
-                'phone_number' => $phone_number
-            ]);
-        }
-        return $data;
     }
 }
