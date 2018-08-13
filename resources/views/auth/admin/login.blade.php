@@ -16,13 +16,6 @@
   <link rel="stylesheet" href="{{URL::asset('css/AdminLTE.min.css')}}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{URL::asset('plugins/iCheck/square/blue.css')}}">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
@@ -32,7 +25,7 @@
 </head>
 <body class="body">
   @include('sweet::alert');
-  <div class="login_wrapper">
+  <div class="login_wrapper" id="jslogin">
     <div class="col-md-6 formLogin">
       <h2>Hệ Thống Quản Trị</h2>
       <p>Thực hiện chức năng quản trị của website. Tài khoản được cung cấp bởi admin (<strong>Hường Tấn Phong</strong>)</p>
@@ -119,6 +112,11 @@
                 .fail(function (error) {
                     console.log(error);
                 });
+        });
+
+        $('#jslogin').css({
+            'margin': ($(window).height()-480)/2 + "px auto",
+            'width':'60%'
         });
     });
   </script>
