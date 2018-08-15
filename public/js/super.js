@@ -149,7 +149,6 @@ function showEditSuper(id) {
         }
     })
         .done(function(admin){
-            console.log(admin);
             $('#usernameEdit').val(admin['admin']['username']);
             $("#user_type_edit option[value=\""+admin['admin']['user_type']+"\"]").prop("selected", "selected");
             $('#emailEdit').val(admin['admin']['email']);
