@@ -19,7 +19,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mật khẩu<span style="color:red;">(*)</span></label>
-                            <input name="password" id="password" type="password" class="form-control" placeholder="">
+                            <input name="password" id="password_edit" type="password" class="form-control" placeholder="">
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -29,7 +29,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Xác nhận mật khẩu<span style="color:red;">(*)</span></label>
-                            <input name="password_confirmation" id="confirm_password" type="password" class="form-control" placeholder="" onkeyup='confirmPassword();'>
+                            <input name="password_confirmation" id="confirm_password_edit" type="password" class="form-control" placeholder="" onkeyup='confirmPassword();'>
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -40,7 +40,7 @@
 
                         <div class="form-group">
                             <label>Phân quyền</label>
-                            <select name="user_type" id="user_type" class="form-control">
+                            <select name="user_type" id="user_type_edit" class="form-control">
                                 <option value="SuperAdmin">SuperAdmin</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Partner">Partner</option>
@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Địa chỉ email<span style="color:red;">(*)</span></label>
-                            <input name="email" class="form-control" placeholder="" value="">
+                            <input name="email" class="form-control" id="emailEdit" placeholder="" value="">
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('email') }}</strong>
@@ -60,7 +60,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Họ và tên</label>
-                            <input name="full_name" type="text" class="form-control" placeholder="" value=""/>
+                            <input name="full_name" type="text" id="full_name_edit" class="form-control" placeholder="" value=""/>
                         </div>
 
                         <div class="form-group">
@@ -82,21 +82,21 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Địa chỉ</label>
-                            <input name="address" type="text" class="form-control" placeholder="" value="">
+                            <input name="address" type="text" class="form-control" id="address_edit" placeholder="" value="">
                         </div>
 
                         <div class="checkbox">
-                            <input type="checkbox" name="activate"> Kích hoạt
+                            <input type="checkbox" name="activate" id="activate"> Kích hoạt
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số điện thoại</label>
-                            <input name="phone_number" type="number" class="form-control" placeholder="" value="">
+                            <input name="phone_number" type="number" id="phone_number_edit" class="form-control" placeholder="" value="">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputFile">Chọn tập tin ảnh</label>
-                            <input name="image" type="file" id="exampleInputFile">
+                            <input name="image" type="file">
                         </div>
 
                         <div class="form-group pull-right">

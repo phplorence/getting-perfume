@@ -148,8 +148,18 @@ function showEditSuper(id) {
             $('#superID').val(id);
         }
     })
-        .done(function(perfume){
-            $('#usernameEdit').val(perfume['admin']['username']);
+        .done(function(admin){
+            console.log(admin);
+            $('#usernameEdit').val(admin['admin']['username']);
+            $("#user_type_edit option[value=\""+admin['admin']['user_type']+"\"]").prop("selected", "selected");
+            $('#emailEdit').val(admin['admin']['email']);
+            $('#full_name_edit').val(admin['admin']['full_name']);
+            $('#address_edit').val(admin['admin']['address']);
+            $('#phone_number_edit').val(admin['admin']['phone_number']);
+            $("input[name=gender][value=\"" + admin['admin']['gender'] + "\"]").prop('checked', true);
+            if (admin['admin']['active'] == 'on') {
+                $('#activate').prop('checked', true);
+            }
             // $('#original_price_edit').val(+perfume['perfume']['original_price']);
             // $('#promotion_price_edit').val(+perfume['perfume']['promotion_price']);
             // $('#doreEdit').val(+perfume['perfume']['dore']);
