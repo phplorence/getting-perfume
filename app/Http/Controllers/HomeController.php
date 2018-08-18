@@ -25,7 +25,7 @@ class HomeController extends Controller
     {
         if(Auth::check())
         {
-            return view('welcome');
+            return view('auth.login');
         }
         return view('home');
     }

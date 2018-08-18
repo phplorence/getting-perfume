@@ -1,0 +1,650 @@
+/** Resource */
+@font-face {
+    font-family:ongdo;    
+    src: url('../fonts/VNI-Ongdo.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/**
+ * TOP NAVIGATION BAR -- WEBSITE TEMPLATE
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    border: none;
+    background: none;
+    background-color: #09101f;
+}
+
+.topNav {    
+    background-color: #09101f;
+    border-bottom: 1px solid #828282;
+}
+
+.topNavOuter {
+    max-height:36px;
+    border: none;
+}
+
+.topNavOuter > li:nth-child(2) {
+    padding-right: 24px;
+    border-right: 1px solid #828282;
+}
+
+.topNavOuter > li:nth-child(9) {
+    border-left: 1px solid #828282;
+}
+
+.topNavOuter > li:nth-child(8) {
+    border-right: 1px solid #828282;
+}
+
+.topNavInner {
+    align-content: center;
+    text-align: center;
+}
+
+.topNavInner > a {
+    padding: 0px; 
+    margin: 0px;
+    text-decoration: none; 
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 8px;
+}
+
+.topNavInner > a:hover,.topNavInner > a:focus {
+    border-color: transparent !important;
+    background-color: transparent !important;
+    color:white;
+}
+
+.topNavInner > a > i {
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 20px;
+}
+
+/**
+ * MENU BAR -- WEBSITE TEMPLATE
+ */
+.menuBarOuter {
+    margin-top: 18px;
+    padding-bottom: 8px;
+}
+
+.menuNavInner {
+    background:none;
+    background-color: #09101f;
+    border-radius: 0px;
+    padding: 4px 0px;
+    border-width: 0px;
+}
+.menuBrandInner {
+    background:none;
+    width: 18%;
+    align-content: center;
+}
+.menuBrandInner > a {
+    margin-top: -8%;
+}
+.icon-bar {
+    background-color: white;
+}
+
+.menuItemOuter{
+    color:white;
+    padding: 0px 32px;
+}
+.menuItemOuter> a > span {
+    text-shadow: none;
+    color:white;
+    font-size: 16px;
+}
+.menuItemOuter > a:hover {
+    background-color: transparent !important;
+}
+
+
+/** 
+ * IMAGE SLIDER
+ */
+.carouselOuter {
+    margin: 0px;
+    padding: 0px;
+    margin-top: -20px;
+    border-top: 1px solid #828282;
+}
+.carouselInner {
+    max-height: 550px;
+    background-color: #09101f;
+}
+.carouselInner img {
+    margin: auto;
+    display:block;
+    max-height: 550px;
+    width: 100%;
+}
+.carouselContentInner {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: 20;
+  color: black;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+#overlay1 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bg_blur.png');
+    background-size: cover;
+    z-index: 2;
+    cursor: pointer;
+}
+#overlay2 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15,20,34,0.85);
+    z-index: 3;
+}
+#titleExplore {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.titleExploreInner {
+    border:none;
+    background: none;
+    color:white;
+}
+.titleExploreInner:first-child {
+    margin-top: 48px;
+}
+#ajdustImageTitle {
+    text-align: center; 
+    width: 32px; 
+    height: 52px;
+}
+.responsiveImgOuter {
+    width: 60%;
+    height: 1%;
+    margin: 0px auto;
+}
+.responsiveImgOuter > img {
+    height: 100%;
+    width: 100%;
+    margin-top: 32px;
+}
+.ajdustDescription {
+    color: #c64d9c;
+    font-weight: bold !important;
+}
+.exploreInner {
+    margin-top: 48px;
+}
+.exploreInner > a:hover {
+    text-decoration: none;
+}
+#ajdustBtnExplore {
+    border: 1px solid white;
+    color:white;
+    padding: 8px 24px;
+}
+#ajdustImageReadmore {
+    text-align: center; 
+    padding-top: 80px;
+    width: 36px; 
+    height: 36px;
+}
+
+/**
+ * TEMPLATE NAME: NGUYEN VAN VUONG
+ * HOT PRODUCT
+ */
+.hotOuter {
+    margin-top: -48px;
+    background-color: white;
+}
+.hotOuter .titleExploreInner {
+    color:black;
+}
+.sologan {
+    margin-top: 20px;
+}
+.hotPerfumeOuter {
+    background-color: white;
+}
+.thumbnail {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+}
+.thumbnail > div > h2 {
+    font-family: ongdo;
+}
+.thumbnail > div > p.description {
+    color: #cbccc7;
+    font-weight: 400;
+    font-size: 18px;
+}
+.thumbnail > div > p.currency {
+    color: red;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: -10px;
+}
+.btnDetail > span {
+    color: white;
+    font-weight: 400;
+    padding: 10px 30px;
+    background-color: #09101f;
+}
+
+/**
+ * TEMPLATE NAME: NGUYEN VAN VUONG
+ * NEW PRODUCT
+ */
+
+.newOuter {
+    margin-top: -48px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.newOuter .titleExploreInner {
+    color:black;    
+}
+
+.newPerfumeOuter {
+    padding: 0px 80px;
+    margin: 0px auto;
+    width: 100%;
+}
+
+.overrideImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.textPerfume {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.namePerfume {
+    color:white;
+}
+
+.namePerfume {
+    color: white;
+    font-weight: 300;
+    padding: 8px 30px;
+    background-color: #030416;
+    border: 1px solid white;
+}
+
+/**
+ * TEMPLATE NAME: NGUYEN VAN VUONG
+ * CONSULT PRODUCT
+ */
+
+.consultOuter {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.consultOuter .titleExploreInner {
+    color:black;    
+}
+
+.consultPerfumeOuter {
+    position: relative;
+    background-image: url('../img/bg_consult.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 40px;
+    text-align: center;
+}
+.textDescription {
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100%; 
+    font-family: 'Gloria Hallelujah';
+    font-size: 28px;
+    color: #fa78a8;
+    margin-top: 20px;
+    padding-top: 100px;
+    line-height: 2.2em;
+    padding-bottom: 30px;
+}
+.btnExplore {
+    padding-bottom: 60px;
+}
+.btnExplore > span {
+    color: white;
+    font-weight: 300;
+    padding: 12px 50px;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.detailConsultPerfume {
+    position: relative;
+    margin: 0px auto;
+    margin-top: 40px;
+}
+.padding-0 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.perfumeLeft {
+    padding-right: 20px;
+}
+.perfumeRight {
+    padding-left: 20px;
+}
+.imgInfo > img {
+    width: 100%;
+    height: 300px;
+}
+.textInfo {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+}
+.textInfo > h3 {
+    color: white;
+    padding-top: 35px;
+}
+.textInfo > .hr {
+    width: 40%;
+    border-top: 1px solid #c64d9c;
+}
+.textInfo > p {
+    color: white;
+    width: 80%;
+    font-weight: 400;
+    margin-bottom: 35px;
+    margin: 0 auto;
+}
+.textInfo > .btn {
+    color: white;
+    font-weight: 300;
+    width: 40%;
+    padding: 12px 0px;
+    background-color: #09101f;
+    border: 2px solid white;
+    margin-bottom: 35px;
+    margin-top: 35px;
+}
+
+/** Footer */
+footer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    display: inline-block;
+}
+.footerInner {
+    position: relative;
+    text-align: center;
+    background-color: #09101f;
+}
+.footerInner > .title {
+    color: white;
+    font-family: serif;
+    font-size: 32px;
+    padding-top: 52px;
+}
+.footerInner > .line {
+    height: 1px;
+    background-color: #c64d9c;
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+.specialContent {
+    margin-top: 48px;
+    display: inline-block;
+}
+.promotion {
+    margin-top: 4px;
+}
+.promotion > h3 {
+    font-family: 'Gloria Hallelujah';
+    font-size: 20px;    
+    color: white;
+}
+.promotion > .line {
+    height: 1px;
+    background-color: #c64d9c;
+    width: 30%;
+    margin: 18px auto;
+}
+.specialExtra {
+    margin-top: 48px;
+    display: inline-block;
+    border: 1px solid white;
+    width: 100%;
+}
+.textSpecial {
+    font-family: sans-serif !important;
+    font-size: 26px;
+    color: white;
+}
+.footer_copyright {
+    background-color: #010715;
+    text-align: center;
+    height: 32px;
+}
+.footer_copyright > p {
+    color:white;
+    font-size: 16px;
+    
+}
+.menuSocial {
+    list-style-type: none;
+    text-align: center;
+}
+.menuSocial > li {
+    display: inline-block;
+}
+.menuSocial > .a {
+    margin-left: -40px;
+}
+/**
+
+ * RESPONSIVE WEBSITE TEMPLATE
+ */
+
+@media (min-width:1200px) {
+    .menuNavInner {
+/*        border-bottom: 1px solid blue;*/
+    }
+}
+
+/** CUSTOM */
+@media (min-width:1900px) {
+  .consultPerfumeOuter {
+        margin-left: 10.0%;
+        margin-right: 10.0%;
+    }
+}
+
+@media (max-width:1199px) {
+    .menuNavInner {
+        border-radius: 0px;
+        padding: 2px 0px;
+        border-width: 0px;
+    }
+    .menuNavInner {
+/*        border-bottom: 1px solid red;*/
+    }
+    .menuItemOuter{
+        color:white;
+        padding: 0px 10px;
+    }
+    .textDescription {
+        font-size: 20px;
+    }
+    .textPerfume {
+        width: 60%;
+    }
+    .textPerfume > p {
+        padding: 4px 8px;
+    }
+    .textInfo > h3 {
+        font-size: 18px;
+    }
+    .textInfo > .hr {
+        width: 35%;
+        border-top: 1px solid #fa78a8;
+    }
+    .textInfo > p {
+        color: white;
+        width: 80%;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 35px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:991px) {
+    .menuNavInner {
+/*        border-bottom: 1px solid yellow;*/
+    }
+    .menuUlOuter {
+        margin-left: 0px;
+    }
+    .menuItemOuter{
+        color:white;
+        padding: 0px 8px;
+    }
+    .menuItemOuter> a > span {
+        text-shadow: none;
+        color:white;
+        font-size: 14px;
+    }
+    .responsiveImgOuter {
+        margin: 0px auto;
+    }
+    .menuBrandInner > a {
+        margin-top: -4%;
+    }
+    .consultPerfumeOuter {
+        margin-left: 10.0%;
+        margin-right: 10.0%;
+    }
+    .textDescription {
+        font-size: 16px;
+    }
+    .textPerfume {
+        width: 48%;
+    }
+}
+
+@media (max-width:767px) { 
+    .menuNavInner {
+/*        border-bottom: 1px solid orange;*/
+    }
+    .menuNavInner {
+        position: relative;
+    }
+    .iconExpand {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+    }
+    .titleSite {    
+        display: none !important;
+    }
+    .topNavInner > a {
+        padding: 8px !important;
+    }
+    .searchBox {
+        display: none !important;
+    }
+    .responsiveImgOuter {
+        margin: 0px auto;
+    }
+    .ajdustDescription {
+        color: #c64d9c;
+        font-size: 12px !important;
+        font-weight: bold !important;
+    }
+    #ajdustImageTitle {
+        margin-top: -48px;
+    }
+    .exploreInner, #ajdustImageReadmore {
+        display: none;
+    }
+    .menuBrandInner {
+        background:none;
+        width: 120px;
+        height: 50px;
+        align-content: center;
+        margin-top: 10px;
+    }
+    .exploreImageIcon {
+        margin-top: 25px;
+    }
+    .exploreImg {
+        margin-top: -6%;
+    }
+    .newPerfumeOuter {
+        margin: 0px;
+        padding: 0px;
+    }
+    .namePerfume {
+        color: white;
+        font-weight: 300;
+        padding: 8px 30px;
+        background-color: #030416;
+        border: 1px solid white;
+        font-size: 14px !important;
+    }
+    .btnExplore > span {
+        padding: 6px 25px;
+    }
+    .perfumeLeft {
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+    .perfumeRight {
+        padding-left: 0px;
+        padding-top: 20px;
+    }
+    .footer_copyright {
+        background-color: #010715;
+        text-align: center;
+        height: 10%;
+    }
+    .footer_copyright > p {
+        color:white;
+        font-size: 14px;
+    }
+}
