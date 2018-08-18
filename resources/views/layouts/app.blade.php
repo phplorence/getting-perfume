@@ -196,6 +196,24 @@
 <script src="{{URL::asset('components/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{ URL::asset('components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script>
+    $("#home").click (function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/home',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            type: "POST",
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(data){
+                $('#modal-loading').modal('hide');
+                $('#page_content_ajax').replaceWith(data['html']);
+            });
+    });
 </script>
 </body>
 </html>

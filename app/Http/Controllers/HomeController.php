@@ -2,25 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('web');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         if(Auth::check())
@@ -28,5 +18,15 @@ class HomeController extends Controller
             return view('auth.login');
         }
         return view('home');
+    }
+
+    public function home()
+    {
+        $returnHTML = view('child.main')->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
     }
 }
