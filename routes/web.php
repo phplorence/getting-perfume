@@ -18,7 +18,8 @@ Route::group(['middleware' => 'web'], function () {
     Auth::routes();
     Route::prefix('')->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
-        Route::post('/home', 'HomeController@home')->name('home_child');
+        Route::post('/home', 'HomeController@home')->name('nav.home');
+        Route::get('/contact', 'ContactController@index')->name('nav.contact');
 
         // Authentication Routes...
         Route::get('/dang-nhap', 'Auth\LoginController@showLoginForm')->name('user.login');

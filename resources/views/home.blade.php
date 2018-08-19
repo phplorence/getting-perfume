@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @include('sweet::alert');
+    @include('sweet::alert')
     <div id="page_content_ajax">
         <div class="carouselOuter">
             <div class="carousel slide carousel-inner carouselInner" data-ride="carousel" id="carousel-1" style="background-color: #000;">
