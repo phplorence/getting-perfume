@@ -17,7 +17,7 @@ class HomeController extends Controller
         {
             return view('auth.login');
         }
-        return view('home');
+        return view('perfume');
     }
 
     public function home()

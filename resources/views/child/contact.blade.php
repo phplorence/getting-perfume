@@ -87,5 +87,6 @@
 </script>
 <!-- /page content -->
 
+{{--
 https://colorlib.com/wp/templates/page/2/
-https://colorlib.com/wp/template/tattooz/
+https://colorlib.com/wp/template/tattooz/--}}
