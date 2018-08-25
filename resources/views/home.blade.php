@@ -15,8 +15,8 @@
                             <div class="responsiveImgOuter" align="center">
                                 <img class="img-responsive" src="{{URL::asset('img/title_perfume_name.png')}}"/>
                             </div>
-                            <p class="text-center ajdustDescription" class="text-center">Chuyên Nước Hoa Pháp Chính Hãng</p>
-                            <p class="exploreInner" align="center"><a id="ajdustBtnExplore" role="button" href="#">Khám phá</a></p>
+                            <p class="text-center ajdustDescription" class="text-center">Nước Hoa giá sỉ - bán buôn nước hoa - chuyên cung cấp phân phối sỉ nước hoa - nguồn hàng nước hoa</p>
+                            <p class="exploreInner" align="center"><a id="ajdustBtnExplore" href="#explorePerfume" class="smooth-goto" role="button">Khám phá</a></p>
                             <div align="center">
                                 <p id="ajdustImageReadmore"><img src="{{URL::asset('img/readmore.png')}}"/></p>
                             </div>
@@ -157,7 +157,7 @@
             </div>
         </div>
 
-        <div class="consultOuter">
+        <div class="consultOuter" id="explorePerfume">
             <div class="jumbotron titleExploreInner">
                 <div>
                     <div align="center">
@@ -174,7 +174,7 @@
                         Nước hoa đã trở thành của riêng mình khi Louis XV lên ngôi trong thế kỷ 18.<br> Việc sử dụng nước hoa ở Pháp tăng đều đặn. Vào thế kỷ 18, cây thơm<br> đã được trồng ở vùng Grasse của Pháp để cung cấp cho ngành công nghiệp<br> nước hoa đang phát triển với nguyên liệu thô.
                     </div>
                     <div>
-                        <p class="btnExplore"><span>Khám phá</span></p>
+                        <p class="btnExplore"><span><a href="">Khám phá</a></span></p>
                     </div>
                 </div>
                 <div class="consultPerfumeOuter">

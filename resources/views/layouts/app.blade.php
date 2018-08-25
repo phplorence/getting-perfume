@@ -33,7 +33,7 @@
                 <i class="fa fa-map-marker wow shake"></i></a>
             </li>
 
-            <li class="topNavInner titleSite  wow slideInRight"><a id="branch" href="javascript:void(0)">Nước Hoa Quảng Ngãi</a></li>
+            <li class="topNavInner titleSite  wow slideInRight"><a id="branch" href="javascript:void(0)">Nước Hoa</a></li>
 
             <li class="navbar-right topNavInner wow slideInLeft">
                 <a href="#"> <i class="fa fa-twitter"></i></a>
@@ -306,6 +306,10 @@
                 $('#modal-loading').modal('hide');
                 $('#page_content_ajax').replaceWith(data['html']);
             });
+    });
+    $('.smooth-goto').on('click', function() {
+        $('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
+        return false;
     });
 </script>
 </body>

@@ -1006,7 +1006,7 @@ ul{
 }
 a#scrollUp {
     position: absolute;
-    left: 50%;
+    right: 60px;
     bottom: 10px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);

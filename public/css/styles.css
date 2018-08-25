@@ -5,6 +5,19 @@
     font-weight:normal;
     font-style:normal;
 }
+@font-face {
+    font-family:helveticaneuelight;
+    src: url('../fonts/helveticaneuelight.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:ongdo;
+    src: url('../fonts/VNI-Ongdo.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
 
 /**
  * TOP NAVIGATION BAR -- WEBSITE TEMPLATE
@@ -105,6 +118,7 @@ html, body {
     text-shadow: none;
     color:white;
     font-size: 16px;
+    font-weight: 600;
 }
 .menuItemOuter > a:hover, .menuItemOuter > a:active, .menuItemOuter > a:focus {
     background-color: transparent !important;
@@ -169,7 +183,7 @@ html, body {
     color:white;
 }
 .titleExploreInner:first-child {
-    margin-top: 48px;
+    margin-top: 8px;
 }
 #ajdustImageTitle {
     text-align: center; 
@@ -187,8 +201,9 @@ html, body {
     margin-top: 32px;
 }
 .ajdustDescription {
-    color: #c64d9c;
-    font-weight: bold !important;
+    color: #ffffff;
+    font-style:normal;
+    font-size: 15px !important;
 }
 .exploreInner {
     margin-top: 48px;
@@ -202,8 +217,8 @@ html, body {
     padding: 8px 24px;
 }
 #ajdustImageReadmore {
-    text-align: center; 
-    padding-top: 80px;
+    text-align: center;
+    padding-top: 30px;
     width: 36px; 
     height: 36px;
 }
@@ -591,9 +606,9 @@ footer {
         margin: 0px auto;
     }
     .ajdustDescription {
-        color: #c64d9c;
-        font-size: 12px !important;
-        font-weight: bold !important;
+        color: #ffffff;
+        font-weight: 400;
+        font-style:italic;
     }
     #ajdustImageTitle {
         margin-top: -48px;

@@ -27,7 +27,7 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-cog"></i> <span>Khu vực menu</span>
+                    <i class="fa fa-cog"></i> <span>Giao diện</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
