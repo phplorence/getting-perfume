@@ -100,8 +100,8 @@
             })
                 .done(function (data) {
                     if(data['message']['status'] == 'success') {
-//                        window.location.href="http://evanuochoa.com/quan-tri";
-                        window.location.href="http://localhost:8000/quan-tri";
+                        window.location.href="http://evanuochoa.com/quan-tri";
+//                        window.location.href="http://localhost:8000/quan-tri";
                     }
                     if(data['message']['status'] == 'error') {
                         swal("", data['message']['description'], "error");
