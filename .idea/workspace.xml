@@ -2,44 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31720278-20ef-494d-ac36-7d625be38225" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/helveticaneue_medium-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/cart1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/cart2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-img/cart3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/favorites.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/logo2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/paypal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/core-img/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/core-style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/nice-select.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/active.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/popper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/perfume.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/helvetica_neu_bold-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/helvetica_neu_bold-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/helvetica_neu_bold-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/helveticaneue_medium-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/helveticaneue_medium-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/PerfumeController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/animate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/classy-nav.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/core-style.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/jquery-ui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css/magnific-popup.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_mixin.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_responsive.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_theme_color.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/style.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/classy-nav.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery/jquery-2.2.4.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/map-active.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/x.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/magnific-popup.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/child/contact.blade.php" afterPath="$PROJECT_DIR$/resources/views/child/contact.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/AdminLTE.min.css" afterPath="$PROJECT_DIR$/public/css/AdminLTE.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/plugins.js" afterPath="$PROJECT_DIR$/public/js/plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/admin/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/admin/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/perfume.blade.php" afterPath="$PROJECT_DIR$/resources/views/perfume.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/core-style.css" afterPath="$PROJECT_DIR$/public/css/css/core-style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/nice-select.css" afterPath="$PROJECT_DIR$/public/css/css/nice-select.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/owl.carousel.css" afterPath="$PROJECT_DIR$/public/css/css/owl.carousel.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,42 +48,66 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="perfume.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="perfume.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/perfume.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4471">
-              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
               <folding>
-                <marker date="1534726325899" expanded="true" signature="512:550" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="619:654" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="694:727" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="767:799" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="839:877" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="917:944" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="968:991" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="1674:1711" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="2211:2246" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="2792:2827" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="3718:3753" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="3847:3887" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="3972:4009" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="4895:4925" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="5446:5476" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="6007:6037" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="6558:6588" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="7108:7138" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="7655:7685" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="8205:8235" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="8758:8788" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="9317:9347" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="11499:11535" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="14275:14326" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="14276:14326" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="14382:14413" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="14472:14532" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="14589:14617" ph="..." />
-                <marker date="1534726325899" expanded="true" signature="14673:14700" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="369:407" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="475:511" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="551:578" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="12807:12820" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="13882:13925" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="13973:14003" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="14054:14087" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="14136:14163" ph="..." />
+                <marker date="1535158260033" expanded="true" signature="14211:14237" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/admin/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="41" column="54" lean-forward="false" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+              <folding>
+                <marker date="1535162933887" expanded="true" signature="375:436" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="498:560" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="618:672" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="733:767" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="823:867" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="1417:1431" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="1709:1723" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="2811:2861" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="2892:2927" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="2958:2997" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="3055:3114" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="3163:3205" ph="..." />
+                <marker date="1535162933887" expanded="true" signature="3975:4002" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminLTE.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/AdminLTE.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="3271" column="21" lean-forward="false" selection-start-line="3271" selection-start-column="21" selection-end-line="3271" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminLTE.min.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/AdminLTE.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,39 +115,39 @@
       <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="33" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="active.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/active.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="102">
+              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="40" />
+              <folding>
+                <marker date="1535158084993" expanded="true" signature="171:185" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="266:327" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="367:429" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="469:497" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="537:566" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="633:663" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="726:756" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="824:856" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="907:946" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="1073:1096" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="3010:3039" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="3751:3773" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="4345:4354" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="4756:4786" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="5360:5393" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="5967:6000" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="6574:6605" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12045:12095" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12124:12184" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12254:12291" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12347:12382" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12440:12482" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12540:12577" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12639:12680" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12747:12793" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12854:12894" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="12939:12967" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="13016:13044" ph="..." />
+                <marker date="1535158084993" expanded="true" signature="15172:15200" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,13 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Hổ trợ on</find>
-      <find>Bán hàng</find>
-      <find>showEditSuper</find>
-      <find>imga</find>
-      <find>img</find>
-      <find>jquery.min.js</find>
-      <find>menuNavInner</find>
       <find>www.</find>
       <find>bootstrap.min.css</find>
       <find>animate</find>
@@ -156,9 +170,7 @@
       <find>font-awesome.min.css</find>
       <find>flaticon.css</find>
       <find>jquery-1.12.4.min.js</find>
-      <find>bootstrap.min.js</find>
       <find>wow.min.js</find>
-      <find>plugins</find>
       <find>logo.png</find>
       <find>1.png</find>
       <find>breadcumb-area</find>
@@ -172,6 +184,15 @@
       <find>.breadcumb-area</find>
       <find>contact</find>
       <find>footer</find>
+      <find>Subscribe for a</find>
+      <find>plugins</find>
+      <find>jquery-2.2.4.min.js</find>
+      <find>scripts</find>
+      <find>bootstrap.min.js</find>
+      <find>Perfume</find>
+      <find>Home</find>
+      <find>login</find>
+      <find>.formLogin p</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -187,11 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/modal/concentration/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/tables/concentration/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Model/Concentrations.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/perfume/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/IncenseController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/StyleController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Tables/AuthorController.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/admin/header/logo.blade.php" />
@@ -215,7 +231,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/super/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Model/Admin.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php" />
-        <option value="$PROJECT_DIR$/public/css/AdminLTE.min.css" />
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/modal/super/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Manager/Super/SuperController.php" />
@@ -227,17 +242,23 @@
         <option value="$PROJECT_DIR$/resources/views/modal/map/location.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/modal/dialog/loading.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/contact.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/public/css/styles.css" />
         <option value="$PROJECT_DIR$/public/css/contacts.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/admin/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/child/contact.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/scss/style.scss" />
+        <option value="$PROJECT_DIR$/resources/views/vendor/x.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/x.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/css/core-style.css.map" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PerfumeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/perfume.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/admin/login.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/AdminLTE.min.css" />
       </list>
     </option>
   </component>
@@ -308,7 +329,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -439,6 +459,28 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -486,68 +528,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core-img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bg-img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="fonts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -563,6 +543,76 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_all-skins.css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-perfume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -642,88 +692,33 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="getting-perfume" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tables" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../gettingblog" />
-    <property name="SearchEverywhereHistoryKey" value="app&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;Home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;styles&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;cont&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;login&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/admin/login.blade.php&#10;contact.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;contacts.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/contacts.css&#10;styles.c&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;ap&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/home.blade.php&#10;Contac&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/ContactController.php&#10;contac&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;master&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;index&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/incense/index.blade.php&#10;mas&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;HomeCo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;style.css&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;app.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;HomeC&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;sideb&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;HomeContro&#9;null&#9;null&#10;composer.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/composer.json&#10;lar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;edit&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/super/edit.blade.php&#10;super.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/super.js&#10;Perfum&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminPerfumeController.php&#10;Perfume&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminPerfumeController.php&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;perfume.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/super.js&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;create&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/super/create.blade.php&#10;larav&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Login&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/admin/login.blade.php&#10;alt&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.min.css&#10;laravel&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;AdminLoginContro&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/Admin/AdminLoginController.php&#10;Super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;navbar.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/navbar.blade.php&#10;head&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header.blade.php&#10;larave&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;per&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;perfume&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;Admin&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Model/Admin.php&#10;Incense&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Model/Incenses.php&#10;perf&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;in&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/incense/index.blade.php&#10;incense&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/incense.js&#10;SuperController&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Admin.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.min.css&#10;alt&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;login&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/admin/login.blade.php&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;perfum&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/perfume.blade.php&#10;sideba&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;app&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;H&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;x&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/x.blade.php&#10;core&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/css/core-style.css.map&#10;HomeC&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;HomeContro&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;Home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;styles&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;cont&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;contact.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;contacts.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/contacts.css&#10;styles.c&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;ap&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/home.blade.php&#10;Contac&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/ContactController.php&#10;contac&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;master&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;index&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/incense/index.blade.php&#10;mas&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;HomeCo&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;style.css&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;app.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;sideb&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;composer.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/composer.json&#10;lar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;edit&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/super/edit.blade.php&#10;super.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/super.js&#10;Perfum&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminPerfumeController.php&#10;Perfume&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminPerfumeController.php&#10;perfume.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/super.js&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;create&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/modal/super/create.blade.php&#10;larav&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Login&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/admin/login.blade.php&#10;laravel&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;AdminLoginContro&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/Admin/AdminLoginController.php&#10;Super&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Manager/Super/SuperController.php&#10;navbar.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/navbar.blade.php&#10;head&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header.blade.php&#10;larave&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;per&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\CauUt\git\getting-perfume\app\Http\Controllers" />
+      <recent name="D:\Project\CauUt\git\getting-perfume\public\js" />
       <recent name="D:\Project\CauUt\git\getting-perfume\public\fonts" />
       <recent name="D:\Project\CauUt\git\getting-perfume\public\css" />
       <recent name="D:\Project\CauUt\git\getting-perfume\public\img" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\public\js" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\CauUt\git\getting-perfume\resources\views" />
       <recent name="D:\Project\CauUt\git\getting-perfume" />
       <recent name="D:\Project\CauUt\git\getting-perfume\resources\views\modal\dialog\confirm" />
       <recent name="D:\Project\CauUt\git\getting-perfume\app\Http\Controllers\Backend\Manager\Super" />
       <recent name="D:\Project\CauUt\git\getting-perfume\app\Http\Controllers\Backend\Manager" />
-      <recent name="D:\Project\CauUt\git\getting-perfume\app\Http\Controllers\Perfume\Tables" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -896,12 +891,15 @@
       <workItem from="1534601765215" duration="12523000" />
       <workItem from="1534675081478" duration="2126000" />
       <workItem from="1534693815554" duration="596000" />
-      <workItem from="1534724498052" duration="2013000" />
+      <workItem from="1534724498052" duration="2041000" />
+      <workItem from="1535113990254" duration="3476000" />
+      <workItem from="1535126698815" duration="22751000" />
+      <workItem from="1535162578941" duration="480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="735975000" />
+    <option name="totallyTimeSpent" value="762710000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -913,20 +911,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532943" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5617284" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5617284" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -961,104 +958,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin/AdminLoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="128" lean-forward="false" selection-start-line="29" selection-start-column="128" selection-end-line="29" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/AdminLTE.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/super/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="57" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Utilize/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modal/super/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modal/perfume/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/perfume.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="180" column="38" lean-forward="false" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdminPerfumeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="139" column="4" lean-forward="false" selection-start-line="139" selection-start-column="4" selection-end-line="148" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/perfume/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/super/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="123" column="20" lean-forward="false" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Manager/Super/SuperController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="184" column="16" lean-forward="false" selection-start-line="184" selection-start-column="16" selection-end-line="184" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modal/super/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="77" column="83" lean-forward="true" selection-start-line="77" selection-start-column="83" selection-end-line="77" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/super.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/modal/author/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1105,13 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="146" column="49" lean-forward="false" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1164,24 +1056,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/owl.carousel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/owl.carousel.css" />
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="111" column="71" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="79" lean-forward="true" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -1206,31 +1085,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/contacts.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31025">
           <caret line="1825" column="16" lean-forward="false" selection-start-line="1825" selection-start-column="16" selection-end-line="1825" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/admin/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="118" column="11" lean-forward="false" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1248,37 +1106,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/core-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/active.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/core-style.css" />
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1290,69 +1118,248 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/nice-select.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/nice-select.css" />
     <entry file="file://$PROJECT_DIR$/public/css/font-awesome.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/active.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/_theme_color.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/_responsive.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-542">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery/jquery-2.2.4.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6531">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/css/core-style.css.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/x.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1609">
+          <caret line="146" column="49" lean-forward="false" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PerfumeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="33" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="40" />
+          <folding>
+            <marker date="1535158084993" expanded="true" signature="171:185" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="266:327" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="367:429" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="469:497" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="537:566" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="633:663" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="726:756" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="824:856" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="907:946" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="1073:1096" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="3010:3039" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="3751:3773" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="4345:4354" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="4756:4786" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="5360:5393" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="5967:6000" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="6574:6605" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12045:12095" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12124:12184" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12254:12291" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12347:12382" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12440:12482" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12540:12577" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12639:12680" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12747:12793" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12854:12894" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="12939:12967" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="13016:13044" ph="..." />
+            <marker date="1535158084993" expanded="true" signature="15172:15200" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/perfume.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4471">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding>
-            <marker date="1534726325899" expanded="true" signature="512:550" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="619:654" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="694:727" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="767:799" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="839:877" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="917:944" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="968:991" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="1674:1711" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="2211:2246" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="2792:2827" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="3718:3753" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="3847:3887" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="3972:4009" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="4895:4925" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="5446:5476" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="6007:6037" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="6558:6588" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="7108:7138" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="7655:7685" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="8205:8235" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="8758:8788" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="9317:9347" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="11499:11535" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="14275:14326" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="14276:14326" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="14382:14413" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="14472:14532" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="14589:14617" ph="..." />
-            <marker date="1534726325899" expanded="true" signature="14673:14700" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="369:407" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="475:511" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="551:578" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="12807:12820" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="13882:13925" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="13973:14003" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="14054:14087" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="14136:14163" ph="..." />
+            <marker date="1535158260033" expanded="true" signature="14211:14237" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/AdminLTE.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="3271" column="21" lean-forward="false" selection-start-line="3271" selection-start-column="21" selection-end-line="3271" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/admin/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="41" column="54" lean-forward="false" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+          <folding>
+            <marker date="1535162933887" expanded="true" signature="375:436" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="498:560" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="618:672" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="733:767" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="823:867" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="1417:1431" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="1709:1723" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="2811:2861" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="2892:2927" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="2958:2997" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="3055:3114" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="3163:3205" ph="..." />
+            <marker date="1535162933887" expanded="true" signature="3975:4002" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/AdminLTE.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

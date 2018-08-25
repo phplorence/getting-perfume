@@ -32,14 +32,14 @@
       <form id="loginForm">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
-          <input type="text" name="email" class="form-control" placeholder="Email">
+          <input type="text" name="email" class="adjustLogin form-control" placeholder="Email">
         </div>
         <div class="form-group has-feedback">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="adjustLogin form-control" placeholder="Password">
         </div>
         <div class="row">
           <div class="col-xs-5">
-            <button type="submit" class="btn buttonLogin">LOGIN</button>
+            <button type="submit" class="adjustSubmit btn buttonLogin">LOGIN</button>
           </div>
         </div>
       </form>

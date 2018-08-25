@@ -2,22 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('web');
-    }
-
     public function index()
     {
-        if(Auth::check())
-        {
-            return view('auth.login');
-        }
-        return view('perfume');
+        return view('home');
     }
 
     public function home()
@@ -25,7 +14,7 @@ class HomeController extends Controller
         $returnHTML = view('child.main')->render();
         $response_array = ([
             'success' => true,
-            'html'      => $returnHTML
+            'html' => $returnHTML
         ]);
         echo json_encode($response_array);
     }

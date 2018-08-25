@@ -76,13 +76,13 @@ form .has-feedback, .checkbox {
     margin-top: 20px;
 }
 
-form button[type="submit"] {
+.adjustSubmit {
     margin-top: 20px;
     margin-left: 24px;
     border-radius: 50px;
 }
 
-.formLogin input[type="text"], .formLogin input[type="password"] {
+.adjustLogin {
     width: 100%;
     margin-top: 20px;
     border-width:0px;

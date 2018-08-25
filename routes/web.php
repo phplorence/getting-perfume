@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'web'], function () {
 
     Auth::routes();
-    Route::prefix('')->group(function () {
+    Route::prefix('')->group(/**
+     *
+     */
+        function () {
         Route::get('/', 'HomeController@index')->name('home');
-        Route::post('/home', 'HomeController@home')->name('nav.home');
-        Route::get('/contact', 'ContactController@index')->name('nav.contact');
+        Route::post('home', 'HomeController@home')->name('nav.home');
+        Route::get('contact', 'ContactController@index')->name('nav.contact');
+        Route::get('nuoc-hoa', 'PerfumeController@index')->name('nav.perfume');
 
         // Authentication Routes...
         Route::get('/dang-nhap', 'Auth\LoginController@showLoginForm')->name('user.login');
@@ -43,6 +47,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/dang-nhap', 'Auth\Admin\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/dang-xuat', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
+
 
         /**
          * PROFILE ROUTE

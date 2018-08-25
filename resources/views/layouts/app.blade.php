@@ -10,16 +10,8 @@
     <link rel="stylesheet" href="{{URL::asset('css/styles.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/animate.css')}}">
 
-    <!-- owl.carousel.2.0.0-beta.2.4 css -->
-    <link rel="stylesheet" href="{{URL::asset('css/owl.carousel.css')}}">
-    <!-- font-awesome v4.6.3 css -->
-    <link rel="stylesheet" href="{{URL::asset('components/font-awesome/css/font-awesome.min.css')}}">
-    <!-- magnific-popup.css -->
-    <link rel="stylesheet" href="{{URL::asset('css/magnific-popup.css')}}">
     <!-- flaticon.css -->
     <link rel="stylesheet" href="{{URL::asset('css/flaticon.css')}}">
-    <!-- slicknav.min.css -->
-    <link rel="stylesheet" href="{{URL::asset('css/slicknav.min.css')}}">
     <!-- style css -->
     <link rel="stylesheet" href="{{URL::asset('css/contacts.css')}}">
     <!-- responsive css -->
@@ -82,10 +74,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav menuUlOuter">
-                        <li class="menuItemOuter wow bounceIn" role="presentation" class="active"><a href="#"><span>TRANG CHỦ</span> </a></li>
-                        <li class="menuItemOuter wow bounceIn" role="presentation"><a href="#"><span>NƯỚC HOA</span> </a></li>
-                        <li class="menuItemOuter wow bounceIn" role="presentation"><a href="#"><span>BÀI VIẾT</span></a></li>
-                        <li class="menuItemOuter wow bounceIn" role="presentation"><a href="#"><span>RAO VẶT</span></a></li>
+                        <li class="menuItemOuter wow bounceIn" role="presentation" class="active"><a id="nav_home" href=""><span>TRANG CHỦ</span> </a></li>
+                        <li class="menuItemOuter wow bounceIn" role="presentation"><a href="{{ route('nav.perfume') }}"><span>NƯỚC HOA</span> </a></li>
+                        <li class="menuItemOuter wow bounceIn" role="presentation"><a href=""><span>BÀI VIẾT</span></a></li>
+                        <li class="menuItemOuter wow bounceIn" role="presentation"><a href=""><span>RAO VẶT</span></a></li>
                         <li class="menuItemOuter wow bounceIn" role="presentation"><a id="contact" href="javascript:void(0)"><span>LIÊN HỆ</span></a></li>
                     </ul>
                 </div>
@@ -279,7 +271,7 @@
 </script>
 <script src="{{ URL::asset('js/scripts.js')}}"></script>
 <script>
-    $("#home, #map, #branch").click (function (event) {
+    $("#home, #map, #branch, #nav_home").click (function (event) {
         event.preventDefault();
         $.ajax({
             url: '/home',
