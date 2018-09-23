@@ -244,6 +244,24 @@ html, body {
     background: transparent;
     flex-wrap: wrap;
 }
+
+.thumbnail img:hover {
+    transform: scale(1.1);
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+
+    transition-duration: 0.8s;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+
+    box-shadow:0px 0px 30px gray;
+    -webkit-box-shadow:0px 0px 30px gray;
+    -moz-box-shadow:0px 0px 30px gray;
+    opacity: 1;
+}
+
 .thumbnail > div > h2 {
 }
 .thumbnail > div > p.description {
@@ -296,7 +314,7 @@ html, body {
 
 .textPerfume {
     position: absolute;
-    top: 90%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

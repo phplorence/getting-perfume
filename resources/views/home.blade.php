@@ -105,15 +105,15 @@
                         @foreach($newPerfumes as $perfume)
                             <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
                                 <div class="thumbnail overrideImage">
-                                    <img src="{{URL::asset('perfume/'.$perfume->path_image)}}" />
-                                    <div class="textPerfume">
+                                    <img src="{{URL::asset('perfume/'.$perfume->path_image)}}" style="width: 362px; height: 521px;" />
+                                    <div class="textPerfume fdw-background" style="opacity: 0;">
                                         <p class="namePerfume">Nos Parfums</p>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     @endif
-                    <div style="margin: 0 auto;">
+                    <div style="margin: 20px auto;">
                         <p class="text-center btnDetail"><span>Xem chi tiết</span></p>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                             <div class="imgInfo">
                                 <img src="{{URL::asset('img/perfume_more_detail.png')}}"/>
                             </div>
-                            <div class="textInfo">
+                            <div class="textInfo" align="center">
                                 <h3>NOS POINTS DE VENTE</h3>
                                 <hr class="hr">
                                 <p>Nước hoa đã trở thành của riêng mình khi Louis XV lên ngôi trong thế kỷ 18</p>
@@ -157,7 +157,7 @@
                             <div class="imgInfo">
                                 <img src="{{URL::asset('img/perfume_more_detail.png')}}"/>
                             </div>
-                            <div class="textInfo">
+                            <div class="textInfo" align="center">
                                 <h3>NOS POINTS DE VENTE</h3>
                                 <hr class="hr">
                                 <p>Nước hoa đã trở thành của riêng mình khi Louis XV lên ngôi trong thế kỷ 18</p>

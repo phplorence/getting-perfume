@@ -7,9 +7,9 @@
     <title>Chuyên Trang Nước Hoa</title>
     <link rel="stylesheet" href="{{URL::asset('components/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="icon" type="image/png" href="{{URL::asset('img/favicon.png')}}">
     <link rel="stylesheet" href="{{URL::asset('css/styles.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/animate.css')}}">
-
     <!-- flaticon.css -->
     <link rel="stylesheet" href="{{URL::asset('css/flaticon.css')}}">
     <!-- style css -->
@@ -40,7 +40,7 @@
             </li>
 
             <li class="navbar-right topNavInner wow slideInLeft">
-                <a href="https://www.facebook.com/htpgroup12" target="_blank"> <i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.facebook.com/evanuochoa/" target="_blank"> <i class="fa fa-facebook-official"></i></a>
             </li>
 
             <li class="navbar-right topNavInner wow slideInLeft">
@@ -196,7 +196,7 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="copyright">
                             <p>
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Chuyên cung cấp nước hoa pháp chính hãng <i class="fa fa-heart-o" aria-hidden="true"></i> bởi <a href="https://colorlib.com" target="_blank">Phong Perfume</a>
                             </p>
                         </div>
                     </div>
@@ -303,6 +303,16 @@
         $('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
         return false;
     });
+    jQuery(document).ready(function($){
+        $('.fdw-background').hover(
+            function () {
+                $(this).animate({opacity:'1'});
+            },
+            function () {
+                $(this).animate({opacity:'0'});
+            });
+    });
+
 </script>
 </body>
 </html>

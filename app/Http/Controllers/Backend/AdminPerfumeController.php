@@ -159,6 +159,14 @@ class AdminPerfumeController extends Controller
             $image_path = $newname;
             $target = 'perfume/' . $newname;
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
+            /**
+             * Resize image in PHP
+             * - crop
+             * - max
+             * - force
+             */
+            $this->helper->resize_image('force', $target, $target,362, 521);
         }
         if ($this->helper->validatePerfumeName($request)) {
             $response_array = ([
@@ -212,8 +220,11 @@ class AdminPerfumeController extends Controller
 
             /**
              * Resize image in PHP
+             * - crop
+             * - max
+             * - force
              */
-            $this->helper->resize_image('max',$target,$target,362, 521);
+            $this->helper->resize_image('force', $target, $target,362, 521);
             // Delete old image
             $original_image = $this->modelPerfume->getPerfume($request->id)->path_image;
             if(strcmp($original_image,$image_path) != 0) {
