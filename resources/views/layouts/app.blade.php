@@ -36,23 +36,15 @@
             <li class="topNavInner titleSite  wow slideInRight"><a id="branch" href="javascript:void(0)">Nước Hoa</a></li>
 
             <li class="navbar-right topNavInner wow slideInLeft">
-                <a href="#"> <i class="fa fa-twitter"></i></a>
+                <a href="https://plus.google.com/100299109617853865755" target="_blank"> <i class="fa fa-google-plus"></i></a>
             </li>
 
             <li class="navbar-right topNavInner wow slideInLeft">
-                <a href="#"> <i class="fa fa-google-plus"></i></a>
+                <a href="https://www.facebook.com/htpgroup12" target="_blank"> <i class="fa fa-facebook-official"></i></a>
             </li>
 
             <li class="navbar-right topNavInner wow slideInLeft">
-                <a href="#"> <i class="fa fa-instagram"></i></a>
-            </li>
-
-            <li class="navbar-right topNavInner wow slideInLeft">
-                <a href="#"> <i class="fa fa-facebook-official"></i></a>
-            </li>
-
-            <li class="navbar-right topNavInner wow slideInLeft">
-                <a href="#"> <i class="fa fa-youtube-play"></i></a>
+                <a href="https://www.youtube.com/channel/UCQzpDYpolWo4hmgvkRC6jxQ" target="_blank"> <i class="fa fa-youtube-play"></i></a>
             </li>
 
             <li class="navbar-right topNavInner searchBox wow slideInLeft"><a href="#">Nhập thông tin tìm kiếm </a></li>

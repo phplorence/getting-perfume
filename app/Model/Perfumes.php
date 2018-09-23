@@ -5,7 +5,6 @@ namespace App\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class Perfumes extends Authenticatable
 {
@@ -44,6 +43,14 @@ class Perfumes extends Authenticatable
 
     public function getAllPerfumes() {
         return DB::table('perfumes')->get();
+    }
+
+    public function getFourPerfumes() {
+        return DB::table('perfumes')->take(4)->get();
+    }
+
+    public function getNewPerfumes() {
+        return DB::table('perfumes')->take(6)->get();
     }
 
     public function isExistIncense($request) {

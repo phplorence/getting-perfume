@@ -33,6 +33,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li><a href="{{ route('admin.gui.index') }}"><i class="fa fa-table"></i> Slide Ảnh</a></li>
                 </ul>
             </li>
 

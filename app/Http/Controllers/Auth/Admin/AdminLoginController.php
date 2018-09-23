@@ -31,7 +31,7 @@ class AdminLoginController extends Controller
             $response_array = ([
                 'message' => [
                     'status' => "success",
-                    'description' => "Login Successful!"
+                    'description' => "Đăng nhập thành công!"
                 ]
             ]);
         } else {
@@ -43,7 +43,7 @@ class AdminLoginController extends Controller
                 ],
                 'message' => [
                     'status' => "error",
-                    'description' => "Wrong information!"
+                    'description' => "Thông tin sai!"
                 ]
             ]);
         }

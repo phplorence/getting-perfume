@@ -27,8 +27,8 @@
   @include('sweet::alert');
   <div class="login_wrapper" id="jslogin">
     <div class="col-md-6 formLogin">
-      <h2>Hệ Thống Quản Trị</h2>
-      <p>Thực hiện chức năng quản trị của website. Tài khoản được cung cấp bởi admin (<strong>Hường Tấn Phong</strong>)</p>
+      <h2><marquee>CHUYÊN CUNG CẤP NƯỚC HOA</marquee></h2>
+      <p>Tài khoản được cung cấp bởi admin (<strong>Hường Tấn Phong</strong>)</p>
       <form id="loginForm">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
@@ -38,23 +38,12 @@
           <input type="password" name="password" class="adjustLogin form-control" placeholder="Password">
         </div>
         <div class="row">
+          <div class="col-xs-7"></div>
           <div class="col-xs-5">
-            <button type="submit" class="adjustSubmit btn buttonLogin">LOGIN</button>
+            <button type="submit" class="adjustSubmit btn buttonLogin">Đăng nhập</button>
           </div>
         </div>
       </form>
-      <div class="row social-network">
-        <div class="col-md-4">
-          <p style="margin-right: 0px;">Hoặc </p>
-        </div>
-        <div class="col-md-8">
-          <p class="pull-right" style="margin-right: 24px;">
-            <a href="#" class="fa fa-facebook socialLogin"></a>
-            <a href="#" class="fa fa-twitter socialLogin"></a>
-            <a href="#" class="fa fa-google-plus socialLogin"></a>
-          </p>
-        </div>
-      </div>
     </div>
     <div class="col-md-6 imgWelcome">
     </div>
@@ -75,7 +64,7 @@
         } else {
             return false;
         };
-    }, "Email address is not valid!");
+    }, "Địa chỉ email không hợp lệ!");
 
     $('#loginForm').validate({
         rules: {
@@ -100,8 +89,8 @@
             })
                 .done(function (data) {
                     if(data['message']['status'] == 'success') {
-                        window.location.href="http://evanuochoa.com/quan-tri";
-//                        window.location.href="http://localhost:8000/quan-tri";
+//                        window.location.href="http://evanuochoa.com/quan-tri";
+                        window.location.href="http://localhost:8000/quan-tri";
                     }
                     if(data['message']['status'] == 'error') {
                         swal("", data['message']['description'], "error");

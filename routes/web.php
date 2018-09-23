@@ -48,7 +48,6 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/dang-nhap', 'Auth\Admin\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/dang-xuat', 'Auth\Admin\AdminLoginController@logout')->name('admin.logout');
 
-
         /**
          * PROFILE ROUTE
          */
@@ -84,6 +83,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/nuoc-hoa/phong-cach/all', 'Backend\Tables\StyleController@indexAll')->name('admin.perfume.style.indexAll');
         Route::post('/nuoc-hoa/nha-pha-che/all', 'Backend\Tables\AuthorController@indexAll')->name('admin.perfume.author.indexAll');
         Route::post('/nuoc-hoa/loai-nuoc-hoa/all', 'Backend\Tables\TypePerfumeController@indexAll')->name('admin.perfume.typeperfume.indexAll');
+        Route::get('/giao-dien/slide-anh', 'Gui\ImageSlider\ImageSliderController@index')->name('admin.gui.index');
 
         /**
          * CONCENTRATION ROUTE

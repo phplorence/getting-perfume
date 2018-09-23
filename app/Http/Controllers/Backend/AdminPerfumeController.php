@@ -210,10 +210,12 @@ class AdminPerfumeController extends Controller
             $target = 'perfume/' . $newname;
             move_uploaded_file($_FILES['image']['tmp_name'], $target);
 
+            /**
+             * Resize image in PHP
+             */
+            $this->helper->resize_image('max',$target,$target,362, 521);
             // Delete old image
-
             $original_image = $this->modelPerfume->getPerfume($request->id)->path_image;
-
             if(strcmp($original_image,$image_path) != 0) {
                 if (file_exists('perfume/'.$original_image)) {
                     unlink('perfume/'.$original_image);

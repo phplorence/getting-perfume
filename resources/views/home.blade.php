@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="{{URL::asset('img/1.jpg')}}" alt="Slide Image" class="img-fluid tales">
+                        <img src="{{URL::asset('img/4.png')}}" alt="Slide Image" class="img-fluid tales">
                     </div>
                     <div class="item"><img src="{{URL::asset('img/2.jpg')}}" alt="Slide Image" class="img-fluid tales"></div>
                     <div class="item active"><img src="{{URL::asset('img/3.jpg')}}" alt="Slide Image" class="img-fluid tales"></div>
@@ -48,48 +48,46 @@
                 </div>
                 <p class="text-center ajdustDescription sologan">Nước Hoa Pháp Chính Hãng</p>
                 <div class="hotPerfumeOuter">
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail">
-                            <img src="{{URL::asset('img/perfume_demo.png')}}" alt="perfume" width="240px;" height="240px;"/>
-                            <div class="caption">
-                                <h2 class="text-center">Mini Versace Bright Absolu</h2>
-                                <p class="text-center description">Nước hoa mini Versace bright absolu ( Hồng Đậm ) 5ml.</p>
-                                <p class="text-center currency">365.000 ₫</p>
+                    @if(isset($hotPerfumes))
+                        @foreach($hotPerfumes as $perfume)
+                            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp">
+                                <div class="thumbnail">
+                                    <img src="{{URL::asset('perfume/'.$perfume->path_image)}}" alt="perfume" style="width:240px; height:240px;"/>
+                                    <div class="caption">
+                                        <h2 class="text-center">
+                                            <?php
+                                                if (strlen(strip_tags($perfume->name)) > 21) {
+                                                    echo substr(strip_tags($perfume->name),0,21)."...";
+                                                } else {
+                                                    echo $perfume->name;
+                                                }
+                                            ?>
+                                        </h2>
+                                        <p class="text-center description">
+                                            <?php
+                                                if (strlen(strip_tags($perfume->description)) > 120) {
+                                                    echo substr(strip_tags($perfume->description),0,120)."...";
+                                                } else {
+                                                    if (strlen(strip_tags($perfume->description)) < 40)
+                                                        echo strip_tags($perfume->description)."</br></br>";
+                                                    else
+                                                        echo strip_tags($perfume->description)."</br>";
+                                                }
+                                            ?>
+                                        </p>
+                                        <p class="text-center currency">
+                                            <?php
+                                                echo number_format($perfume->original_price, 0, '', ','). " VND";
+                                            ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail">
-                            <img src="{{URL::asset('img/perfume_demo.png')}}" alt="perfume" width="240;" height="240px;"/>
-                            <div class="caption">
-                                <h2 class="text-center">Mini Versace Bright Absolu</h2>
-                                <p class="text-center description">Nước hoa mini Versace bright absolu ( Hồng Đậm ) 5ml.</p>
-                                <p class="text-center currency">365.000 ₫</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail">
-                            <img src="{{URL::asset('img/perfume_demo.png')}}" alt="perfume" width="240px;" height="240px;"/>
-                            <div class="caption">
-                                <h2 class="text-center">Mini Versace Bright Absolu</h2>
-                                <p class="text-center description">Nước hoa mini Versace bright absolu ( Hồng Đậm ) 5ml.</p>
-                                <p class="text-center currency">365.000 ₫</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail">
-                            <img src="{{URL::asset('img/perfume_demo.png')}}" alt="perfume" width="240px;" height="240px;"/>
-                            <div class="caption">
-                                <h2 class="text-center">Mini Versace Bright Absolu</h2>
-                                <p class="text-center description">Nước hoa mini Versace bright absolu ( Hồng Đậm ) 5ml.</p>
-                                <p class="text-center currency">365.000 ₫</p>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
-                <p class="text-center btnDetail"><span>Xem chi tiết</span></p>
+                <div style="margin: 0 auto;">
+                    <p class="text-center btnDetail"><span>Xem chi tiết</span></p>
+                </div>
             </div>
         </div>
 
@@ -103,55 +101,20 @@
                 </div>
                 <p class="text-center ajdustDescription sologan">Nước Hoa Pháp Chính Hãng</p>
                 <div class="newPerfumeOuter">
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail overrideImage">
-                            <img src="{{URL::asset('img/perfume_demo_2.png')}}"/>
-                            <div class="textPerfume">
-                                <p class="namePerfume">Nos Parfums</p>
+                    @if(isset($newPerfumes))
+                        @foreach($newPerfumes as $perfume)
+                            <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
+                                <div class="thumbnail overrideImage">
+                                    <img src="{{URL::asset('perfume/'.$perfume->path_image)}}" />
+                                    <div class="textPerfume">
+                                        <p class="namePerfume">Nos Parfums</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail overrideImage">
-                            <img src="{{URL::asset('img/perfume_demo_2.png')}}"/>
-                            <div class="textPerfume">
-                                <p class="namePerfume">Nos Parfums</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail overrideImage">
-                            <img src="{{URL::asset('img/perfume_demo_2.png')}}"/>
-                            <div class="textPerfume">
-                                <p class="namePerfume">Nos Parfums</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="newPerfumeOuter">
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail overrideImage">
-                            <img src="{{URL::asset('img/perfume_demo_2.png')}}"/>
-                            <div class="textPerfume">
-                                <p class="namePerfume">Nos Parfums</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail overrideImage">
-                            <img src="{{URL::asset('img/perfume_demo_2.png')}}"/>
-                            <div class="textPerfume">
-                                <p class="namePerfume">Nos Parfums</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center wow fadeInUp">
-                        <div class="thumbnail overrideImage">
-                            <img src="{{URL::asset('img/perfume_demo_2.png')}}"/>
-                            <div class="textPerfume">
-                                <p class="namePerfume">Nos Parfums</p>
-                            </div>
-                        </div>
+                        @endforeach
+                    @endif
+                    <div style="margin: 0 auto;">
+                        <p class="text-center btnDetail"><span>Xem chi tiết</span></p>
                     </div>
                 </div>
             </div>
