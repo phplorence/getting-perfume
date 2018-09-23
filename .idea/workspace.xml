@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31720278-20ef-494d-ac36-7d625be38225" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/favicon.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/perfume/1000_1533967038.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/perfume/222_1533967066.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/perfume/aaa_1533970914.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/perfume/hello_1533967326.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminPerfumeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminPerfumeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Utilize/Helper.php" afterPath="$PROJECT_DIR$/app/Utilize/Helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.css" afterPath="$PROJECT_DIR$/public/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/admin/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/admin/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +14,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="64" column="45" lean-forward="true" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+            <state relative-caret-position="153">
+              <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
               <folding>
                 <marker date="1537683509587" expanded="true" signature="9:22" ph="..." />
                 <marker date="1537683509587" expanded="true" signature="33:42" ph="..." />
@@ -56,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/styles.css">
+      <file leaf-file-name="contact.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/child/contact.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="428" column="1" lean-forward="true" selection-start-line="428" selection-start-column="1" selection-end-line="428" selection-end-column="1" />
+            <state relative-caret-position="510">
+              <caret line="91" column="41" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -699,7 +687,7 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SERVER 1/gettingblog" />
-    <property name="SearchEverywhereHistoryKey" value="style&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/home.blade.php&#10;app&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;HomeC&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;Home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminHomeController.php&#10;main&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/main.blade.php&#10;regis&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/register.blade.php&#10;login&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/admin/login.blade.php&#10;master&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;Hel&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Utilize/Helper.php&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Helper&#9;null&#9;null&#10;Perfume&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminPerfumeController.php&#10;st&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;register.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/register.blade.php&#10;register.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/register.blade.php&#10;sty&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;styles&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;al&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;alt&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.min.css&#10;perfume.j&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;app.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;navbar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/navbar.blade.php&#10;logo.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/logo.blade.php&#10;header&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header.blade.php&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;home.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/home.blade.php&#10;AuthorCon&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;main.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/main.blade.php&#10;AdminLogin&#9;null&#9;null&#10;LoginCont&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/LoginController.php&#10;LoginController&#9;null&#9;null&#10;.e&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/.env&#10;author.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/author.js&#10;index.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/author/index.blade.php&#10;Author&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;web.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;web.xml&#9;null&#9;null&#10;styles.c&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;Admin&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;index&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/index.blade.php&#10;Sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;styles.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;Admin.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.min.css&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;perfum&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/perfume.blade.php&#10;sideba&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;H&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;x&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/x.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="contact.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/contact.blade.php&#10;home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/home.blade.php&#10;style&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;app&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;HomeC&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php&#10;Home&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminHomeController.php&#10;main&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/main.blade.php&#10;regis&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/register.blade.php&#10;login&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/admin/login.blade.php&#10;master&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/master.blade.php&#10;Hel&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Utilize/Helper.php&#10;lara&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/storage/logs/laravel.log&#10;Helper&#9;null&#9;null&#10;Perfume&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/AdminPerfumeController.php&#10;st&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;register.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/register.blade.php&#10;register.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/auth/register.blade.php&#10;sty&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;styles&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;al&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;alt&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.min.css&#10;perfume.j&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/perfume.js&#10;app.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/layouts/app.blade.php&#10;navbar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/navbar.blade.php&#10;logo.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header/logo.blade.php&#10;header&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/header.blade.php&#10;web&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;home.bla&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/home.blade.php&#10;AuthorCon&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;main.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/child/main.blade.php&#10;AdminLogin&#9;null&#9;null&#10;LoginCont&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Auth/LoginController.php&#10;LoginController&#9;null&#9;null&#10;.e&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/.env&#10;author.js&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/js/author.js&#10;index.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/tables/author/index.blade.php&#10;Author&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/Backend/Tables/AuthorController.php&#10;web.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;web.xml&#9;null&#9;null&#10;styles.c&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;Admin&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.css&#10;index&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/admin/index.blade.php&#10;Sidebar&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;styles.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/styles.css&#10;Admin.&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/public/css/AdminLTE.min.css&#10;we&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/routes/web.php&#10;perfum&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/perfume.blade.php&#10;sideba&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/resources/views/partials/admin/sidebar.blade.php&#10;H&#9;FILE&#9;file://D:/Project/CauUt/git/getting-perfume/app/Http/Controllers/HomeController.php" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
@@ -908,12 +896,12 @@
       <workItem from="1537280118242" duration="4302000" />
       <workItem from="1537549319444" duration="17551000" />
       <workItem from="1537623038800" duration="3874000" />
-      <workItem from="1537636300121" duration="20548000" />
+      <workItem from="1537636300121" duration="22731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="832649000" />
+    <option name="totallyTimeSpent" value="834832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -925,7 +913,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23572475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -995,13 +983,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/active.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1494,8 +1475,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="64" column="45" lean-forward="true" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
           <folding>
             <marker date="1537683509587" expanded="true" signature="9:22" ph="..." />
             <marker date="1537683509587" expanded="true" signature="33:42" ph="..." />
@@ -1517,6 +1498,14 @@
             <marker date="1537683509587" expanded="true" signature="9248:9289" ph="..." />
             <marker date="1537683509587" expanded="true" signature="9956:9997" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/child/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="91" column="41" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
