@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'web'], function () {
 
     Auth::routes();
-    Route::prefix('')->group(/**
-     *
-     */
-        function () {
+    Route::prefix('')->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::post('home', 'HomeController@home')->name('nav.home');
         Route::get('contact', 'ContactController@index')->name('nav.contact');

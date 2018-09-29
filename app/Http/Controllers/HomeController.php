@@ -18,7 +18,6 @@ class HomeController extends Controller
     {
         $hotPerfumes = $this->modelPerfume->getFourPerfumes();
         $newPerfumes = $this->modelPerfume->getNewPerfumes();
-        Log::info($newPerfumes);
         return view('home', ['hotPerfumes'=>$hotPerfumes,'newPerfumes'=>$newPerfumes]);
     }
 

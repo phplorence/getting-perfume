@@ -49,6 +49,10 @@ class Perfumes extends Authenticatable
         return DB::table('perfumes')->take(4)->get();
     }
 
+    public function getDetailPerfumes() {
+        return DB::table('perfumes')->take(12)->get();
+    }
+
     public function getNewPerfumes() {
         return DB::table('perfumes')->take(6)->get();
     }

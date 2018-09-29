@@ -1,80 +1,62 @@
 <!-- page content -->
 <div id="page_content_ajax">
-    <div class="breadcumb-area bg-img-5 black-opacity">
+    <div class="blog-area bg-1 hot-perfume">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="breadcumb-wrap text-center">
-                        <h2>Perfume Detail</h2>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li>/</li>
-                            <li class="active">contact</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="contact-area bg-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <div class="contact-form">
-                        <div class="cf-msg"></div>
-                        <form action="mail.php" method="post" id="cf">
-                            <div class="row">
-                                <div class="col-md-6 col-xs-12">
-                                    <input type="text" placeholder="Name" id="fname" name="fname">
+                @if(isset($hotPerfumes))
+                    @foreach($hotPerfumes as $perfume)
+                        <div class="col-xs-12 col-md-4 col-sm-6">
+                            <div class="blog-wrap">
+                                <div class="blog-img">
+                                    <img src="{{URL::asset('perfume/'.$perfume->path_image)}}" alt="perfume" style="width: 360px; height: 360px;" />
                                 </div>
-                                <div class="col-md-6 col-xs-12">
-                                    <input type="text" placeholder="Email" id="email" name="email">
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <input type="text" placeholder="Subject" id="subject" name="subject">
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <textarea class="contact-textarea" placeholder="Message" id="msg" name="msg"></textarea>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <button id="submit" class="cont-submit btn-contact btn-style" name="submit">SEND MESSAGE</button>
+                                <div class="blog-content">
+                                    <ul class="blog-meta">
+                                        <li><a href="#"><i class="fa fa-clock-o"></i> June, 23, 2017</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i> 4</a></li>
+                                    </ul>
+                                    <h3>
+                                        <?php
+                                        if (strlen(strip_tags($perfume->name)) > 21) {
+                                            echo substr(strip_tags($perfume->name),0,21)."...";
+                                        } else {
+                                            echo $perfume->name;
+                                        }
+                                        ?>
+                                    </h3>
+                                    <p>
+                                        <?php
+                                        if (strlen(strip_tags($perfume->description)) > 120) {
+                                            echo substr(strip_tags($perfume->description),0,120)."...";
+                                        } else {
+                                            if (strlen(strip_tags($perfume->description)) < 40)
+                                                echo strip_tags($perfume->description)."</br></br>";
+                                            else
+                                                echo strip_tags($perfume->description)."</br>";
+                                        }
+                                        ?>
+                                    </p>
+                                    <a href="blog-details.html">Chi tiết <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="contact-wrap">
+                        </div>
+                    @endforeach
+                @endif
+                <div class="col-xs-12">
+                    <div class="pagination-wrap text-center">
                         <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                Phone number
-                                <p>
-                                    <span>+ (0012) 123 456 789</span>
-                                    <span>+ (0012) 123 456 789</span>
-                                </p>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                Email Id
-                                <p>
-                                    <span>info145@gmail.com</span>
-                                    <span>info145@gmail.com</span>
-                                </p>
-                            </li>
-                            <li>
-                                <i class="fa fa-location-arrow"></i>
-                                Location
-                                <p>
-                                    <span>+227 Marion Street Address Here Columbia, SC 29201</span>
-                                </p>
-                            </li>
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li> <span>3</span></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="googleMap"></div>
     </div>
 </div>
 <script>

@@ -81,7 +81,7 @@ ul{
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-.bg-1{background:#0d0f11;}
+.bg-1{background:#09101f;}
 .bg-2{background:#131619;}
 
 .ptb-130{padding: 130px 0px}
@@ -831,12 +831,15 @@ ul{
 /*---------booknow-area end---------*/
 
 /*---------blog-area start---------*/
-.blog-area{
-  padding: 130px 0px 100px;
+.blog-area {
+    padding: 130px 0px 100px;
+}
+.hot-perfume {
+    padding: 30px 0px 40px;
 }
 .blog-wrap{
   margin-bottom: 30px;
-  background: #131619;
+  background: #09101f;
 }
 .blog-img img{
   width: 100%;
