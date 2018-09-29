@@ -299,6 +299,24 @@
                 $('#page_content_ajax').replaceWith(data['html']);
             });
     });
+    $("#perfume-list-host").click (function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/nuoc-hoa/moi-ve',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            type: "GET",
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(data){
+                $('#modal-loading').modal('hide');
+                $('#page_content_ajax').replaceWith(data['html']);
+            });
+    });
     $('.smooth-goto').on('click', function() {
         $('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
         return false;

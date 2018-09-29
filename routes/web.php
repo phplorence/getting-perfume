@@ -23,6 +23,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::post('home', 'HomeController@home')->name('nav.home');
         Route::get('contact', 'ContactController@index')->name('nav.contact');
+        Route::get('nuoc-hoa/moi-ve', 'PerfumeController@hot')->name('nav.perfume.detail');
         Route::get('nuoc-hoa', 'PerfumeController@index')->name('nav.perfume');
 
         // Authentication Routes...

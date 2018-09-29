@@ -8,4 +8,13 @@ class PerfumeController extends Controller
     {
         return view('perfume');
     }
+
+    public function hot() {
+        $returnHTML = view('child.hot_perfume')->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
 }

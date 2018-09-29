@@ -86,7 +86,7 @@
                     @endif
                 </div>
                 <div style="margin: 0 auto;">
-                    <p class="text-center btnDetail"><span>Xem chi tiết</span></p>
+                    <p class="text-center btnDetail"><span><a id="perfume-list-host" href="javascript:void(0)"><span>Xem chi tiết</span></a></span></p>
                 </div>
             </div>
         </div>
