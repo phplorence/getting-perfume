@@ -18,23 +18,20 @@
                                     </ul>
                                     <h3>
                                         <?php
-                                        if (strlen(strip_tags($perfume->name)) > 21) {
-                                            echo substr(strip_tags($perfume->name),0,21)."...";
-                                        } else {
-                                            echo $perfume->name;
-                                        }
+                                            if (strlen(strip_tags($perfume->name)) > 21) {
+                                                echo substr(strip_tags($perfume->name),0,21)."...";
+                                            } else {
+                                                echo $perfume->name;
+                                            }
                                         ?>
                                     </h3>
                                     <p>
                                         <?php
-                                        if (strlen(strip_tags($perfume->description)) > 120) {
-                                            echo substr(strip_tags($perfume->description),0,120)."...";
-                                        } else {
-                                            if (strlen(strip_tags($perfume->description)) < 40)
-                                                echo strip_tags($perfume->description)."</br></br>";
-                                            else
-                                                echo strip_tags($perfume->description)."</br>";
-                                        }
+                                            if (strlen(strip_tags($perfume->description)) > 160) {
+                                                echo mb_substr(strip_tags($perfume->description),0,160)."...";
+                                            } else {
+                                                echo $perfume->description;
+                                            }
                                         ?>
                                     </p>
                                     <a href="blog-details.html">Chi tiết <i class="fa fa-long-arrow-right"></i></a>
