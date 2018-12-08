@@ -21,7 +21,16 @@ class PerfumeController extends Controller
 
     public function hot() {
         $hotPerfumes = $this->modelPerfume->getDetailPerfumes();
-        $returnHTML = view('child.hot_perfume')->with(compact('hotPerfumes'))->render();
+        $returnHTML = view('child.perfume_hot')->with(compact('hotPerfumes'))->render();
+        $response_array = ([
+            'success' => true,
+            'html'      => $returnHTML
+        ]);
+        echo json_encode($response_array);
+    }
+
+    public function detail() {
+        $returnHTML = view('child.perfume_detail')->render();
         $response_array = ([
             'success' => true,
             'html'      => $returnHTML

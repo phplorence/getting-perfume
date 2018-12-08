@@ -34,7 +34,7 @@
                                             }
                                         ?>
                                     </p>
-                                    <a href="blog-details.html">Chi tiết <i class="fa fa-long-arrow-right"></i></a>
+                                    <a id="perfumeHotDetail" name="perfumeHotDetail" href="javascript:void(0)">Chi tiết <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

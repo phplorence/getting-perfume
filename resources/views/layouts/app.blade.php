@@ -317,6 +317,60 @@
                 $('#page_content_ajax').replaceWith(data['html']);
             });
     });
+    $('a[name="perfumeHotDetail"]').click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/nuoc-hoa/chi-tiet',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            type: "GET",
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(data){
+                $('#modal-loading').modal('hide');
+                $('#page_content_ajax').replaceWith(data['html']);
+            });
+    });
+    $(document).on('click', '#perfumeHotDetail', function() {
+        event.preventDefault();
+        $.ajax({
+            url: '/nuoc-hoa/chi-tiet',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            type: "GET",
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(data){
+                $('#modal-loading').modal('hide');
+                $('#page_content_ajax').replaceWith(data['html']);
+            });
+    });
+    $("#perfumeHotDetail").click(function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/nuoc-hoa/chi-tiet',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            type: "GET",
+            beforeSend: function(){
+                $('#modal-loading').modal('show');
+            }
+        })
+            .done(function(data){
+                $('#modal-loading').modal('hide');
+                $('#page_content_ajax').replaceWith(data['html']);
+            });
+    });
     $('.smooth-goto').on('click', function() {
         $('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
         return false;

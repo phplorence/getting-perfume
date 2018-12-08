@@ -20,8 +20,9 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::post('home', 'HomeController@home')->name('nav.home');
         Route::get('contact', 'ContactController@index')->name('nav.contact');
-        Route::get('nuoc-hoa/moi-ve', 'PerfumeController@hot')->name('nav.perfume.detail');
+        Route::get('nuoc-hoa/moi-ve', 'PerfumeController@hot')->name('nav.perfume.hot');
         Route::get('nuoc-hoa', 'PerfumeController@index')->name('nav.perfume');
+        Route::get('nuoc-hoa/chi-tiet', 'PerfumeController@detail')->name('nav.perfume.detail');
 
         // Authentication Routes...
         Route::get('/dang-nhap', 'Auth\LoginController@showLoginForm')->name('user.login');
